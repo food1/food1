@@ -15,5 +15,35 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// 后台路由
+
 //后台首页
 Route::get('/admin','AdminController@index');
+
+//用户管理
+Route::resource('user', 'UserController');
+
+//餐品管理
+Route::resource('food1', 'Food1Controller');
+
+//分类管理
+Route::resource('cate', 'CateController');
+
+//店铺管理
+Route::resource('dianpu', 'DianpuController');
+
+//购物车
+Route::resource('shoping', 'ShopingController');
+
+//结算管理
+Route::resource('clearing', 'ClearingController');
+
+//订单管理
+Route::resource('order', 'OrderController');
+
+//友情链接
+Route::resource('link', 'LinkController');
+
+// 网站设置
+// Route::get('/wzsz', 'WzszController');
+
