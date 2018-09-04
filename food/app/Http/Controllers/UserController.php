@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -14,6 +16,13 @@ class UserController extends Controller
     public function index()
     {
         //
+         //读取数据库 获取用户数据
+        $users = User::orderBy('id','desc')
+            ->where('user_name','like', '%'.request()->keywords.'%')
+            ->paginate(10);
+        //解析模板显示用户数据
+        return view('admin.user.index', ['users'=>$users]);
+        
     }
 
     /**
@@ -24,6 +33,8 @@ class UserController extends Controller
     public function create()
     {
         //
+        //
+        return view('admin.user.create');
     }
 
     /**
@@ -35,6 +46,23 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        //dd($request->all());
+         $user = new User;
+
+        $user -> user_name = $request->user_name;
+        $user -> user_password = Hash::make($request->user_password);
+        $user -> user_phone = $request->user_phone;
+        //$user -> user_img = $request->user_img;
+        
+        if ($request->hasFile('user_img')) {
+            $user->user_img = '/'.$request->user_img->store('uploads/'.date('Ymd'));
+        }
+
+        if($user -> save()){
+            return redirect('/user')->with('success', '添加成功');
+        }else{
+            return back()->with('error','添加失败');
+        }
     }
 
     /**
