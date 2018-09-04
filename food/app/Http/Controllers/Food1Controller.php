@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DianpuController extends Controller
+class Food1Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,6 @@ class DianpuController extends Controller
      */
     public function index()
     {
-        return view('/home.dianpu.index');
-
         //
     }
 

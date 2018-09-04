@@ -20,6 +20,12 @@ class CreateUsersTable extends Migration
             $table->string('user_password');
             $table->string('user_img');
             $table->string('user_adress');
+            $table->increments('id');
+            $table->string('user_name')->comment('用户名');
+            $table->integer('user_phone')->comment('电话');
+            $table->string('user_password')->comment('密码');
+            $table->string('user_img')->comment('头像');
+            $table->string('user_adress')->nullable()->comment('地址');
             $table->timestamps();
         });
     }
