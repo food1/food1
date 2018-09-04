@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 //后台首页
 Route::get('/admin','AdminController@index');
+
+
+//前台首页
+Route::get('/','HomeController@index');
+//前台店铺
+Route::get('/dianpu','DianpuController@index');
+
