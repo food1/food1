@@ -80,6 +80,7 @@ $(document).ready(function(){
         <th>ID<i class="sort"></i></th>
         <th>用户名</th>
         <th>手机号</th>
+        <th>权限</th>
         <th>头像</th>
         <th>地址</th>
         <th>操作</th>
@@ -93,6 +94,14 @@ $(document).ready(function(){
         <td>{{$v['id']}}</td>
         <td>{{$v['user_name']}}</td>
         <td>{{$v['user_phone']}}</td>
+        <td>
+        @if($v['user_qx'] == 1)
+            管理员
+        @endif
+        @if($v['user_qx'] == 0)
+            普通用户
+        @endif
+        </td>
         <td><img src="{{$v['user_img']}}" width="50" height="50"></td>
         <td>{{$v['user_adress']}}</td>
         <td><a href="/user/{{$v['id']}}/edit" class="tablelink">编辑</a>

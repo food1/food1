@@ -24,6 +24,8 @@
     <ul class="forminfo">
     <li><label>用户名</label><input name="user_name" type="text" class="dfinput" value="{{$user['user_name']}}" /></li>
     <li><label>手机号</label><input name="user_phone" type="text" class="dfinput" value="{{$user['user_phone']}}"/></li>
+    <li><label>普通用户</label><input  type="radio" class="dfinput" @if($user->user_qx == 0) checked @endif name="user_qx" value ="0"/></li>
+    <li><label>管理员</label><input  type="radio" class="dfinput" @if($user->user_qx == 1)  checked @endif name="user_qx" value ="1"/></li>
     <li><label>头像</label><input name="user_img" type="file" class="dfinput" value="{{$user['user_img']}}"/></li>
     {{method_field('PUT')}}
     {{csrf_field()}}
