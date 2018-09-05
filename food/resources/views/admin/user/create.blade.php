@@ -25,8 +25,6 @@
     <li><label>密码</label><input name="user_password" type="password" class="dfinput" /></li>
     <li><label>头像</label><input name="user_img" type="file" /></li>
     <br>
-    <li><label>头像</label><input name="user_img" type="file"/></li>
-    <br>
     {{csrf_field()}}
     <li><label>&nbsp;</label><input class="btn btn-primary btn6 mr10" value="提交" type="submit"></li>
     </ul>

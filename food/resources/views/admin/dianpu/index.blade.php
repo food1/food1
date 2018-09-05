@@ -38,19 +38,20 @@ $(document).ready(function(){
     </div>
     @if(Session::has('success'))
             <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-                <div style="background: blue" green">
-                        <div class="desc" style="text-align: center;line-height:95px;color:yellow;font-size: 20px;">{{Session::get('success')}} </div>
+                <div style="background:yellowgreen">
+                        <div class="desc" style="text-align: center;line-height:95px;color:white;font-size: 20px;">{{Session::get('success')}} </div>
                 </div>
             </div>
             @endif
 
             @if(Session::has('error'))
             <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-                <div style="background: pink" red">
-                        <div class="desc" style="text-align: center;line-height:95px;color:yellow;font-size: 20px;">{{Session::get('error')}}</div>
+                <div style="background: pink">
+                        <div class="desc" style="text-align: center;line-height:95px;color:white;font-size: 20px;">{{Session::get('error')}} </div>
                 </div>
             </div>
-            @endif
+        </div>
+    @endif
     
     <div class="rightinfo">
     
@@ -66,7 +67,15 @@ $(document).ready(function(){
         </ul>
     
     </div>
-    
+    <center>
+            <form action="/user" method="get">
+            {{csrf_field()}}
+            <div>
+                <input type="text" name="keywords" value="{{request()->keywords}}" style="width:350px;height:30px;border:solid 1px #ddd;">
+                <button style="width:50px;height:30px;">搜索</button>
+            </div>
+            </form>
+        </center>
     
     <table class="tablelist">
     	<thead>
@@ -90,12 +99,14 @@ $(document).ready(function(){
         <td>{{$v['dianpu_intro']}}</td>
         <td><img src="{{$v['dianpu_img']}}" width="50" height="50"></td>
         <td>{{$v['dianpu_adress']}}</td>
-        <td><a href="/dianpu/{{$v['id']}}/edit" class="tablelink">编辑</a>
-            <form style="float: left" action="/dianpu/{{$v['id']}}" method="post">
-            {{method_field('DELETE')}}
-            {{csrf_field()}}
-            <button href="/dianpu/{{$v['id']}}" class="tablelink"> 删除</button>
-            </form>
+        <td>
+            <a href="/dianpu/{{$v['id']}}/edit" style="float:left">
+                <div style="color:#aaa;background-color:#ddd;height:25px;line-height:25px;font-size:13px;">编辑</div></a>
+                <form action="/dianpu/{{$v['id']}}" method="post">
+                {{method_field('DELETE')}}
+                {{csrf_field()}}
+                <button href="/dianpu/{{$v['id']}}" style="float:right;height:25px;font-size:14px;color:#aaa;"> 删除</button>
+                </form>
         </td>
         </tr>
            @endforeach    

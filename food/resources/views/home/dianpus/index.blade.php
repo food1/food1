@@ -35,15 +35,15 @@
 			<div class="clearfix"></div>
 		</div>
 		<div class="header_bottom">
-		  <div class="header_nav">
-      		<div class="logo">
-				<a href="index.html"><img src="/home/images/logo.png" alt=""/><br></a>
-			 </div>
-			 <nav class="navbar navbar-default menu" role="navigation">
-			 	<h3 class="nav_right">
-			 		<a href="index.html">
-			 			<img src="/home/images/logo.png" class="img-responsive" alt=""/>
-			 		</a>
+		  	<div class="header_nav">
+      			<div class="logo">
+					<a href="index.html"><img src="/home/images/logo.png" alt=""/><br></a>
+			 	</div>
+		<nav class="navbar navbar-default menu" role="navigation">
+			<h3 class="nav_right">
+			 	<a href="index.html">
+			 	<img src="/home/images/logo.png" class="img-responsive" alt=""/>
+			 	</a>
 			 	</h3>
 			  	<div class="container-fluid">
 			    <div class="navbar-header">
@@ -71,20 +71,20 @@
 			</div>
 		</div>
 	</nav>
-			@if(Session::has('success'))
+		@if(Session::has('success'))
 		    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
 		    <div class="dashboard-stat green">
 		    <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:yellowgreen;">{{Session::get('success')}} </div>
 		    </div>
 		    </div>
-		    @endif
-		    @if(Session::has('error'))
+		@endif
+		@if(Session::has('error'))
 		    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
 		    <div class="dashboard-stat red">
 		    <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:#f66;">{{Session::get('error')}} </div>
 		    </div>
 		    </div>
-		    @endif
+		@endif
         <div class="clearfix"></div>
            	</div>
             	<div class="search">
@@ -118,8 +118,8 @@
 				   	  	<li><a href="#">晚餐</a></li>
 				   	  	<li><a href="#">夜宵</a></li>
 		   	     	</ul>
-		   	   </div>
-		   	   <ul class="product_reviews">
+		   	   	</div>
+		   	   	<ul class="product_reviews">
 		   	   	<h3><i class="arrow"> </i><span>用户评论</span></h3>
 		   	   	<li>
 		   	   		<ul class="review1">
@@ -143,16 +143,16 @@
 		   	   		</ul>
 		   	   	</li>
 		   	    <div class="but">
-			       <a href="#">更多评论<i class="but_arrow"> </i></a>
+			       	<a href="#">更多评论<i class="but_arrow"> </i></a>
 			    </div>
 		   	   	</ul>		   	   
 		   	   	<ul class="product_reviews">
-		   	   		<h3><i class="arrow"> </i><span>支付方式</span></h3>	   	   		
+		   	   		<h3><i class="arrow"> </i><span>支付方式</span></h3>
 		   	   	</ul>
 		   	   		<div style="float:left;">
-		   	   			<a href=""><img src="/home/images/1.png" style="width:60px;height:50px;"/></a>
-		   	   			<a href=""><img src="/home/images/2.png" style="width:60px;height:50px;"/></a>
-		   	   			<a href=""><img src="/home/images/3.png" style="width:60px;height:50px;"/></a>
+		   	   			<a href=""><img src="/home/images/1.png" style="width:50px;height:50px;"/></a>
+		   	   			<a href=""><img src="/home/images/2.png" style="width:50px;height:50px;"/></a>
+		   	   			<a href=""><img src="/home/images/3.png" style="width:50px;height:50px;"/></a>
 		   	   		</div>	
 		   		</div>	   		
 		   		<div class="col-md-9">
@@ -269,183 +269,182 @@
 				<div class="price">Price:
 					<span class="actual">$12.00</span>
 						</div>
-						  <ul class="product_but">
+						  	<ul class="product_but">
+						  		<li class="but3">Buy</li>
+						  		<li class="like"><span>120</span><i class="like1"> </i></li>
+						  	<div class="clearfix"> </div>
+						  	</ul>
+						<div class="mask">
+	                <div class="info">Quick View</div>
+			    </div>
+			</div>
+		</div>
+	</a>
+</div>
+</div>
+</div>
+	<div class="row content_bottom1">
+		<div class="col-md-3">
+			<div class="content_box"><a href="../food1/index">
+			   	<div class="view view-fifth">
+			   	   	<img src="/home/images/p8.jpg" class="img-responsive" alt=""/>
+				   	   	<div class="content_box-grid">
+				   	   	<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+				   	   	<div class="price">Price:
+						<span class="actual">$12.00</span>
+						</div>
+						<ul class="product_but">
+						<li class="but3">Buy</li>
+						<li class="like"><span>120</span><i class="like1"> </i></li>
+						<div class="clearfix"> </div>
+						</ul>
+						<div class="mask">
+	                    <div class="info">Quick View</div>
+			            </div>
+			            </div>
+				   	</div>
+			   	</a>
+			</div>
+		</div>
+			<div class="col-md-3">
+			   	<div class="content_box"><a href="../food1/index">
+			   	   	<div class="view view-fifth">
+			   	   	    <img src="/home/images/p7.jpg" class="img-responsive" alt=""/>
+				   	   	<div class="content_box-grid">
+				   	   	<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+				   	   	<div class="price">Price:
+						<span class="actual">$12.00</span>
+						</div>
+						<ul class="product_but">
 						  	<li class="but3">Buy</li>
 						  	<li class="like"><span>120</span><i class="like1"> </i></li>
-						  	<div class="clearfix"> </div>
-						  </ul>
-						   <div class="mask">
-	                         <div class="info">Quick View</div>
-			               </div>
-			             </div>
-				   	   	</div>
-			   	   	   </a>
-			   	   	  </div>
-			   	   </div>
-			   </div>
-			   <div class="row content_bottom1">
-			   	   <div class="col-md-3">
-			   	   	<div class="content_box"><a href="../food1/index">
+						<div class="clearfix"> </div>
+						</ul>
+						<div class="mask">
+	                    <div class="info">Quick View</div>
+			            </div>
+			            </div>
+				   	</div>
+			   	</a>
+			</div>
+			   	</div>
+			   	   	<div class="col-md-3">
+			   	   	  	<div class="content_box"><a href="../food1/index">
 			   	   	  	<div class="view view-fifth">
-			   	   	     <img src="/home/images/p8.jpg" class="img-responsive" alt=""/>
-				   	   	 <div class="content_box-grid">
-				   	   	  <p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	   	  <div class="price">Price:
-						    <span class="actual">$12.00</span>
-						  </div>
-						  <ul class="product_but">
+			   	   	    <img src="/home/images/p6.jpg" class="img-responsive" alt=""/>
+				   	   	<div class="content_box-grid">
+				   	   	<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+				   	   	<div class="price">Price:
+						<span class="actual">$12.00</span>
+						</div>
+						<ul class="product_but">
 						  	<li class="but3">Buy</li>
 						  	<li class="like"><span>120</span><i class="like1"> </i></li>
-						  	<div class="clearfix"> </div>
-						  </ul>
-						   <div class="mask">
-	                         <div class="info">Quick View</div>
-			               </div>
-			             </div>
-				   	   	</div>
-			   	   	   </a>
-			   	   	  </div>
-			   	   </div>
-			   	   <div class="col-md-3">
-			   	   	  <div class="content_box"><a href="../food1/index">
+						<div class="clearfix"> </div>
+						</ul>
+						<div class="mask">
+	                    <div class="info">Quick View</div>
+			            </div>
+			           	</div>
+				   	</div>
+			   	</a>
+			</div>
+			   	</div>
+			   	   	<div class="col-md-3">
+			   	   	   	<div class="content_box"><a href="../food1/index">
 			   	   	  	<div class="view view-fifth">
-			   	   	     <img src="/home/images/p7.jpg" class="img-responsive" alt=""/>
-				   	   	 <div class="content_box-grid">
-				   	   	  <p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	   	  <div class="price">Price:
-						    <span class="actual">$12.00</span>
-						  </div>
-						  <ul class="product_but">
-						  	<li class="but3">Buy</li>
-						  	<li class="like"><span>120</span><i class="like1"> </i></li>
-						  	<div class="clearfix"> </div>
-						  </ul>
-						   <div class="mask">
-	                         <div class="info">Quick View</div>
-			               </div>
-			             </div>
-				   	   	</div>
-			   	   	   </a>
-			   	   	  </div>
-			   	   </div>
-			   	   <div class="col-md-3">
-			   	   	  <div class="content_box"><a href="../food1/index">
-			   	   	  	<div class="view view-fifth">
-			   	   	     <img src="/home/images/p6.jpg" class="img-responsive" alt=""/>
-				   	   	 <div class="content_box-grid">
-				   	   	  <p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	   	  <div class="price">Price:
-						    <span class="actual">$12.00</span>
-						  </div>
-						  <ul class="product_but">
-						  	<li class="but3">Buy</li>
-						  	<li class="like"><span>120</span><i class="like1"> </i></li>
-						  	<div class="clearfix"> </div>
-						  </ul>
-						   <div class="mask">
-	                         <div class="info">Quick View</div>
-			               </div>
-			             </div>
-				   	   	</div>
-			   	   	   </a>
-			   	   	  </div>
-			   	   </div>
-			   	   <div class="col-md-3">
-			   	   	   <div class="content_box"><a href="../food1/index">
-			   	   	  	<div class="view view-fifth">
-			   	   	     <img src="/home/images/p5.jpg" class="img-responsive" alt=""/>
-				   	   	 <div class="content_box-grid">
-				   	   	  <p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	   	  <div class="price">Price:
-						    <span class="actual">$12.00</span>
-						  </div>
-						  <ul class="product_but">
-						  	<li class="but3">Buy</li>
-						  	<li class="like"><span>120</span><i class="like1"> </i></li>
-						  	<div class="clearfix"> </div>
-						  </ul>
-						   <div class="mask">
-	                         <div class="info">Quick View</div>
-			               </div>
-			             </div>
-				   	   	</div>
-			   	   	   </a>
-			   	   	  </div>
-			   	   </div>
-			   </div>
-			   <ul class="dc_pagination dc_paginationA dc_paginationA06">
-				  <li><a href="#">1</a></li>
-				  <li><a href="#" class="current">2</a></li>
-				  <li><a href="#">3</a></li>
-				  <li><a href="#">4</a></li>
-				  <li><a href="#">5</a></li>
-				  <li><a href="#">...</a></li>
-				  <li><a href="#">19</a></li>
-				  <li><a href="#">20</a></li>
-				  <li><a href="#" class="previous">下一页></a></li>
-				  <li><a href="#" class="next">上一页>></a></li>
-		       </ul>
-		    </div>
-		   </div>
+			   	   	    <img src="/home/images/p5.jpg" class="img-responsive" alt=""/>
+				   	   	<div class="content_box-grid">
+				   	   	<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+				   	   	<div class="price">Price:
+						<span class="actual">$12.00</span>
+						</div>
+						<ul class="product_but">
+						<li class="but3">Buy</li>
+						<li class="like"><span>120</span><i class="like1"> </i></li>
+						<div class="clearfix"> </div>
+						</ul>
+						<div class="mask">
+	                    <div class="info">Quick View</div>
+			            </div>
+			        </div>
+				</div>
+			</a>
 		</div>
 	</div>
+</div>
+	<ul class="dc_pagination dc_paginationA dc_paginationA06">
+		<li><a href="#">1</a></li>
+		<li><a href="#" class="current">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li><a href="#">...</a></li>
+		<li><a href="#">19</a></li>
+		<li><a href="#">20</a></li>
+		<li><a href="#" class="previous">下一页></a></li>
+		<li><a href="#" class="next">上一页>></a></li>
+	</ul>
+</div>
+</div>
+</div>
+</div>
 	<div class="footer">
 		<div class="container">
 			<div class="footer-grid footer-grid1">
-			  <h3 class="m_2">用戶帮助</h3>
-			  <ul class="list1">
+			  	<h3 class="m_2">用戶帮助</h3>
+			  	<ul class="list1">
 			  	<li><a href="#">我的客服</a></li>
-			  </ul>
-		   </div>
-		   <div class="footer-grid footer-grid2">
-			  <h3 class="m_2">商务合作</h3>
-			  <ul class="list1">
-			  	<li><a href="#">我要开店</a></li>
-			    <li><a href="#">加盟指南</a></li>
-			    <li><a href="#">市场合作</a></li>
-			    <li><a href="#">开放平台</a></li>
-			  </ul>
-		   </div>
-		   <div class="footer-grid footer-grid3">
-			  <h3 class="m_2">关于我们</h3>
-			  <ul class="list1">
-			  	<li><a href="#">吃了么介绍</a></li>
-			    <li><a href="#">加入我们</a></li>
-			    <li><a href="#">联系我们</a></li>
-			    <li><a href="#">规则中心</a></li>
-			  </ul>
-		   </div>
-		   <div class="footer-grid footer-grid4">
-			   <h3 class="m_2">交个朋友吧</h3>
-			   <ul class="footer_social">
-				 <li><a href=""> <i class="tw"> </i> </a></li>
-				 <li><a href=""><i class="fb"> </i> </a></li>
-				 <li><a href=""><i class="rss"> </i> </a></li>
-				 <li><a href=""><i class="msg"> </i> </a></li>
-				 <div class="clearfix"> </div>
-			   </ul>
-			   <h3 class="m_3">订阅</h3>
-			   <div class="footer_search">
+			  	</ul>
+		   	</div>
+		   	<div class="footer-grid footer-grid2">
+			  	<h3 class="m_2">商务合作</h3>
+			  	<ul class="list1">
+			  		<li><a href="#">我要开店</a></li>
+			    	<li><a href="#">加盟指南</a></li>
+			    	<li><a href="#">市场合作</a></li>
+			    	<li><a href="#">开放平台</a></li>
+			  	</ul>
+		   	</div>
+		   	<div class="footer-grid footer-grid3">
+			  	<h3 class="m_2">关于我们</h3>
+			  	<ul class="list1">
+			  		<li><a href="#">吃了么介绍</a></li>
+			    	<li><a href="#">加入我们</a></li>
+			    	<li><a href="#">联系我们</a></li>
+			    	<li><a href="#">规则中心</a></li>
+			  	</ul>
+		   	</div>
+		   	<div class="footer-grid footer-grid4">
+			   	<h3 class="m_2">交个朋友吧</h3>
+			   	<ul class="footer_social">
+				 	<li><a href=""> <i class="tw"> </i> </a></li>
+				 	<li><a href=""><i class="fb"> </i> </a></li>
+				 	<li><a href=""><i class="rss"> </i> </a></li>
+				 	<li><a href=""><i class="msg"> </i> </a></li>
+					<div class="clearfix"> </div>
+			   	</ul>
+			   	<h3 class="m_3">订阅</h3>
+			   	<div class="footer_search">
 			    <input type="text" class="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Email';}">
 			    <input type="submit" value="搜索">
-			   </div>
-		   </div>
-		   <div class="footer-grid footer-grid_last">
-	          <ul class="secure">
-			  	<li class="secure_img"><img src="/home/images/secure.png" alt=""/></li> 
-			  	<li class="secure_desc">品质值得信赖</li>
-			  	<div class="clearfix"> </div>
-			  </ul>
-			  <ul class="secure">
-			  	<li class="secure_img"><img src="/home/images/order.png" alt=""/></li> 
-			  	<li class="secure_desc">速度值得称赞</li>
-			  	<div class="clearfix"> </div>
-			 </ul>
-		   </div>
-		   <div class="clearfix"> </div>
-	   </div>
+			   	</div>
+		   	</div>
+		   	<div class="footer-grid footer-grid_last">
+	          	<ul class="secure">
+			  		<li class="secure_img"><img src="/home/images/secure.png" alt=""/></li> 
+			  		<li class="secure_desc">品质值得信赖</li>
+			  		<div class="clearfix"> </div>
+			  	</ul>
+			  	<ul class="secure">
+			  		<li class="secure_img"><img src="/home/images/order.png" alt=""/></li> 
+			  		<li class="secure_desc">速度值得称赞</li>
+			  		<div class="clearfix"> </div>
+			 	</ul>
+		   	</div>
+		<div class="clearfix"> </div>
 	</div>
-
+</div>
 </body>
 </html>
 

@@ -38,7 +38,7 @@
 		  <div class="header_nav">
       		<div class="logo">
 				<a href="index.html"><img src="/home/images/logo.png" alt=""/><br></a>
-			 </div>
+			</div>
 			 <nav class="navbar navbar-default menu" role="navigation">
 			 	<h3 class="nav_right">
 			 		<a href="index.html">
@@ -56,7 +56,7 @@
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    	<ul class="nav navbar-nav menu1">
-				      	<li class="active"><a>首页</a></li>
+				      	<li class="active"><a href="/dianpus">首页</a></li>
 				        <li><a>关于我们</a></li>
 				        <li><a>今日推荐</a></li>
 				        <li><a>我的订单</a></li>
@@ -70,21 +70,21 @@
 			</div>
 		</div>
 	</nav>
-            <div class="clearfix"></div>
-           </div>
-            <div class="search">
-			  <input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-			  <input type="submit" value="搜索">
-			</div>
-		 </div>  
-		</div>
+        <div class="clearfix"></div>
+</div>
+    <div class="search">
+		<input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+			<input type="submit" value="搜索">
 	</div>
+</div>  
+</div>
+</div>
     <div class="main">
 		<div class="container">
-		  <div class="Product_top">
-		  	<center>
-		  	  <form> 
-				 <div class="register-top-grid">
+		  	<div class="Product_top">
+		  		<center>
+		  	  		<form> 
+				 		<div class="register-top-grid">
 						<div>
 						    <span><label>用户名:</label></span>
 						    <span><input name="user_name" type="text" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
@@ -113,13 +113,13 @@
 		   	   			</div>	
 					</div>
 				</form>
-				  <div class="clearfix"> </div>
-					<div class="register-but">
-					   <form>
-						 <input type="submit" value="注册">
-						 <div class="clearfix"> </div>
-					</form>
-				</center>
+				<div class="clearfix"> </div>
+				<div class="register-but">
+				<form>
+					<input type="submit" value="注册">
+					<div class="clearfix"> </div>
+				</form>
+			</center>
 			</div>
 		</div>
 	</div>
@@ -127,60 +127,59 @@
    <div class="footer">
 		<div class="container">
 			<div class="footer-grid footer-grid1">
-			  <h3 class="m_2">用戶帮助</h3>
-			  <ul class="list1">
-			  	<li><a href="#">我的客服</a></li>
-			  </ul>
-		   </div>
-		   <div class="footer-grid footer-grid2">
-			  <h3 class="m_2">商务合作</h3>
-			  <ul class="list1">
-			  	<li><a href="#">我要开店</a></li>
-			    <li><a href="#">加盟指南</a></li>
-			    <li><a href="#">市场合作</a></li>
-			    <li><a href="#">开放平台</a></li>
-			  </ul>
-		   </div>
-		   <div class="footer-grid footer-grid3">
-			  <h3 class="m_2">关于我们</h3>
-			  <ul class="list1">
-			  	<li><a href="#">吃了么介绍</a></li>
-			    <li><a href="#">加入我们</a></li>
-			    <li><a href="#">联系我们</a></li>
-			    <li><a href="#">规则中心</a></li>
-			  </ul>
-		   </div>
-		   <div class="footer-grid footer-grid4">
-			   <h3 class="m_2">交个朋友吧</h3>
-			   <ul class="footer_social">
-				 <li><a href=""> <i class="tw"> </i> </a></li>
-				 <li><a href=""><i class="fb"> </i> </a></li>
-				 <li><a href=""><i class="rss"> </i> </a></li>
-				 <li><a href=""><i class="msg"> </i> </a></li>
-				 <div class="clearfix"> </div>
-			   </ul>
-			   <h3 class="m_3">订阅</h3>
-			   <div class="footer_search">
+			  	<h3 class="m_2">用戶帮助</h3>
+			  	<ul class="list1">
+			  		<li><a href="#">我的客服</a></li>
+			  	</ul>
+		   	</div>
+		   	<div class="footer-grid footer-grid2">
+			  	<h3 class="m_2">商务合作</h3>
+			  	<ul class="list1">
+			  		<li><a href="#">我要开店</a></li>
+			    	<li><a href="#">加盟指南</a></li>
+			    	<li><a href="#">市场合作</a></li>
+			    	<li><a href="#">开放平台</a></li>
+			  	</ul>
+		   	</div>
+		   	<div class="footer-grid footer-grid3">
+			  	<h3 class="m_2">关于我们</h3>
+			  	<ul class="list1">
+			  		<li><a href="#">吃了么介绍</a></li>
+			    	<li><a href="#">加入我们</a></li>
+			    	<li><a href="#">联系我们</a></li>
+			    	<li><a href="#">规则中心</a></li>
+			  	</ul>
+		   	</div>
+		   	<div class="footer-grid footer-grid4">
+			   	<h3 class="m_2">交个朋友吧</h3>
+			   	<ul class="footer_social">
+				 	<li><a href=""> <i class="tw"> </i> </a></li>
+				 	<li><a href=""><i class="fb"> </i> </a></li>
+				 	<li><a href=""><i class="rss"> </i> </a></li>
+				 	<li><a href=""><i class="msg"> </i> </a></li>
+				<div class="clearfix"> </div>
+			   	</ul>
+			   	<h3 class="m_3">订阅</h3>
+			   	<div class="footer_search">
 			    <input type="text" class="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Email';}">
 			    <input type="submit" value="搜索">
-			   </div>
-		   </div>
-		   <div class="footer-grid footer-grid_last">
-	          <ul class="secure">
-			  	<li class="secure_img"><img src="/home/images/secure.png" alt=""/></li> 
-			  	<li class="secure_desc">品质值得信赖</li>
-			  	<div class="clearfix"> </div>
-			  </ul>
-			  <ul class="secure">
-			  	<li class="secure_img"><img src="/home/images/order.png" alt=""/></li> 
-			  	<li class="secure_desc">速度值得称赞</li>
-			  	<div class="clearfix"> </div>
-			 </ul>
-		   </div>
-		   <div class="clearfix"> </div>
-	   </div>
+			   	</div>
+		   	</div>
+		   	<div class="footer-grid footer-grid_last">
+	          	<ul class="secure">
+			  		<li class="secure_img"><img src="/home/images/secure.png" alt=""/></li> 
+			  		<li class="secure_desc">品质值得信赖</li>
+			  		<div class="clearfix"> </div>
+			  	</ul>
+			  	<ul class="secure">
+			  		<li class="secure_img"><img src="/home/images/order.png" alt=""/></li> 
+			  		<li class="secure_desc">速度值得称赞</li>
+			  		<div class="clearfix"> </div>
+			 	</ul>
+		   		</div>
+		   	<div class="clearfix"> </div>
+	   	</div>
 	</div>
-
 </body>
 </html>
 
