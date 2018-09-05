@@ -402,7 +402,7 @@
 			  </ul>
 		   </div>
 		   <div class="footer-grid footer-grid4">
-			   <h3 class="m_2">Let's be friends</h3>
+			   <h3 class="m_2">交个朋友吧</h3>
 			   <ul class="footer_social">
 				 <li><a href=""> <i class="tw"> </i> </a></li>
 				 <li><a href=""><i class="fb"> </i> </a></li>
@@ -410,22 +410,21 @@
 				 <li><a href=""><i class="msg"> </i> </a></li>
 				 <div class="clearfix"> </div>
 			   </ul>
-			   <h3 class="m_3">Subscribe</h3>
-			   <p class="m_4">aliquam erat volutpat. Ut wisi</p>
+			   <h3 class="m_3">订阅</h3>
 			   <div class="footer_search">
-			    <input type="text" class="text" value="Enter Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Email';}">
-			    <input type="submit" value="Search">
+			    <input type="text" class="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Email';}">
+			    <input type="submit" value="搜索">
 			   </div>
 		   </div>
 		   <div class="footer-grid footer-grid_last">
 	          <ul class="secure">
 			  	<li class="secure_img"><img src="/home/images/secure.png" alt=""/></li> 
-			  	<li class="secure_desc">Lorem ipsum dolor coadipiscing</li>
+			  	<li class="secure_desc">品质值得信赖</li>
 			  	<div class="clearfix"> </div>
 			  </ul>
 			  <ul class="secure">
 			  	<li class="secure_img"><img src="/home/images/order.png" alt=""/></li> 
-			  	<li class="secure_desc">Lorem ipsum dolor coadipiscing</li>
+			  	<li class="secure_desc">速度值得称赞</li>
 			  	<div class="clearfix"> </div>
 			 </ul>
 		   </div>
