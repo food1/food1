@@ -155,6 +155,8 @@
 		   	   			<div class="clearfix"> </div>
 		   	   		</ul>
 		   	   	</li>
+
+		   	   	
 		   	    <div class="but">
 			       <a href="#">更多评论<i class="but_arrow"> </i></a>
 			    </div>
@@ -165,9 +167,9 @@
 		   	   	   <img src="/home/images/payment.png" class="img-responsive" alt=""/>
 		   	    </ul>
 		   	    <div style="float:left;">
-	   	   			<a href=""><img src="/home/images/1.png" style="width:60px;height:50px;"/></a>
-	   	   			<a href=""><img src="/home/images/2.png" style="width:60px;height:50px;"/></a>
-	   	   			<a href=""><img src="/home/images/3.png" style="width:60px;height:50px;"/></a>
+	   	   			<a href=""><img src="/home/images/1.png" style="width:50px;height:50px;"/></a>
+	   	   			<a href=""><img src="/home/images/2.png" style="width:50px;height:50px;"/></a>
+	   	   			<a href=""><img src="/home/images/3.png" style="width:50px;height:50px;"/></a>
 	   	   		</div>
 		   	</div>
 		   	<div class="col-md-9">
@@ -207,12 +209,12 @@
 					    </div>
 					    <div class="single_right">
 				        	<h3>产品介绍</h3>
-				        	<p class="m_5">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse</p>
+				        	<p class="m_5">em vel eum iriure dolor in hendrerit in vulputate velit esse</p>
 				        	<div class="price_single">
 							  <span class="reducedfrom">¥66.00</span>
 							  <span class="actual1">¥12.00</span>
 							</div>
-				        	
+				        <div style="width: 50"></div>
 							<div class="btn_form">
 							   <form type="post" action="/dianpu/xiangqing">
 								 <input type="submit" value="立即购买" title="">
@@ -223,7 +225,7 @@
     			            </ul>
 							<div class="col-xs-12  col-sm-6  col-md-4">
 				              <div class="banners--small  banners--small--social">
-				                <a href="#" class="social"><i><img src="/home/images/1.png" style="width:60px;height:50px;"/></i>
+				                <a href="#" class="social"><i><img src="/home/images/1.png" style="width:50px;height:50px;"/></i>
 				                <span class="banners--small--text"> 分享到<br>QQ</span>
 				                <div class="clearfix"> </div>
 				                </a>
@@ -231,7 +233,7 @@
             				</div>
                             <div class="col-xs-12  col-sm-6  col-md-4">
 				              <div class="banners--small  banners--small--social">
-				                <a href="#" class="social"><i><img src="/home/images/2.png" style="width:60px;height:50px;"/></i>
+				                <a href="#" class="social"><i><img src="/home/images/2.png" style="width:50px;height:50px;"/></i>
 				                <span class="banners--small--text"> 分享到 <br>微信</span>
 				                <div class="clearfix"> </div>
 				                </a>
@@ -239,12 +241,13 @@
             				</div>
                             <div class="col-xs-12  col-sm-6  col-md-4">
 				              <div class="banners--small  banners--small--social">
-				                <a href="#" class="social"><i class="zocial-pin"> </i>
-				                <span class="banners--small--text">Pin on<br>Pinterest</span>
+				                <a href="#" class="social"><i><img src="/home/images/sina.png" style="width:50px;height:50px;"/></i>
+				                <span class="banners--small--text">分享到<br>新浪微博</span>
 				                <div class="clearfix"> </div>
 				                </a>
 				              </div>
             			   </div>
+            			
            </div>
 		   <div class="clearfix"> </div>
 		   <!----product-rewies---->
@@ -275,49 +278,18 @@
 								 });
 						 });
 					</script>
-				<!---//responsive-tabs---->
-				<!--//vertical Tabs-script-->
-				<!--vertical Tabs-->
-
-        		<!-- <div id="verticalTab">
-		            <ul class="resp-tabs-list">
-		                <li>描述</li>
-		                <li>餐品标签</li>
-		                <li>产品评论</li>
-		            </ul>
-		            <div class="resp-tabs-container vertical-tabs">
-		                <div>
-		                	<h3> Details</h3>
-		                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.</p>
-		               		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor</p>
-		                </div>
-		                <div>
-		                	<h3>Product Tags</h3>
-		                	<h4>Add Your Tags:</h4>
-		                	<form>
-		                		<input type="text"> <input type="submit" value="ADD TAGS"/>
-		                		<span>Use spaces to separate tags. Use single quotes (') for phrases.</span>
-		                	</form>
-		                </div>
-		                <div>
-		                	<h3>Customer Reviews</h3>
-		                	<p>There are no customer reviews yet.</p>
-		                </div>
-		            </div>
-       		    </div>
-       		    <div class="clearfix"> </div> -->
 
 		      </div>
 		      <div class="related_products">
-		      	<h3>相关产品</h3>
+		      	<h3>店主推荐</h3>
 		      	<div class="row">
 		      		<div class="col-md-4 related">
-		      			<img src="/home/images/pic4.jpg" class="img-responsive" alt=""/>
+		      			<img src="/home/images/pic6.jpg" class="img-responsive" alt=""/>
 		      		</div>
 		      		<div class="col-md-4 related">
-		      			<img src="/home/images/pic5.jpg" class="img-responsive" alt=""/>
+		      			<img src="/home/images/pic6.jpg" class="img-responsive" alt=""/>
 		      		</div>
-		      		<div class="col-md-4">
+		      		<div class="col-md-4 related">
 		      			<img src="/home/images/pic6.jpg" class="img-responsive" alt=""/>
 		      		</div>
 		      	</div>
@@ -383,7 +355,6 @@
 		   <div class="clearfix"> </div>
 	   </div>
 	</div>
-
 </body>
 </html>
 

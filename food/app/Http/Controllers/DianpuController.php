@@ -132,8 +132,4 @@ class DianpuController extends Controller
         }
     }
 
-    public function xiangqing()
-    {
-        return view('/home.dianpu.xiangqing');
-    }
 }

@@ -14,10 +14,10 @@
 //前台首页
 Route::get('/','HomeController@index');
 //前台店铺
-Route::get('/dianpu','DianpuController@index');
+Route::get('/dianpus','QdianpuController@index');
 
 //前台店铺详情
-Route::get('/dianpu/xiangqing','DianpuController@xiangqing');
+Route::get('/dianpus/xiangqing','QdianpuController@xiangqing');
 // Route::get('/', function () {
 //     return view('welcome');
 // });

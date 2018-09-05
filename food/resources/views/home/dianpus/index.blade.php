@@ -95,10 +95,65 @@
 		</div>
 	</div>
     <div class="main">
-		<div class="container">
-		   	<div class="banner">
-			 	<img src="/home/images/banner.jpg" class="img-responsive" alt=""/>
-		   	</div>
+    	<!--图片轮播-->
+<div class="container">
+		   	
+		   	<style type="text/css">
+		   		#carousel-example-generic{
+		   			width: 1148px;
+		   			height: 399.75px;
+		   			margin-top: 10px;
+		   			overflow:hidden;
+		   		}
+		   	</style>
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
+		    <!--轮播图片的提示点-->
+		    <ol class="carousel-indicators">
+		        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		        <li data-target="#carousel-example-generic" data-slide-to="1" ></li>
+		        <li data-target="#carousel-example-generic" data-slide-to="2" ></li>
+		        <li data-target="#carousel-example-generic" data-slide-to="3" ></li>
+		        <li data-target="#carousel-example-generic" data-slide-to="4" ></li>
+		        <li data-target="#carousel-example-generic" data-slide-to="5" ></li>
+		        <li data-target="#carousel-example-generic" data-slide-to="6" ></li>
+		    </ol>
+		    <!--轮播图片-->
+		    <div class="carousel-inner" role="listbox">
+		        <div class="item active">
+		            <img src="home/images/f1.jpg" alt="1" width="100%">
+		        </div>
+		        <div class="item ">
+		            <img src="home/images/banner.jpg" alt="2" width="100%">
+		            <div class="carousel-caption"></div>
+		        </div>
+		        <div class="item ">
+		            <img src="home/images/s2.jpg" alt="3" width="100%">
+		            <div class="carousel-caption"></div>
+		        </div>
+		        <div class="item ">
+		            <img src="home/images/f2.jpg" alt="4" width="100%">
+		            <div class="carousel-caption"></div>
+		        </div>
+		        <div class="item ">
+		            <img src="home/images/f3.jpg" alt="5" width="100%">
+		            <div class="carousel-caption"></div>
+		        </div>
+		        <div class="item ">
+		            <img src="home/images/p7.jpg" alt="6" width="100%">
+		            <div class="carousel-caption"></div>
+		        </div>
+		    </div>
+		    <!--左右滑动图标-->
+		    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"5
+	            <span class="sr-only">Previous</span>
+	        </a>
+	        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+	            <span class="sr-only">Next</span>
+	        </a>
+		</div>
+</div>
+		<!-- 轮播图结束 -->
+
 		   	<div class="row content">
 		   	<div class="col-md-3 content_top">
 		   	   	<div class="category_box">
@@ -150,11 +205,12 @@
 		   	   		<h3><i class="arrow"> </i><span>支付方式</span></h3>	   	   		
 		   	   	</ul>
 		   	   		<div style="float:left;">
-		   	   			<a href=""><img src="/home/images/1.png" style="width:60px;height:50px;"/></a>
-		   	   			<a href=""><img src="/home/images/2.png" style="width:60px;height:50px;"/></a>
-		   	   			<a href=""><img src="/home/images/3.png" style="width:60px;height:50px;"/></a>
+		   	   			<a href=""><img src="/home/images/1.png" style="width:50px;height:50px;"/></a>
+		   	   			<a href=""><img src="/home/images/2.png" style="width:50px;height:50px;"/></a>
+		   	   			<a href=""><img src="/home/images/3.png" style="width:50px;height:50px;"/></a>
 		   	   		</div>	
-		   		</div>	   		
+		   		</div>	
+		   		   		
 		   		<div class="col-md-9">
 		   	   	<ul class="feature">
 		   	   	 	<h3><i class="arrow"> </i><span>今日精选</span></h3>
@@ -166,7 +222,7 @@
 					  	<span class="actual">$12.00</span>
 					</div>
 				    <div class="but1">
-			          	<a href="">Buy Now</a>
+			          	<a href="">立即购买</a>
 			        </div>
 				 	</li>		   	   	
 				 	<li class="grid1"><img src="/home/images/f2.jpg" class="img-responsive" alt=""/>
@@ -175,7 +231,7 @@
 					  	<span class="actual">$12.00</span>
 					</div>
 				    <div class="but1">
-			          	<a href="#">Buy Now</a>
+			          	<a href="#">立即购买</a>
 			        </div>
 				 	</li>		   	
 				 	<li class="grid2"><img src="/home/images/f3.jpg" class="img-responsive" alt=""/>
@@ -184,7 +240,7 @@
 					  	<span class="actual">$12.00</span>
 					</div>
 				    <div class="but1">
-			          	<a href="#">Buy Now</a>
+			          	<a href="#">立即购买</a>
 			        </div>
 				 	</li>		   	
 				 	<div class="clearfix"> </div>
@@ -193,8 +249,10 @@
 		   	   	 	<h3><i class="arrow"> </i><span>热门商铺</span></h3>
 		   	   	</ul>
 		   	   	<div class="row content_bottom">
+		   	   		
+
 			   	   	<div class="col-md-3">
-			   	   		<div class="content_box"><a href="/dianpu/xiangqing">
+			   	   		<div class="content_box"><a href="/dianpus/xiangqing">
 			   	   	  	<div class="view view-fifth">
 			   	   	     	<img src="/home/images/p1.jpg" class="img-responsive" alt=""/>
 				   	   	<div class="content_box-grid">
@@ -203,7 +261,7 @@
 						    <span class="actual">¥12.00</span>
 						</div>
 						<ul class="product_but">
-						  	<li class="but3">立即购买</li>
+						  	<li class="but3">加入购物车</li>
 						  	<li class="like"><span>120</span><i class="like1"> </i></li>
 						<div class="clearfix"> </div>
 						</ul>
@@ -215,52 +273,54 @@
 		</a>
 	</div>
 </div>
+
+
 	<div class="col-md-3">
-		<div class="content_box"><a href="/xiangqing">
+		<div class="content_box"><a href="/dianpus/xiangqing">
 			<div class="view view-fifth">
 			   	<img src="/home/images/p4.jpg" class="img-responsive" alt=""/>
-			<div class="content_box-grid">
-			<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-			<div class="price">Price:
-				<span class="actual">$12.00</span>
+				<div class="content_box-grid">
+				<p class="m_1"> elit</p>
+				<div class="price">Price:
+					<span class="actual">$12.00</span>
+				</div>
+				<ul class="product_but">
+					<li class="but3">Buy</li>
+					<li class="like"><span>120</span><i class="like1"> </i></li>
+					<div class="clearfix"> </div>
+				</ul>
+				<div class="mask">
+		        <div class="info">Quick View</div>
+				</div>
+				</div>
 			</div>
-			<ul class="product_but">
-				<li class="but3">Buy</li>
-				<li class="like"><span>120</span><i class="like1"> </i></li>
-				<div class="clearfix"> </div>
-			</ul>
-			<div class="mask">
-	        <div class="info">Quick View</div>
-		</div>
+		</a>
 	</div>
 </div>
-</a>
-</div>
-</div>
 	<div class="col-md-3">
-		<div class="content_box"><a href="/xiangqing">
+		<div class="content_box"><a href="/dianpus/xiangqing">
 			<div class="view view-fifth">
 			   	<img src="/home/images/p3.jpg" class="img-responsive" alt=""/>
-			<div class="content_box-grid">
-			<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-			<div class="price">Price:
-				<span class="actual">$12.00</span>
+				<div class="content_box-grid">
+					<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+					<div class="price">Price:
+						<span class="actual">$12.00</span>
+					</div>
+					<ul class="product_but">
+						<li class="but3">Buy</li>
+						<li class="like"><span>120</span><i class="like1"> </i></li>
+					<div class="clearfix"> </div>
+					</ul>
+					<div class="mask">
+			        <div class="info">Quick View</div>
+					</div>
+				</div>
 			</div>
-			<ul class="product_but">
-				<li class="but3">Buy</li>
-				<li class="like"><span>120</span><i class="like1"> </i></li>
-			<div class="clearfix"> </div>
-			</ul>
-			<div class="mask">
-	        <div class="info">Quick View</div>
+		</a>
 		</div>
 	</div>
-</div>
-</a>
-</div>
-</div>
 	<div class="col-md-3">
-		<div class="content_box"><a href="/xiangqing">
+		<div class="content_box"><a href="/dianpus/xiangqing">
 		<div class="view view-fifth">
 			<img src="/home/images/p2.jpg" class="img-responsive" alt=""/>
 		<div class="content_box-grid">
@@ -284,7 +344,7 @@
 			   </div>
 			   <div class="row content_bottom1">
 			   	   <div class="col-md-3">
-			   	   	<div class="content_box"><a href="/xiangqing">
+			   	   	<div class="content_box"><a href="/dianpus/xiangqing">
 			   	   	  	<div class="view view-fifth">
 			   	   	     <img src="/home/images/p8.jpg" class="img-responsive" alt=""/>
 				   	   	 <div class="content_box-grid">
@@ -306,7 +366,7 @@
 			   	   	  </div>
 			   	   </div>
 			   	   <div class="col-md-3">
-			   	   	  <div class="content_box"><a href="/xiangqing">
+			   	   	  <div class="content_box"><a href="/dianpus/xiangqing">
 			   	   	  	<div class="view view-fifth">
 			   	   	     <img src="/home/images/p7.jpg" class="img-responsive" alt=""/>
 				   	   	 <div class="content_box-grid">
@@ -328,7 +388,7 @@
 			   	   	  </div>
 			   	   </div>
 			   	   <div class="col-md-3">
-			   	   	  <div class="content_box"><a href="/xiangqing">
+			   	   	  <div class="content_box"><a href="/dianpus/xiangqing">
 			   	   	  	<div class="view view-fifth">
 			   	   	     <img src="/home/images/p6.jpg" class="img-responsive" alt=""/>
 				   	   	 <div class="content_box-grid">
@@ -350,7 +410,7 @@
 			   	   	  </div>
 			   	   </div>
 			   	   <div class="col-md-3">
-			   	   	   <div class="content_box"><a href="/xiangqing">
+			   	   	   <div class="content_box"><a href="/dianpus/xiangqing">
 			   	   	  	<div class="view view-fifth">
 			   	   	     <img src="/home/images/p5.jpg" class="img-responsive" alt=""/>
 				   	   	 <div class="content_box-grid">
@@ -388,6 +448,7 @@
 		   </div>
 		</div>
 	</div>
+	<!-- 页脚 -->
 	<div class="footer">
 		<div class="container">
 			<div class="footer-grid footer-grid1">
@@ -415,12 +476,12 @@
 			  </ul>
 		   </div>
 		   <div class="footer-grid footer-grid4">
-			   <h3 class="m_2">交个朋友吧</h3>
+			   <h3 class="m_2">好东西和大家一起分享!</h3>
 			   <ul class="footer_social">
-				 <li><a href=""> <i class="tw"> </i> </a></li>
-				 <li><a href=""><i class="fb"> </i> </a></li>
-				 <li><a href=""><i class="rss"> </i> </a></li>
-				 <li><a href=""><i class="msg"> </i> </a></li>
+				 <li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http"><img src="/home/images/QQ.png"/></a></li>
+				 <li><a href="https://www.douban.com/share/service?href=http"><img src="/home/images/douban.png"/></a></li>
+				 <li><a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey"><img src="/home/images/qqkj.png"/></a></li>
+				 <li><a href="http://service.weibo.com/share/share.php"><img src="/home/images/weibo.png"/></a></li>
 				 <div class="clearfix"> </div>
 			   </ul>
 			   <h3 class="m_3">订阅</h3>
@@ -429,6 +490,7 @@
 			    <input type="submit" value="搜索">
 			   </div>
 		   </div>
+		   <!-- 友情链接 -->
 		   <div class="footer-grid footer-grid_last">
 	          <ul class="secure">
 			  	<li class="secure_img"><img src="/home/images/secure.png" alt=""/></li> 
@@ -441,6 +503,7 @@
 			  	<div class="clearfix"> </div>
 			 </ul>
 		   </div>
+		   <!-- 友情链接 -->
 		   <div class="clearfix"> </div>
 	   </div>
 	</div>

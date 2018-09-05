@@ -43,7 +43,7 @@
 								<br>
 				
 								<!-- 城市三级联动 -->
-								<form action="/dianpu">
+								<form action="/dianpus">
 								<div class="form-group">
 								  <label class="col-sm-2 control-label">
 								    <i>*</i>所在地址</label>
@@ -63,7 +63,7 @@
 								  </div>
 								</div>
 								
-								<a href="/dianpu"><button class="btn-stress">搜 索</button></a>
+								<a href="/dianpus"><button class="btn-stress">搜 索</button></a>
          						</form>
 						       <!-- 城市三级联动 -->
 						    </div>	
