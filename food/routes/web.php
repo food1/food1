@@ -19,9 +19,6 @@ Route::get('/admin','AdminController@index');
 Route::get('/','HomeController@index');
 //前台店铺
 Route::get('/dianpu','DianpuController@index');
-Route::get('/', function () {
-    return view('welcome');
-});
 
 // 后台路由
 
@@ -54,3 +51,8 @@ Route::resource('link', 'LinkController');
 
 // 网站设置
 // Route::get('/wzsz', 'WzszController');
+ 
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
