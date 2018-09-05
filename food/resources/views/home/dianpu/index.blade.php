@@ -152,7 +152,7 @@
 					  	<span class="actual">$12.00</span>
 					</div>
 				    <div class="but1">
-			          	<a href="#">Buy Now</a>
+			          	<a href="">Buy Now</a>
 			        </div>
 				 	</li>		   	   	
 				 	<li class="grid1"><img src="/home/images/f2.jpg" class="img-responsive" alt=""/>
@@ -181,7 +181,7 @@
 		   	   	<div class="tlinks">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
 		   	   	<div class="row content_bottom">
 			   	   	<div class="col-md-3">
-			   	   		<div class="content_box"><a href="single.html">
+			   	   		<div class="content_box"><a href="/home/food1/index">
 			   	   	  	<div class="view view-fifth">
 			   	   	     	<img src="/home/images/p1.jpg" class="img-responsive" alt=""/>
 				   	   	<div class="content_box-grid">
@@ -203,7 +203,7 @@
 	</div>
 </div>
 	<div class="col-md-3">
-		<div class="content_box"><a href="single.html">
+		<div class="content_box"><a href="../food1/index">
 			<div class="view view-fifth">
 			   	<img src="/home/images/p4.jpg" class="img-responsive" alt=""/>
 			<div class="content_box-grid">
@@ -225,7 +225,7 @@
 </div>
 </div>
 	<div class="col-md-3">
-		<div class="content_box"><a href="single.html">
+		<div class="content_box"><a href="../food1/index">
 			<div class="view view-fifth">
 			   	<img src="/home/images/p3.jpg" class="img-responsive" alt=""/>
 			<div class="content_box-grid">
@@ -247,7 +247,7 @@
 </div>
 </div>
 	<div class="col-md-3">
-		<div class="content_box"><a href="single.html">
+		<div class="content_box"><a href="../food1/index">
 		<div class="view view-fifth">
 			<img src="/home/images/p2.jpg" class="img-responsive" alt=""/>
 		<div class="content_box-grid">
@@ -271,7 +271,7 @@
 			   </div>
 			   <div class="row content_bottom1">
 			   	   <div class="col-md-3">
-			   	   	<div class="content_box"><a href="single.html">
+			   	   	<div class="content_box"><a href="../food1/index">
 			   	   	  	<div class="view view-fifth">
 			   	   	     <img src="/home/images/p8.jpg" class="img-responsive" alt=""/>
 				   	   	 <div class="content_box-grid">
@@ -293,7 +293,7 @@
 			   	   	  </div>
 			   	   </div>
 			   	   <div class="col-md-3">
-			   	   	  <div class="content_box"><a href="single.html">
+			   	   	  <div class="content_box"><a href="../food1/index">
 			   	   	  	<div class="view view-fifth">
 			   	   	     <img src="/home/images/p7.jpg" class="img-responsive" alt=""/>
 				   	   	 <div class="content_box-grid">
@@ -315,7 +315,7 @@
 			   	   	  </div>
 			   	   </div>
 			   	   <div class="col-md-3">
-			   	   	  <div class="content_box"><a href="single.html">
+			   	   	  <div class="content_box"><a href="../food1/index">
 			   	   	  	<div class="view view-fifth">
 			   	   	     <img src="/home/images/p6.jpg" class="img-responsive" alt=""/>
 				   	   	 <div class="content_box-grid">
@@ -337,7 +337,7 @@
 			   	   	  </div>
 			   	   </div>
 			   	   <div class="col-md-3">
-			   	   	   <div class="content_box"><a href="single.html">
+			   	   	   <div class="content_box"><a href="../food1/index">
 			   	   	  	<div class="view view-fifth">
 			   	   	     <img src="/home/images/p5.jpg" class="img-responsive" alt=""/>
 				   	   	 <div class="content_box-grid">
@@ -402,7 +402,7 @@
 			  </ul>
 		   </div>
 		   <div class="footer-grid footer-grid4">
-			   <h3 class="m_2">Let's be friends</h3>
+			   <h3 class="m_2">交个朋友吧</h3>
 			   <ul class="footer_social">
 				 <li><a href=""> <i class="tw"> </i> </a></li>
 				 <li><a href=""><i class="fb"> </i> </a></li>
@@ -410,22 +410,21 @@
 				 <li><a href=""><i class="msg"> </i> </a></li>
 				 <div class="clearfix"> </div>
 			   </ul>
-			   <h3 class="m_3">Subscribe</h3>
-			   <p class="m_4">aliquam erat volutpat. Ut wisi</p>
+			   <h3 class="m_3">订阅</h3>
 			   <div class="footer_search">
-			    <input type="text" class="text" value="Enter Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Email';}">
-			    <input type="submit" value="Search">
+			    <input type="text" class="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Email';}">
+			    <input type="submit" value="搜索">
 			   </div>
 		   </div>
 		   <div class="footer-grid footer-grid_last">
 	          <ul class="secure">
 			  	<li class="secure_img"><img src="/home/images/secure.png" alt=""/></li> 
-			  	<li class="secure_desc">Lorem ipsum dolor coadipiscing</li>
+			  	<li class="secure_desc">品质值得信赖</li>
 			  	<div class="clearfix"> </div>
 			  </ul>
 			  <ul class="secure">
 			  	<li class="secure_img"><img src="/home/images/order.png" alt=""/></li> 
-			  	<li class="secure_desc">Lorem ipsum dolor coadipiscing</li>
+			  	<li class="secure_desc">速度值得称赞</li>
 			  	<div class="clearfix"> </div>
 			 </ul>
 		   </div>
