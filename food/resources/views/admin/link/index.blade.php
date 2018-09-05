@@ -34,31 +34,35 @@ $(document).ready(function(){
 <body>
 
 	<div class="place">
-    <span>店铺管理</span>
+    <span>位置：</span>
+    <ul class="placeul">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">数据表</a></li>
+    <li><a href="#">基本内容</a></li>
+    </ul>
     </div>
     @if(Session::has('success'))
             <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-                <div style="background:yellowgreen">
-                        <div class="desc" style="text-align: center;line-height:95px;color:white;font-size: 20px;">{{Session::get('success')}} </div>
+                <div style="background: blue" green">
+                        <div class="desc" style="text-align: center;line-height:95px;color:red">{{Session::get('success')}} </div>
                 </div>
             </div>
             @endif
 
             @if(Session::has('error'))
             <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-                <div style="background: pink">
-                        <div class="desc" style="text-align: center;line-height:95px;color:white;font-size: 20px;">{{Session::get('error')}} </div>
+                <div style="background: pink" red">
+                        <div class="desc" style="text-align: center;line-height:95px;color:red">{{Session::get('error')}} </div>
                 </div>
             </div>
-        </div>
-    @endif
+            @endif
     
     <div class="rightinfo">
     
     <div class="tools">
     
     	<ul class="toolbar">
-        <li class="click"><span><a href="/dianpu/create"><img src="/admingg/images/t01.png" /></span>添加</a></li>
+        <li class="click"><span><img src="/admingg/images/t01.png" /><a href="/link/create"></span>添加</a></li>
         </ul>
         
         
@@ -67,46 +71,34 @@ $(document).ready(function(){
         </ul>
     
     </div>
-    <center>
-            <form action="/user" method="get">
-            {{csrf_field()}}
-            <div>
-                <input type="text" name="keywords" value="{{request()->keywords}}" style="width:350px;height:30px;border:solid 1px #ddd;">
-                <button style="width:50px;height:30px;">搜索</button>
-            </div>
-            </form>
-        </center>
+    
     
     <table class="tablelist">
     	<thead>
     	<tr>
         <th><input name="" type="checkbox" value="" checked="checked"/></th>
         <th>ID<i class="sort"></i></th>
-        <th>店铺名称</th>
-        <th>店铺描述</th>
-        <th>小店图片</th>
-        <th>小店地址</th>
+        <th>用户名</th>
+        <th>地址</th>
+        <th>头像</th>
         <th>操作</th>
         </tr>
         </thead>
         <tbody>
-            @foreach($dianpus as $v)
+            @foreach($links as $v)
 
         <tr>
         <td><input name="" type="checkbox" value=""/></td>
         <td>{{$v['id']}}</td>
-        <td>{{$v['dianpu_name']}}</td>
-        <td>{{$v['dianpu_intro']}}</td>
-        <td><img src="{{$v['dianpu_img']}}" width="50" height="50"></td>
-        <td>{{$v['dianpu_adress']}}</td>
-        <td>
-            <a href="/dianpu/{{$v['id']}}/edit" style="float:left">
-                <div style="color:#aaa;background-color:#ddd;height:25px;line-height:25px;font-size:13px;">编辑</div></a>
-                <form action="/dianpu/{{$v['id']}}" method="post">
-                {{method_field('DELETE')}}
-                {{csrf_field()}}
-                <button href="/dianpu/{{$v['id']}}" style="float:right;height:25px;font-size:14px;color:#aaa;"> 删除</button>
-                </form>
+        <td>{{$v['link_name']}}</td>
+        <td>{{$v['link_url']}}</td>
+        <td><img src="{{$v['link_img']}}" width="50" height="50"></td>
+        <td><a href="/link/{{$v['id']}}/edit" class="tablelink">编辑</a>
+            <form style="float: left" action="/link/{{$v['id']}}" method="post">
+            {{method_field('DELETE')}}
+            {{csrf_field()}}
+            <button href="/link/{{$v['id']}}" class="tablelink"> 删除</button>
+            </form>
         </td>
         </tr>
            @endforeach    
@@ -164,7 +156,7 @@ $(document).ready(function(){
                 </style>
                 <div class="am-cf" style="float: right;">
                     <div class="am-fr">
-                        {{ $dianpus->appends(request()->all())->links() }}
+                        {{ $links->appends(request()->all())->links() }}
                     </div>
                 </div>
     </div>

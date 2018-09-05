@@ -40,41 +40,41 @@
 								<script src="/home/sass/ass/js/jquery.cxselect.js"></script>
 								<div id="city_china">
 								<h1>吃了么</h1>
-								<br>
-				
+								<br>				
 								<!-- 城市三级联动 -->
-								<form action="/dianpu">
+								<form action="/dianpus">
 								<div class="form-group">
-								  <label class="col-sm-2 control-label">
-								    <i>*</i>所在地址</label>
-								  <div class="col-sm-3">
-								    <select name="input_province" id="input_province" class="form-control">
-								      <option value="">--请选择--</option></select>
-								  </div>
-								  <div class="col-sm-3">
-								    <select name="input_city" id="input_city" class="form-control">
-								      <option value=""></option>
-								    </select>
-								  </div>
-								  <div class="col-sm-3">
-								    <select name="input_area" id="input_area" class="form-control">
-								      <option value=""></option>
-								    </select>
-								  </div>
-								</div>
-								
-								<a href="/dianpu"><button class="btn-stress">搜 索</button></a>
+
+								<label class="col-sm-2 control-label" style="color:black;font-size:26px;">
+								<i>*</i>所在地址</label>
+								  	<div class="col-sm-3">
+								    	<select name="input_province" id="input_province" class="form-control" style="width:200px;height:45px;border:solid 2px #aaa;">
+								      	<option value="">--请选择--</option></select>
+								  	</div>
+								  	<div class="col-sm-3">
+								    	<select name="input_city" id="input_city" class="form-control" style="width:200px;height:45px;border:solid 2px #aaa;">
+								      	<option value=""></option>
+								    	</select>
+								  	</div>
+								  	<div class="col-sm-3">
+								    	<select name="input_area" id="input_area" class="form-control" style="width:200px;height:45px;border:solid 2px #aaa;">
+								      	<option value=""></option>
+								    	</select>
+								  	</div>
+								</div>								
+									<a href="/home/dianpus"><button class="btn-stress">搜 索</button></a><i style="color:black;font-size:28px;">*</i>
+
          						</form>
 						       <!-- 城市三级联动 -->
 						    </div>	
 						</div>
 					</div>
 				</div>
-					<ul class="slides">
-						<li style="background-image: url(/home/sass/images/slide_1.jpg);" data-stellar-background-ratio="0.5"></li>
-						<li style="background-image: url(/home/sass/images/slide_2.jpg);" data-stellar-background-ratio="0.5"></li>
-						<li style="background-image: url(/home/sass/images/slide_3.jpg);" data-stellar-background-ratio="0.5"></li>
-					</ul>
+				<ul class="slides">
+					<li style="background-image: url(/home/sass/images/slide_1.jpg);" data-stellar-background-ratio="0.5"></li>
+					<li style="background-image: url(/home/sass/images/slide_2.jpg);" data-stellar-background-ratio="0.5"></li>
+					<li style="background-image: url(/home/sass/images/slide_3.jpg);" data-stellar-background-ratio="0.5"></li>
+				</ul>
 			</div>
 			<div style="width:100%;height:130px;background-color:#ddd;">
 				<p style="text-align:center;font-family:'叶根友毛笔行书2.0版';">
@@ -110,7 +110,7 @@
 </body>
 </html>
 <script>	
-$(function () {
+	$(function () {
         var html = "";
         $("#input_city").append(html); $("#input_area").append(html);
         $.each(pdata,function(idx,item){
@@ -121,27 +121,27 @@ $(function () {
         $("#input_province").append(html);
         $("#input_province").change(function(){
             if ($(this).val() == "") return;
-            $("#input_city option").remove(); $("#input_area option").remove();
-            var code = $(this).find("option:selected").attr("exid"); code = code.substring(0,2);
-            var html = "<option value=''>--请选择--</option>"; $("#input_area").append(html);
-            $.each(pdata,function(idx,item){
+            	$("#input_city option").remove(); $("#input_area option").remove();
+            	var code = $(this).find("option:selected").attr("exid"); code = code.substring(0,2);
+            	var html = "<option value=''>--请选择--</option>"; $("#input_area").append(html);
+            	$.each(pdata,function(idx,item){
                 if (parseInt(item.level) == 1 && code == item.code.substring(0,2)) {
                     html += "<option value='" + item.names + "' exid='" + item.code + "'>" + item.names + "</option>";
-                }
-            });
+                	}
+            	});
             $("#input_city").append(html);
         });
         $("#input_city").change(function(){
             if ($(this).val() == "") return;
-            $("#input_area option").remove();
-            var code = $(this).find("option:selected").attr("exid"); code = code.substring(0,4);
-            var html = "<option value=''>--请选择--</option>";
-            $.each(pdata,function(idx,item){
+            	$("#input_area option").remove();
+            	var code = $(this).find("option:selected").attr("exid"); code = code.substring(0,4);
+            	var html = "<option value=''>--请选择--</option>";
+            	$.each(pdata,function(idx,item){
                 if (parseInt(item.level) == 2 && code == item.code.substring(0,4)) {
                     html += "<option value='" + item.names + "' exid='" + item.code + "'>" + item.names + "</option>";
-                }
-            });
+                	}
+            	});
             $("#input_area").append(html);
         });
-});
+	});
 </script>	    
