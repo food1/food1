@@ -41,8 +41,31 @@
 								<div id="city_china">
 								<h1>吃了么</h1>
 								<br>
-								<a href="/dianpu"><button>进入</button></a>
-						        </p>
+				
+								<!-- 城市三级联动 -->
+								<form action="/dianpu">
+								<div class="form-group">
+								  <label class="col-sm-2 control-label">
+								    <i>*</i>所在地址</label>
+								  <div class="col-sm-3">
+								    <select name="input_province" id="input_province" class="form-control">
+								      <option value="">--请选择--</option></select>
+								  </div>
+								  <div class="col-sm-3">
+								    <select name="input_city" id="input_city" class="form-control">
+								      <option value=""></option>
+								    </select>
+								  </div>
+								  <div class="col-sm-3">
+								    <select name="input_area" id="input_area" class="form-control">
+								      <option value=""></option>
+								    </select>
+								  </div>
+								</div>
+								
+								<a href="/dianpu"><button class="btn-stress">搜 索</button></a>
+         						</form>
+						       <!-- 城市三级联动 -->
 						    </div>	
 						</div>
 					</div>
@@ -77,6 +100,7 @@
 	<script src="/home/sass/js/jquery.stellar.min.js"></script>
 	<!-- Flexslider -->
 	<script src="/home/sass/js/jquery.flexslider-min.js"></script>
+	<script src="/home/js/adress.min.js"></script>
 	<script>
 		$(function () {
 	       $('#date').datetimepicker();
@@ -85,4 +109,39 @@
 	<script src="/home/sass/js/main.js"></script>
 </body>
 </html>
-	    
+<script>	
+$(function () {
+        var html = "";
+        $("#input_city").append(html); $("#input_area").append(html);
+        $.each(pdata,function(idx,item){
+            if (parseInt(item.level) == 0) {
+                html += "<option value='" + item.names + "' exid='" + item.code + "'>" + item.names + "</option>";
+            }
+        });
+        $("#input_province").append(html);
+        $("#input_province").change(function(){
+            if ($(this).val() == "") return;
+            $("#input_city option").remove(); $("#input_area option").remove();
+            var code = $(this).find("option:selected").attr("exid"); code = code.substring(0,2);
+            var html = "<option value=''>--请选择--</option>"; $("#input_area").append(html);
+            $.each(pdata,function(idx,item){
+                if (parseInt(item.level) == 1 && code == item.code.substring(0,2)) {
+                    html += "<option value='" + item.names + "' exid='" + item.code + "'>" + item.names + "</option>";
+                }
+            });
+            $("#input_city").append(html);
+        });
+        $("#input_city").change(function(){
+            if ($(this).val() == "") return;
+            $("#input_area option").remove();
+            var code = $(this).find("option:selected").attr("exid"); code = code.substring(0,4);
+            var html = "<option value=''>--请选择--</option>";
+            $.each(pdata,function(idx,item){
+                if (parseInt(item.level) == 2 && code == item.code.substring(0,4)) {
+                    html += "<option value='" + item.names + "' exid='" + item.code + "'>" + item.names + "</option>";
+                }
+            });
+            $("#input_area").append(html);
+        });
+});
+</script>	    

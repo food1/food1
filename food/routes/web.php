@@ -54,3 +54,8 @@ Route::resource('link', 'LinkController');
 
 // 网站设置
 // Route::get('/wzsz', 'WzszController');
+ 
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });

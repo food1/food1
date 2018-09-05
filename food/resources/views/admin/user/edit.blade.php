@@ -23,6 +23,9 @@
     <br>
     <li><label>头像</label><input name="user_img" type="file" value="{{$user['user_img']}}"/></li>
     <br>
+    <li><label>普通用户</label><input  type="radio" class="dfinput" @if($user->user_qx == 0) checked @endif name="user_qx" value ="0"/></li>
+    <li><label>管理员</label><input  type="radio" class="dfinput" @if($user->user_qx == 1)  checked @endif name="user_qx" value ="1"/></li>
+    <li><label>头像</label><input name="user_img" type="file" class="dfinput" value="{{$user['user_img']}}"/></li>
     {{method_field('PUT')}}
     {{csrf_field()}}
     <li><label>&nbsp;</label><input class="btn btn-primary btn6 mr10" value="提交" type="submit"></li>
