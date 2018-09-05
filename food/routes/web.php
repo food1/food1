@@ -15,8 +15,18 @@
 Route::get('/','HomeController@index');
 //前台店铺
 Route::get('/dianpus','QdianpuController@index');
+<<<<<<< HEAD
 //前台店铺详情
 Route::get('/dianpusngqing','QdianpuController@xiangqing');
+=======
+
+//前台店铺详情
+Route::get('/dianpus/xiangqing','QdianpuController@xiangqing');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+>>>>>>> 340899a025b55045c08a1e1df2eeec5188fe4012
 //登陆页面
 Route::get('/home/login', 'HomeController@login');
 //登陆操作
@@ -32,9 +42,12 @@ Route::post('/home/zhuce', 'HomeController@dozhuce');
 
 
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 340899a025b55045c08a1e1df2eeec5188fe4012
 //后台首页
 Route::get('/admin','AdminController@index');
 //用户管理

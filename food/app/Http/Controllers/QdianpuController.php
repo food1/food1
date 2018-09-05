@@ -6,7 +6,12 @@ use Illuminate\Http\Request;
 
 class QdianpuController extends Controller
 {
+
      public function index()
+
+    //
+    //前台控制器
+    public function index()
     {
         return view('home.dianpus.index');
     }

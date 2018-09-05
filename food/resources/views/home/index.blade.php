@@ -44,6 +44,7 @@
 								<!-- 城市三级联动 -->
 								<form action="/dianpus">
 								<div class="form-group">
+<<<<<<< HEAD
 								<label class="col-sm-2 control-label" style="color:black;font-size:26px;">
 								<i>*</i>所在地址</label>
 								  	<div class="col-sm-3">
@@ -62,6 +63,27 @@
 								  	</div>
 								</div>								
 									<a href="/home/dianpus"><button class="btn-stress">搜 索</button></a><i style="color:black;font-size:28px;">*</i>
+=======
+								  <label class="col-sm-2 control-label">
+								    <i>*</i>所在地址</label>
+								  <div class="col-sm-3">
+								    <select name="input_province" id="input_province" class="form-control">
+								      <option value="">--请选择--</option></select>
+								  </div>
+								  <div class="col-sm-3">
+								    <select name="input_city" id="input_city" class="form-control">
+								      <option value=""></option>
+								    </select>
+								  </div>
+								  <div class="col-sm-3">
+								    <select name="input_area" id="input_area" class="form-control">
+								      <option value=""></option>
+								    </select>
+								  </div>
+								</div>
+								
+								<a href="/dianpus"><button class="btn-stress">搜 索</button></a>
+>>>>>>> 340899a025b55045c08a1e1df2eeec5188fe4012
          						</form>
 						       <!-- 城市三级联动 -->
 						    </div>	
