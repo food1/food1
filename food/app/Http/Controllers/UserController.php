@@ -13,7 +13,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+     public function index()
     {
         //
          //读取数据库 获取用户数据
@@ -52,6 +52,7 @@ class UserController extends Controller
         $user -> user_name = $request->user_name;
         $user -> user_password = Hash::make($request->user_password);
         $user -> user_phone = $request->user_phone;
+        $user -> user_qx = $request->user_qx;
         //$user -> user_img = $request->user_img;
         
         if ($request->hasFile('user_img')) {
@@ -107,7 +108,7 @@ class UserController extends Controller
         $user -> user_name = $request->user_name;
         $user -> user_phone = $request->user_phone;
         //$user -> user_img = $request->user_img;
-
+        $user -> user_qx = $request->user_qx;
         if ($request->hasFile('user_img')) {
             $user->user_img = '/'.$request->user_img->store('uploads/'.date('Ymd'));
         }

@@ -64,13 +64,27 @@
 				        <li><a href="contact.html">在线客服</a></li>
 		        	</ul>
 		          	<ul class="login">
-		          		<a href="account.html"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
-		            	<a href="register.html"><li class="login_bottom"><i class="register"> </i><span>注册</span></li></a>
+		          		<a href="/home/login"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
+		            	<a href="/home/zhuce"><li class="login_bottom"><i class="register"> </i><span>注册</span></li></a>
 		          	</ul>
 			    <div class="clearfix"></div>
 			</div>
 		</div>
 	</nav>
+			@if(Session::has('success'))
+		    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
+		    <div class="dashboard-stat green">
+		    <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:yellowgreen;">{{Session::get('success')}} </div>
+		    </div>
+		    </div>
+		    @endif
+		    @if(Session::has('error'))
+		    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
+		    <div class="dashboard-stat red">
+		    <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:#f66;">{{Session::get('error')}} </div>
+		    </div>
+		    </div>
+		    @endif
         <div class="clearfix"></div>
            	</div>
             	<div class="search">

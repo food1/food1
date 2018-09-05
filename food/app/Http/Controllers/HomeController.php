@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -80,5 +82,45 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    //登录页面
+    public function login()
+    {
+        return view('home.login');
+    }
+
+    //登陆操作
+    public function dologin(Request $request)
+    {
+
+        //获取用户的数据
+        $user = User::where('user_name', $request->user_name)->first();
+
+        if(!$user){
+            return back()->with('error','登陆失败!');
+        }
+        //校验密码
+        if(Hash::check($request->user_password, $user->user_password)){
+            //写入session
+            session(['user_name'=>$user->user_name, 'id'=>$user->id]);
+            return redirect('/home')->with('success','登陆成功');
+        }else{
+            return back()->with('error','登陆失败!');
+        }
+    }
+
+    //退出登录
+    public function logout(Request $request)
+    {
+        $request->session()->flush();
+        return redirect('/home/login')->with('success','退出成功');
+    }
+
+
+    //注册页面
+    public function zhuce()
+    {
+        return view('home.zhuce');
     }
 }
