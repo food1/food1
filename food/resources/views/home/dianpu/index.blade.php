@@ -166,7 +166,7 @@
 					  	<span class="actual">$12.00</span>
 					</div>
 				    <div class="but1">
-			          	<a href="#">Buy Now</a>
+			          	<a href="">Buy Now</a>
 			        </div>
 				 	</li>		   	   	
 				 	<li class="grid1"><img src="/home/images/f2.jpg" class="img-responsive" alt=""/>
@@ -195,7 +195,7 @@
 		   	   	<div class="tlinks">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
 		   	   	<div class="row content_bottom">
 			   	   	<div class="col-md-3">
-			   	   		<div class="content_box"><a href="single.html">
+			   	   		<div class="content_box"><a href="/home/food1/index">
 			   	   	  	<div class="view view-fifth">
 			   	   	     	<img src="/home/images/p1.jpg" class="img-responsive" alt=""/>
 				   	   	<div class="content_box-grid">
@@ -217,7 +217,7 @@
 	</div>
 </div>
 	<div class="col-md-3">
-		<div class="content_box"><a href="single.html">
+		<div class="content_box"><a href="../food1/index">
 			<div class="view view-fifth">
 			   	<img src="/home/images/p4.jpg" class="img-responsive" alt=""/>
 			<div class="content_box-grid">
@@ -239,7 +239,7 @@
 </div>
 </div>
 	<div class="col-md-3">
-		<div class="content_box"><a href="single.html">
+		<div class="content_box"><a href="../food1/index">
 			<div class="view view-fifth">
 			   	<img src="/home/images/p3.jpg" class="img-responsive" alt=""/>
 			<div class="content_box-grid">
@@ -261,7 +261,7 @@
 </div>
 </div>
 	<div class="col-md-3">
-		<div class="content_box"><a href="single.html">
+		<div class="content_box"><a href="../food1/index">
 		<div class="view view-fifth">
 			<img src="/home/images/p2.jpg" class="img-responsive" alt=""/>
 		<div class="content_box-grid">
@@ -285,7 +285,7 @@
 			   </div>
 			   <div class="row content_bottom1">
 			   	   <div class="col-md-3">
-			   	   	<div class="content_box"><a href="single.html">
+			   	   	<div class="content_box"><a href="../food1/index">
 			   	   	  	<div class="view view-fifth">
 			   	   	     <img src="/home/images/p8.jpg" class="img-responsive" alt=""/>
 				   	   	 <div class="content_box-grid">
@@ -307,7 +307,7 @@
 			   	   	  </div>
 			   	   </div>
 			   	   <div class="col-md-3">
-			   	   	  <div class="content_box"><a href="single.html">
+			   	   	  <div class="content_box"><a href="../food1/index">
 			   	   	  	<div class="view view-fifth">
 			   	   	     <img src="/home/images/p7.jpg" class="img-responsive" alt=""/>
 				   	   	 <div class="content_box-grid">
@@ -329,7 +329,7 @@
 			   	   	  </div>
 			   	   </div>
 			   	   <div class="col-md-3">
-			   	   	  <div class="content_box"><a href="single.html">
+			   	   	  <div class="content_box"><a href="../food1/index">
 			   	   	  	<div class="view view-fifth">
 			   	   	     <img src="/home/images/p6.jpg" class="img-responsive" alt=""/>
 				   	   	 <div class="content_box-grid">
@@ -351,7 +351,7 @@
 			   	   	  </div>
 			   	   </div>
 			   	   <div class="col-md-3">
-			   	   	   <div class="content_box"><a href="single.html">
+			   	   	   <div class="content_box"><a href="../food1/index">
 			   	   	  	<div class="view view-fifth">
 			   	   	     <img src="/home/images/p5.jpg" class="img-responsive" alt=""/>
 				   	   	 <div class="content_box-grid">

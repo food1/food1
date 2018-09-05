@@ -12,6 +12,7 @@
     <li><a href="#">首页</a></li>
     <li><a href="#">用户修改</a></li>
     </ul>
+    <span>修改用户</span>
     </div>
     <div class="formbody">
     <form action="/user/{{$user['id']}}" method="post" id="myform" name="myform" enctype="multipart/form-data">
@@ -20,6 +21,12 @@
     <li><label>用户名</label><input name="user_name" type="text" class="dfinput" value="{{$user['user_name']}}" /></li>
     <li><label>手机号</label><input name="user_phone" type="text" class="dfinput" value="{{$user['user_phone']}}"/></li>
     <li><label>头像</label><input name="user_img" type="file" value="{{$user['user_img']}}"/></li>
+    <br>
+    <li><label>头像</label><input name="user_img" type="file" value="{{$user['user_img']}}"/></li>
+    <br>
+    <li><label>普通用户</label><input  type="radio" class="dfinput" @if($user->user_qx == 0) checked @endif name="user_qx" value ="0"/></li>
+    <li><label>管理员</label><input  type="radio" class="dfinput" @if($user->user_qx == 1)  checked @endif name="user_qx" value ="1"/></li>
+    <li><label>头像</label><input name="user_img" type="file" class="dfinput" value="{{$user['user_img']}}"/></li>
     {{method_field('PUT')}}
     {{csrf_field()}}
     <li><label>&nbsp;</label><input class="btn btn-primary btn6 mr10" value="提交" type="submit"></li>
