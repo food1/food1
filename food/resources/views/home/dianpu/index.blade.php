@@ -29,7 +29,7 @@
 			</ul>
 			<ul class="shopping_cart">
 			   <a href="#"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
-			   <a href="#"><li class="shop_right"><span>$0.00</span></li></a>
+			   <a href="#"><li class="shop_right"><span>¥0.00</span></li></a>
 			   <div class="clearfix"> </div>
 			</ul>
 			<div class="clearfix"></div>
@@ -178,19 +178,18 @@
 		   	    <ul class="feature">
 		   	   	 	<h3><i class="arrow"> </i><span>热门商铺</span></h3>
 		   	   	</ul>
-		   	   	<div class="tlinks">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
 		   	   	<div class="row content_bottom">
 			   	   	<div class="col-md-3">
-			   	   		<div class="content_box"><a href="/home/food1/index">
+			   	   		<div class="content_box"><a href="/dianpu/xiangqing">
 			   	   	  	<div class="view view-fifth">
 			   	   	     	<img src="/home/images/p1.jpg" class="img-responsive" alt=""/>
 				   	   	<div class="content_box-grid">
-				   	   	<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	   	<div class="price">Price:
-						    <span class="actual">$12.00</span>
+				   	   	<p class="m_1">汉堡</p>
+				   	   	<div class="price">价格:
+						    <span class="actual">¥12.00</span>
 						</div>
 						<ul class="product_but">
-						  	<li class="but3">Buy</li>
+						  	<li class="but3">立即购买</li>
 						  	<li class="like"><span>120</span><i class="like1"> </i></li>
 						<div class="clearfix"> </div>
 						</ul>
@@ -203,7 +202,7 @@
 	</div>
 </div>
 	<div class="col-md-3">
-		<div class="content_box"><a href="../food1/index">
+		<div class="content_box"><a href="/xiangqing">
 			<div class="view view-fifth">
 			   	<img src="/home/images/p4.jpg" class="img-responsive" alt=""/>
 			<div class="content_box-grid">
@@ -225,7 +224,7 @@
 </div>
 </div>
 	<div class="col-md-3">
-		<div class="content_box"><a href="../food1/index">
+		<div class="content_box"><a href="/xiangqing">
 			<div class="view view-fifth">
 			   	<img src="/home/images/p3.jpg" class="img-responsive" alt=""/>
 			<div class="content_box-grid">
@@ -247,7 +246,7 @@
 </div>
 </div>
 	<div class="col-md-3">
-		<div class="content_box"><a href="../food1/index">
+		<div class="content_box"><a href="/xiangqing">
 		<div class="view view-fifth">
 			<img src="/home/images/p2.jpg" class="img-responsive" alt=""/>
 		<div class="content_box-grid">
@@ -271,7 +270,7 @@
 			   </div>
 			   <div class="row content_bottom1">
 			   	   <div class="col-md-3">
-			   	   	<div class="content_box"><a href="../food1/index">
+			   	   	<div class="content_box"><a href="/xiangqing">
 			   	   	  	<div class="view view-fifth">
 			   	   	     <img src="/home/images/p8.jpg" class="img-responsive" alt=""/>
 				   	   	 <div class="content_box-grid">
@@ -293,7 +292,7 @@
 			   	   	  </div>
 			   	   </div>
 			   	   <div class="col-md-3">
-			   	   	  <div class="content_box"><a href="../food1/index">
+			   	   	  <div class="content_box"><a href="/xiangqing">
 			   	   	  	<div class="view view-fifth">
 			   	   	     <img src="/home/images/p7.jpg" class="img-responsive" alt=""/>
 				   	   	 <div class="content_box-grid">
@@ -315,7 +314,7 @@
 			   	   	  </div>
 			   	   </div>
 			   	   <div class="col-md-3">
-			   	   	  <div class="content_box"><a href="../food1/index">
+			   	   	  <div class="content_box"><a href="/xiangqing">
 			   	   	  	<div class="view view-fifth">
 			   	   	     <img src="/home/images/p6.jpg" class="img-responsive" alt=""/>
 				   	   	 <div class="content_box-grid">
@@ -337,7 +336,7 @@
 			   	   	  </div>
 			   	   </div>
 			   	   <div class="col-md-3">
-			   	   	   <div class="content_box"><a href="../food1/index">
+			   	   	   <div class="content_box"><a href="/xiangqing">
 			   	   	  	<div class="view view-fifth">
 			   	   	     <img src="/home/images/p5.jpg" class="img-responsive" alt=""/>
 				   	   	 <div class="content_box-grid">

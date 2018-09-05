@@ -19,6 +19,8 @@ Route::get('/admin','AdminController@index');
 Route::get('/','HomeController@index');
 //前台店铺
 Route::get('/dianpu','DianpuController@index');
+//前台店铺详情
+Route::get('/dianpu/xiangqing','DianpuController@xiangqing');
 // Route::get('/', function () {
 //     return view('welcome');
 // });
