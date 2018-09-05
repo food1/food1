@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Dianpu;
 use Illuminate\Http\Request;
 
 class DianpuController extends Controller
@@ -11,9 +12,15 @@ class DianpuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+     public function index()
     {
-        return view('/home.dianpu.index');
+        // return view('/home.dianpu.index');
+        //读取数据库 获取用户数据
+        $dianpus = Dianpu::orderBy('id','desc')
+            ->where('dianpu_name','like', '%'.request()->keywords.'%')
+            ->paginate(5);
+        //解析模板显示用户数据
+        return view('admin.dianpu.index', ['dianpus'=>$dianpus]);
 
         //
     }
@@ -25,7 +32,7 @@ class DianpuController extends Controller
      */
     public function create()
     {
-        //
+        return view('/admin.dianpu.create');
     }
 
     /**
@@ -36,7 +43,21 @@ class DianpuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $dianpu = new Dianpu;
+
+        $dianpu -> dianpu_name = $request->dianpu_name;
+        $dianpu -> dianpu_intro =$request->dianpu_intro;
+        $dianpu -> dianpu_adress = $request->dianpu_adress;
+        
+        if ($request->hasFile('dianpu_img')) {
+            $dianpu->dianpu_img = '/'.$request->dianpu_img->store('uploads/'.date('Ymd'));
+        }
+        if($dianpu -> save()){
+            return redirect('/dianpu')->with('success', '添加成功');
+        }else{
+            return back()->with('error','添加失败');
+        }
     }
 
     /**
@@ -58,7 +79,10 @@ class DianpuController extends Controller
      */
     public function edit($id)
     {
-        //
+        //获取用户的信息
+        $dianpu = Dianpu::findOrFail($id);
+        //解析模板显示数据
+        return view('admin.dianpu.edit', ['dianpu'=>$dianpu]);
     }
 
     /**
@@ -70,7 +94,25 @@ class DianpuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //获取用户的信息
+        $dianpu = Dianpu::findOrFail($id);
+
+        //更新
+        $dianpu -> dianpu_name = $request->dianpu_name;
+        $dianpu -> dianpu_intro= $request->dianpu_intro;
+        $dianpu -> dianpu_adress = $request->dianpu_adress;
+        //$dianpu -> dianpu_img = $request->dianpu_img;
+
+        if ($request->hasFile('dianpu_img')) {
+            $dianpu->dianpu_img = '/'.$request->dianpu_img->store('uploads/'.date('Ymd'));
+        }
+        
+
+        if($dianpu->save()){
+            return redirect('/dianpu')->with('success','更新成功');
+        }else{
+            return back()->with('error','更新失败');
+        }
     }
 
     /**
@@ -81,6 +123,13 @@ class DianpuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dianpu = Dianpu::findOrFail($id);
+
+        if($dianpu->delete()){
+            return back()->with('success','删除成功');
+        }else{
+            return back()->with('error','删除失败');
+        }
     }
+
 }
