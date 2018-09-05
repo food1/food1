@@ -41,6 +41,21 @@ $(document).ready(function(){
     <li><a href="#">基本内容</a></li>
     </ul>
     </div>
+    @if(Session::has('success'))
+            <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
+                <div style="background: blue" green">
+                        <div class="desc" style="text-align: center;line-height:95px;color:red">{{Session::get('success')}} </div>
+                </div>
+            </div>
+            @endif
+
+            @if(Session::has('error'))
+            <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
+                <div style="background: pink" red">
+                        <div class="desc" style="text-align: center;line-height:95px;color:red">{{Session::get('error')}} </div>
+                </div>
+            </div>
+            @endif
     
     <div class="rightinfo">
     
@@ -48,9 +63,6 @@ $(document).ready(function(){
     
     	<ul class="toolbar">
         <li class="click"><span><img src="/admingg/images/t01.png" /><a href="/user/create"></span>添加</a></li>
-        <li class="click"><span><img src="/admingg/images/t02.png" /></span>修改</li>
-        <li><span><img src="/admingg/images/t03.png" /></span>删除</li>
-        <li><span><img src="/admingg/images/t04.png" /></span>统计</li>
         </ul>
         
         
@@ -83,29 +95,72 @@ $(document).ready(function(){
         <td>{{$v['user_phone']}}</td>
         <td><img src="{{$v['user_img']}}" width="50" height="50"></td>
         <td>{{$v['user_adress']}}</td>
-        <td><a href="#" class="tablelink">编辑</a>
+        <td><a href="/user/{{$v['id']}}/edit" class="tablelink">编辑</a>
+            <form style="float: left" action="/user/{{$v['id']}}" method="post">
+            {{method_field('DELETE')}}
             {{csrf_field()}}
-            <a href="#" class="tablelink"> 删除</a></td>
+            <button href="/user/{{$v['id']}}" class="tablelink"> 删除</button>
+            </form>
+        </td>
         </tr>
            @endforeach    
         </tbody>
     </table>
     
    
-    <div class="pagin">
-        <ul class="paginList">
-        <li class="paginItem"><a href="javascript:;"><span class="pagepre"></span></a></li>
-        <li class="paginItem"><a href="javascript:;">1</a></li>
-        <li class="paginItem current"><a href="javascript:;">2</a></li>
-        <li class="paginItem"><a href="javascript:;">3</a></li>
-        <li class="paginItem"><a href="javascript:;">4</a></li>
-        <li class="paginItem"><a href="javascript:;">5</a></li>
-        <li class="paginItem more"><a href="javascript:;">...</a></li>
-        <li class="paginItem"><a href="javascript:;">10</a></li>
-        <li class="paginItem"><a href="javascript:;"><span class="pagenxt"></span></a></li>
-        </ul>
-    </div>
-    
+   <style>
+                    .pagination{
+                        padding-left: 0;
+                        margin: 1.5rem 0;
+                        list-style: none;
+                        color: #999;
+                        text-align: left;
+                        padding: 0;
+                    }
+
+                    .pagination li{
+                        display: inline-block;
+                    }
+
+                    .pagination li a, .pagination li span{
+                        color: #23abf0;
+                        border-radius: 3px;
+                        padding: 6px 12px;
+                        position: relative;
+                        display: block;
+                        text-decoration: none;
+                        line-height: 1.2;
+                        background-color: #fff;
+                        border: 1px solid #ddd;
+                        border-radius: 0;
+                        margin-bottom: 5px;
+                        margin-right: 5px;
+                    }
+
+                    .pagination .active span{
+                        color: #23abf0;
+                        border-radius: 3px;
+                        padding: 6px 12px;
+                        position: relative;
+                        display: block;
+                        text-decoration: none;
+                        line-height: 1.2;
+                        background-color: #fff;
+                        border: 1px solid #ddd;
+                        border-radius: 0;
+                        margin-bottom: 5px;
+                        margin-right: 5px;
+                        background: #23abf0;
+                        color: #fff;
+                        border: 1px solid #23abf0;
+                        padding: 6px 12px;
+                    }
+                </style>
+                <div class="am-cf" style="float: right;">
+                    <div class="am-fr">
+                        {{ $users->appends(request()->all())->links() }}
+                    </div>
+                </div>
     </div>
 </body>
 </html>

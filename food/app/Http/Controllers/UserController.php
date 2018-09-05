@@ -19,7 +19,7 @@ class UserController extends Controller
          //读取数据库 获取用户数据
         $users = User::orderBy('id','desc')
             ->where('user_name','like', '%'.request()->keywords.'%')
-            ->paginate(10);
+            ->paginate(5);
         //解析模板显示用户数据
         return view('admin.user.index', ['users'=>$users]);
         
@@ -57,7 +57,6 @@ class UserController extends Controller
         if ($request->hasFile('user_img')) {
             $user->user_img = '/'.$request->user_img->store('uploads/'.date('Ymd'));
         }
-
         if($user -> save()){
             return redirect('/user')->with('success', '添加成功');
         }else{
@@ -85,6 +84,10 @@ class UserController extends Controller
     public function edit($id)
     {
         //
+         //获取用户的信息
+        $user = User::findOrFail($id);
+        //解析模板显示数据
+        return view('admin.user.edit', ['user'=>$user]);
     }
 
     /**
@@ -97,6 +100,24 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
+         //获取用户的信息
+        $user = User::findOrFail($id);
+
+        //更新
+        $user -> user_name = $request->user_name;
+        $user -> user_phone = $request->user_phone;
+        //$user -> user_img = $request->user_img;
+
+        if ($request->hasFile('user_img')) {
+            $user->user_img = '/'.$request->user_img->store('uploads/'.date('Ymd'));
+        }
+        
+
+        if($user->save()){
+            return redirect('/user')->with('success','更新成功');
+        }else{
+            return back()->with('error','更新失败');
+        }
     }
 
     /**
@@ -108,5 +129,12 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+        $user = User::findOrFail($id);
+
+        if($user->delete()){
+            return back()->with('success','删除成功');
+        }else{
+            return back()->with('error','删除失败');
+        }
     }
 }
