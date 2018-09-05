@@ -13,16 +13,17 @@
     </div>
     
     <div class="formbody">
-    <form action="/user/{{$user['id']}}" method="post" id="myform" name="myform" enctype="multipart/form-data">
+    <form action="/dianpu/{{$dianpu['id']}}" method="post" id="myform" name="myform" enctype="multipart/form-data">
 
     <div class="formtitle"><span>基本信息</span></div>
     
     <ul class="forminfo">
-    <li><label>用户名</label><input name="user_name" type="text" class="dfinput" value="{{$user['user_name']}}" /></li>
-    <li><label>手机号</label><input name="user_phone" type="text" class="dfinput" value="{{$user['user_phone']}}"/></li>
+    <li><label>店铺名称</label><input name="dianpu_name" type="text" class="dfinput" value="{{$dianpu['dianpu_name']}}" /></li>
+    <li><label>店铺描述</label><input name="dianpu_intro" type="text" class="dfinput" value="{{$dianpu['dianpu_intro']}}"/></li>
     <br>
-    <li><label>头像</label><input name="user_img" type="file" value="{{$user['user_img']}}"/></li>
+    <li><label>小店图片</label><input name="dianpu_img" type="file" value="{{$dianpu['dianpu_img']}}"/></li>
     <br>
+    <li><label>店铺地址</label><input name="dianpu_adress" type="text" class="dfinput" value="{{$dianpu['dianpu_adress']}}"/></li>
     {{method_field('PUT')}}
     {{csrf_field()}}
     <li><label>&nbsp;</label><input class="btn btn-primary btn6 mr10" value="提交" type="submit"></li>

@@ -34,7 +34,7 @@ $(document).ready(function(){
 <body>
 
 	<div class="place">
-    <span>用户管理</span>
+    <span>店铺管理</span>
     </div>
     @if(Session::has('success'))
             <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
@@ -47,7 +47,7 @@ $(document).ready(function(){
             @if(Session::has('error'))
             <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
                 <div style="background: pink" red">
-                        <div class="desc" style="text-align: center;line-height:95px;color:yellow;font-size: 20px;">{{Session::get('error')}} </div>
+                        <div class="desc" style="text-align: center;line-height:95px;color:yellow;font-size: 20px;">{{Session::get('error')}}</div>
                 </div>
             </div>
             @endif
@@ -57,7 +57,7 @@ $(document).ready(function(){
     <div class="tools">
     
     	<ul class="toolbar">
-        <li class="click"><span><a href="/user/create"><img src="/admingg/images/t01.png" /></span>添加</a></li>
+        <li class="click"><span><a href="/dianpu/create"><img src="/admingg/images/t01.png" /></span>添加</a></li>
         </ul>
         
         
@@ -73,28 +73,28 @@ $(document).ready(function(){
     	<tr>
         <th><input name="" type="checkbox" value="" checked="checked"/></th>
         <th>ID<i class="sort"></i></th>
-        <th>用户名</th>
-        <th>手机号</th>
-        <th>头像</th>
-        <th>地址</th>
+        <th>店铺名称</th>
+        <th>店铺描述</th>
+        <th>小店图片</th>
+        <th>小店地址</th>
         <th>操作</th>
         </tr>
         </thead>
         <tbody>
-            @foreach($users as $v)
+            @foreach($dianpus as $v)
 
         <tr>
         <td><input name="" type="checkbox" value=""/></td>
         <td>{{$v['id']}}</td>
-        <td>{{$v['user_name']}}</td>
-        <td>{{$v['user_phone']}}</td>
-        <td><img src="{{$v['user_img']}}" width="50" height="50"></td>
-        <td>{{$v['user_adress']}}</td>
-        <td><a href="/user/{{$v['id']}}/edit" class="tablelink">编辑</a>
-            <form style="float: left" action="/user/{{$v['id']}}" method="post">
+        <td>{{$v['dianpu_name']}}</td>
+        <td>{{$v['dianpu_intro']}}</td>
+        <td><img src="{{$v['dianpu_img']}}" width="50" height="50"></td>
+        <td>{{$v['dianpu_adress']}}</td>
+        <td><a href="/dianpu/{{$v['id']}}/edit" class="tablelink">编辑</a>
+            <form style="float: left" action="/dianpu/{{$v['id']}}" method="post">
             {{method_field('DELETE')}}
             {{csrf_field()}}
-            <button href="/user/{{$v['id']}}" class="tablelink"> 删除</button>
+            <button href="/dianpu/{{$v['id']}}" class="tablelink"> 删除</button>
             </form>
         </td>
         </tr>
@@ -153,7 +153,7 @@ $(document).ready(function(){
                 </style>
                 <div class="am-cf" style="float: right;">
                     <div class="am-fr">
-                        {{ $users->appends(request()->all())->links() }}
+                        {{ $dianpus->appends(request()->all())->links() }}
                     </div>
                 </div>
     </div>
