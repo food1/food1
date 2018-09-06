@@ -31,7 +31,7 @@ Route::get('/home/logout', 'HomeController@logout');
 //注册页面
 Route::get('/home/zhuce', 'HomeController@zhuce');
 //注册操作
-Route::post('/home/zhuce', 'HomeController@dozhuce');
+Route::post('/home/login', 'HomeController@dozhuce');
 
 
 

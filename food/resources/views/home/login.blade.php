@@ -70,10 +70,17 @@
 			</div>
 		</div>
 	</nav>
+			
+            <div class="clearfix"></div>
+           </div>
+            <div class="search">
+			  <input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+			  <input type="submit" value="搜索">
+			</div>
 			@if(Session::has('success'))
 		    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
 		    <div class="dashboard-stat green">
-		    <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:yellowgreen;">{{Session::get('success')}} </div>
+		    <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:pink;">{{Session::get('success')}} </div>
 		    </div>
 		    </div>
 		    @endif
@@ -84,12 +91,6 @@
 		    </div>
 		    </div>
 		    @endif
-            <div class="clearfix"></div>
-           </div>
-            <div class="search">
-			  <input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-			  <input type="submit" value="搜索">
-			</div>
 		 </div>  
 		</div>
 	</div>
@@ -105,7 +106,6 @@
 			   	  	<li><a href="#"><img src="/home/images/p2.jpg" width="100px" height="50px"></a></li>
 			   	  	<li><a href="#"><img src="/home/images/p3.jpg" width="100px" height="50px"></a></li>
 			   	  	<li><a href="#"><img src="/home/images/p4.jpg" width="100px" height="50px"></a></li>
-			   	  	>>>
 		   	     </ul>
 		   	    </div>
 		   	 </div>
@@ -116,7 +116,7 @@
 	        </div>
 	        <center>
 	          	<div class="contact-form">
-					<form method="post" action="/dianpu">
+					<form method="post" action="/dianpus">
 					    <div>
 						    <span><label>用户名:</label></span>
 						    <span><input name="user_name" type="text" class="textbox" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
@@ -126,6 +126,7 @@
 						   	<span><input name="user_password" type="password" class="textbox" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
 						    </div>
 						<div>
+							{{csrf_field()}}
 						   	<span><input type="submit" value="登录"></span>
 						</div>
 						<br>

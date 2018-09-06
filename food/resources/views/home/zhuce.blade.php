@@ -79,11 +79,27 @@
 		 </div>  
 		</div>
 	</div>
+	 <!-- 閃存 -->
+	           @if(Session::has('success'))
+			    <div id="k" class=" am-u-sm-12" style="padding:0px;margin:0px;">
+			    <div class="dashboard-stat green">
+			    <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:yellowgreen;">{{Session::get('success')}} </div>
+			    </div>
+			    </div>
+			    @endif
+			    @if(Session::has('error'))
+			    <div id="k" class=" am-u-sm-12" style="padding:0px;margin:0px;">
+			    <div class="dashboard-stat red">
+			    <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:#f66;">{{Session::get('error')}} </div>
+			    </div>
+			    </div>
+			    @endif
+           <!-- 閃存 -->
     <div class="main">
 		<div class="container">
 		  <div class="Product_top">
 		  	<center>
-		  	  <form> 
+		  	  <form action="/home/login" method="post" id="myform" name="myform" enctype="multipart/form-data"> 
 				 <div class="register-top-grid">
 						<div>
 						    <span><label>用户名:</label></span>
@@ -112,14 +128,13 @@
 		   	   				&nbsp; &nbsp; &nbsp; <a href=""><img src="/home/images/3.png" style="width:60px;height:50px;"/></a>
 		   	   			</div>	
 					</div>
-				</form>
 				  <div class="clearfix"> </div>
-					<div class="register-but">
-					   <form>
+					<div class="register-but"> 
+					   	{{csrf_field()}}
 						 <input type="submit" value="注册">
 						 <div class="clearfix"> </div>
 					</form>
-				</center>
+			</center>
 			</div>
 		</div>
 	</div>
