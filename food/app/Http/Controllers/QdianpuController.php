@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 class QdianpuController extends Controller
 {
 
-
-    //
     //前台控制器
     public function index()
     {
