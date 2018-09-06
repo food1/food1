@@ -23,7 +23,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-	<div class="place">
+    <div class="place">
     <span>位置：</span>
     <ul class="placeul">
     <li><a href="#">首页</a></li>
@@ -34,23 +34,23 @@ $(document).ready(function(){
     </div>
     @if(Session::has('success'))
             <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-                <div style="background:yellowgreen">
-                        <div class="desc" style="text-align: center;line-height:95px;color:white;font-size: 20px;">{{Session::get('success')}} </div>
+                <div style="background: blue" green">
+                        <div class="desc" style="text-align: center;line-height:95px;color:yellow;font-size: 20px;">{{Session::get('success')}} </div>
                 </div>
             </div>
             @endif
 
             @if(Session::has('error'))
             <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-                <div style="background: pink">
-                        <div class="desc" style="text-align: center;line-height:95px;color:white;font-size: 20px;">{{Session::get('error')}} </div>
+                <div style="background: pink" red">
+                        <div class="desc" style="text-align: center;line-height:95px;color:yellow;font-size: 20px;">{{Session::get('error')}} </div>
                 </div>
             </div>
         </div>
     @endif
     <div class="rightinfo">
     <div class="tools">
-    	<ul class="toolbar">
+        <ul class="toolbar">
             <li class="click">
                 <span>           
                     <a href="/user/create">
@@ -58,6 +58,7 @@ $(document).ready(function(){
                 </span>添加
             </a>
             </li>
+        <li class="click"><span><a href="/user/create"><img src="/admingg/images/t01.png" /></span>添加</a></li>
         </ul>
         <ul class="toolbar1">
             <li><span><img src="/admingg/images/t05.png" /></span>设置</li>
@@ -73,14 +74,15 @@ $(document).ready(function(){
             </form>
         </center>
     <table class="tablelist">
-    	<thead>
-    	<tr>
+        <thead>
+        <tr>
         <th><input name="" type="checkbox" value="" checked="checked"/></th>
         <th>ID<i class="sort"></i></th>
         <th>用户名</th>
         <th>手机号</th>
         <th>权限</th>
         <th>头像</th>
+        <th>地址</th>
         <th>操作</th>
         </tr>
         </thead>
@@ -91,7 +93,6 @@ $(document).ready(function(){
         <td>{{$v['id']}}</td>
         <td>{{$v['user_name']}}</td>
         <td>{{$v['user_phone']}}</td>
-        <td><center><img src="{{$v['user_img']}}" width="70" height="50"></center></td>
         <td>
         @if($v['user_qx'] == 1)
             管理员
@@ -100,6 +101,8 @@ $(document).ready(function(){
             普通用户
         @endif
         </td>
+        <td><img src="{{$v['user_img']}}" width="50" height="50"></td>
+        <td>{{$v['user_adress']}}</td>
         <td>
             <a href="/user/{{$v['id']}}/edit" style="float:left"><div style="color:#aaa;background-color:#ddd;height:25px;line-height:25px;font-size:13px;">编辑</div></a>
             <form action="/user/{{$v['id']}}" method="post">

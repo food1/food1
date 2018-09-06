@@ -6,7 +6,7 @@
 <link href="/admingg/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<div class="place">
+    <div class="place">
     <span>位置：</span>
     <ul class="placeul">
     <li><a href="#">首页</a></li>
@@ -24,6 +24,7 @@
     <li><label>管理员</label><input name="user_qx" type="radio" class="dfinput" value="1" /></li>
     <li><label>密码</label><input name="user_password" type="password" class="dfinput" /></li>
     <li><label>头像</label><input name="user_img" type="file" /></li>
+    <br>
     <br>
     {{csrf_field()}}
     <li><label>&nbsp;</label><input class="btn btn-primary btn6 mr10" value="提交" type="submit"></li>

@@ -19,6 +19,10 @@ Route::get('/dianpus','QdianpuController@index');
 Route::get('/dianpusngqing','QdianpuController@xiangqing');
 
 //前台店铺详情
+Route::get('/dianpusngqing','QdianpuController@xiangqing');
+
+
+//前台店铺详情
 Route::get('/dianpus/xiangqing','QdianpuController@xiangqing');
 // Route::get('/', function () {
 //     return view('welcome');
@@ -36,7 +40,6 @@ Route::get('/home/logout', 'HomeController@logout');
 Route::get('/home/zhuce', 'HomeController@zhuce');
 //注册操作
 Route::post('/home/zhuce', 'HomeController@dozhuce');
-
 
 
 
