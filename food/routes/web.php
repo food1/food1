@@ -62,5 +62,11 @@ Route::resource('clearing', 'ClearingController');
 Route::resource('order', 'OrderController');
 //友情链接
 Route::resource('link', 'LinkController');
+
+
+// 店铺_餐品
+Route::get('/model', 'DBController@model');
+
+
 // 网站设置
 // Route::get('/wzsz', 'WzszController');

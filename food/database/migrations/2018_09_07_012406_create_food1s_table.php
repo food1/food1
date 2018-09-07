@@ -22,6 +22,7 @@ class CreateFood1sTable extends Migration
             $table->timestamps();
         });
     }
+    
 
     /**
      * Reverse the migrations.
