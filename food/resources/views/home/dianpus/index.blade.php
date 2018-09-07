@@ -3,6 +3,7 @@
 <head>
 <title>吃了么&nbsp; 歡迎您~ </title>
 <link href="/home/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/home/js/jquery.min.js"></script>
 <script src="/home/js/bootstrap.min.js"></script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -32,9 +33,10 @@
 				<li><a href="account.html">我的账户</a></li>
 			</ul>
 			<ul class="shopping_cart">
-			   <a href="#"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
+			   <a href="#"><li class="shop_left"><i class="cart" id="but1"></i><span>购物车</span></li></a>
 			   <a href="#"><li class="shop_right"><span>¥0.00</span></li></a>
-			   <div class="clearfix"> </div>
+			   <div class="clearfix"> 
+			   </div>
 			</ul>
 			<div class="clearfix"></div>
 		</div>
@@ -69,22 +71,18 @@
 			        <li><a href="club.html">反馈留言</a></li>
 			        <li><a href="contact.html">在线客服</a></li>
 		          </ul>
+
 		          <ul class="login">
 		          	<a href="/home/login"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
 		            <a href="/home/zhuce"><li class="login_bottom"><i class="register"> </i><span>注册</span></li></a>
 		          </ul>
+
 			      <div class="clearfix"></div>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
 			</nav>
 			 <!-- 閃存 -->
-	           @if(Session::has('success'))
-			    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-			    <div class="dashboard-stat green">
-			    <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:yellowgreen;">{{Session::get('success')}} </div>
-			    </div>
-			    </div>
-			    @endif
+	           
 			    @if(Session::has('error'))
 			    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
 			    <div class="dashboard-stat red">
@@ -96,7 +94,7 @@
             <div class="clearfix"></div>
            </div>
             <div class="search">
-			  <input type="text" class="text" value="111 Product Details" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '111';}">
+			  <input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 			  <input type="submit" value="搜索">
 			</div>
 		 </div>  

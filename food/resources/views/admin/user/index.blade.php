@@ -23,24 +23,13 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-	<div class="place">
+    <div class="place">
     <span>位置：</span>
     <ul class="placeul">
     <li><a href="#">首页</a></li>
     <li><a href="#">用户列表</a></li>
     </ul>
     </div>
-    @if(Session::has('success'))
-        <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-            <div style="background:yellowgreen;">
-            <div class="desc" style="text-align:center;line-height:95px;color:white;font-size:20px;">{{Session::get('success')}} </div>
-            </div>
-        </div>
-    @endif
-    @if(Session::has('error'))
-        <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-            <div style="background: pink">
-                <div class="desc" style="text-align:center;line-height:95px;color:white;font-size:20px;">{{Session::get('error')}} </div>
     <span>用户管理</span>
     </div>
     @if(Session::has('success'))
@@ -61,7 +50,7 @@ $(document).ready(function(){
     @endif
     <div class="rightinfo">
     <div class="tools">
-    	<ul class="toolbar">
+        <ul class="toolbar">
             <li class="click">
                 <span>           
                     <a href="/user/create">
@@ -85,8 +74,8 @@ $(document).ready(function(){
             </form>
         </center>
     <table class="tablelist">
-    	<thead>
-    	<tr>
+        <thead>
+        <tr>
         <th><input name="" type="checkbox" value="" checked="checked"/></th>
         <th>ID<i class="sort"></i></th>
         <th>用户名</th>
@@ -104,7 +93,6 @@ $(document).ready(function(){
         <td>{{$v['id']}}</td>
         <td>{{$v['user_name']}}</td>
         <td>{{$v['user_phone']}}</td>
-        <td><center><img src="{{$v['user_img']}}" width="70" height="50"></center></td>
         <td>
         @if($v['user_qx'] == 1)
             管理员

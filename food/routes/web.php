@@ -15,17 +15,18 @@
 Route::get('/','HomeController@index');
 //前台店铺
 Route::get('/dianpus','QdianpuController@index');
-
 //前台店铺详情
 Route::get('/dianpus/xiangqing','QdianpuController@xiangqing');
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
+
+
 //登陆页面
 Route::get('/home/login', 'HomeController@login');
 //登陆操作
-Route::post('/home/login', 'HomeController@dologin');
+Route::post('/home/dianpus', 'HomeController@dologin');
 //退出登录
 Route::get('/home/logout', 'HomeController@logout');
 //注册页面

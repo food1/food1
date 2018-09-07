@@ -45,7 +45,6 @@ class DianpuController extends Controller
     {
         // dd($request->all());
         $dianpu = new Dianpu;
-
         $dianpu -> dianpu_name = $request->dianpu_name;
         $dianpu -> dianpu_intro =$request->dianpu_intro;
         $dianpu -> dianpu_adress = $request->dianpu_adress;
@@ -131,5 +130,4 @@ class DianpuController extends Controller
             return back()->with('error','删除失败');
         }
     }
-
 }

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Food1;
 use Illuminate\Http\Request;
 
 class Food1Controller extends Controller
@@ -13,7 +13,12 @@ class Food1Controller extends Controller
      */
     public function index()
     {
-        //
+        //读取数据库 获取用户数据
+        $food1s = Food1::orderBy('id','desc')
+            ->where('food1_name','like', '%'.request()->keywords.'%')
+            ->paginate(5);
+        //解析模板显示用户数据
+        return view('admin.food1.index', ['food1s'=>$food1s]);
     }
 
     /**
@@ -23,7 +28,7 @@ class Food1Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.food1.create');
     }
 
     /**
@@ -34,7 +39,20 @@ class Food1Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $food1 = new Food1;
+        $food1 -> food1_name = $request->food1_name;
+        $food1 -> food1_intro =$request->food1_intro;
+        $food1 -> food1_price = $request->food1_price;
+        
+        if ($request->hasFile('food1_img')) {
+            $food1->food1_img = '/'.$request->food1_img->store('uploads/'.date('Ymd'));
+        }
+        if($food1 -> save()){
+            return redirect('/food1')->with('success', '添加成功');
+        }else{
+            return back()->with('error','添加失败');
+        }
     }
 
     /**
@@ -56,7 +74,8 @@ class Food1Controller extends Controller
      */
     public function edit($id)
     {
-        //
+        $food1 = Food1::findOrFail($id);
+        return view('admin.food1.edit', ['food1'=>$food1]);
     }
 
     /**
@@ -68,7 +87,25 @@ class Food1Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //获取用户的信息
+        $food1 = Food1::findOrFail($id);
+
+        //更新
+        $food1 -> food1_name = $request->food1_name;
+        $food1 -> food1_intro= $request->food1_intro;
+        $food1 -> food1_price = $request->food1_price;
+        //$food1 -> food1_img = $request->food1_img;
+
+        if ($request->hasFile('food1_img')) {
+            $food1->food1_img = '/'.$request->food1_img->store('uploads/'.date('Ymd'));
+        }
+        
+
+        if($food1->save()){
+            return redirect('/food1')->with('success','更新成功');
+        }else{
+            return back()->with('error','更新失败');
+        }
     }
 
     /**
@@ -79,6 +116,12 @@ class Food1Controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $Food1 = Food1::findOrFail($id);
+
+        if($Food1->delete()){
+            return back()->with('success','删除成功');
+        }else{
+            return back()->with('error','删除失败');
+        }
     }
 }
