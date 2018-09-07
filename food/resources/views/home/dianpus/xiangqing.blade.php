@@ -85,7 +85,7 @@
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    	<ul class="nav navbar-nav menu1">
-				      	<li class="active"><a href="/">首页</a></li>
+				      	<li class="active"><a href="/dianpus">首页</a></li>
 				        <li><a href="fruits.html">关于我们</a></li>
 				        <li><a href="products.html">今日推荐</a></li>
 				        <li><a href="store.html">我的订单</a></li>
@@ -93,8 +93,7 @@
 				        <li><a href="contact.html">在线客服</a></li>
 		        	</ul>
 		          	<ul class="login">
-		          		<a href="account.html"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
-		            	<a href="register.html"><li class="login_bottom"><i class="register"> </i><span>注册</span></li></a>
+		          		<a href="/home/logout"><li class="login_top"><i class="sign"> </i><span>退出登录</span></li></a>
 		          	</ul>
 			    <div class="clearfix"></div>
 			</div>
@@ -136,21 +135,21 @@
 		   	   	<h3><i class="arrow"> </i><span>用户评论</span></h3>
 		   	   	<li>
 		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/pic1.jpg" class="img-responsive" alt=""/></li>
+		   	   			<li class="review1_img"><img src="/home/images/f3.jpg" class="img-responsive" alt=""/></li>
 		   	   			<li class="review1_desc"><h3><a href="#">aaaaaa</a></h3><p>Wed, June 2014</p></li>
 		   	   			<div class="clearfix"> </div>
 		   	   		</ul>
 		   	   	</li>
 		   	   	<li>
 		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/pic2.jpg" class="img-responsive" alt=""/></li>
+		   	   			<li class="review1_img"><img src="/home/images/l4.jpg" class="img-responsive" alt=""/></li>
 		   	   			<li class="review1_desc"><h3><a href="#">bbbbbb</a></h3><p>Wed, June 2014</p></li>
 		   	   			<div class="clearfix"> </div>
 		   	   		</ul>
 		   	   	</li>
 		   	   	<li>
 		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/pic3.jpg" class="img-responsive" alt=""/></li>
+		   	   			<li class="review1_img"><img src="/home/images/p3.jpg" class="img-responsive" alt=""/></li>
 		   	   			<li class="review1_desc"><h3><a href="#">cccccc</a></h3><p>Wed, June 2014</p></li>
 		   	   			<div class="clearfix"> </div>
 		   	   		</ul>
@@ -164,7 +163,6 @@
 		   	   
 		   	    <ul class="product_reviews">
 		   	   	   <h3><i class="arrow"> </i><span>支付方式</span></h3>
-		   	   	   <img src="/home/images/payment.png" class="img-responsive" alt=""/>
 		   	    </ul>
 		   	    <div style="float:left;">
 	   	   			<a href=""><img src="/home/images/1.png" style="width:50px;height:50px;"/></a>
@@ -177,33 +175,33 @@
 					     <ul id="etalage">
 							<li>
 								<a href="optionallink.html">
-									<img class="etalage_thumb_image" src="/home/images/s1.jpg" class="img-responsive" alt=""/>
-									<img class="etalage_source_image"  src="/home/images/s1.jpg" class="img-responsive" alt=""/>
+									<img class="etalage_thumb_image" src="/home/images/p1.jpg" class="img-responsive" alt=""/>
+									<img class="etalage_source_image"  src="/home/images/p1.jpg" class="img-responsive" alt=""/>
 								</a>
 							</li>
 							<li>
-								<img class="etalage_thumb_image"  src="/home/images/s2.jpg" class="img-responsive" alt=""/>
-								<img class="etalage_source_image"  src="/home/images/s2.jpg" class="img-responsive" alt=""/>
+								<img class="etalage_thumb_image"  src="/home/images/p2.jpg" class="img-responsive" alt=""/>
+								<img class="etalage_source_image"  src="/home/images/p2.jpg" class="img-responsive" alt=""/>
 							</li>
 							<li>
 								<img class="etalage_thumb_image"  src="/home/images/s3.jpg" class="img-responsive" alt=""/>
 								<img class="etalage_source_image"  src="/home/images/s3.jpg" class="img-responsive" alt=""/>
 							</li>
 							<li>
-								<img class="etalage_thumb_image"  src="/home/images/s1.jpg" class="img-responsive" alt=""/>
-								<img class="etalage_source_image"  src="/home/images/s1.jpg" class="img-responsive" alt=""/>
+								<img class="etalage_thumb_image"  src="/home/images/p3.jpg" class="img-responsive" alt=""/>
+								<img class="etalage_source_image"  src="/home/images/p3.jpg" class="img-responsive" alt=""/>
 							</li>
 							<li>
-								<img class="etalage_thumb_image"  src="/home/images/s2.jpg" class="img-responsive" alt=""/>
-								<img class="etalage_source_image"  src="/home/images/s2.jpg" class="img-responsive" alt=""/>
+								<img class="etalage_thumb_image"  src="/home/images/p4.jpg" class="img-responsive" alt=""/>
+								<img class="etalage_source_image"  src="/home/images/p4.jpg" class="img-responsive" alt=""/>
 							</li>
 							<li>
-								<img class="etalage_thumb_image"  src="/home/images/s3.jpg" class="img-responsive" alt=""/>
-								<img class="etalage_source_image"  src="/home/images/s3.jpg" class="img-responsive" alt=""/>
+								<img class="etalage_thumb_image"  src="/home/images/p5.jpg" class="img-responsive" alt=""/>
+								<img class="etalage_source_image"  src="/home/images/p5.jpg" class="img-responsive" alt=""/>
 							</li>
 							<li>
-								<img class="etalage_thumb_image"  src="/home/images/s1.jpg" class="img-responsive" alt=""/>
-								<img class="etalage_source_image"  src="/home/images/s1.jpg" class="img-responsive" alt=""/>
+								<img class="etalage_thumb_image"  src="/home/images/p6.jpg" class="img-responsive" alt=""/>
+								<img class="etalage_source_image"  src="/home/images/p6.jpg" class="img-responsive" alt=""/>
 							</li>
 						</ul>
 					    </div>
@@ -284,13 +282,13 @@
 		      	<h3>店主推荐</h3>
 		      	<div class="row">
 		      		<div class="col-md-4 related">
-		      			<img src="/home/images/pic6.jpg" class="img-responsive" alt=""/>
+		      			<img src="/home/images/p6.jpg" class="img-responsive" alt=""/>
 		      		</div>
 		      		<div class="col-md-4 related">
-		      			<img src="/home/images/pic6.jpg" class="img-responsive" alt=""/>
+		      			<img src="/home/images/p7.jpg" class="img-responsive" alt=""/>
 		      		</div>
 		      		<div class="col-md-4 related">
-		      			<img src="/home/images/pic6.jpg" class="img-responsive" alt=""/>
+		      			<img src="/home/images/p5.jpg" class="img-responsive" alt=""/>
 		      		</div>
 		      	</div>
 		      </div>
@@ -326,7 +324,7 @@
 			  </ul>
 		   </div>
 		   <div class="footer-grid footer-grid4">
-			   <h3 class="m_2">交个朋友吧</h3>
+			   <h3 class="m_2">好东西和大家一起分享!</h3>
 			   <ul class="footer_social">
 				 <li><a href=""> <i class="tw"> </i> </a></li>
 				 <li><a href=""><i class="fb"> </i> </a></li>

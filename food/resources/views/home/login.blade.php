@@ -70,6 +70,15 @@
 			</div>
 		</div>
 	</nav>
+            <div class="clearfix"></div>
+           	</div>
+            <div class="search">
+			  	<input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+			  	<input type="submit" value="搜索">
+			</div>
+		 </div>  
+		</div>
+	</div>
 		@if(Session::has('success'))
 		    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
 		    <div class="dashboard-stat green">
@@ -84,15 +93,6 @@
 		    </div>
 		    </div>
 		@endif
-            <div class="clearfix"></div>
-           </div>
-            <div class="search">
-			  <input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-			  <input type="submit" value="搜索">
-			</div>
-		 </div>  
-		</div>
-	</div>
     <div class="main">
 		<div class="container">
 		  <div class="Product_top">
@@ -109,14 +109,15 @@
 		   	     </ul>
 		   	    </div>
 		   	 </div>
-		     <div class="col-md-9">
-		   	  <div class="breadcrumb">
+		    <div class="col-md-9">
+		   	<div class="breadcrumb">
 				<a href="index.html">首页</a>  
 				&gt;&gt;  <span class="last">登录</span>
 	        </div>
 	        <center>
 	          	<div class="contact-form">
-					<form method="post" action="/dianpu">
+					<form method="post" action="/home/dianpus">
+
 					    <div>
 						    <span><label>用户名:</label></span>
 						    <span><input name="user_name" type="text" class="textbox" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
@@ -125,15 +126,24 @@
 						    <span><label>密码:</label></span>
 						   	<span><input name="user_password" type="password" class="textbox" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
 						    </div>
+						   {{csrf_field()}}
 						<div>
 						   	<span><input type="submit" value="登录"></span>
 						</div>
 						<br>
 						<div>
 							<p style="font-size:14px;">其他登录方式:
-		   	   				&nbsp; <a href=""><img src="/home/images/1.png" style="width:60px;height:50px;"/></a>
-		   	   				&nbsp; &nbsp; &nbsp; <a href=""><img src="/home/images/2.png" style="width:60px;height:50px;"/></a>
-		   	   				&nbsp; &nbsp; &nbsp; <a href=""><img src="/home/images/3.png" style="width:60px;height:50px;"/></a>
+		   	   				<ul class="footer_social">
+				 				<li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http">
+				 					<img src="/home/images/QQ.png"/>
+				 					</a>
+				 				</li>
+				 				<li><a href="http://service.weibo.com/share/share.php">
+				 					<img src="/home/images/weibo.png"/>
+				 					</a>
+				 				</li>
+				 				<div class="clearfix"></div>
+			   				</ul>
 		   	   			</div>
 		   	   		</p>
 					</form>
@@ -171,13 +181,13 @@
 			  	</ul>
 		   	</div>
 		<div class="footer-grid footer-grid4">
-			   	<h3 class="m_2">交个朋友吧</h3>
+			   	<h3 class="m_2">好东西和大家一起分享!</h3>
 			   	<ul class="footer_social">
-				 	<li><a href=""> <i class="tw"> </i> </a></li>
-				 	<li><a href=""><i class="fb"> </i> </a></li>
-				 	<li><a href=""><i class="rss"> </i> </a></li>
-				 	<li><a href=""><i class="msg"> </i> </a></li>
-				 	<div class="clearfix"> </div>
+				 	<li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http"><img src="/home/images/QQ.png"/></a></li>
+				 	<li><a href="https://www.douban.com/share/service?href=http"><img src="/home/images/douban.png"/></a></li>
+				 	<li><a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey"><img src="/home/images/qqkj.png"/></a></li>
+				 	<li><a href="http://service.weibo.com/share/share.php"><img src="/home/images/weibo.png"/></a></li>
+				<div class="clearfix"> </div>
 			   	</ul>
 			   	<h3 class="m_3">订阅</h3>
 			   	<div class="footer_search">

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>吃了么页面</title>
+<title>吃了么注册页面</title>
 <link href="/home/css/bootstrap.css" rel='stylesheet' type='text/css' />
 <script src="/home/js/jquery.min.js"></script>
 <script src="/home/js/bootstrap.min.js"></script>
@@ -74,11 +74,25 @@
 </div>
     <div class="search">
 		<input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-			<input type="submit" value="搜索">
+		<input type="submit" value="搜索">
 	</div>
 </div>  
 </div>
 </div>
+		@if(Session::has('success'))
+		    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
+		    <div class="dashboard-stat green">
+		    <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:yellowgreen;">{{Session::get('success')}} </div>
+		    </div>
+		    </div>
+		@endif
+		@if(Session::has('error'))
+		    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
+		    <div class="dashboard-stat red">
+		    <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:#f66;">{{Session::get('error')}} </div>
+		    </div>
+		    </div>
+		@endif
     <div class="main">
 		<div class="container">
 		  	<div class="Product_top">
@@ -105,12 +119,6 @@
 						    <span><label>头像:</label></span>
 						    <input name="user_img" type="file" style="width:300px;height:30px;border:solid 1px #aaa;">
 						</div>
-						<div style="float:left;">
-							<p style="font-size:14px;">其他注册方式:</p>
-		   	   				<a href=""><img src="/home/images/1.png" style="width:60px;height:50px;"/></a>
-		   	   				&nbsp; &nbsp; &nbsp; <a href=""><img src="/home/images/2.png" style="width:60px;height:50px;"/></a>
-		   	   				&nbsp; &nbsp; &nbsp; <a href=""><img src="/home/images/3.png" style="width:60px;height:50px;"/></a>
-		   	   			</div>	
 					</div>
 				</form>
 				<div class="clearfix"> </div>
@@ -151,12 +159,12 @@
 			  	</ul>
 		   	</div>
 		   	<div class="footer-grid footer-grid4">
-			   	<h3 class="m_2">交个朋友吧</h3>
+			   	<h3 class="m_2">好东西和大家一起分享!</h3>
 			   	<ul class="footer_social">
-				 	<li><a href=""> <i class="tw"> </i> </a></li>
-				 	<li><a href=""><i class="fb"> </i> </a></li>
-				 	<li><a href=""><i class="rss"> </i> </a></li>
-				 	<li><a href=""><i class="msg"> </i> </a></li>
+					<li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http"><img src="/home/images/QQ.png"/></a></li>
+					<li><a href="https://www.douban.com/share/service?href=http"><img src="/home/images/douban.png"/></a></li>
+					<li><a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey"><img src="/home/images/qqkj.png"/></a></li>
+					<li><a href="http://service.weibo.com/share/share.php"><img src="/home/images/weibo.png"/></a></li>
 				<div class="clearfix"> </div>
 			   	</ul>
 			   	<h3 class="m_3">订阅</h3>

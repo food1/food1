@@ -104,7 +104,7 @@ class HomeController extends Controller
         if(Hash::check($request->user_password, $user->user_password)){
             //写入session
             session(['user_name'=>$user->user_name, 'id'=>$user->id]);
-            return redirect('/home')->with('success','登陆成功');
+            return redirect('/dianpus')->with('success','登陆成功!');
         }else{
             return back()->with('error','登陆失败!');
         }
@@ -114,7 +114,7 @@ class HomeController extends Controller
     public function logout(Request $request)
     {
         $request->session()->flush();
-        return redirect('/home/login')->with('success','退出成功');
+        return redirect('/home/login')->with('success','退出成功!');
     }
 
 

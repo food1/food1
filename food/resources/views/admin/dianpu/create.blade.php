@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>用户添加</title>
+    <title>店铺添加</title>
     <link href="/admingg/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
