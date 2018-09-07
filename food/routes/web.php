@@ -61,6 +61,9 @@ Route::resource('link', 'LinkController');
 // 店铺_餐品
 Route::get('/model', 'DBController@model');
 
+// 店铺_分类
+Route::get('/cd', 'DBController@cd');
+
 
 // 网站设置
 // Route::get('/wzsz', 'WzszController');

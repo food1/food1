@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Cate;
 use App\Dianpu;
-
 use Illuminate\Http\Request;
 
 class DBController extends Controller
@@ -19,6 +19,13 @@ class DBController extends Controller
 
 		// dd($food1);
 
+	}
+
+	public function cd()
+	{
+		$cate = Cate::find(2);
+		$dianpu = $cate->dianpus;
+		// dd($dianpu);
 	}
 
 

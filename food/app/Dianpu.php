@@ -11,4 +11,9 @@ class Dianpu extends Model
     {
     	return $this->belongsToMany('App\Food1');
     }
+    //n店铺对1分类
+    public function cate()
+    {
+    	return $this->belongsTo('App\Cate');
+    }
 }
