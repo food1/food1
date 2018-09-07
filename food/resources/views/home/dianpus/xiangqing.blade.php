@@ -93,8 +93,8 @@
 				        <li><a href="contact.html">在线客服</a></li>
 		        	</ul>
 		          	<ul class="login">
-		          		<a href="account.html"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
-		            	<a href="register.html"><li class="login_bottom"><i class="register"> </i><span>注册</span></li></a>
+		          		<a href="/home/login"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
+		            	<a href="/home/zhuce"><li class="login_bottom"><i class="register"> </i><span>注册</span></li></a>
 		          	</ul>
 			    <div class="clearfix"></div>
 			</div>
@@ -103,7 +103,7 @@
         <div class="clearfix"></div>
            	</div>
             	<div class="search">
-			  		<input type="text" class="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Product Details';}">
+			  		<input type="text" class="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 			  		<input type="submit" value="搜索">
 				</div>
 		 	</div>  
