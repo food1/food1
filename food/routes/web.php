@@ -10,26 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 //前台首页
 Route::get('/','HomeController@index');
 //前台店铺
 Route::get('/dianpus','QdianpuController@index');
 //前台店铺详情
-Route::get('/dianpusngqing','QdianpuController@xiangqing');
-
-//前台店铺详情
-Route::get('/dianpusngqing','QdianpuController@xiangqing');
-
-
-//前台店铺详情
 Route::get('/dianpus/xiangqing','QdianpuController@xiangqing');
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
 
 //登陆页面
 Route::get('/home/login', 'HomeController@login');
@@ -41,9 +31,6 @@ Route::get('/home/logout', 'HomeController@logout');
 Route::get('/home/zhuce', 'HomeController@zhuce');
 //注册操作
 Route::post('/home/zhuce', 'HomeController@dozhuce');
-
-
-
 
 //登录拦截
 Route::group(['middleware'=>'admin'],function(){
