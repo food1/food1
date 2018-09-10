@@ -3,6 +3,7 @@
 <head>
 <title>吃了么&nbsp; 歡迎您~ </title>
 <link href="/home/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/home/js/jquery.min.js"></script>
 <script src="/home/js/bootstrap.min.js"></script>
 <script src="/home/js/jquery.min.js"></script>
@@ -11,6 +12,49 @@
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 </script>
 <link href='http://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+
+	<style>
+		*{	
+			margin:0px;
+			padding:0px;
+			list-style:none;
+		}
+		#slide{
+			width:90%;
+			height:450px;
+			border:solid 1px #ddd;
+			margin:100px auto;
+			position:relative;
+		}
+		#images li{
+			width:100%;
+			height:400px;
+			position:absolute;
+			left:0px;
+			top:0px;
+		}
+
+		#dots{
+			width:200px;
+			height:20px;
+			position:absolute;
+			left:485px;
+			bottom:5px;
+		}
+
+		#dots li{
+			width: 10px;
+    		height: 10px;
+			background:yellowgreen;
+			float:left;
+			margin-right:5px;
+			border-radius:50%;
+		}
+
+		#dots .active{
+			background:white;
+		}
+	</style>
 </head>
 <body>
 	<div class="header">
@@ -18,26 +62,31 @@
 		  <div class="header_top">
 			<ul class="phone">
 				<li class="phone_left"><i class="mobile"> </i><span>15149174619</span></li>
-				<li class="phone_right">50元以上的餐品我们将免费为您配送哦!</li>
+				<li class="phone_right"> 50元以上的餐品我们将免费为您配送哦!</li>
 				<div class="clearfix"></div>
 			</ul>
 			<ul class="social">
-				<h1 style="font-family:'华文彩云';color:#aaa;font-size:40px;">吃了么</h1>
+				 <h1 style="font-family:'华文彩云';color:#aaa;font-size:40px;">吃了么</h1>
 			</ul>
 			<ul class="account">
-				<li><a href="account.html">我的账户</a></li>
+
+				<li><a href="/person">个人中心</a></li>
+
 			</ul>
 			<ul class="shopping_cart">
-			   <a href="#"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
-			   <a href="#"><li class="shop_right"><span>¥0.00</span></li></a>
+			   <a href="/dianpus/car"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
+			   <a href="#"><li class="shop_right"><span>$0.00</span></li></a>
 			   <div class="clearfix"> </div>
+			</ul>
+			   <div class="clearfix"> 
+			   </div>
 			</ul>
 			<div class="clearfix"></div>
 		</div>
 		<div class="header_bottom">
 		  <div class="header_nav">
       		<div class="logo">
-				<a href="index.html"><img src="/home/images/logo.png" alt=""/><br></a>
+				<a href="/dianpus"><img src="/home/images/logo.png" alt=""/><br></a>
 			 </div>
 			 <nav class="navbar navbar-default menu" role="navigation">
 			 	<h3 class="nav_right">
@@ -45,121 +94,82 @@
 			 			<img src="/home/images/logo.png" class="img-responsive" alt=""/>
 			 		</a>
 			 	</h3>
-			  	<div class="container-fluid">
+			  <div class="container-fluid">
 			    <div class="navbar-header">
-			    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			        	<span class="sr-only">Toggle navigation</span>
-			        	<span class="icon-bar"></span>
-			        	<span class="icon-bar"></span>
-			        	<span class="icon-bar"></span>
-			        </button>
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			    	<ul class="nav navbar-nav menu1">
-				      	<li class="active"><a href="/">首页</a></li>
-				        <li><a href="fruits.html">关于我们</a></li>
-				        <li><a href="products.html">今日推荐</a></li>
-				        <li><a href="store.html">我的订单</a></li>
-				        <li><a href="club.html">反馈留言</a></li>
-				        <li><a href="contact.html">在线客服</a></li>
-		        	</ul>
-		          	<ul class="login">
-		          		<a href="/home/login"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
-		            	<a href="/home/zhuce"><li class="login_bottom"><i class="register"> </i><span>注册</span></li></a>
-		          	</ul>
-			    <div class="clearfix"></div>
+			      <ul class="nav navbar-nav menu1">
+			      	<li class="active"><a href="index.html">首页</a></li>			        
+			        <li><a href="products.html">今日推荐</a></li>
+			        <li><a href="/dianpus/order">我的订单</a></li>
+			        <li><a href="/dianpus/guize">规则中心</a></li>
+			        <li><a href="contact.html">我的客服</a></li>
+		          </ul>
+		          <ul class="login">
+					<a href="/home/logout"><li class="login_top"><i class="sign"> </i><span>退出登录</span></li></a>
+					<a href="/home/login"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
+					<a href="/home/zhuce"><li class="login_bottom"><i class="register"> </i><span>注册</span></li></a>
+		          </ul>
+			      <div class="clearfix"></div>
+			    </div>
+			  </div>
+		</nav>		
+        <div class="clearfix"></div>
+           </div>
+            <div class="search">
+			  <input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+			  <input type="submit" value="搜索">
 			</div>
+		 </div>  
 		</div>
-	</nav>
-			@if(Session::has('success'))
+	</div>
+		@if(Session::has('success'))
 		    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
 		    <div class="dashboard-stat green">
 		    <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:yellowgreen;">{{Session::get('success')}} </div>
 		    </div>
 		    </div>
-		    @endif
-		    @if(Session::has('error'))
+		@endif
+		@if(Session::has('error'))
 		    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
 		    <div class="dashboard-stat red">
 		    <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:#f66;">{{Session::get('error')}} </div>
 		    </div>
 		    </div>
-		    @endif
-        <div class="clearfix"></div>
-           	</div>
-            	<div class="search">
-			  		<input type="text" class="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Product Details';}">
-			  		<input type="submit" value="搜索">
-				</div>
-		 	</div>  
-		</div>
-	</div>
+		@endif
     <div class="main">
-    	<!--图片轮播-->
-<div class="container">
-		   	
-		   	<style type="text/css">
-		   		#carousel-example-generic{
-		   			width: 1148px;
-		   			height: 399.75px;
-		   			margin-top: 10px;
-		   			overflow:hidden;
-		   		}
-		   	</style>
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
-		    <!--轮播图片的提示点-->
-		    <ol class="carousel-indicators">
-		        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-		        <li data-target="#carousel-example-generic" data-slide-to="1" ></li>
-		        <li data-target="#carousel-example-generic" data-slide-to="2" ></li>
-		        <li data-target="#carousel-example-generic" data-slide-to="3" ></li>
-		        <li data-target="#carousel-example-generic" data-slide-to="4" ></li>
-		        <li data-target="#carousel-example-generic" data-slide-to="5" ></li>
-		        <li data-target="#carousel-example-generic" data-slide-to="6" ></li>
-		    </ol>
-		    <!--轮播图片-->
-		    <div class="carousel-inner" role="listbox">
-		        <div class="item active">
-		            <img src="home/images/f1.jpg" alt="1" width="100%">
-		        </div>
-		        <div class="item ">
-		            <img src="home/images/banner.jpg" alt="2" width="100%">
-		            <div class="carousel-caption"></div>
-		        </div>
-		        <div class="item ">
-		            <img src="home/images/s2.jpg" alt="3" width="100%">
-		            <div class="carousel-caption"></div>
-		        </div>
-		        <div class="item ">
-		            <img src="home/images/f2.jpg" alt="4" width="100%">
-		            <div class="carousel-caption"></div>
-		        </div>
-		        <div class="item ">
-		            <img src="home/images/f3.jpg" alt="5" width="100%">
-		            <div class="carousel-caption"></div>
-		        </div>
-		        <div class="item ">
-		            <img src="home/images/p7.jpg" alt="6" width="100%">
-		            <div class="carousel-caption"></div>
-		        </div>
-		    </div>
-		    <!--左右滑动图标-->
-		    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"5
-	            <span class="sr-only">Previous</span>
-	        </a>
-	        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-	            <span class="sr-only">Next</span>
-	        </a>
+		<div class="container">
+			<div id="slide">
+			<ul id="images">
+				<li><img src="home/images/l.jpg" alt="" width="100%" height="450px"></li>
+				<li><img src="home/images/l4.jpg" alt="" width="100%" height="450px"></li>
+				<li><img src="home/images/p11.jpg" alt="" width="100%" height="450px"></li>
+				<li><img src="home/images/p13.jpg" alt="" width="100%" height="450px"></li>
+				<li><img src="home/images/p10.jpg" alt="" width="100%" height="450px"></li>
+			</ul>
+			<ul id="dots">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
 		</div>
-</div>
-		<!-- 轮播图结束 -->
-
-		   	<div class="row content">
+		<div class="row content">
+		</div>  
+		</div>
+		<div class="container" style="width: 95%">
+		   
 		   	<div class="col-md-3 content_top">
 		   	   	<div class="category_box">
 		   	  		<h3 class="cate_head">店铺分类</h3>
 		   	     	<ul class="category">
-				   	  	<li><a href="#">美食</a></li>
 				   	  	<li><a href="#">快餐便当</a></li>
 				   	  	<li><a href="#">特色菜系</a></li>
 				   	  	<li><a href="#">异国料理</a></li>
@@ -178,27 +188,27 @@
 		   	   	<h3><i class="arrow"> </i><span>用户评论</span></h3>
 		   	   	<li>
 		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/pic1.jpg" class="img-responsive" alt=""/></li>
+		   	   			<li class="review1_img"><img src="/home/images/f3.jpg" class="img-responsive" alt=""/></li>
 		   	   			<li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
 		   	   			<div class="clearfix"> </div>
 		   	   		</ul>
 		   	   	</li>
 		   	   	<li>
 		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/pic2.jpg" class="img-responsive" alt=""/></li>
+		   	   			<li class="review1_img"><img src="/home/images/l4.jpg" class="img-responsive" alt=""/></li>
 		   	   			<li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
 		   	   			<div class="clearfix"> </div>
 		   	   		</ul>
 		   	   	</li>
 		   	   	<li>
 		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/pic3.jpg" class="img-responsive" alt=""/></li>
+		   	   			<li class="review1_img"><img src="/home/images/p3.jpg" class="img-responsive" alt=""/></li>
 		   	   			<li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
 		   	   			<div class="clearfix"> </div>
 		   	   		</ul>
 		   	   	</li>
 		   	    <div class="but">
-			       <a href="#">更多评论<i class="but_arrow"> </i></a>
+			       <a href="#">更多评论<i class="but_arrow"></i></a>
 			    </div>
 		   	   	</ul>		   	   
 		   	   	<ul class="product_reviews">
@@ -252,7 +262,7 @@
 		   	   		
 
 			   	   	<div class="col-md-3">
-			   	   		<div class="content_box"><a href="/dianpus/xiangqing">
+			   	   		<div class="content_box"><a href="/dianpus/cai">
 			   	   	  	<div class="view view-fifth">
 			   	   	     	<img src="/home/images/p1.jpg" class="img-responsive" alt=""/>
 				   	   	<div class="content_box-grid">
@@ -261,7 +271,7 @@
 						    <span class="actual">¥12.00</span>
 						</div>
 						<ul class="product_but">
-						  	<li class="but3">加入购物车</li>
+						  	<li class="but3">进店瞧瞧</li>
 						  	<li class="like"><span>120</span><i class="like1"> </i></li>
 						<div class="clearfix"> </div>
 						</ul>
@@ -273,8 +283,6 @@
 		</a>
 	</div>
 </div>
-
-
 	<div class="col-md-3">
 		<div class="content_box"><a href="/dianpus/xiangqing">
 			<div class="view view-fifth">
@@ -323,131 +331,131 @@
 		<div class="content_box"><a href="/dianpus/xiangqing">
 		<div class="view view-fifth">
 			<img src="/home/images/p2.jpg" class="img-responsive" alt=""/>
-		<div class="content_box-grid">
-			<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				<div class="price">Price:
-					<span class="actual">$12.00</span>
+				<div class="content_box-grid">
+					<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+						<div class="price">Price:
+							<span class="actual">$12.00</span>
 						</div>
-						  <ul class="product_but">
-						  	<li class="but3">Buy</li>
-						  	<li class="like"><span>120</span><i class="like1"> </i></li>
+							<ul class="product_but">
+							  	<li class="but3">Buy</li>
+							  	<li class="like"><span>120</span><i class="like1"> </i></li>
 						  	<div class="clearfix"> </div>
-						  </ul>
-						   <div class="mask">
-	                         <div class="info">Quick View</div>
-			               </div>
-			             </div>
-				   	   	</div>
-			   	   	   </a>
-			   	   	  </div>
-			   	   </div>
-			   </div>
-			   <div class="row content_bottom1">
-			   	   <div class="col-md-3">
-			   	   	<div class="content_box"><a href="/dianpus/xiangqing">
-			   	   	  	<div class="view view-fifth">
-			   	   	     <img src="/home/images/p8.jpg" class="img-responsive" alt=""/>
-				   	   	 <div class="content_box-grid">
-				   	   	  <p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	   	  <div class="price">Price:
-						    <span class="actual">$12.00</span>
-						  </div>
-						  <ul class="product_but">
-						  	<li class="but3">Buy</li>
-						  	<li class="like"><span>120</span><i class="like1"> </i></li>
-						  	<div class="clearfix"> </div>
-						  </ul>
-						   <div class="mask">
-	                         <div class="info">Quick View</div>
-			               </div>
-			             </div>
-				   	   	</div>
-			   	   	   </a>
-			   	   	  </div>
-			   	   </div>
-			   	   <div class="col-md-3">
-			   	   	  <div class="content_box"><a href="/dianpus/xiangqing">
-			   	   	  	<div class="view view-fifth">
-			   	   	     <img src="/home/images/p7.jpg" class="img-responsive" alt=""/>
-				   	   	 <div class="content_box-grid">
-				   	   	  <p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	   	  <div class="price">Price:
-						    <span class="actual">$12.00</span>
-						  </div>
-						  <ul class="product_but">
-						  	<li class="but3">Buy</li>
-						  	<li class="like"><span>120</span><i class="like1"> </i></li>
-						  	<div class="clearfix"> </div>
-						  </ul>
-						   <div class="mask">
-	                         <div class="info">Quick View</div>
-			               </div>
-			             </div>
-				   	   	</div>
-			   	   	   </a>
-			   	   	  </div>
-			   	   </div>
-			   	   <div class="col-md-3">
-			   	   	  <div class="content_box"><a href="/dianpus/xiangqing">
-			   	   	  	<div class="view view-fifth">
-			   	   	     <img src="/home/images/p6.jpg" class="img-responsive" alt=""/>
-				   	   	 <div class="content_box-grid">
-				   	   	  <p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	   	  <div class="price">Price:
-						    <span class="actual">$12.00</span>
-						  </div>
-						  <ul class="product_but">
-						  	<li class="but3">Buy</li>
-						  	<li class="like"><span>120</span><i class="like1"> </i></li>
-						  	<div class="clearfix"> </div>
-						  </ul>
-						   <div class="mask">
-	                         <div class="info">Quick View</div>
-			               </div>
-			             </div>
-				   	   	</div>
-			   	   	   </a>
-			   	   	  </div>
-			   	   </div>
-			   	   <div class="col-md-3">
-			   	   	   <div class="content_box"><a href="/dianpus/xiangqing">
-			   	   	  	<div class="view view-fifth">
-			   	   	     <img src="/home/images/p5.jpg" class="img-responsive" alt=""/>
-				   	   	 <div class="content_box-grid">
-				   	   	  <p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	   	  <div class="price">Price:
-						    <span class="actual">$12.00</span>
-						  </div>
-						  <ul class="product_but">
-						  	<li class="but3">Buy</li>
-						  	<li class="like"><span>120</span><i class="like1"> </i></li>
-						  	<div class="clearfix"> </div>
-						  </ul>
-						   <div class="mask">
-	                         <div class="info">Quick View</div>
-			               </div>
-			             </div>
-				   	   	</div>
-			   	   	   </a>
-			   	   	  </div>
-			   	   </div>
-			   </div>
-			   <ul class="dc_pagination dc_paginationA dc_paginationA06">
-				  <li><a href="#">1</a></li>
-				  <li><a href="#" class="current">2</a></li>
-				  <li><a href="#">3</a></li>
-				  <li><a href="#">4</a></li>
-				  <li><a href="#">5</a></li>
-				  <li><a href="#">...</a></li>
-				  <li><a href="#">19</a></li>
-				  <li><a href="#">20</a></li>
-				  <li><a href="#" class="previous">下一页></a></li>
-				  <li><a href="#" class="next">上一页>></a></li>
-		       </ul>
-		    </div>
-		   </div>
+						    </ul>
+						    <div class="mask">
+			                    <div class="info">Quick View</div>
+			            </div>
+					</div>
+				</div>
+			</a>
 		</div>
 	</div>
+</div>
+	<div class="row content_bottom1">
+		<div class="col-md-3">
+			<div class="content_box"><a href="/dianpus/xiangqing">
+			   	<div class="view view-fifth">
+			   	   	<img src="/home/images/s3.jpg" class="img-responsive" alt=""/>
+				   	<div class="content_box-grid">
+				   	<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+				   	<div class="price">Price:
+					<span class="actual">$12.00</span>
+					</div>
+					<ul class="product_but">
+					<li class="but3">Buy</li>
+					<li class="like"><span>120</span><i class="like1"> </i></li>
+					<div class="clearfix"> </div>
+					</ul>
+					<div class="mask">
+	                <div class="info">Quick View</div>
+			        </div>
+			    </div>
+			</div>
+		</a>
+	</div>
+</div>
+	<div class="col-md-3">
+		<div class="content_box"><a href="/dianpus/xiangqing">
+			<div class="view view-fifth">
+			   	<img src="/home/images/p7.jpg" class="img-responsive" alt=""/>
+				   	<div class="content_box-grid">
+				   	   	<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+				   	   	<div class="price">Price:
+						<span class="actual">$12.00</span>
+						</div>
+						<ul class="product_but">
+						<li class="but3">Buy</li>
+						<li class="like"><span>120</span><i class="like1"> </i></li>
+						<div class="clearfix"> </div>
+						</ul>
+						<div class="mask">
+	                    <div class="info">Quick View</div>
+			         	</div>
+			        </div>
+				</div>
+			</a>
+		</div>
+	</div>
+		<div class="col-md-3">
+			<div class="content_box"><a href="/dianpus/xiangqing">
+			   	<div class="view view-fifth">
+			   	   	<img src="/home/images/p6.jpg" class="img-responsive" alt=""/>
+				   	<div class="content_box-grid">
+				   	   	<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+				   	   	<div class="price">Price:
+						<span class="actual">$12.00</span>
+						</div>
+						<ul class="product_but">
+						<li class="but3">Buy</li>
+						<li class="like"><span>120</span><i class="like1"> </i></li>
+						<div class="clearfix"> </div>
+						</ul>
+						<div class="mask">
+	                    <div class="info">Quick View</div>
+			            </div>
+			        </div>
+				</div>
+			</a>
+		</div>
+	</div>
+		<div class="col-md-3">
+			<div class="content_box"><a href="/dianpus/xiangqing">
+			   	<div class="view view-fifth">
+			   	   	<img src="/home/images/p5.jpg" class="img-responsive" alt=""/>
+				   	   	<div class="content_box-grid">
+				   	   	<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+				   	   	<div class="price">Price:
+						<span class="actual">$12.00</span>
+						</div>
+						<ul class="product_but">
+						<li class="but3">Buy</li>
+						<li class="like"><span>120</span><i class="like1"> </i></li>
+						<div class="clearfix"> </div>
+						</ul>
+						<div class="mask">
+	                    <div class="info">Quick View</div>
+			            </div>
+			         	</div>
+				   	</div>
+			   	</a>
+			</div>
+		</div>
+	</div>
+		<ul class="dc_pagination dc_paginationA dc_paginationA06">
+			<li><a href="#">1</a></li>
+			<li><a href="#" class="current">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li><a href="#">...</a></li>
+			<li><a href="#">19</a></li>
+			<li><a href="#">20</a></li>
+			<li><a href="#" class="previous">下一页</a></li>
+			<li><a href="#" class="next">上一页</a></li>
+		</ul>
+	</div>
+</div>
+</div>
+</div>
 	<!-- 页脚 -->
 	<div class="footer">
 		<div class="container">
@@ -507,7 +515,55 @@
 		   <div class="clearfix"> </div>
 	   </div>
 	</div>
+<<<<<<< HEAD
 
+
+=======
+>>>>>>> 5e553a7befee90b73f011df07df34637484a926a
 </body>
 </html>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		/**
+			1. 页面布局
+			2. 定时器
+		*/
+		var index = -1;
+		var timer = null;
+		$('#dots li').mouseover(function(){
+			//清除定时器
+			clearInterval(timer);
+			//修改图片的显示的内容
+			index  = $(this).index();
+			//显示当前索引的图片和点
+			show(index);
+		}).mouseout(function(){
+			// 启动定时器
+			autoRun();
+		});
+		//自动变化
+		function autoRun() {
+			timer = setInterval(function(){
+				index++;
+				//显示当前索引对应 图片和点
+				show(index);
+				//判断
+				if(index >= $('#images li').length-1) {
+					index = -1;
+				}
+			}, 3000);
+		}
+		//显示当前索引对应图片和点
+		function show(index) {
+			//点样式发生改变
+			$('#dots li').removeClass('active');
+			$('#dots li').eq(index).addClass('active');
+			//切换图片
+			//使其他索引的元素隐藏
+			$('#images>li').fadeOut();		//siblings	
+			//使当前索引的元素显示
+			$('#images>li').eq(index).fadeIn();
+		}
+		autoRun();
+</script>
 

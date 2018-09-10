@@ -18,19 +18,33 @@
 Route::get('/','HomeController@index');
 //前台店铺
 Route::get('/dianpus','QdianpuController@index');
+//菜品展示
+Route::get('/dianpus/cai','QdianpuController@cai');
 //前台店铺详情
 Route::get('/dianpus/xiangqing','QdianpuController@xiangqing');
-
 //登陆页面
 Route::get('/home/login', 'HomeController@login');
 //登陆操作
-Route::post('/home/login', 'HomeController@dologin');
-//退出登录
-Route::get('/home/logout', 'HomeController@logout');
+Route::post('/home/dianpus', 'HomeController@dologin');
 //注册页面
 Route::get('/home/zhuce', 'HomeController@zhuce');
 //注册操作
-Route::post('/home/zhuce', 'HomeController@dozhuce');
+Route::post('/home/login', 'HomeController@dozhuce');
+//规则中心
+Route::get('/dianpus/guize','QdianpuController@guize');
+
+Route::group(['middleware'=>'home'],function(){
+//个人中心
+Route::get('/person','PersonController@index');
+//进入购物车
+Route::get('/dianpus/car', 'QdianpuController@car');
+//进入我的订单
+Route::get('/dianpus/order', 'QdianpuController@order');
+//退出登录
+Route::get('/home/logout', 'HomeController@logout');
+});
+//----------------------------------------------------------------------
+
 
 //登录拦截
 Route::group(['middleware'=>'admin'],function(){
@@ -52,6 +66,15 @@ Route::resource('clearing', 'ClearingController');
 Route::resource('order', 'OrderController');
 //友情链接
 Route::resource('link', 'LinkController');
+
+
+// 店铺_餐品
+Route::get('/model', 'DBController@model');
+
+// 店铺_分类
+Route::get('/cd', 'DBController@cd');
+
+
 // 网站设置
 // Route::get('/wzsz', 'WzszController');
 // 
