@@ -11,6 +11,7 @@
 |
 */
 
+
 //前台首页
 Route::get('/','HomeController@index');
 //登陆页面
@@ -20,14 +21,14 @@ Route::post('/home/dianpus', 'HomeController@dologin');
 //注册页面
 Route::get('/home/zhuce', 'HomeController@zhuce');
 //注册操作
-Route::post('/home/zhuce', 'HomeController@dozhuce');
-
-
-
-
+Route::post('/home/login', 'HomeController@dozhuce');
+//规则中心
+Route::get('/dianpus/guize','QdianpuController@guize');
 
 
 Route::group(['middleware'=>'home'],function(){
+//个人中心
+Route::get('/person','PersonController@index');
 //前台店铺详情
 Route::get('/dianpus/xiangqing','QdianpuController@xiangqing');
 //前台店铺
@@ -35,11 +36,7 @@ Route::get('/dianpus','QdianpuController@index');
 //退出登录
 Route::get('/home/logout', 'HomeController@logout');
 });
-
-
-
-
-
+//----------------------------------------------------------------------
 
 
 //后台首页

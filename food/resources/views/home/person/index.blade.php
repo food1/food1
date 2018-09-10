@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>吃了么注册页面</title>
+<title>吃了么个人中心</title>
 <link href="/home/css/bootstrap.css" rel='stylesheet' type='text/css' />
 <script src="/home/js/jquery.min.js"></script>
 <script src="/home/js/bootstrap.min.js"></script>
@@ -53,14 +53,14 @@
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    	<ul class="nav navbar-nav menu1">
 				      	<li class="active"><a href="/dianpus">首页</a></li>
-				        <li><a>关于我们</a></li>
 				        <li><a>今日推荐</a></li>
 				        <li><a>我的订单</a></li>
+				        <li><a href="/dianpus/guize">规则中心</a></li>
 				        <li><a>反馈留言</a></li>
 				        <li><a>在线客服</a></li>
 		        	</ul>
 		          	<ul class="login">
-		          		<a href="/home/login"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
+		          		<a href="/home/logout"><li class="login_top"><i class="sign"> </i><span>退出登录</span></li></a>
 		          	</ul>
 			    <div class="clearfix"></div>
 			</div>
@@ -91,54 +91,39 @@
 		    </div>
 		@endif
 		<!-- 闪存 -->
-<div class="main">
+    <div class="main">
 		<div class="container">
 		  	<div class="Product_top">
-		  		    <div class="col-md-3">
-                        <div class="category_box">
-                            <h3 class="cate_head">精品推荐</h3>
-                            <ul class="category">
-                                <li><a href="#"><img src="/home/images/p1.jpg" width="100px" height="50px"></a></li>
-                                <li><a href="#"><img src="/home/images/p2.jpg" width="100px" height="50px"></a></li>
-                                <li><a href="#"><img src="/home/images/p3.jpg" width="100px" height="50px"></a></li>
-                                <li><a href="#"><img src="/home/images/p4.jpg" width="100px" height="50px"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-		  		    <div class="col-md-9">
-                        <div class="breadcrumb">
-                            <a href="#">首页</a> &gt;&gt; <span class="last">注册</span>
-                        </div>
-                        <center>
-                            <div class="contact-form">
-                                <form method="post" action="/home/login">
-                                    <div>
-						    <span><label>用户名:</label></span>
-						    <span><input name="user_name" type="text" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
-						</div>
+		  		<center>
+		  	  		<form action="/home/login" method="post" id="myform" name="myform" enctype="multipart/form-data"> 
+				 		<div class="register-top-grid">
 						<div>
-						    <span><label>密码::</label></span>
-						    <span><input name="user_password" type="password" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
+						    <span><label>用户名:</label></span>
+						    <span><input name="user_name" type="text" style="width:300px;height:30px;border:solid 1px #aaa;" value="{{$users->user_name}}"></span>
 						</div>
 						<div>
 						    <span><label>手机号:</label></span>
-						    <span><input name="user_phone" type="text" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
+						    <span><input name="user_phone" type="text" style="width:300px;height:30px;border:solid 1px #aaa;" value="{{$users->user_phone}}"></span>
 						</div>
 						<div>
 						    <span><label>收货地址:</label></span>
-						    <span><input name="user_adress" type="text" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
+						    <span><input name="user_adress" type="text" style="width:300px;height:30px;border:solid 1px #aaa;" value="{{$users->user_adress}}"></span>
 						</div>
 						<div>
 						    <span><label>头像:</label></span>
 						    <input name="user_img" type="file" style="width:300px;height:30px;border:solid 1px #aaa;">
+						    <img src="{{$users->user_img}}" width="100px">
 						</div>
-                                    <div>
-                                        {{csrf_field()}}
-                                        <span><input type="submit" value="注册"></span>
-                                    </div>
-                                </form>
-                            </div>
-                        </center>
+					</div>
+				  <div class="clearfix"> </div>
+					<div class="register-but">
+						{{method_field('PUT')}} 
+					   	{{csrf_field()}}
+						<input type="submit" value="修改">
+						<input value="返回" type="button" onclick="history.go(-1)">	
+						 <div class="clearfix"> </div>
+					</form>
+			</center>
 			</div>
 		</div>
 	</div>

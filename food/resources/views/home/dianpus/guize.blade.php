@@ -50,7 +50,7 @@
                         <div class="container-fluid">
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="sr-only"></span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
@@ -59,16 +59,19 @@
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav menu1">
                                     <li class="active"><a href="/dianpus">首页</a></li>
-                                    <li><a>关于我们</a></li>
                                     <li><a>今日推荐</a></li>
                                     <li><a>我的订单</a></li>
+                                    <li><a href="/dianpus/guize">规则中心</a></li>
                                     <li><a>反馈留言</a></li>
                                     <li><a>在线客服</a></li>
                                 </ul>
                                 <ul class="login">
-                                    <a href="/home/zhuce">
-                                        <li class="login_top"><i class="sign"> </i><span>註冊</span></li>
-                                    </a>
+                                	<a href="/home/login">
+                                		<li class="login_top"><i class="sign"> </i><span>登录</span></li>
+                                	</a>
+									<a href="/home/zhuce">
+										<li class="login_bottom"><i class="register"> </i><span>注册</span></li>
+									</a>
                                 </ul>
                                 <div class="clearfix"></div>
                             </div>
@@ -81,19 +84,6 @@
             <input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
             <input type="submit" value="搜索">
         </div>
-        @if(Session::has('success'))
-        <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-            <div class="dashboard-stat green">
-                <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:yellowgreen;">{{Session::get('success')}} </div>
-            </div>
-        </div>
-        @endif @if(Session::has('error'))
-        <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-            <div class="dashboard-stat red">
-                <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:#f66;">{{Session::get('error')}} </div>
-            </div>
-        </div>
-        @endif
     </div>
     </div>
     </div>
@@ -101,55 +91,25 @@
         <div class="container">
             <div class="Product_top">
                 <div class="row content">
-                    <div class="col-md-3">
-                        <div class="category_box">
-                            <h3 class="cate_head">精品推荐</h3>
-                            <ul class="category">
-                                <li><a href="#"><img src="/home/images/p1.jpg" width="100px" height="50px"></a></li>
-                                <li><a href="#"><img src="/home/images/p2.jpg" width="100px" height="50px"></a></li>
-                                <li><a href="#"><img src="/home/images/p3.jpg" width="100px" height="50px"></a></li>
-                                <li><a href="#"><img src="/home/images/p4.jpg" width="100px" height="50px"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="breadcrumb">
-                            <a href="#">首页</a> &gt;&gt; <span class="last">登录</span>
-                        </div>
-                        <center>
-                            <div class="contact-form">
-                                <form method="post" action="/home/dianpus">
-                                    <div>
-                                        <span><label>用户名:</label></span>
-                                        <span><input name="user_name" type="text" class="textbox" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
-                                    </div>
-                                    <div>
-                                        <span><label>密码:</label></span>
-                                        <span><input name="user_password" type="password" class="textbox" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
-                                    </div>
-                                    <div>
-                                        {{csrf_field()}}
-                                        <span><input type="submit" value="登录"></span>
-                                    </div>
-                                    <br>
-                                    <div>
-                                        <p style="font-size:14px;">其他登录方式:
-                                            <ul class="footer_social">
-                                                <li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http">
-				 					<img src="/home/images/QQ.png"/>
-				 					</a>
-                                                </li>
-                                                <li><a href="http://service.weibo.com/share/share.php">
-				 					<img src="/home/images/weibo.png"/>
-				 					</a>
-                                                </li>
-                                                <div class="clearfix"></div>
-                                            </ul>
-                                    </div>
-                                    </p>
-                                </form>
-                            </div>
-                        </center>
+                    <div>
+                    	<p>
+                    		<h3>吃了么网上订餐平台服务协议</h3>
+                    		<h6>吃了么网上订餐平台依据以下条件和条款为您提供所享有的服务,请仔细阅读并遵守.</h6>
+                    		<h4>一.总则</h4>
+                    		请您审慎阅读并选择同意或不同意本协议，除非您接受本协议所有条款，否则您无权使用本协议项下相关服务.您的申请、使用、帐号获取和登录等行为表明您自愿接受本协议的全部内容并受其约束，不得以任何理由包括但不限于未能认真阅读本协议等作为纠纷抗辩理由.
+                    		<br>
+                    		<h4>二.定义</h4>
+                    		吃了么平台：是搭建、提供及维护网上订餐服务信息发布的平台，用户和商户通过吃了么平台对订餐及外卖服务达成合意.
+                    		<br>
+                    		<h4>三.吃了么权利与义务</h4>
+                    		1.&nbsp; 吃了么为商户在消费群体中做相关宣传介绍并进行相关推荐，以提升商户的知名度.商户同意授权吃了么使用其品牌、LOGO、名称、商标等知识产权.<br>
+							2.&nbsp; 吃了么有权对商户拟在吃了么发布的内容、信息进行审核，必要时可删改.吃了么有权对不符合法律法规、政策规定的内容或任何侵犯第三方合法权益的内容予以删改或拒绝发布，但甲乙双方确认，吃了么的前述审核、删改不为吃了么设置任何义务，也不免除商户根据本协议应承担的责任.<br>
+							3.&nbsp; 如任何第三方向吃了么投诉，吃了么经核实后，有权要求商户配合解决该投诉.如出现不符合法律法规、政策规定或侵犯第三方合法权益的内容的，吃了么有权在不通知商户的情况下做下线处理、立即停止为其提供网络交易平台服务、冻结商户账户等.<br>
+							4.&nbsp; 商户店铺内所售品类如有违反吃了么平台经营范围的相关规定或有向消费者私自售卖违禁品的行为，吃了么平台有权按照相关规定对商户进行处罚，并举报至相关行政主管部门.<br>
+							5.&nbsp; 吃了么用户退订情形，吃了么应在收到退订申请后告知商户取消对应外卖订餐项目.商户应根据吃了么通知做相应的调整.<br>
+							6.&nbsp; 如商户违反本协议第三条项下约定的义务，吃了么有权随时停止提供服务，并操作商户商品信息下线.<br>
+							7.&nbsp; 本协议项下服务终止时，吃了么有权删除吃了么网上订餐上的商户已发布的外卖商品信息，且有权拒绝向商户提供相关信息；吃了么有权保存商户资质信息、商品信息、交易记录等相关资料.
+                    	</p>
                     </div>
                 </div>
             </div>

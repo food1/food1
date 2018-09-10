@@ -17,4 +17,9 @@ class QdianpuController extends Controller
     {
         return view('home.dianpus.xiangqing');
     }
+
+     public function guize()
+    {
+        return view('home.dianpus.guize');
+    }
 }
