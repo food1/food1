@@ -10,7 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// 
 //前台首页
 Route::get('/','HomeController@index');
 //前台店铺
@@ -19,29 +22,29 @@ Route::get('/dianpus','QdianpuController@index');
 Route::get('/dianpus/cai','QdianpuController@cai');
 //前台店铺详情
 Route::get('/dianpus/xiangqing','QdianpuController@xiangqing');
-//进入购物车
-Route::get('/dianpus/car', 'QdianpuController@car');
-//进入我的订单
-Route::get('/dianpus/order', 'QdianpuController@order');
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
-
 //登陆页面
 Route::get('/home/login', 'HomeController@login');
 //登陆操作
 Route::post('/home/dianpus', 'HomeController@dologin');
-//退出登录
-Route::get('/home/logout', 'HomeController@logout');
 //注册页面
 Route::get('/home/zhuce', 'HomeController@zhuce');
 //注册操作
 Route::post('/home/login', 'HomeController@dozhuce');
+//规则中心
+Route::get('/dianpus/guize','QdianpuController@guize');
 
 
-
+Route::group(['middleware'=>'home'],function(){
+//个人中心
+Route::get('/person','PersonController@index');
+//进入购物车
+Route::get('/dianpus/car', 'QdianpuController@car');
+//进入我的订单
+Route::get('/dianpus/order', 'QdianpuController@order');
+//退出登录
+Route::get('/home/logout', 'HomeController@logout');
+});
+//----------------------------------------------------------------------
 
 
 
@@ -63,5 +66,14 @@ Route::resource('clearing', 'ClearingController');
 Route::resource('order', 'OrderController');
 //友情链接
 Route::resource('link', 'LinkController');
+
+
+// 店铺_餐品
+Route::get('/model', 'DBController@model');
+
+// 店铺_分类
+Route::get('/cd', 'DBController@cd');
+
+
 // 网站设置
 // Route::get('/wzsz', 'WzszController');

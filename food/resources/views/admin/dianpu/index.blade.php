@@ -82,6 +82,7 @@ $(document).ready(function(){
     	<tr>
         <th><input name="" type="checkbox" value="" checked="checked"/></th>
         <th>ID<i class="sort"></i></th>
+        <th>所属分类</th>
         <th>店铺名称</th>
         <th>店铺描述</th>
         <th>小店图片</th>
@@ -95,6 +96,7 @@ $(document).ready(function(){
         <tr>
         <td><input name="" type="checkbox" value=""/></td>
         <td>{{$v['id']}}</td>
+         
         <td>{{$v['dianpu_name']}}</td>
         <td>{{$v['dianpu_intro']}}</td>
         <td><img src="{{$v['dianpu_img']}}" width="50" height="50"></td>

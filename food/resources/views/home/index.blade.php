@@ -26,7 +26,6 @@
 	<link rel="stylesheet" href="/home/sass/css/flexslider.css">
 	<link rel="stylesheet" href="/home/sass/css/bootstrap.css">
 	<link rel="stylesheet" href="/home/sass/css/style.css">
-	<!-- Modernizr JS -->
 	<script src="/home/sass/js/modernizr-2.6.2.min.js"></script>
 	</head>
 	<body>
@@ -41,7 +40,6 @@
 								<div id="city_china">
 								<h1>吃了么</h1>
 								<br>
-				
 								<!-- 城市三级联动 -->
 								<form action="/dianpus">
 								<div class="form-group">
@@ -62,7 +60,6 @@
 								    </select>
 								  </div>
 								</div>
-								
 								<a href="/dianpus"><button class="btn-stress">搜 索</button></a>
          						</form>
 						       <!-- 城市三级联动 -->
@@ -75,7 +72,7 @@
 						<li style="background-image: url(/home/sass/images/slide_2.jpg);" data-stellar-background-ratio="0.5"></li>
 						<li style="background-image: url(/home/sass/images/slide_3.jpg);" data-stellar-background-ratio="0.5"></li>
 					</ul>
-			</div>
+				</div>
 			<div style="width:100%;height:130px;background-color:#ddd;">
 				<p style="text-align:center;font-family:'叶根友毛笔行书2.0版';">
 					<a href="" style="color:#666;">用户帮助</a>|
@@ -84,33 +81,29 @@
 					<a href="" style="color:#666;">官方微信</a>|
 					<a href="" style="color:#666;">官方微博</a>
 				</p>
-				<p style="text-align:center;font-family:'叶根友毛笔行书2.0版';">所有方:内蒙F4组 | 北京市昌平区兄弟连</p>
+				<p style="text-align:center;font-family:'叶根友毛笔行书2.0版';">
+				所有方:内蒙F4组 | 北京市昌平区兄弟连</p>
 			</div>
 		</div>
 	</div>
 	<script src="/home/sass/js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
 	<script src="/home/sass/js/bootstrap.min.js"></script>
-	<!-- Bootstrap DateTimePicker -->
 	<script src="/home/sass/js/moment.js"></script>
 	<script src="/home/sass/js/bootstrap-datetimepicker.min.js"></script>
-	<!-- Waypoints -->
 	<script src="/home/sass/js/jquery.waypoints.min.js"></script>
-	<!-- Stellar Parallax -->
 	<script src="/home/sass/js/jquery.stellar.min.js"></script>
-	<!-- Flexslider -->
 	<script src="/home/sass/js/jquery.flexslider-min.js"></script>
 	<script src="/home/js/adress.min.js"></script>
 	<script>
 		$(function () {
 	       $('#date').datetimepicker();
 	   });
-	</script>
-	<script src="/home/sass/js/main.js"></script>
+</script>
+<script src="/home/sass/js/main.js"></script>
 </body>
 </html>
 <script>	
-$(function () {
+	$(function () {
         var html = "";
         $("#input_city").append(html); $("#input_area").append(html);
         $.each(pdata,function(idx,item){
@@ -143,5 +136,5 @@ $(function () {
             });
             $("#input_area").append(html);
         });
-});
+	});
 </script>	    

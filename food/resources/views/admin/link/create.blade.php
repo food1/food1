@@ -27,10 +27,12 @@
                     <label>地址</label>
                     <input name="link_url" type="text" class="dfinput" />
                 </li>
+                <br>
                 <li>
                     <label>头像</label>
-                    <input name="link_img" type="file" class="dfinput" />
+                    <input name="link_img" type="file" />
                 </li>
+                <br>
                 {{csrf_field()}}
                 <li>
                     <label>&nbsp;</label>

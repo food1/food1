@@ -26,6 +26,7 @@ class QdianpuController extends Controller
         return view('home.dianpus.xiangqing');
     }
 
+
     //购物车页面
      public function car()
     {
@@ -37,4 +38,11 @@ class QdianpuController extends Controller
     {
         return view('home.dianpus.order');
     }
+    
+     public function guize()
+    {
+        return view('home.dianpus.guize');
+
+    }
+    
 }

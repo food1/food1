@@ -30,8 +30,7 @@ $(document).ready(function(){
     <li><a href="#">用户列表</a></li>
     </ul>
     </div>
-    <span>用户管理</span>
-    </div>
+    <div class="formtitle"><span>用户管理</span></div> 
     @if(Session::has('success'))
             <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
                 <div style="background: blue" green">
@@ -58,7 +57,6 @@ $(document).ready(function(){
                 </span>添加
             </a>
             </li>
-        <li class="click"><span><a href="/user/create"><img src="/admingg/images/t01.png" /></span>添加</a></li>
         </ul>
         <ul class="toolbar1">
             <li><span><img src="/admingg/images/t05.png" /></span>设置</li>
