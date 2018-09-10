@@ -38,6 +38,7 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         //
+        
     }
 
     /**
@@ -130,13 +131,13 @@ class HomeController extends Controller
     public function dozhuce(Request $request)
     {
          
+    
         $user = new User;
 
         $user -> user_name = $request->user_name;
         $user -> user_password = Hash::make($request->user_password);
         $user -> user_phone = $request->user_phone;
         $user -> user_adress = $request->user_adress;
-        
         if ($request->hasFile('user_img')) {
             $user->user_img = '/'.$request->user_img->store('uploads/'.date('Ymd'));
         }
