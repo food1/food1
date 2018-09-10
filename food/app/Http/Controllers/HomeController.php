@@ -141,9 +141,11 @@ class HomeController extends Controller
             $user->user_img = '/'.$request->user_img->store('uploads/'.date('Ymd'));
         }
         if($user -> save()){
-            return redirect('/home/login')->with('success', '添加成功');
+            return redirect('/home/login')->with('success', '注册成功');
         }else{
-            return back()->with('error','添加失败');
+            return back()->with('error','注册失败');
         } 
     }
+
+   
 }

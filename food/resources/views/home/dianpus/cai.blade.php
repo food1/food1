@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>吃了么&nbsp; 歡迎您~ </title>
+<title>吃了么-小店美食</title>
 <link href="/home/css/bootstrap.css" rel='stylesheet' type='text/css' />
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/home/js/jquery.min.js"></script>
@@ -45,7 +45,7 @@
 		<div class="header_bottom">
 		  <div class="header_nav">
       		<div class="logo">
-				<a href="/dianpus"><img src="/home/images/logo.png" alt=""/><br></a>
+				<a href="index.html"><img src="/home/images/logo.png" alt=""/><br></a>
 			 </div>
 			 <nav class="navbar navbar-default menu" role="navigation">
 			 	<h3 class="nav_right">
@@ -69,7 +69,7 @@
 			      	<li class="active"><a href="/dianpus">首页</a></li>
 			        <li><a href="fruits.html">关于我们</a></li>
 			        <li><a href="products.html">今日推荐</a></li>
-			        <li><a href="/dianpus/order">我的订单</a></li>
+			        <li><a href="store.html">我的订单</a></li>
 			        <li><a href="club.html">反馈留言</a></li>
 			        <li><a href="contact.html">在线客服</a></li>
 		          </ul>
@@ -104,155 +104,23 @@
 	</div>
     <div class="main">
 		<div class="container" style="width: 80%">
-			<!--图片轮播-->
-			<style type="text/css">
-		   		#myCarousel{
-		   			height: 300px;
-		   			margin-top: 10px;
-		   			overflow:hidden;
-		   		}
-		   	</style>
-		   <div class="banner">
-			 <div id="myCarousel" class="carousel slide">
-			    <!-- 轮播（Carousel）指标 -->
-			    <ol class="carousel-indicators">
-			        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			        <li data-target="#myCarousel" data-slide-to="1"></li>
-			        <li data-target="#myCarousel" data-slide-to="2"></li>
-			        <li data-target="#myCarousel" data-slide-to="3"></li>
-			        <li data-target="#myCarousel" data-slide-to="4"></li>
-			        <li data-target="#myCarousel" data-slide-to="5"></li>
-			        <li data-target="#myCarousel" data-slide-to="6"></li>
-			    </ol>   
-			    <!-- 轮播（Carousel）项目 -->
-			    <div class="carousel-inner">
-			        <div class="item active">
-			            <img src="home/images/f1.jpg" alt="0">
-			        </div>
-			        <div class="item">
-			            <img src="home/images/banner.jpg" alt="1">
-			        </div>
-			        <div class="item">
-			            <img src="home/images/s2.jpg" alt="2">
-			        </div>
-			        <div class="item">
-			            <img src="home/images/f2.jpg" alt="3">
-			        </div>
-			        <div class="item">
-			            <img src="home/images/f3.jpg" alt="4">
-			        </div>
-			        <div class="item">
-			            <img src="home/images/p7.jpg" alt="5">
-			        </div>
-			        <div class="item">
-			            <img src="home/images/p6.jpg" alt="6">
-			        </div>
-			    </div>
-			    <!-- 轮播（Carousel）导航 -->
-			    <a class="carousel-control left" href="#myCarousel" data-slide="prev"></a>
-			    <a class="carousel-control right" href="#myCarousel" data-slide="next"></a>
-			</div>	
-		   </div>
-		   <!--图片轮播-->
 		   <div class="row content">
-		   	<div class="col-md-3 content_top">
-		   	   	<div class="category_box">
-		   	  		<h3 class="cate_head">店铺分类</h3>
-		   	     	<ul class="category">
-				   	  	<li><a href="#">美食</a></li>
-				   	  	<li><a href="#">快餐便当</a></li>
-				   	  	<li><a href="#">特色菜系</a></li>
-				   	  	<li><a href="#">异国料理</a></li>
-				   	  	<li><a href="#">小吃夜宵</a></li>
-				   	  	<li><a href="#">甜品饮品</a></li>
-				   	  	<li><a href="#">果蔬生鲜</a></li>
-				   	  	<li><a href="#">商店超市</a></li>
-				   	  	<li><a href="#">早餐</a></li>
-				   	  	<li><a href="#">午餐</a></li>
-				   	  	<li><a href="#">下午茶</a></li>
-				   	  	<li><a href="#">晚餐</a></li>
-				   	  	<li><a href="#">夜宵</a></li>
-		   	     	</ul>
-		   	   </div>
-		   	   <ul class="product_reviews">
-		   	   	<h3><i class="arrow"> </i><span>用户评论</span></h3>
-		   	   	<li>
-		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/pic1.jpg" class="img-responsive" alt=""/></li>
-		   	   			<li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
-		   	   			<div class="clearfix"> </div>
-		   	   		</ul>
-		   	   	</li>
-		   	   	<li>
-		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/pic2.jpg" class="img-responsive" alt=""/></li>
-		   	   			<li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
-		   	   			<div class="clearfix"> </div>
-		   	   		</ul>
-		   	   	</li>
-		   	   	<li>
-		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/pic3.jpg" class="img-responsive" alt=""/></li>
-		   	   			<li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
-		   	   			<div class="clearfix"> </div>
-		   	   		</ul>
-		   	   	</li>
-		   	    <div class="but">
-			       <a href="#">更多评论<i class="but_arrow"> </i></a>
-			    </div>
-		   	   	</ul>		   	   
-		   	   	<ul class="product_reviews">
-		   	   		<h3><i class="arrow"> </i><span>支付方式</span></h3>	   	   		
-		   	   	</ul>
-		   	   		<div style="float:left;">
-		   	   			<a href=""><img src="/home/images/1.png" style="width:50px;height:50px;"/></a>
-		   	   			<a href=""><img src="/home/images/2.png" style="width:50px;height:50px;"/></a>
-		   	   			<a href="https://auth.alipay.com/login/ant_sso_index.htm?"><img src="/home/images/3.png" style="width:50px;height:50px;"/></a>
-		   	   		</div>	
+		   	<div class="col-md-2 content_top">		   	   
+		   	   
 		   		</div>	
 		   		   		
-		   		<div class="col-md-9">
-		   	   	<ul class="feature">
-		   	   	 	<h3><i class="arrow"> </i><span>今日精选</span></h3>
-		   	   	</ul>
-		   	   	<ul class="feature_grid">
-				 	<li class="grid1"><img src="/home/images/f1.jpg" class="img-responsive" alt=""/>
-				 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed</p>
-				 	<div class="price">Price:
-					  	<span class="actual">$12.00</span>
-					</div>
-				    <div class="but1">
-			          	<a href="">立即购买</a>
-			        </div>
-				 	</li>		   	   	
-				 	<li class="grid1"><img src="/home/images/f2.jpg" class="img-responsive" alt=""/>
-				 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed</p>
-				 	<div class="price">Price:
-					  	<span class="actual">$12.00</span>
-					</div>
-				    <div class="but1">
-			          	<a href="#">立即购买</a>
-			        </div>
-				 	</li>		   	
-				 	<li class="grid2"><img src="/home/images/f3.jpg" class="img-responsive" alt=""/>
-				 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed</p>
-				 	<div class="price">Price:
-					  	<span class="actual">$12.00</span>
-					</div>
-				    <div class="but1">
-			          	<a href="#">立即购买</a>
-			        </div>
-				 	</li>		   	
-				 	<div class="clearfix"> </div>
+		   		<div class="col-md-8">
+		   	   
+				 	
 		   	   	</ul>
 		   	    <ul class="feature">
-		   	   	 	<h3><i class="arrow"> </i><span>热门商铺</span></h3>
+		   	   	 	<h3><i class="arrow"> </i><span>热菜</span></h3>
 		   	   	</ul>
 		   	   	<div class="row content_bottom">
 		   	   		
 
 			   	   	<div class="col-md-3">
-			   	   		<div class="content_box"><a href="/dianpus/cai">
+			   	   		<div class="content_box"><a href="/dianpus/xiangqing">
 			   	   	  	<div class="view view-fifth">
 			   	   	     	<img src="/home/images/p1.jpg" class="img-responsive" alt=""/>
 				   	   	<div class="content_box-grid">
@@ -261,7 +129,7 @@
 						    <span class="actual">¥12.00</span>
 						</div>
 						<ul class="product_but">
-						  	<li class="but3">进店瞧瞧</li>
+						  	<li class="but3">加入购物车</li>
 						  	<li class="like"><span>120</span><i class="like1"> </i></li>
 						<div class="clearfix"> </div>
 						</ul>

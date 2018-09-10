@@ -54,7 +54,7 @@
 				<h1 style="font-family:'华文彩云';color:#aaa;font-size:40px;">吃了么</h1>
 			</ul>
 			<ul class="account">
-				<li><a href="account.html">我的账户</a></li>
+				<li><a href="account.html">个人中心</a></li>
 			</ul>
 			<ul class="shopping_cart">
 			   <a href="#"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
@@ -85,10 +85,10 @@
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    	<ul class="nav navbar-nav menu1">
-				      	<li class="active"><a href="/">首页</a></li>
+				      	<li class="active"><a href="/dianpus">首页</a></li>
 				        <li><a href="fruits.html">关于我们</a></li>
 				        <li><a href="products.html">今日推荐</a></li>
-				        <li><a href="store.html">我的订单</a></li>
+				        <li><a href="#">我的订单</a></li>
 				        <li><a href="club.html">反馈留言</a></li>
 				        <li><a href="contact.html">在线客服</a></li>
 		        	</ul>
@@ -113,65 +113,7 @@
 		<div class="container">
 		  <div class="single">
 		   <div class="row content">
-		   	<div class="col-md-3">
-		   	   <div class="category_box">
-		   	  		<h3 class="cate_head">店铺分类</h3>
-		   	     	<ul class="category">
-				   	  	<li><a href="#">美食</a></li>
-				   	  	<li><a href="#">快餐便当</a></li>
-				   	  	<li><a href="#">特色菜系</a></li>
-				   	  	<li><a href="#">异国料理</a></li>
-				   	  	<li><a href="#">小吃夜宵</a></li>
-				   	  	<li><a href="#">甜品饮品</a></li>
-				   	  	<li><a href="#">果蔬生鲜</a></li>
-				   	  	<li><a href="#">商店超市</a></li>
-				   	  	<li><a href="#">早餐</a></li>
-				   	  	<li><a href="#">午餐</a></li>
-				   	  	<li><a href="#">下午茶</a></li>
-				   	  	<li><a href="#">晚餐</a></li>
-				   	  	<li><a href="#">夜宵</a></li>
-		   	     	</ul>
-		   	   </div>
-		   	   <ul class="product_reviews">
-		   	   	<h3><i class="arrow"> </i><span>用户评论</span></h3>
-		   	   	<li>
-		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/pic1.jpg" class="img-responsive" alt=""/></li>
-		   	   			<li class="review1_desc"><h3><a href="#">aaaaaa</a></h3><p>Wed, June 2014</p></li>
-		   	   			<div class="clearfix"> </div>
-		   	   		</ul>
-		   	   	</li>
-		   	   	<li>
-		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/pic2.jpg" class="img-responsive" alt=""/></li>
-		   	   			<li class="review1_desc"><h3><a href="#">bbbbbb</a></h3><p>Wed, June 2014</p></li>
-		   	   			<div class="clearfix"> </div>
-		   	   		</ul>
-		   	   	</li>
-		   	   	<li>
-		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/pic3.jpg" class="img-responsive" alt=""/></li>
-		   	   			<li class="review1_desc"><h3><a href="#">cccccc</a></h3><p>Wed, June 2014</p></li>
-		   	   			<div class="clearfix"> </div>
-		   	   		</ul>
-		   	   	</li>
-
-		   	   	
-		   	    <div class="but">
-			       <a href="#">更多评论<i class="but_arrow"> </i></a>
-			    </div>
-		   	    </ul>
-		   	   
-		   	    <ul class="product_reviews">
-		   	   	   <h3><i class="arrow"> </i><span>支付方式</span></h3>
-		   	   	   <img src="/home/images/payment.png" class="img-responsive" alt=""/>
-		   	    </ul>
-		   	    <div style="float:left;">
-	   	   			<a href=""><img src="/home/images/1.png" style="width:50px;height:50px;"/></a>
-	   	   			<a href=""><img src="/home/images/2.png" style="width:50px;height:50px;"/></a>
-	   	   			<a href=""><img src="/home/images/3.png" style="width:50px;height:50px;"/></a>
-	   	   		</div>
-		   	</div>
+		   
 		   	<div class="col-md-9">
 		   	   <div class="single_image">
 					     <ul id="etalage">
@@ -240,15 +182,15 @@
 				              </div>
             				</div>
                             <div class="col-xs-12  col-sm-6  col-md-4">
-				              <div class="banners--small  banners--small--social">
+				               <div class="banners--small  banners--small--social">
 				                <a href="#" class="social"><i><img src="/home/images/sina.png" style="width:50px;height:50px;"/></i>
 				                <span class="banners--small--text">分享到<br>新浪微博</span>
 				                <div class="clearfix"> </div>
 				                </a>
-				              </div>
-            			   </div>
-            			
-           </div>
+				               </div>
+            			    </div>	
+           			    </div>
+           	</div>
 		   <div class="clearfix"> </div>
 		   <!----product-rewies---->
 			<div class="product-reviwes">

@@ -15,8 +15,14 @@
 Route::get('/','HomeController@index');
 //前台店铺
 Route::get('/dianpus','QdianpuController@index');
+//菜品展示
+Route::get('/dianpus/cai','QdianpuController@cai');
 //前台店铺详情
 Route::get('/dianpus/xiangqing','QdianpuController@xiangqing');
+//进入购物车
+Route::get('/dianpus/car', 'QdianpuController@car');
+//进入我的订单
+Route::get('/dianpus/order', 'QdianpuController@order');
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -33,6 +39,7 @@ Route::get('/home/logout', 'HomeController@logout');
 Route::get('/home/zhuce', 'HomeController@zhuce');
 //注册操作
 Route::post('/home/login', 'HomeController@dozhuce');
+
 
 
 
