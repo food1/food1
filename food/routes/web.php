@@ -11,6 +11,7 @@
 |
 */
 
+
 //前台首页
 Route::get('/','HomeController@index');
 //前台店铺
@@ -44,7 +45,8 @@ Route::post('/home/zhuce', 'HomeController@dozhuce');
 
 
 
-
+//登录拦截
+Route::group(['middleware'=>'admin'],function(){
 //后台首页
 Route::get('/admin','AdminController@index');
 //用户管理
@@ -65,3 +67,11 @@ Route::resource('order', 'OrderController');
 Route::resource('link', 'LinkController');
 // 网站设置
 // Route::get('/wzsz', 'WzszController');
+// 
+Route::get('/admin/logout','AdminController@logout');
+});
+
+//后台登录页面
+Route::get('/admin/login','AdminController@login');
+//后台登录操作
+Route::post('/admin/login','AdminController@dologin');
