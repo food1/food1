@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cate;
 use App\Dianpu;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class DianpuController extends Controller
      */
      public function index()
     {
-        // return view('/home.dianpu.index');
+        // Cate::with('dianpus')->find(1)->get(); ,'cates'=>$cate
         //读取数据库 获取用户数据
         $dianpus = Dianpu::orderBy('id','desc')
             ->where('dianpu_name','like', '%'.request()->keywords.'%')
@@ -31,8 +32,10 @@ class DianpuController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('/admin.dianpu.create');
+    { 
+        $cates = Cate::all();
+        // dd($cates);
+        return view('/admin.dianpu.create',compact('cates'));
     }
 
     /**
