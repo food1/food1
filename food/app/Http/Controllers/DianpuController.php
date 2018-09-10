@@ -15,19 +15,24 @@ class DianpuController extends Controller
      */
      public function index()
     {
-        // Cate::with('dianpus')->find(1)->get(); ,'cates'=>$cate
+        
+        $cates = Cate::all();
+        // dd($cates);
         //读取数据库 获取用户数据
         $dianpus = Dianpu::orderBy('id','desc')
             ->where('dianpu_name','like', '%'.request()->keywords.'%')
             ->paginate(5);
+
+        
         //解析模板显示用户数据
-        return view('admin.dianpu.index', ['dianpus'=>$dianpus]);
+        return view('admin.dianpu.index', compact('dianpus','cate'));
+        //['dianpus'=>$dianpus,'cates'=>$cates]
 
         //
     }
 
     /**
-     * Show the form for creating a new resource.
+     2* Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -46,15 +51,28 @@ class DianpuController extends Controller
      */
     public function store(Request $request)
     {
+
         // dd($request->all());
+        // $cate = Cate::all();
+        $cate = Cate::all();
         $dianpu = new Dianpu;
+        $dianpu -> cate_id = $request->cate_id;
+        // dd($dianpu);
+        
+
+        
+        
         $dianpu -> dianpu_name = $request->dianpu_name;
         $dianpu -> dianpu_intro =$request->dianpu_intro;
         $dianpu -> dianpu_adress = $request->dianpu_adress;
         
+
+
         if ($request->hasFile('dianpu_img')) {
             $dianpu->dianpu_img = '/'.$request->dianpu_img->store('uploads/'.date('Ymd'));
         }
+
+
         if($dianpu -> save()){
             return redirect('/dianpu')->with('success', '添加成功');
         }else{
@@ -82,9 +100,11 @@ class DianpuController extends Controller
     public function edit($id)
     {
         //获取用户的信息
+        $cates = Cate::all();
         $dianpu = Dianpu::findOrFail($id);
+        // dd($dianpu->cate);
         //解析模板显示数据
-        return view('admin.dianpu.edit', ['dianpu'=>$dianpu]);
+        return view('admin.dianpu.edit', ['dianpu'=>$dianpu, 'cates'=>$cates]);
     }
 
     /**
@@ -97,9 +117,11 @@ class DianpuController extends Controller
     public function update(Request $request, $id)
     {
         //获取用户的信息
+       
         $dianpu = Dianpu::findOrFail($id);
-
+       
         //更新
+        
         $dianpu -> dianpu_name = $request->dianpu_name;
         $dianpu -> dianpu_intro= $request->dianpu_intro;
         $dianpu -> dianpu_adress = $request->dianpu_adress;
