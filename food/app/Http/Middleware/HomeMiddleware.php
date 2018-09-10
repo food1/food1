@@ -15,10 +15,10 @@ class HomeMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(\Session::has('id')){
+       if(\Session::has('id')){
             return $next($request);
         }else{
-            return redirect('/home/login')->with('error','您还没有登陆!!!请登陆...');
+            return redirect('/home/login')->with('error','您还没有登录,请先登录...');
         }
     }
 }

@@ -51,13 +51,6 @@ $(document).ready(function(){
     <div class="rightinfo">
     <div class="tools">
         <ul class="toolbar">
-            <li class="click">
-                <span>           
-                    <a href="/cate/create">
-                    <img src="/admingg/images/t01.png" />    
-                </span>添加
-            </a>
-            </li>
         <li class="click"><span><a href="/cate/create"><img src="/admingg/images/t01.png" /></span>添加</a></li>
         </ul>
         <ul class="toolbar1">

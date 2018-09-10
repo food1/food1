@@ -38,6 +38,7 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         //
+        
     }
 
     /**
@@ -105,6 +106,7 @@ class HomeController extends Controller
         if(Hash::check($request->user_password, $user->user_password)){
             //写入session
             session(['user_name'=>$user->user_name, 'id'=>$user->id]);
+            return redirect('/dianpus')->with('success','登陆成功!');
             return redirect('/dianpus')->with('success','登陆成功');
         }else{
             return back()->with('error','登陆失败!');
@@ -115,7 +117,7 @@ class HomeController extends Controller
     public function logout(Request $request)
     {
         $request->session()->flush();
-        return redirect('/home/login')->with('success','退出成功');
+        return redirect('/home/login')->with('success','退出成功!');
     }
 
 
@@ -128,15 +130,14 @@ class HomeController extends Controller
     //執行註冊
     public function dozhuce(Request $request)
     {
+         
+    
         $user = new User;
 
         $user -> user_name = $request->user_name;
         $user -> user_password = Hash::make($request->user_password);
         $user -> user_phone = $request->user_phone;
         $user -> user_adress = $request->user_adress;
-        
-        //$user -> user_img = $request->user_img;
-        
         if ($request->hasFile('user_img')) {
             $user->user_img = '/'.$request->user_img->store('uploads/'.date('Ymd'));
         }
@@ -144,6 +145,8 @@ class HomeController extends Controller
             return redirect('/home/login')->with('success', '添加成功');
         }else{
             return back()->with('error','添加失败');
-        } 
+        }
     }
+
+   
 }

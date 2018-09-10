@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cate extends Model
 {
+
+    // public function dianpus()
+    // {
+    // 	return $this->hasMany('App\Dianpu');
+    // }
     
     public function dianpus()
     {
@@ -13,4 +18,5 @@ class Cate extends Model
     }
 
    	
+
 }

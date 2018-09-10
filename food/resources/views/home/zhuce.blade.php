@@ -24,14 +24,10 @@
 			<ul class="social">
 				<h1 style="font-family:'华文彩云';color:#aaa;font-size:40px;">吃了么</h1>
 			</ul>
-			<ul class="account">
-				<li><a>我的账户</a></li>
-			</ul>
-			<ul class="shopping_cart">
-			   <a><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
-			   <a><li class="shop_right"><span>$0.00</span></li></a>
-			   <div class="clearfix"> </div>
-			</ul>
+                <ul class="phone">
+                    <li class="phone_right">吃了么24小时竭诚为您服务!</li>
+                    <div class="clearfix"></div>
+                </ul>
 			<div class="clearfix"></div>
 		</div>
 		<div class="header_bottom">
@@ -70,7 +66,7 @@
 			</div>
 		</div>
 	</nav>
-        <div class="clearfix"></div>
+<div class="clearfix"></div>
 </div>
     <div class="search">
 		<input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
@@ -79,7 +75,7 @@
 </div>  
 </div>
 </div>
- 		<!-- 閃存 -->
+ 		<!-- 闪存 -->
 		@if(Session::has('success'))
 		    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
 		    <div class="dashboard-stat green">
@@ -94,14 +90,29 @@
 		    </div>
 		    </div>
 		@endif
-		 <!-- 閃存 -->
-    <div class="main">
+		<!-- 闪存 -->
+<div class="main">
 		<div class="container">
 		  	<div class="Product_top">
-		  		<center>
-		  	  		<form action="/home/login" method="post" id="myform" name="myform" enctype="multipart/form-data"> 
-				 		<div class="register-top-grid">
-						<div>
+		  		    <div class="col-md-3">
+                        <div class="category_box">
+                            <h3 class="cate_head">精品推荐</h3>
+                            <ul class="category">
+                                <li><a href="#"><img src="/home/images/p1.jpg" width="100px" height="50px"></a></li>
+                                <li><a href="#"><img src="/home/images/p2.jpg" width="100px" height="50px"></a></li>
+                                <li><a href="#"><img src="/home/images/p3.jpg" width="100px" height="50px"></a></li>
+                                <li><a href="#"><img src="/home/images/p4.jpg" width="100px" height="50px"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+		  		    <div class="col-md-9">
+                        <div class="breadcrumb">
+                            <a href="#">首页</a> &gt;&gt; <span class="last">注册</span>
+                        </div>
+                        <center>
+                            <div class="contact-form">
+                                <form method="post" action="/home/login" enctype="multipart/form-data">
+                                    <div>
 						    <span><label>用户名:</label></span>
 						    <span><input name="user_name" type="text" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
 						</div>
@@ -121,20 +132,13 @@
 						    <span><label>头像:</label></span>
 						    <input name="user_img" type="file" style="width:300px;height:30px;border:solid 1px #aaa;">
 						</div>
-						<div style="float:left;">
-							<p style="font-size:14px;">其他注册方式:</p>
-		   	   				<a href=""><img src="/home/images/1.png" style="width:60px;height:50px;"/></a>
-		   	   				&nbsp; &nbsp; &nbsp; <a href=""><img src="/home/images/2.png" style="width:60px;height:50px;"/></a>
-		   	   				&nbsp; &nbsp; &nbsp; <a href=""><img src="/home/images/3.png" style="width:60px;height:50px;"/></a>
-		   	   			</div>	
-					</div>
-				  <div class="clearfix"> </div>
-					<div class="register-but"> 
-					   	{{csrf_field()}}
-						 <input type="submit" value="注册">
-						 <div class="clearfix"> </div>
-					</form>
-			</center>
+                                    <div>
+                                        {{csrf_field()}}
+                                        <span><input type="submit" value="注册"></span>
+                                    </div>
+                                </form>
+                            </div>
+                        </center>
 			</div>
 		</div>
 	</div>

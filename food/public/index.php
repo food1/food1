@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 
 /**
  * Laravel - A PHP Framework For Web Artisans
