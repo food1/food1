@@ -111,7 +111,7 @@
                         </div>
                         <center>
                             <div class="contact-form">
-                                <form method="post" action="/home/login">
+                                <form method="post" action="/home/login" enctype="multipart/form-data">
                                     <div>
 						    <span><label>用户名:</label></span>
 						    <span><input name="user_name" type="text" style="width:300px;height:30px;border:solid 1px #aaa;"></span>

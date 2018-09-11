@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class QdianpuController extends Controller
@@ -10,7 +11,8 @@ class QdianpuController extends Controller
     //前台控制器
     public function index()
     {
-        return view('home.dianpus.index');
+        $users = User::find(\Session::get('id'));
+        return view('home.dianpus.index',compact('users'));
     }
 
     public function xiangqing()

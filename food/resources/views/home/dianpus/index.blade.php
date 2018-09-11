@@ -62,14 +62,19 @@
 		  <div class="header_top">
 			<ul class="phone">
 				<li class="phone_left"><i class="mobile"> </i><span>15149174619</span></li>
-				<li class="phone_right"> 50元以上的餐品我们将免费为您配送哦!</li>
+				<li class="phone_right"> 50元以上餐品将免费为您配送!</li>
 				<div class="clearfix"></div>
 			</ul>
 			<ul class="social">
 				 <h1 style="font-family:'华文彩云';color:#aaa;font-size:40px;">吃了么</h1>
 			</ul>
 			<ul class="account">
-				<li><a href="/person">个人中心</a></li>
+				<li style="color:#aaa;font-size:16px;">
+					<a href="/person">个人中心</a>&nbsp;|
+					<a href="#">用户:{{$users->user_name}}</a>
+					&nbsp; <img src="{{$users->user_img}}" width="30px" height="30px">
+				</li>
+				
 			</ul>
 			<ul class="shopping_cart">
 			   <a href="#"><li class="shop_left"><i class="cart" id="but1"></i><span>购物车</span></li></a>
@@ -77,6 +82,7 @@
 			   <div class="clearfix"> 
 			   </div>
 			</ul>
+			
 			<div class="clearfix"></div>
 		</div>
 		<div class="header_bottom">
@@ -93,7 +99,7 @@
 			  <div class="container-fluid">
 			    <div class="navbar-header">
 			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			        <span class="sr-only">Toggle navigation</span>
+			        <span class="sr-only"></span>
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
