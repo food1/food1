@@ -58,12 +58,11 @@
                             </div>
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav menu1">
-                                    <li class="active"><a href="/dianpus">首页</a></li>
-                                    <li><a>关于我们</a></li>
-                                    <li><a>今日推荐</a></li>
-                                    <li><a>我的订单</a></li>
-                                    <li><a>反馈留言</a></li>
-                                    <li><a>在线客服</a></li>
+                                    <li class="active"><a href="/dianpus">首页</a></li>                 
+                                    <li><a href="products.html">今日推荐</a></li>
+                                    <li><a href="/dianpus/order">我的订单</a></li>
+                                    <li><a href="/dianpus/guize">规则中心</a></li>
+                                    <li><a href="contact.html">我的客服</a></li>
                                 </ul>
                                 <ul class="login">
                                     <a href="/home/zhuce">
@@ -81,13 +80,7 @@
             <input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
             <input type="submit" value="搜索">
         </div>
-        @if(Session::has('success'))
-        <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-            <div class="dashboard-stat green">
-                <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:yellowgreen;">{{Session::get('success')}} </div>
-            </div>
-        </div>
-        @endif @if(Session::has('error'))
+        @if(Session::has('error'))
         <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
             <div class="dashboard-stat red">
                 <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:#f66;">{{Session::get('error')}} </div>

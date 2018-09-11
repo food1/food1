@@ -13,6 +13,19 @@
     <form action="/dianpu/{{$dianpu['id']}}" method="post" id="myform" name="myform" enctype="multipart/form-data">
     <div class="formtitle"><span>基本信息</span></div>   
     <ul class="forminfo">
+    <li>
+        <label>选择所属分类:</label>
+        <select class="dfinput" name="cate_id" style="width: 347px;height: 34px; font-size: 14px;">
+            @foreach($cates as $v)
+                <option value="{{$v['id']}}" 
+                @if($dianpu['cate_id'] == $v['id'])
+                    selected
+                @endif 
+
+                 >{{$v['cate_name']}}</option>
+            @endforeach
+        </select>
+    </li>
     <li><label>店铺名称</label><input name="dianpu_name" type="text" class="dfinput" value="{{$dianpu['dianpu_name']}}" /></li>
     <li><label>店铺描述</label><input name="dianpu_intro" type="text" class="dfinput" value="{{$dianpu['dianpu_intro']}}"/></li>
     <br>

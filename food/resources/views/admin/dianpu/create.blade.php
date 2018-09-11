@@ -21,9 +21,9 @@
             <ul class="forminfo">
                 <li>
                     <label>选择所属分类:</label>
-                    <select class="dfinput" style="width: 347px;height: 34px; font-size: 14px;">
+                    <select class="dfinput" name="cate_id" style="width: 347px;height: 34px; font-size: 14px;">
                         @foreach($cates as $v)
-                            <option>{{$v['cate_name']}}</option>
+                            <option value="{{$v['id']}}">{{$v['cate_name']}}</option>
                         @endforeach
                     </select>
                 </li>

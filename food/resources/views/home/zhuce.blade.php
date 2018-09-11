@@ -52,12 +52,11 @@
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    	<ul class="nav navbar-nav menu1">
-				      	<li class="active"><a href="/dianpus">首页</a></li>
-				        <li><a>关于我们</a></li>
-				        <li><a>今日推荐</a></li>
-				        <li><a>我的订单</a></li>
-				        <li><a>反馈留言</a></li>
-				        <li><a>在线客服</a></li>
+				      	<li class="active"><a href="/dianpus">首页</a></li>			        
+			        	<li><a href="products.html">今日推荐</a></li>
+			        	<li><a href="/dianpus/order">我的订单</a></li>
+			        	<li><a href="/dianpus/guize">规则中心</a></li>
+			        	<li><a href="contact.html">我的客服</a></li>
 		        	</ul>
 		          	<ul class="login">
 		          		<a href="/home/login"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>

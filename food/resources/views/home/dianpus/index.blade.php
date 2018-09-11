@@ -69,16 +69,21 @@
 				 <h1 style="font-family:'华文彩云';color:#aaa;font-size:40px;">吃了么</h1>
 			</ul>
 			<ul class="account">
+			@if(Session::has('id') == null)				
+			@endif
+			@if(Session::has('id') != null)
 				<li style="color:#aaa;font-size:16px;">
-					<a href="/person">个人中心</a>&nbsp;|
-					<a href="#">用户:{{$users->user_name}}</a>
-					&nbsp; <img src="{{$users->user_img}}" width="30px" height="30px">
+				<a href="/person">个人中心</a>&nbsp;|
+				<a href="#">用户:{{$users['user_name']}}</a>
+				&nbsp; <img src="{{$users['user_img']}}" width="30px" height="30px" />
 				</li>
-				
+			@endif
 			</ul>
 			<ul class="shopping_cart">
-			   <a href="#"><li class="shop_left"><i class="cart" id="but1"></i><span>购物车</span></li></a>
-			   <a href="#"><li class="shop_right"><span>¥0.00</span></li></a>
+			   <a href="/dianpus/car"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
+			   <a href="#"><li class="shop_right"><span>$0.00</span></li></a>
+			   <div class="clearfix"> </div>
+			</ul>
 			   <div class="clearfix"> 
 			   </div>
 			</ul>
@@ -88,7 +93,7 @@
 		<div class="header_bottom">
 		  <div class="header_nav">
       		<div class="logo">
-				<a href="index.html"><img src="/home/images/logo.png" alt=""/><br></a>
+				<a href="/dianpus"><img src="/home/images/logo.png" alt=""/><br></a>
 			 </div>
 			 <nav class="navbar navbar-default menu" role="navigation">
 			 	<h3 class="nav_right">
@@ -107,16 +112,20 @@
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav menu1">
-			      	<li class="active"><a href="index.html">首页</a></li>			        
+			      	<li class="active"><a href="/dianpus">首页</a></li>			        
 			        <li><a href="products.html">今日推荐</a></li>
-			        <li><a href="store.html">我的订单</a></li>
+			        <li><a href="/dianpus/order">我的订单</a></li>
 			        <li><a href="/dianpus/guize">规则中心</a></li>
 			        <li><a href="contact.html">我的客服</a></li>
 		          </ul>
 		          <ul class="login">
-<a href="/home/logout"><li class="login_top"><i class="sign"> </i><span>退出登录</span></li></a>
-<a href="/home/login"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
-<a href="/home/zhuce"><li class="login_bottom"><i class="register"> </i><span>注册</span></li></a>
+				@if(Session::has('id') == null)
+					<a href="/home/login"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
+					<a href="/home/zhuce"><li class="login_bottom"><i class="register"> </i><span>注册</span></li></a>
+				@endif
+				@if(Session::has('id') != null)
+					<a href="/home/logout"><li class="login_top"><i class="sign"> </i><span>退出登录</span></li></a>
+				@endif
 		          </ul>
 			      <div class="clearfix"></div>
 			    </div>
@@ -131,13 +140,6 @@
 		 </div>  
 		</div>
 	</div>
-		@if(Session::has('success'))
-		    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-		    <div class="dashboard-stat green">
-		    <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:yellowgreen;">{{Session::get('success')}} </div>
-		    </div>
-		    </div>
-		@endif
 		@if(Session::has('error'))
 		    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
 		    <div class="dashboard-stat red">
@@ -185,8 +187,8 @@
 				   	  	<li><a href="#">晚餐</a></li>
 				   	  	<li><a href="#">夜宵</a></li>
 		   	     	</ul>
-		   	   </div>
-		   	   <ul class="product_reviews">
+		   	   	</div>
+		   	   	<ul class="product_reviews">
 		   	   	<h3><i class="arrow"> </i><span>用户评论</span></h3>
 		   	   	<li>
 		   	   		<ul class="review1">
@@ -264,7 +266,7 @@
 		   	   		
 
 			   	   	<div class="col-md-3">
-			   	   		<div class="content_box"><a href="/dianpus/xiangqing">
+			   	   		<div class="content_box"><a href="/dianpus/cai">
 			   	   	  	<div class="view view-fifth">
 			   	   	     	<img src="/home/images/p1.jpg" class="img-responsive" alt=""/>
 				   	   	<div class="content_box-grid">
@@ -273,7 +275,7 @@
 						    <span class="actual">¥12.00</span>
 						</div>
 						<ul class="product_but">
-						  	<li class="but3">加入购物车</li>
+						  	<li class="but3">进店瞧瞧</li>
 						  	<li class="like"><span>120</span><i class="like1"> </i></li>
 						<div class="clearfix"> </div>
 						</ul>
@@ -517,6 +519,7 @@
 		   <div class="clearfix"> </div>
 	   </div>
 	</div>
+
 </body>
 </html>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>

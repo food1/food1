@@ -91,12 +91,16 @@ $(document).ready(function(){
         </tr>
         </thead>
         <tbody>
-            @foreach($dianpus as $v)
+             
+            
+        @foreach($dianpus as $v)
 
         <tr>
         <td><input name="" type="checkbox" value=""/></td>
         <td>{{$v['id']}}</td>
-         
+
+        <td> {{$v->cate['cate_name']}} </td>
+
         <td>{{$v['dianpu_name']}}</td>
         <td>{{$v['dianpu_intro']}}</td>
         <td><img src="{{$v['dianpu_img']}}" width="50" height="50"></td>
@@ -105,13 +109,14 @@ $(document).ready(function(){
             <a href="/dianpu/{{$v['id']}}/edit" style="float:left">
                 <div style="color:#aaa;background-color:#ddd;height:25px;line-height:25px;font-size:13px;">编辑</div></a>
                 <form action="/dianpu/{{$v['id']}}" method="post">
-                {{method_field('DELETE')}}
-                {{csrf_field()}}
-                <button href="/dianpu/{{$v['id']}}" style="float:right;height:25px;font-size:14px;color:#aaa;"> 删除</button>
+                    {{method_field('DELETE')}}
+                    {{csrf_field()}}
+                    <button href="/dianpu/{{$v['id']}}" style="float:right;height:25px;font-size:14px;color:#aaa;"> 删除</button>
                 </form>
         </td>
         </tr>
-           @endforeach    
+           @endforeach   
+
         </tbody>
     </table>
     

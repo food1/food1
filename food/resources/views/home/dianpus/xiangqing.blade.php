@@ -37,42 +37,40 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="header_top">
-                <ul class="phone">
-                    <li class="phone_left"><i class="mobile"> </i><span>15149174619</span></li>
-                    <li class="phone_right">50元以上的餐品我们将免费为您配送哦!</li>
-                    <div class="clearfix"></div>
-                </ul>
-                <ul class="social">
-                    <h1 style="font-family:'华文彩云';color:#aaa;font-size:40px;">吃了么</h1>
-                </ul>
-                <ul class="account">
-                    <li><a href="account.html">我的账户</a></li>
-                </ul>
-                <ul class="shopping_cart">
-                    <a href="#">
-                        <li class="shop_left"><i class="cart"> </i><span>购物车</span></li>
-                    </a>
-                    <a href="#">
-                        <li class="shop_right"><span>$0.00</span></li>
-                    </a>
-                    <div class="clearfix"> </div>
-                </ul>
-                <div class="clearfix"></div>
-            </div>
-            <div class="header_bottom">
-                <div class="header_nav">
-                    <div class="logo">
-                        <a href="index.html"><img src="/home/images/logo.png" alt=""/><br></a>
-                    </div>
-                    <nav class="navbar navbar-default menu" role="navigation">
-                        <h3 class="nav_right">
+	<div class="header">
+		<div class="container">
+		  <div class="header_top">
+			<ul class="phone">
+				<li class="phone_left"><i class="mobile"> </i><span>15149174619</span></li>
+				<li class="phone_right">50元以上的餐品我们将免费为您配送哦!</li>
+				<div class="clearfix"></div>
+			</ul>
+			<ul class="social">
+				<h1 style="font-family:'华文彩云';color:#aaa;font-size:40px;">吃了么</h1>
+			</ul>
+			<ul class="account">
+				<li><a href="account.html">个人中心</a></li>
+			</ul>
+			<ul class="shopping_cart">
+			   <a href="#"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
+			   <a href="#"><li class="shop_right"><span>$0.00</span></li></a>
+			   <div class="clearfix"> </div>
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+		<div class="header_bottom">
+		  <div class="header_nav">
+      		<div class="logo">
+				<a href="index.html"><img src="/home/images/logo.png" alt=""/><br></a>
+			 </div>
+			 <nav class="navbar navbar-default menu" role="navigation">
+			 	<h3 class="nav_right">
+
 			 		<a href="index.html">
 			 			<img src="/home/images/logo.png" class="img-responsive" alt=""/>
 			 		</a>
 			 	</h3>
+
                         <div class="container-fluid">
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -84,12 +82,11 @@
                             </div>
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav menu1">
-                                    <li class="active"><a href="/dianpus">首页</a></li>
-                                    <li><a href="fruits.html">关于我们</a></li>
+                                    <li class="active"><a href="/dianpus">首页</a></li>                 
                                     <li><a href="products.html">今日推荐</a></li>
-                                    <li><a href="store.html">我的订单</a></li>
-                                    <li><a href="club.html">反馈留言</a></li>
-                                    <li><a href="contact.html">在线客服</a></li>
+                                    <li><a href="/dianpus/order">我的订单</a></li>
+                                    <li><a href="/dianpus/guize">规则中心</a></li>
+                                    <li><a href="contact.html">我的客服</a></li>
                                 </ul>
                                 <ul class="login">
                                     <a href="/home/logout">
@@ -341,6 +338,7 @@
             <div class="clearfix"> </div>
         </div>
     </div>
+
 </body>
 
 </html>

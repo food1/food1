@@ -52,12 +52,11 @@
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    	<ul class="nav navbar-nav menu1">
-				      	<li class="active"><a href="/dianpus">首页</a></li>
-				        <li><a>今日推荐</a></li>
-				        <li><a>我的订单</a></li>
-				        <li><a href="/dianpus/guize">规则中心</a></li>
-				        <li><a>反馈留言</a></li>
-				        <li><a>在线客服</a></li>
+				      	<li class="active"><a href="dianpus">首页</a></li>			        
+			        	<li><a href="products.html">今日推荐</a></li>
+			        	<li><a href="/dianpus/order">我的订单</a></li>
+			        	<li><a href="/dianpus/guize">规则中心</a></li>
+			        	<li><a href="contact.html">我的客服</a></li>
 		        	</ul>
 		          	<ul class="login">
 		          		<a href="/home/logout"><li class="login_top"><i class="sign"> </i><span>退出登录</span></li></a>
@@ -110,9 +109,13 @@
 						    <span><input name="user_adress" type="text" style="width:300px;height:30px;border:solid 1px #aaa;" value="{{$users->user_adress}}"></span>
 						</div>
 						<div>
+						    <span><label>密码:</label></span>
+						    <span><input name="user_password" type="text" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
+						</div>
+						<div>
 						    <span><label>头像:</label></span>
 						    <input name="user_img" type="file" style="width:300px;height:30px;border:solid 1px #aaa;">
-						    <img src="{{$users->user_img}}" width="100px">
+						    <img src="{{$users->user_img}}" width="100px" height="80px">
 						</div>
 					</div>
 				  <div class="clearfix"> </div>
