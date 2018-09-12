@@ -10,9 +10,7 @@ class PersonController extends Controller
 {
     public function index()
     {
-    	// $users = new User;
     	$users = User::find(\Session::get('id'));
-    	// $user -> user_password = Hash::make($request->user_password);
         return view('home.person.index',compact('users'));
     }
 

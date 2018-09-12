@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Link;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -12,39 +13,55 @@ class QdianpuController extends Controller
     //店铺展示页面
     public function index()
     {
+
+        $links = Link::all();
         $users = User::find(\Session::get('id'));
-        return view('home.dianpus.index',compact('users'));
+        return view('home.dianpus.index',compact('users','links'));
     }
 
     //菜品展示页面
     public function cai()
     {
-        return view('home.dianpus.cai');
+        $users = User::find(\Session::get('id'));
+        return view('home.dianpus.cai',compact('users'));
     }
 
     //详情页面
     public function xiangqing()
     {
-        return view('home.dianpus.xiangqing');
+        $users = User::find(\Session::get('id'));
+        return view('home.dianpus.xiangqing',compact('users'));
     }
 
 
     //购物车页面
      public function car()
     {
-        return view('home.dianpus.car');
+        $users = User::find(\Session::get('id'));
+        return view('home.dianpus.car',compact('users'));
     }
     
     //我的订单页面
     public function order()
     {
-        return view('home.dianpus.order');
+        $users = User::find(\Session::get('id'));
+        return view('home.dianpus.order',compact('users'));
     }
     
      public function guize()
     {
-        return view('home.dianpus.guize');
+        $users = User::find(\Session::get('id'));
+        return view('home.dianpus.guize',compact('users'));
+    }
 
+    public function intro()
+    {
+        return view('home.dianpus.intro');
+    }
+
+    public function call()
+    {
+        return view('home.dianpus.call');
     }
     
 }

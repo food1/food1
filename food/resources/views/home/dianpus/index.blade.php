@@ -112,8 +112,10 @@
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav menu1">
-			      	<li class="active"><a href="/dianpus">首页</a></li>			        
-			        <li><a href="products.html">今日推荐</a></li>
+			      	<li><a></a></li>
+			      	<li><a></a></li>
+			      	<li><a></a></li>
+			      	<li><a href="/dianpus">首页</a></li>
 			        <li><a href="/dianpus/order">我的订单</a></li>
 			        <li><a href="/dianpus/guize">规则中心</a></li>
 			        <li><a href="contact.html">我的客服</a></li>
@@ -466,7 +468,17 @@
 			<div class="footer-grid footer-grid1">
 			  <h3 class="m_2">用戶帮助</h3>
 			  <ul class="list1">
-			  	<li><a href="#">我的客服</a></li>
+			  	<li><a href="#">用户留言</a></li>
+			  	<li><a href="#">用户反馈</a></li>
+			  </ul>
+		   </div>
+
+		   <div class="footer-grid footer-grid3">
+			  <h3 class="m_2">关于我们</h3>
+			  <ul class="list1">
+			  	<li><a href="/dianpus/intro">吃了么介绍</a></li>
+			    <li><a href="/dianpus/call">联系我们</a></li>
+			    <li><a href="/dianpus/guize">规则中心</a></li>
 			  </ul>
 		   </div>
 		   <div class="footer-grid footer-grid2">
@@ -476,15 +488,6 @@
 			    <li><a href="#">加盟指南</a></li>
 			    <li><a href="#">市场合作</a></li>
 			    <li><a href="#">开放平台</a></li>
-			  </ul>
-		   </div>
-		   <div class="footer-grid footer-grid3">
-			  <h3 class="m_2">关于我们</h3>
-			  <ul class="list1">
-			  	<li><a href="#">吃了么介绍</a></li>
-			    <li><a href="#">加入我们</a></li>
-			    <li><a href="#">联系我们</a></li>
-			    <li><a href="#">规则中心</a></li>
 			  </ul>
 		   </div>
 		   <div class="footer-grid footer-grid4">
@@ -504,16 +507,15 @@
 		   </div>
 		   <!-- 友情链接 -->
 		   <div class="footer-grid footer-grid_last">
+		   	@foreach($links as $v)
 	          <ul class="secure">
-			  	<li class="secure_img"><img src="/home/images/secure.png" alt=""/></li> 
-			  	<li class="secure_desc">品质值得信赖</li>
+			  	<li class="secure_img">
+			  		<a href="{{$v['link_url']}}">
+			  			<img src="{{$v['link_img']}}" alt="" width="50"/></a></li> 
+			  	<li class="secure_desc">{{$v['link_name']}}</li>
 			  	<div class="clearfix"> </div>
 			  </ul>
-			  <ul class="secure">
-			  	<li class="secure_img"><img src="/home/images/order.png" alt=""/></li> 
-			  	<li class="secure_desc">速度值得称赞</li>
-			  	<div class="clearfix"> </div>
-			 </ul>
+			@endforeach
 		   </div>
 		   <!-- 友情链接 -->
 		   <div class="clearfix"> </div>

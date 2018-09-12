@@ -85,8 +85,7 @@ $(document).ready(function(){
         </tr>
         </thead>
         <tbody>
-            @foreach($links as $v)
-
+        @foreach($links as $v)
         <tr>
         <td><input name="" type="checkbox" value=""/></td>
         <td>{{$v['id']}}</td>
