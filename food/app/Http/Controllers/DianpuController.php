@@ -121,7 +121,7 @@ class DianpuController extends Controller
         $dianpu = Dianpu::findOrFail($id);
        
         //更新
-        
+        $dianpu -> cate_id = $request->cate_id;
         $dianpu -> dianpu_name = $request->dianpu_name;
         $dianpu -> dianpu_intro= $request->dianpu_intro;
         $dianpu -> dianpu_adress = $request->dianpu_adress;

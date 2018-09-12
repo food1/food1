@@ -1,0 +1,109 @@
+.post_list{
+	width:958px;
+	border:1px solid #ccc;
+}
+.post_title{
+	background:#F2F2F2;
+	height:35px;
+	padding:0 15px;
+	line-height:35px;
+	text-align:left;
+	border-bottom:1px solid #cdcdcd;
+}
+.post_content{
+	padding:10px 15px;
+	line-height:35px;
+	text-align:left;
+}
+.post_content td{
+	border-bottom:1px dashed #ccc;
+	height:40px;
+}
+.list_title{
+	width:70%;
+}
+.list_author{
+	width:10%;
+}
+.list_count{
+	width:10%;
+}
+.list_ptime{
+	width:10%;
+}
+.post_detail{
+	width:958px;
+	border:1px solid #ccc;
+	background:#E5EDF2;
+}
+.left{
+	width:160px;
+	float:left;
+	text-align:center;
+}
+.right{
+	float:right;
+	width:798px;
+	background:white;
+}
+.count_title{
+	height:40px;
+	line-height:40px;
+	border-bottom:1px solid #C2D5E3;
+}
+.content_title{
+	height:40px;
+	line-height:40px;
+	padding-left:20px;
+	font-size:14px;
+	font-weight:700;
+	border-left:1px solid #C2D5E3;
+	border-bottom:1px solid #ccc;
+}
+.content_content{
+	padding:20px;
+	min-height:200px;
+	border-left:1px solid #C2D5E3;
+}
+.author{
+	padding:15px;
+}
+.author_info{
+	text-align:left;
+}
+.username{
+	border-bottom:1px dashed #ccc;
+	height:40px;
+	line-height:40px;
+	font-weight:700;
+}
+.ptime{
+	border-bottom:1px dashed #ccc;
+	height:40px;
+	padding-left:20px;
+	line-height:40px;
+	border-left:1px solid #C2D5E3;
+}
+.send_btn{
+	height:40px;
+	line-height:40px;
+}
+.send{
+	float:left;
+	margin-right:15px;
+}
+.reply{
+	float:left;
+}
+.list_btn{
+	float:right;
+	width:80px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	font-weight:700;
+	border:1px solid #C2D5E3;
+}
+.form_reg{
+	padding:20px 300px;
+}

@@ -76,8 +76,11 @@ Route::get('/cd', 'DBController@cd');
 
 
 // 网站设置
-// Route::get('/wzsz', 'WzszController');
-// 
+Route::resource('/peizhi', 'PeizhiController');
+// Route::resource('/peizhi/id{peizhi_delete}', 'PeizhiController@destroy');
+
+
+//退出登录
 Route::get('/admin/logout','AdminController@logout');
 });
 
