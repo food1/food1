@@ -62,16 +62,22 @@
 		  <div class="header_top">
 			<ul class="phone">
 				<li class="phone_left"><i class="mobile"> </i><span>15149174619</span></li>
-				<li class="phone_right"> 50元以上的餐品我们将免费为您配送哦!</li>
+				<li class="phone_right"> 50元以上餐品将免费为您配送!</li>
 				<div class="clearfix"></div>
 			</ul>
 			<ul class="social">
 				 <h1 style="font-family:'华文彩云';color:#aaa;font-size:40px;">吃了么</h1>
 			</ul>
 			<ul class="account">
-
-				<li><a href="/person">个人中心</a></li>
-
+			@if(Session::has('id') == null)				
+			@endif
+			@if(Session::has('id') != null)
+				<li style="color:#aaa;font-size:16px;">
+				<a href="/person">个人中心</a>&nbsp;|
+				<a href="#">用户:{{$users['user_name']}}</a>
+				&nbsp; <img src="{{$users['user_img']}}" width="30px" height="30px" />
+				</li>
+			@endif
 			</ul>
 			<ul class="shopping_cart">
 			   <a href="/dianpus/car"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
@@ -81,6 +87,7 @@
 			   <div class="clearfix"> 
 			   </div>
 			</ul>
+			
 			<div class="clearfix"></div>
 		</div>
 		<div class="header_bottom">
@@ -97,7 +104,7 @@
 			  <div class="container-fluid">
 			    <div class="navbar-header">
 			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			        <span class="sr-only">Toggle navigation</span>
+			        <span class="sr-only"></span>
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
@@ -105,16 +112,22 @@
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav menu1">
-			      	<li class="active"><a href="index.html">首页</a></li>			        
-			        <li><a href="products.html">今日推荐</a></li>
+			      	<li><a></a></li>
+			      	<li><a></a></li>
+			      	<li><a></a></li>
+			      	<li><a href="/dianpus">首页</a></li>
 			        <li><a href="/dianpus/order">我的订单</a></li>
 			        <li><a href="/dianpus/guize">规则中心</a></li>
 			        <li><a href="contact.html">我的客服</a></li>
 		          </ul>
 		          <ul class="login">
-					<a href="/home/logout"><li class="login_top"><i class="sign"> </i><span>退出登录</span></li></a>
+				@if(Session::has('id') == null)
 					<a href="/home/login"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
 					<a href="/home/zhuce"><li class="login_bottom"><i class="register"> </i><span>注册</span></li></a>
+				@endif
+				@if(Session::has('id') != null)
+					<a href="/home/logout"><li class="login_top"><i class="sign"> </i><span>退出登录</span></li></a>
+				@endif
 		          </ul>
 			      <div class="clearfix"></div>
 			    </div>
@@ -129,13 +142,6 @@
 		 </div>  
 		</div>
 	</div>
-		@if(Session::has('success'))
-		    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-		    <div class="dashboard-stat green">
-		    <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:yellowgreen;">{{Session::get('success')}} </div>
-		    </div>
-		    </div>
-		@endif
 		@if(Session::has('error'))
 		    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
 		    <div class="dashboard-stat red">
@@ -183,8 +189,8 @@
 				   	  	<li><a href="#">晚餐</a></li>
 				   	  	<li><a href="#">夜宵</a></li>
 		   	     	</ul>
-		   	   </div>
-		   	   <ul class="product_reviews">
+		   	   	</div>
+		   	   	<ul class="product_reviews">
 		   	   	<h3><i class="arrow"> </i><span>用户评论</span></h3>
 		   	   	<li>
 		   	   		<ul class="review1">
@@ -462,7 +468,17 @@
 			<div class="footer-grid footer-grid1">
 			  <h3 class="m_2">用戶帮助</h3>
 			  <ul class="list1">
-			  	<li><a href="#">我的客服</a></li>
+			  	<li><a href="#">用户留言</a></li>
+			  	<li><a href="#">用户反馈</a></li>
+			  </ul>
+		   </div>
+
+		   <div class="footer-grid footer-grid3">
+			  <h3 class="m_2">关于我们</h3>
+			  <ul class="list1">
+			  	<li><a href="/dianpus/intro">吃了么介绍</a></li>
+			    <li><a href="/dianpus/call">联系我们</a></li>
+			    <li><a href="/dianpus/guize">规则中心</a></li>
 			  </ul>
 		   </div>
 		   <div class="footer-grid footer-grid2">
@@ -472,15 +488,6 @@
 			    <li><a href="#">加盟指南</a></li>
 			    <li><a href="#">市场合作</a></li>
 			    <li><a href="#">开放平台</a></li>
-			  </ul>
-		   </div>
-		   <div class="footer-grid footer-grid3">
-			  <h3 class="m_2">关于我们</h3>
-			  <ul class="list1">
-			  	<li><a href="#">吃了么介绍</a></li>
-			    <li><a href="#">加入我们</a></li>
-			    <li><a href="#">联系我们</a></li>
-			    <li><a href="#">规则中心</a></li>
 			  </ul>
 		   </div>
 		   <div class="footer-grid footer-grid4">
@@ -500,26 +507,21 @@
 		   </div>
 		   <!-- 友情链接 -->
 		   <div class="footer-grid footer-grid_last">
+		   	@foreach($links as $v)
 	          <ul class="secure">
-			  	<li class="secure_img"><img src="/home/images/secure.png" alt=""/></li> 
-			  	<li class="secure_desc">品质值得信赖</li>
+			  	<li class="secure_img">
+			  		<a href="{{$v['link_url']}}">
+			  			<img src="{{$v['link_img']}}" alt="" width="50"/></a></li> 
+			  	<li class="secure_desc">{{$v['link_name']}}</li>
 			  	<div class="clearfix"> </div>
 			  </ul>
-			  <ul class="secure">
-			  	<li class="secure_img"><img src="/home/images/order.png" alt=""/></li> 
-			  	<li class="secure_desc">速度值得称赞</li>
-			  	<div class="clearfix"> </div>
-			 </ul>
+			@endforeach
 		   </div>
 		   <!-- 友情链接 -->
 		   <div class="clearfix"> </div>
 	   </div>
 	</div>
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 5e553a7befee90b73f011df07df34637484a926a
 </body>
 </html>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>

@@ -32,7 +32,14 @@ Route::get('/home/zhuce', 'HomeController@zhuce');
 Route::post('/home/login', 'HomeController@dozhuce');
 //规则中心
 Route::get('/dianpus/guize','QdianpuController@guize');
+//关于我们
+Route::get('/dianpus/intro','QdianpuController@intro');
+//联系我们
+Route::get('/dianpus/call','QdianpuController@call');
 
+
+
+//前台登陆拦截
 Route::group(['middleware'=>'home'],function(){
 //个人中心
 Route::get('/person','PersonController@index');
@@ -46,7 +53,7 @@ Route::get('/home/logout', 'HomeController@logout');
 //----------------------------------------------------------------------
 
 
-//登录拦截
+//后台登录拦截
 Route::group(['middleware'=>'admin'],function(){
 //后台首页
 Route::get('/admin','AdminController@index');
@@ -66,15 +73,10 @@ Route::resource('clearing', 'ClearingController');
 Route::resource('order', 'OrderController');
 //友情链接
 Route::resource('link', 'LinkController');
-
-
 // 店铺_餐品
 Route::get('/model', 'DBController@model');
-
 // 店铺_分类
 Route::get('/cd', 'DBController@cd');
-
-
 // 网站设置
 Route::resource('/peizhi', 'PeizhiController');
 // Route::resource('/peizhi/id{peizhi_delete}', 'PeizhiController@destroy');
@@ -83,6 +85,7 @@ Route::resource('/peizhi', 'PeizhiController');
 //退出登录
 Route::get('/admin/logout','AdminController@logout');
 });
+
 
 //后台登录页面
 Route::get('/admin/login','AdminController@login');
