@@ -23,6 +23,7 @@ class QdianpuController extends Controller
     public function cai()
     {
         $users = User::find(\Session::get('id'));
+        
         return view('home.dianpus.cai',compact('users'));
     }
 

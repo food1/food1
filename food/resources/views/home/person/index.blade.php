@@ -96,7 +96,7 @@
 		<div class="container">
 		  	<div class="Product_top">
 		  		<center>
-		  	  		<form action="/home/login" method="post" id="myform" name="myform" enctype="multipart/form-data"> 
+		  	  		<form action="/person/{{$users['id']}}" method="post" id="myform" name="myform" enctype="multipart/form-data"> 
 				 		<div class="register-top-grid">
 						<div>
 						    <span><label>用户名:</label></span>

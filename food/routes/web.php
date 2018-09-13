@@ -44,7 +44,7 @@ Route::get('/dianpus/call','QdianpuController@call');
 //前台登陆拦截
 Route::group(['middleware'=>'home'],function(){
 //个人中心
-Route::get('/person','PersonController@index');
+Route::resource('/person','PersonController');
 //进入购物车
 Route::get('/dianpus/car', 'QdianpuController@car');
 //进入我的订单

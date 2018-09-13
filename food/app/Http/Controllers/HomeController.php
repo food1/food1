@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cate;
 use App\Dianpu;
+use App\Food1;
 use App\Link;
 use App\User;
 use Illuminate\Http\Request;
@@ -54,6 +55,7 @@ class HomeController extends Controller
      public function show(Request $request)
     {
         //
+        $food1s = Food1::all();
         $links = Link::all();
          $users = User::find(\Session::get('id'));
           $cates = Cate::all();      
@@ -66,7 +68,7 @@ class HomeController extends Controller
         // }
         
         //解析模板显示用户数据
-        return view('/home/dianpus/index', compact('dianpus','cates','users','links'));
+        return view('/home/dianpus/index', compact('dianpus','cates','users','links','food1s'));
     }
 
 
