@@ -271,16 +271,8 @@
                     	 @endforeach
                   </div>
 		<ul class="dc_pagination dc_paginationA dc_paginationA06">
-			<li><a href="#">1</a></li>
-			<li><a href="#" class="current">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
-			<li><a href="#">...</a></li>
-			<li><a href="#">19</a></li>
-			<li><a href="#">20</a></li>
-			<li><a href="#" class="previous">下一页</a></li>
-			<li><a href="#" class="next">上一页</a></li>
+			<li>{{ $dianpus->appends(request()->all())->links() }}</li>
+
 		</ul>
 	</div>
 </div>
