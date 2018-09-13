@@ -12,7 +12,7 @@
         <span>位置：</span>
         <ul class="placeul">
             <li><a href="#">首页</a></li>
-            <li><a href="#">表单</a></li>
+            <li><a href="#">链接管理</a></li>
         </ul>
     </div>
     <div class="formbody">
@@ -20,16 +20,16 @@
             <div class="formtitle"><span>基本信息</span></div>
             <ul class="forminfo">
                 <li>
-                    <label>用户名</label>
+                    <label>链接名称</label>
                     <input name="link_name" type="text" class="dfinput" />
                 </li>
                 <li>
-                    <label>地址</label>
+                    <label>链接URL</label>
                     <input name="link_url" type="text" class="dfinput" />
                 </li>
                 <br>
                 <li>
-                    <label>头像</label>
+                    <label>链接头像</label>
                     <input name="link_img" type="file" />
                 </li>
                 <br>

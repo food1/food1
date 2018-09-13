@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cate;
 use App\Dianpu;
+use App\Link;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -50,10 +51,11 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     //前台展示
-    public function show(Request $request)
+     public function show(Request $request)
     {
         //
-         
+        $links = Link::all();
+         $users = User::find(\Session::get('id'));
           $cates = Cate::all();      
         // //读取数据库 获取用户数据
         $dianpus = Dianpu::where('cate_id', $request->cate_id)->orderBy('id','desc')
@@ -64,8 +66,9 @@ class HomeController extends Controller
         // }
         
         //解析模板显示用户数据
-        return view('/home/dianpus/index', compact('dianpus','cates'));
+        return view('/home/dianpus/index', compact('dianpus','cates','users','links'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

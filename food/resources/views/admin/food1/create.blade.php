@@ -31,16 +31,14 @@
                 <br>
                 <li>
                     <label>菜品描述</label>
-                    <input name="food1_intro" type="text" class="dfinput" /> 
+                    <input name="food1_intro" type="text" class="dfinput" />
                 </li>
                 <br>
                 <li>
                     <label>菜品单价</label>
-                    
-                    <input name="food1_price" type="text" size="5"  / style="border:solid 1px #a7b5bc;height: 30px;">
+                    <input name="food1_price" type="text" size="5" / style="border:solid 1px #a7b5bc;height: 30px;">
                 </li>
                 <br>
-                
                 <br> {{csrf_field()}}
                 <li>
                     <label>&nbsp;</label>

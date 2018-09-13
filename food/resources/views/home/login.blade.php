@@ -58,12 +58,13 @@
                             </div>
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav menu1">
-                                    <li class="active"><a href="/dianpus">首页</a></li>
-                                    <li><a>关于我们</a></li>
-                                    <li><a>今日推荐</a></li>
+                                    <li><a></a></li>
+                                    <li><a></a></li>
+                                    <li><a></a></li>
+                                    <li><a href="/dianpus">首页</a></li>
                                     <li><a>我的订单</a></li>
-                                    <li><a>反馈留言</a></li>
-                                    <li><a>在线客服</a></li>
+                                    <li><a href="/dianpus/guize">规则中心</a></li>
+                                    <li><a>我的客服</a></li>
                                 </ul>
                                 <ul class="login">
                                     <a href="/home/zhuce">
@@ -81,13 +82,7 @@
             <input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
             <input type="submit" value="搜索">
         </div>
-        @if(Session::has('success'))
-        <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-            <div class="dashboard-stat green">
-                <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:yellowgreen;">{{Session::get('success')}} </div>
-            </div>
-        </div>
-        @endif @if(Session::has('error'))
+        @if(Session::has('error'))
         <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
             <div class="dashboard-stat red">
                 <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:#f66;">{{Session::get('error')}} </div>
@@ -160,7 +155,17 @@
             <div class="footer-grid footer-grid1">
                 <h3 class="m_2">用戶帮助</h3>
                 <ul class="list1">
-                    <li><a href="#">我的客服</a></li>
+                    <li><a href="#">用户留言</a></li>
+                    <li><a href="#">用户反馈</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-grid footer-grid3">
+                <h3 class="m_2">关于我们</h3>
+                <ul class="list1">
+                    <li><a href="/dianpus/intro">吃了么介绍</a></li>
+                    <li><a href="/dianpus/call">联系我们</a></li>
+                    <li><a href="/dianpus/guize">规则中心</a></li>
                 </ul>
             </div>
             <div class="footer-grid footer-grid2">
@@ -170,15 +175,6 @@
                     <li><a href="#">加盟指南</a></li>
                     <li><a href="#">市场合作</a></li>
                     <li><a href="#">开放平台</a></li>
-                </ul>
-            </div>
-            <div class="footer-grid footer-grid3">
-                <h3 class="m_2">关于我们</h3>
-                <ul class="list1">
-                    <li><a href="#">吃了么介绍</a></li>
-                    <li><a href="#">加入我们</a></li>
-                    <li><a href="#">联系我们</a></li>
-                    <li><a href="#">规则中心</a></li>
                 </ul>
             </div>
             <div class="footer-grid footer-grid4">

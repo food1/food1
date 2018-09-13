@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Dianpu;
 use App\Food1;
 use Illuminate\Http\Request;
 
@@ -28,7 +29,8 @@ class Food1Controller extends Controller
      */
     public function create()
     {
-        return view('admin.food1.create');
+        $dianpus = Dianpu::all();
+        return view('admin.food1.create', compact('dianpus'));
     }
 
     /**
@@ -40,7 +42,14 @@ class Food1Controller extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        // $food1 =  Food1::find(1);
+        // $dianpu = $food1->dianpus;
+        // dd($dianpu);
+
+
         $food1 = new Food1;
+        
+
         $food1 -> food1_name = $request->food1_name;
         $food1 -> food1_intro =$request->food1_intro;
         $food1 -> food1_price = $request->food1_price;

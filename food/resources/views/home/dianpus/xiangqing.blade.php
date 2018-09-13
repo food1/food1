@@ -49,7 +49,15 @@
 				<h1 style="font-family:'华文彩云';color:#aaa;font-size:40px;">吃了么</h1>
 			</ul>
 			<ul class="account">
-				<li><a href="account.html">个人中心</a></li>
+            @if(Session::has('id') == null)             
+            @endif
+            @if(Session::has('id') != null)
+                <li style="color:#aaa;font-size:16px;">
+                <a href="/person">个人中心</a>&nbsp;|
+                <a href="#">用户:{{$users['user_name']}}</a>
+                &nbsp; <img src="{{$users['user_img']}}" width="30px" height="30px" />
+                </li>
+            @endif
 			</ul>
 			<ul class="shopping_cart">
 			   <a href="#"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
@@ -74,7 +82,7 @@
                         <div class="container-fluid">
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="sr-only"></span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
@@ -82,12 +90,13 @@
                             </div>
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav menu1">
-                                    <li class="active"><a href="/dianpus">首页</a></li>
-                                    <li><a href="fruits.html">关于我们</a></li>
-                                    <li><a href="products.html">今日推荐</a></li>
-                                    <li><a href="store.html">我的订单</a></li>
-                                    <li><a href="club.html">反馈留言</a></li>
-                                    <li><a href="contact.html">在线客服</a></li>
+                                    <li><a></a></li>
+                                    <li><a></a></li>
+                                    <li><a></a></li>
+                                    <li><a href="/dianpus">首页</a></li>
+                                    <li><a href="/dianpus/order">我的订单</a></li>
+                                    <li><a href="/dianpus/guize">规则中心</a></li>
+                                    <li><a href="contact.html">我的客服</a></li>
                                 </ul>
                                 <ul class="login">
                                     <a href="/home/logout">
@@ -288,7 +297,17 @@
             <div class="footer-grid footer-grid1">
                 <h3 class="m_2">用戶帮助</h3>
                 <ul class="list1">
-                    <li><a href="#">我的客服</a></li>
+                    <li><a href="#">用户留言</a></li>
+                    <li><a href="#">用户反馈</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-grid footer-grid3">
+                <h3 class="m_2">关于我们</h3>
+                <ul class="list1">
+                    <li><a href="/dianpus/intro">吃了么介绍</a></li>
+                    <li><a href="/dianpus/call">联系我们</a></li>
+                    <li><a href="/dianpus/guize">规则中心</a></li>
                 </ul>
             </div>
             <div class="footer-grid footer-grid2">
@@ -298,15 +317,6 @@
                     <li><a href="#">加盟指南</a></li>
                     <li><a href="#">市场合作</a></li>
                     <li><a href="#">开放平台</a></li>
-                </ul>
-            </div>
-            <div class="footer-grid footer-grid3">
-                <h3 class="m_2">关于我们</h3>
-                <ul class="list1">
-                    <li><a href="#">吃了么介绍</a></li>
-                    <li><a href="#">加入我们</a></li>
-                    <li><a href="#">联系我们</a></li>
-                    <li><a href="#">规则中心</a></li>
                 </ul>
             </div>
             <div class="footer-grid footer-grid4">
