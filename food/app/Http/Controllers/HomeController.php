@@ -125,7 +125,6 @@ class HomeController extends Controller
             //写入session
             session(['user_name'=>$user->user_name, 'id'=>$user->id]);
             return redirect('/dianpus')->with('success','登陆成功!');
-            return redirect('/dianpus')->with('success','登陆成功');
         }else{
             return back()->with('error','登陆失败!');
         }
