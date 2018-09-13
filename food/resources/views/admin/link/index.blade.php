@@ -38,7 +38,7 @@ $(document).ready(function(){
     <ul class="placeul">
     <li><a href="#">首页</a></li>
     <li><a href="#">数据表</a></li>
-    <li><a href="#">基本内容</a></li>
+    <li><a href="#">链接管理</a></li>
     </ul>
     </div>
     @if(Session::has('success'))
@@ -78,9 +78,9 @@ $(document).ready(function(){
     	<tr>
         <th><input name="" type="checkbox" value="" checked="checked"/></th>
         <th>ID<i class="sort"></i></th>
-        <th>用户名</th>
-        <th>地址</th>
-        <th>头像</th>
+        <th>链接名称</th>
+        <th>链接URL</th>
+        <th>链接头像</th>
         <th>操作</th>
         </tr>
         </thead>
