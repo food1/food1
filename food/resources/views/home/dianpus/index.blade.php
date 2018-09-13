@@ -118,7 +118,7 @@
 			      	<li><a href="/dianpus">首页</a></li>
 			        <li><a href="/dianpus/order">我的订单</a></li>
 			        <li><a href="/dianpus/guize">规则中心</a></li>
-			        <li><a href="contact.html">我的客服</a></li>
+			        <li><a href="#">我的客服</a></li>
 		          </ul>
 		          <ul class="login">
 				@if(Session::has('id') == null)
@@ -259,10 +259,10 @@
 			          	<a href="#">立即购买</a>
 			        </div>
 				 	</li>		   	
-				 	<div class="clearfix"> </div>
+				 	<div class="clearfix"></div>
 		   	   	</ul>
 		   	    <ul class="feature">
-		   	   	 	<h3><i class="arrow"> </i><span>热门商铺</span></h3>
+		   	   	 	<h3><i class="arrow"></i><span>热门店铺</span></h3>
 		   	   	</ul>
 		   	   	<div class="row content_bottom">
 		   	   		
@@ -321,7 +321,7 @@
 						<span class="actual">$12.00</span>
 					</div>
 					<ul class="product_but">
-						<li class="but3">Buy</li>
+						<li class="but3">立即购买</li>
 						<li class="like"><span>120</span><i class="like1"> </i></li>
 					<div class="clearfix"> </div>
 					</ul>
@@ -510,9 +510,10 @@
 		   	@foreach($links as $v)
 	          <ul class="secure">
 			  	<li class="secure_img">
-			  		<a href="{{$v['link_url']}}">
-			  			<img src="{{$v['link_img']}}" alt="" width="50"/></a></li> 
+			  	<a href="{{$v['link_url']}}">
+			  	<img src="{{$v['link_img']}}" alt="" width="50"/></li> 
 			  	<li class="secure_desc">{{$v['link_name']}}</li>
+			  	</a>
 			  	<div class="clearfix"> </div>
 			  </ul>
 			@endforeach
