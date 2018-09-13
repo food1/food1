@@ -18,6 +18,9 @@
 Route::get('/','HomeController@index');
 //前台店铺
 Route::get('/dianpus','QdianpuController@index');
+//前台展示&店铺分类展示
+Route::get('/dianpus','HomeController@show');
+
 //菜品展示
 Route::get('/dianpus/cai','QdianpuController@cai');
 //前台店铺详情
