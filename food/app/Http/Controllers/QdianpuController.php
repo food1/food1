@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Food1;
 use App\Link;
 use App\User;
 use Illuminate\Http\Request;
@@ -19,12 +20,26 @@ class QdianpuController extends Controller
         return view('home.dianpus.index',compact('users','links'));
     }
 
+    // //菜品展示页面
+    // public function cai()
+    // {
+    //     $users = User::find(\Session::get('id'));
+        
+    //     return view('home.dianpus.cai',compact('users'));
+    // }
     //菜品展示页面
-    public function cai()
+    public function cai(Request $request)
     {
-        $users = User::find(\Session::get('id'));
-        return view('home.dianpus.cai',compact('users'));
+         $users = User::find(\Session::get('id'));
+        
+        $food1s = Food1::orderBy('id','desc')
+               ->where('food1_name','like', '%'.request()->keywords.'%')
+               ->paginate(8);
+        //解析模板显示数据
+        // dd($food1s);
+        return view('/home.dianpus.cai',compact('food1s','users'));
     }
+
 
     //详情页面
     public function xiangqing()

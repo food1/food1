@@ -111,16 +111,16 @@
 			      </button>
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      <ul class="nav navbar-nav menu1">
+			    <ul class="nav navbar-nav menu1">
 			      	<li><a></a></li>
 			      	<li><a></a></li>
 			      	<li><a></a></li>
 			      	<li><a href="/dianpus">首页</a></li>
 			        <li><a href="/dianpus/order">我的订单</a></li>
 			        <li><a href="/dianpus/guize">规则中心</a></li>
-			        <li><a href="contact.html">我的客服</a></li>
-		          </ul>
-		          <ul class="login">
+			        <li><a href="#">我的客服</a></li>
+		        </ul>
+		        <ul class="login">
 				@if(Session::has('id') == null)
 					<a href="/home/login"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
 					<a href="/home/zhuce"><li class="login_bottom"><i class="register"> </i><span>注册</span></li></a>
@@ -128,10 +128,10 @@
 				@if(Session::has('id') != null)
 					<a href="/home/logout"><li class="login_top"><i class="sign"> </i><span>退出登录</span></li></a>
 				@endif
-		          </ul>
-			      <div class="clearfix"></div>
+		        </ul>
+			    <div class="clearfix"></div>
 			    </div>
-			  </div>
+			</div>
 		</nav>		
         <div class="clearfix"></div>
            </div>
@@ -173,23 +173,14 @@
 		<div class="container" style="width: 95%">
 		   
 		   	<div class="col-md-3 content_top">
-		   	   	<div class="category_box">
-		   	  		<h3 class="cate_head">店铺分类</h3>
-		   	     	<ul class="category">
-				   	  	<li><a href="#">快餐便当</a></li>
-				   	  	<li><a href="#">特色菜系</a></li>
-				   	  	<li><a href="#">异国料理</a></li>
-				   	  	<li><a href="#">小吃夜宵</a></li>
-				   	  	<li><a href="#">甜品饮品</a></li>
-				   	  	<li><a href="#">果蔬生鲜</a></li>
-				   	  	<li><a href="#">商店超市</a></li>
-				   	  	<li><a href="#">早餐</a></li>
-				   	  	<li><a href="#">午餐</a></li>
-				   	  	<li><a href="#">下午茶</a></li>
-				   	  	<li><a href="#">晚餐</a></li>
-				   	  	<li><a href="#">夜宵</a></li>
-		   	     	</ul>
-		   	   	</div>
+		   	   	 <div class="category_box">
+                    <h3 class="cate_head">店铺分类</h3>
+                    <ul class="category">
+                    	@foreach($cates as $v)
+                        <li><a href="/dianpus?cate_id={{$v->id}}">{{$v->cate_name}}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
 		   	   	<ul class="product_reviews">
 		   	   	<h3><i class="arrow"> </i><span>用户评论</span></h3>
 		   	   	<li>
@@ -231,232 +222,57 @@
 		   	   	<ul class="feature">
 		   	   	 	<h3><i class="arrow"> </i><span>今日精选</span></h3>
 		   	   	</ul>
-		   	   	<ul class="feature_grid">
-				 	<li class="grid1"><img src="/home/images/f1.jpg" class="img-responsive" alt=""/>
-				 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed</p>
+		   	   	<ul class="feature_grid" style="width: 900px">
+		   	   		@foreach($food1s as $k => $v)
+		   	   		@if($k <= 2)
+
+				 	<li class="grid1" style="float: right;margin: 0 auto;margin-right: 0px""><img src="{{$v['food1_img']}}" class="img-responsive" style="width: 250px;height: 110px; alt=""  />
+				 	<p>{{$v['food1_name']}}</p>
 				 	<div class="price">Price:
-					  	<span class="actual">$12.00</span>
+					  	<span class="actual">{{$v['food1_price']}}</span>
 					</div>
 				    <div class="but1">
 			          	<a href="">立即购买</a>
 			        </div>
-				 	</li>		   	   	
-				 	<li class="grid1"><img src="/home/images/f2.jpg" class="img-responsive" alt=""/>
-				 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed</p>
-				 	<div class="price">Price:
-					  	<span class="actual">$12.00</span>
-					</div>
-				    <div class="but1">
-			          	<a href="#">立即购买</a>
-			        </div>
-				 	</li>		   	
-				 	<li class="grid2"><img src="/home/images/f3.jpg" class="img-responsive" alt=""/>
-				 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed</p>
-				 	<div class="price">Price:
-					  	<span class="actual">$12.00</span>
-					</div>
-				    <div class="but1">
-			          	<a href="#">立即购买</a>
-			        </div>
-				 	</li>		   	
-				 	<div class="clearfix"> </div>
+				 	</li>
+				 	@endif		   	   	
+				 		@endforeach
+				 	<div class="clearfix"></div>
 		   	   	</ul>
 		   	    <ul class="feature">
-		   	   	 	<h3><i class="arrow"> </i><span>热门商铺</span></h3>
+		   	   	 	<h3><i class="arrow"></i><span>热门店铺</span></h3>
 		   	   	</ul>
-		   	   	<div class="row content_bottom">
-		   	   		
-
-			   	   	<div class="col-md-3">
-			   	   		<div class="content_box"><a href="/dianpus/cai">
-			   	   	  	<div class="view view-fifth">
-			   	   	     	<img src="/home/images/p1.jpg" class="img-responsive" alt=""/>
-				   	   	<div class="content_box-grid">
-				   	   	<p class="m_1">汉堡</p>
-				   	   	<div class="price">价格:
-						    <span class="actual">¥12.00</span>
-						</div>
-						<ul class="product_but">
-						  	<li class="but3">进店瞧瞧</li>
-						  	<li class="like"><span>120</span><i class="like1"> </i></li>
-						<div class="clearfix"> </div>
-						</ul>
-						<div class="mask">
-	                    <div class="info">Quick View</div>
-			        </div>
-			    </div>
-			</div>
-		</a>
-	</div>
-</div>
-	<div class="col-md-3">
-		<div class="content_box"><a href="/dianpus/xiangqing">
-			<div class="view view-fifth">
-			   	<img src="/home/images/p4.jpg" class="img-responsive" alt=""/>
-				<div class="content_box-grid">
-				<p class="m_1"> elit</p>
-				<div class="price">Price:
-					<span class="actual">$12.00</span>
-				</div>
-				<ul class="product_but">
-					<li class="but3">Buy</li>
-					<li class="like"><span>120</span><i class="like1"> </i></li>
-					<div class="clearfix"> </div>
-				</ul>
-				<div class="mask">
-		        <div class="info">Quick View</div>
-				</div>
-				</div>
-			</div>
-		</a>
-	</div>
-</div>
-	<div class="col-md-3">
-		<div class="content_box"><a href="/dianpus/xiangqing">
-			<div class="view view-fifth">
-			   	<img src="/home/images/p3.jpg" class="img-responsive" alt=""/>
-				<div class="content_box-grid">
-					<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-					<div class="price">Price:
-						<span class="actual">$12.00</span>
-					</div>
-					<ul class="product_but">
-						<li class="but3">Buy</li>
-						<li class="like"><span>120</span><i class="like1"> </i></li>
-					<div class="clearfix"> </div>
-					</ul>
-					<div class="mask">
-			        <div class="info">Quick View</div>
-					</div>
-				</div>
-			</div>
-		</a>
-		</div>
-	</div>
-	<div class="col-md-3">
-		<div class="content_box"><a href="/dianpus/xiangqing">
-		<div class="view view-fifth">
-			<img src="/home/images/p2.jpg" class="img-responsive" alt=""/>
-				<div class="content_box-grid">
-					<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-						<div class="price">Price:
-							<span class="actual">$12.00</span>
-						</div>
-							<ul class="product_but">
-							  	<li class="but3">Buy</li>
-							  	<li class="like"><span>120</span><i class="like1"> </i></li>
-						  	<div class="clearfix"> </div>
-						    </ul>
-						    <div class="mask">
-			                    <div class="info">Quick View</div>
-			            </div>
-					</div>
-				</div>
-			</a>
-		</div>
-	</div>
-</div>
-	<div class="row content_bottom1">
-		<div class="col-md-3">
-			<div class="content_box"><a href="/dianpus/xiangqing">
-			   	<div class="view view-fifth">
-			   	   	<img src="/home/images/s3.jpg" class="img-responsive" alt=""/>
-				   	<div class="content_box-grid">
-				   	<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	<div class="price">Price:
-					<span class="actual">$12.00</span>
-					</div>
-					<ul class="product_but">
-					<li class="but3">Buy</li>
-					<li class="like"><span>120</span><i class="like1"> </i></li>
-					<div class="clearfix"> </div>
-					</ul>
-					<div class="mask">
-	                <div class="info">Quick View</div>
-			        </div>
-			    </div>
-			</div>
-		</a>
-	</div>
-</div>
-	<div class="col-md-3">
-		<div class="content_box"><a href="/dianpus/xiangqing">
-			<div class="view view-fifth">
-			   	<img src="/home/images/p7.jpg" class="img-responsive" alt=""/>
-				   	<div class="content_box-grid">
-				   	   	<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	   	<div class="price">Price:
-						<span class="actual">$12.00</span>
-						</div>
-						<ul class="product_but">
-						<li class="but3">Buy</li>
-						<li class="like"><span>120</span><i class="like1"> </i></li>
-						<div class="clearfix"> </div>
-						</ul>
-						<div class="mask">
-	                    <div class="info">Quick View</div>
-			         	</div>
-			        </div>
-				</div>
-			</a>
-		</div>
-	</div>
-		<div class="col-md-3">
-			<div class="content_box"><a href="/dianpus/xiangqing">
-			   	<div class="view view-fifth">
-			   	   	<img src="/home/images/p6.jpg" class="img-responsive" alt=""/>
-				   	<div class="content_box-grid">
-				   	   	<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	   	<div class="price">Price:
-						<span class="actual">$12.00</span>
-						</div>
-						<ul class="product_but">
-						<li class="but3">Buy</li>
-						<li class="like"><span>120</span><i class="like1"> </i></li>
-						<div class="clearfix"> </div>
-						</ul>
-						<div class="mask">
-	                    <div class="info">Quick View</div>
-			            </div>
-			        </div>
-				</div>
-			</a>
-		</div>
-	</div>
-		<div class="col-md-3">
-			<div class="content_box"><a href="/dianpus/xiangqing">
-			   	<div class="view view-fifth">
-			   	   	<img src="/home/images/p5.jpg" class="img-responsive" alt=""/>
-				   	   	<div class="content_box-grid">
-				   	   	<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	   	<div class="price">Price:
-						<span class="actual">$12.00</span>
-						</div>
-						<ul class="product_but">
-						<li class="but3">Buy</li>
-						<li class="like"><span>120</span><i class="like1"> </i></li>
-						<div class="clearfix"> </div>
-						</ul>
-						<div class="mask">
-	                    <div class="info">Quick View</div>
-			            </div>
-			         	</div>
-				   	</div>
-			   	</a>
-			</div>
-		</div>
-	</div>
+		   	    <div class="row content_bottom">
+                	@foreach($dianpus as $v)
+                    <div class="col-md-3" >
+                        
+                        <div class="content_box"  style="float: left;margin-top:30px;">
+                            <a href="/dianpus/cai">
+                                <div class="view view-fifth" style="width: 190px">
+                                    <img src="{{$v->dianpu_img}}" style="width: 190px;height:110px;margin: 0 auto" class="img-responsive" alt="" />
+                                    <div class="content_box-grid">
+                                        <p class="m_1" style="color: red"><center><b>{{$v->dianpu_name}}</b></center></p>
+                                        <!-- <p class="m_1">{{$v['dianpu_intro']}}</p> -->
+                                        <p class="m_1" style="display: hidden;"><?php echo mb_substr($v->dianpu_intro,0,13,'utf-8')?></p>
+                                        
+                                        <ul class="product_but">
+                                            <li class="but3">进店瞧瞧</li>
+                                            <li class="like"><span>120</span><i class="like1"> </i></li>
+                                            <div class="clearfix"> </div>
+                                        </ul>
+                                        <div class="mask">
+                                            <!-- <div class="info">Quick View</div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    	 @endforeach
+                  </div>
 		<ul class="dc_pagination dc_paginationA dc_paginationA06">
-			<li><a href="#">1</a></li>
-			<li><a href="#" class="current">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
-			<li><a href="#">...</a></li>
-			<li><a href="#">19</a></li>
-			<li><a href="#">20</a></li>
-			<li><a href="#" class="previous">下一页</a></li>
-			<li><a href="#" class="next">上一页</a></li>
+			<li>{{ $dianpus->appends(request()->all())->links() }}</li>
+
 		</ul>
 	</div>
 </div>
@@ -510,9 +326,10 @@
 		   	@foreach($links as $v)
 	          <ul class="secure">
 			  	<li class="secure_img">
-			  		<a href="{{$v['link_url']}}">
-			  			<img src="{{$v['link_img']}}" alt="" width="50"/></a></li> 
+			  	<a href="{{$v['link_url']}}">
+			  	<img src="{{$v['link_img']}}" alt="" width="50"/></li> 
 			  	<li class="secure_desc">{{$v['link_name']}}</li>
+			  	</a>
 			  	<div class="clearfix"> </div>
 			  </ul>
 			@endforeach
