@@ -314,7 +314,7 @@ $('input[name=user_name]').focus(function() {
 			//获取用户的输入值
 			var v = $(this).val();
 			//正则
-			var reg = /^[a-zA-Z]\w{6,17}$/;
+			var reg = /^[a-zA-Z]\w{5,17}$/;
 
 			if(!reg.test(v)) {
 				

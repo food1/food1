@@ -81,8 +81,8 @@ class PersonController extends Controller
         if (!Hash::check($request->jiupass,$user->user_password)){
             return back()->with('error','原密码输入错误,请重新输入!!!');
         }
-        //
-        //
+        
+        
         
         $user = User::find($id);
         //更新
