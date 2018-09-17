@@ -20,38 +20,40 @@
         <form action="/user" method="post" id="myform" name="myform" enctype="multipart/form-data">
             <div class="formtitle"><span>基本信息</span></div>
             <ul class="forminfo">
-                <li>
-                    <label>用户名</label>
-                    <input name="user_name" type="text" class="dfinput" />
-                </li>
-                <li>
-                    <label>手机号</label>
-                    <input name="user_phone" type="text" class="dfinput" />
-                </li>
-                <li>
-                    <label>普通用户</label>
-                    <input name="user_qx" type="radio" class="dfinput" value="0" />
-                </li>
-                <li>
-                    <label>管理员</label>
-                    <input name="user_qx" type="radio" class="dfinput" value="1" />
-                </li>
-                <li>
-                    <label>密码</label>
-                    <input name="user_password" type="password" class="dfinput" />
-                </li>
-                <li>
-                    <label>头像</label>
-                    <input name="user_img" type="file" />
-                </li>
-                <br>
-                <br> {{csrf_field()}}
-                <li>
-                    <label>&nbsp;</label>
-                    <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
-                </li>
-            </ul>
-        </form>
+              
+    <li>
+        <label>用户名</label>
+        <input name="user_name" type="text" class="dfinput" />
+    </li>
+    <li>
+        <label>手机号</label>
+        <input name="user_phone" type="text" class="dfinput" />
+    </li>
+    <li>
+        <label>普通用户</label>
+        <input name="user_qx" type="radio" class="dfinput" value="0" />
+    </li>
+    <li>
+        <label>管理员</label>
+        <input name="user_qx" type="radio" class="dfinput" value="1" />
+    </li>
+    <li>
+        <label>密码</label>
+        <input name="user_password" type="password" class="dfinput" />
+    </li>
+    <li>
+        <label>头像</label>
+        <input name="user_img" type="file" />
+    </li>
+    <br>
+    <br> {{csrf_field()}}
+    <li>
+        <label>&nbsp;</label>
+        <!-- <input class="btn btn-primary btn6 mr10" value="提交" type="submit"> -->
+        <button class="btn btn-primary btn6 mr10">提交</button>
+    </li>
+    </ul>
+    </form>
     </div>
 </body>
 

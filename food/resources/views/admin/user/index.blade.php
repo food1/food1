@@ -23,6 +23,24 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+    
+        @if(Session::has('success'))
+                <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
+                    <div style="background: blue" green">
+                            <div class="desc" style="text-align: center;line-height:95px;color:yellow;font-size: 20px;">{{Session::get('success')}} </div>
+                    </div>
+                </div>
+                @endif
+
+                @if(Session::has('error'))
+                <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
+                    <div style="background: pink" red">
+                            <div class="desc" style="text-align: center;line-height:95px;color:yellow;font-size: 20px;">{{Session::get('error')}} </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+    
     <div class="place">
     <span>位置：</span>
     <ul class="placeul">
@@ -30,21 +48,10 @@ $(document).ready(function(){
     <li><a href="#">用户列表</a></li>
     </ul>
     </div>
+    <div>
+    
+    </div>
     <div class="formtitle"><span>用户管理</span></div> 
-    @if(Session::has('success'))
-        <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-            <div style="background: yellowgreen">
-                <div class="desc" style="text-align: center;line-height:95px;color:white;font-size: 20px;">{{Session::get('success')}} </div>
-            </div>
-        </div>
-    @endif
-    @if(Session::has('error'))
-        <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-            <div style="background: pink">
-                <div class="desc" style="text-align: center;line-height:95px;color:white;font-size: 20px;">{{Session::get('error')}} </div>
-            </div>
-        </div>
-    @endif
     <div class="rightinfo">
     <div class="tools">
         <ul class="toolbar">
@@ -112,6 +119,8 @@ $(document).ready(function(){
     </tbody>
 </table>
     <style>
+        
+
         .pagination{
             padding-left: 0;
             margin: 1.5rem 0;
