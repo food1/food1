@@ -111,6 +111,22 @@
                         <div class="breadcrumb">
                             <a href="#">首页</a> &gt;&gt; <span class="last">登录</span>
                         </div>
+                        <!-- 闪存 -->
+                        @if(Session::has('success'))
+                            <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
+                            <div class="dashboard-stat green">
+                            <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:yellowgreen;">{{Session::get('success')}} </div>
+                            </div>
+                            </div>
+                        @endif
+                        @if(Session::has('error'))
+                            <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
+                            <div class="dashboard-stat red">
+                            <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:#f66;">{{Session::get('error')}} </div>
+                            </div>
+                            </div>
+                        @endif
+                        <!-- 闪存 -->
                         <center>
                             <div class="contact-form">
                                 <form method="post" action="/home/dianpus">
