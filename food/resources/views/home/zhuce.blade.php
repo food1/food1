@@ -308,13 +308,13 @@ $('input[name=user_name]').focus(function() {
 			//边框颜色
 			$(this).addClass('active');
 			//提示语显示
-			$(this).next().show().html('请输入字母开头5-16位字母数字下划线!!!');
+			$(this).next().show().html('请输入字母开头6-16位字母数字下划线!!!');
 		}).blur(function(){
 			$(this).removeClass('active');
 			//获取用户的输入值
 			var v = $(this).val();
 			//正则
-			var reg = /^[a-zA-Z]\w{5,17}$/;
+			var reg = /^[a-zA-Z]\w{6,17}$/;
 
 			if(!reg.test(v)) {
 				

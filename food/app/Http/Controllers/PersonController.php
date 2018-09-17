@@ -78,8 +78,8 @@ class PersonController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::findOrFail(session('id'));
-        if (!Hash::check($request->user_password,$user->repassword)){
-            return back()->with('error','新密码不可与原密码相同');
+        if (!Hash::check($request->jiupass,$user->user_password)){
+            return back()->with('error','原密码输入错误,请重新输入!!!');
         }
         //
         //
