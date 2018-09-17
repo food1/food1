@@ -43,6 +43,10 @@ Route::get('/dianpus/call','QdianpuController@call');
 Route::group(['middleware'=>'home'],function(){
 //个人中心
 Route::get('/person','PersonController@index');
+//用户反馈
+Route::get('/dianpus/fankui', 'QdianpuController@fankui');
+//用户留言
+Route::get('/dianpus/liuyan', 'QdianpuController@liuyan');
 //进入购物车
 Route::get('/dianpus/car', 'QdianpuController@car');
 //进入我的订单

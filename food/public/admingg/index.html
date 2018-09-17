@@ -8,29 +8,21 @@
 
 <style>
 body {
-    background-color:black;
+    background-color:#f0fcff;
 }
 </style>
 
 </head>
 <body>
-
     <center><canvas id="canvas" width="500" height="500" >cccc</canvas></center>
-
-	<!-- <div class="place">
-    <span>位置：</span>
-    <ul class="placeul">
-    <li><a href="#">首页</a></li>
-    </ul>
-    </div> -->
 <script>
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
-ctx.strokeStyle = '#00ffff';
+ctx.strokeStyle = '#a4e2c6';
 ctx.lineWidth = 17;
 ctx.shadowBlur = 15;
-ctx.shadowColor = '#00ffff'
+ctx.shadowColor = '#70f3ff'
 
 function degToRad(degree) {
     var factor = Math.PI / 180;
@@ -50,8 +42,8 @@ function renderTime() {
 
     //Background
     gradient = ctx.createRadialGradient(250, 250, 5, 250, 250, 300);
-    gradient.addColorStop(0, "#03303a");
-    gradient.addColorStop(1, "black");
+    gradient.addColorStop(0, "#eee");
+    gradient.addColorStop(1, "#f0fcff");
     ctx.fillStyle = gradient;
     //ctx.fillStyle = 'rgba(00 ,00 , 00, 1)';
     ctx.fillRect(0, 0, 500, 500);
@@ -81,7 +73,7 @@ setInterval(renderTime, 40);
 </script>
 
 <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';color:#ffffff">
-<p><font style="font-size:50px" color="blue">啊哈啊啊哈啊黑猫警长</font></p>
+<p><font style="font-size:60px;font-family:'叶根友毛笔行书2.0版'" color="#ccc">吃了么</font></p>
 
 </div>    
 </body>

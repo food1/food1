@@ -96,13 +96,17 @@
                                     <li><a href="/dianpus">首页</a></li>
                                     <li><a href="/dianpus/order">我的订单</a></li>
                                     <li><a href="/dianpus/guize">规则中心</a></li>
-                                    <li><a href="contact.html">我的客服</a></li>
+                                    <li><a href="#">用户反馈</a></li>
+                                    <li><a href="/dianpus/call">联系我们</a></li>
                                 </ul>
                                 <ul class="login">
-                                    <a href="/home/logout">
-                                        <li class="login_top"><i class="sign"> </i><span>退出登录</span></li>
-                                    </a>
-                                </ul>
+                                @if(Session::has('id') == null)
+                                    <a href="/home/login"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
+                                    <a href="/home/zhuce"><li class="login_bottom"><i class="register"> </i><span>注册</span></li></a>
+                                @endif
+                                @if(Session::has('id') != null)
+                                    <a href="/home/logout"><li class="login_top"><i class="sign"> </i><span>退出登录</span></li></a>
+                                @endif
                                 <div class="clearfix"></div>
                             </div>
                         </div>

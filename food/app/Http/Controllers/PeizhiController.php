@@ -1,11 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-
-
-
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 class PeizhiController extends Controller
@@ -40,10 +35,10 @@ class PeizhiController extends Controller
     public function store(Request $request)
     {
         
-        $path = 'E:/XAMPP/htdocs/food/food/storage/framework/down';
+        $path = 'D:/XAMPP/htdocs/food/food/storage/framework/down';
         if(!is_file($path))
         {
-            File::copy('E:/XAMPP/htdocs/food/food/storage/framework/adown', 'E:/XAMPP/htdocs/food/food/storage/framework/down');
+            File::copy('D:/XAMPP/htdocs/food/food/storage/framework/adown', 'D:/XAMPP/htdocs/food/food/storage/framework/down');
             
             return redirect('/peizhi')->with('success','网站关闭成功!!!');
         }
@@ -98,10 +93,10 @@ class PeizhiController extends Controller
     public function destroy($id)
     {
         
-        $path = 'E:/XAMPP/htdocs/food/food/storage/framework/down';
+        $path = 'D:/XAMPP/htdocs/food/food/storage/framework/down';
         if(is_file($path))
         {
-            File::delete('E:/XAMPP/htdocs/food/food/storage/framework/down');
+            File::delete('D:/XAMPP/htdocs/food/food/storage/framework/down');
            
              return redirect('/peizhi')->with('success','恭喜维护完成!!!');
         } else {

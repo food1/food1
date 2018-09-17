@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Cate;
+use App\Dianpu;
 use App\Link;
 use App\User;
 use Illuminate\Http\Request;
@@ -15,8 +17,10 @@ class QdianpuController extends Controller
     {
 
         $links = Link::all();
+        $cates = Cate::all();
+        $dianpus = Dianpu::all();
         $users = User::find(\Session::get('id'));
-        return view('home.dianpus.index',compact('users','links'));
+        return view('home.dianpus.index',compact('users','links','cates','dianpus'));
     }
 
     //菜品展示页面
@@ -62,6 +66,16 @@ class QdianpuController extends Controller
     public function call()
     {
         return view('home.dianpus.call');
+    }
+
+    public function fankui()
+    {
+        return view('home.dianpus.fankui');
+    }
+
+    public function liuyan()
+    {
+        return view('home.dianpus.liuyan');
     }
     
 }

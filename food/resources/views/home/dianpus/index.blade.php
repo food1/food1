@@ -8,6 +8,7 @@
 <script src="/home/js/bootstrap.min.js"></script>
 <script src="/home/js/jquery.min.js"></script>
 <link href="/home/css/style.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="/home/kefu/css/style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 </script>
@@ -62,18 +63,18 @@
 		  <div class="header_top">
 			<ul class="phone">
 				<li class="phone_left"><i class="mobile"> </i><span>15149174619</span></li>
-				<li class="phone_right"> 50元以上餐品将免费为您配送!</li>
+				<li class="phone_right"> 50元以上餐品将免费为您配送!&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </li>
 				<div class="clearfix"></div>
 			</ul>
 			<ul class="social">
-				 <h1 style="font-family:'华文彩云';color:#aaa;font-size:40px;">吃了么</h1>
+				<h1 style="font-family:'华文彩云';color:#aaa;font-size:40px;text-align:center;">吃了么</h1>
 			</ul>
 			<ul class="account">
 			@if(Session::has('id') == null)				
 			@endif
 			@if(Session::has('id') != null)
 				<li style="color:#aaa;font-size:16px;">
-				<a href="/person">个人中心</a>&nbsp;|
+				&nbsp; &nbsp; &nbsp; &nbsp; <a href="/person">个人中心</a>&nbsp;|
 				<a href="#">用户:{{$users['user_name']}}</a>
 				&nbsp; <img src="{{$users['user_img']}}" width="30px" height="30px" />
 				</li>
@@ -86,8 +87,7 @@
 			</ul>
 			   <div class="clearfix"> 
 			   </div>
-			</ul>
-			
+			</ul>		
 			<div class="clearfix"></div>
 		</div>
 		<div class="header_bottom">
@@ -111,16 +111,17 @@
 			      </button>
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      <ul class="nav navbar-nav menu1">
+			    <ul class="nav navbar-nav menu1">
 			      	<li><a></a></li>
 			      	<li><a></a></li>
 			      	<li><a></a></li>
 			      	<li><a href="/dianpus">首页</a></li>
 			        <li><a href="/dianpus/order">我的订单</a></li>
 			        <li><a href="/dianpus/guize">规则中心</a></li>
-			        <li><a href="#">我的客服</a></li>
-		          </ul>
-		          <ul class="login">
+			        <li><a href="/dianpus/fankui">用户反馈</a></li>
+			        <li><a href="/dianpus/call">联系我们</a></li>
+		        </ul>
+		        <ul class="login">
 				@if(Session::has('id') == null)
 					<a href="/home/login"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
 					<a href="/home/zhuce"><li class="login_bottom"><i class="register"> </i><span>注册</span></li></a>
@@ -128,10 +129,10 @@
 				@if(Session::has('id') != null)
 					<a href="/home/logout"><li class="login_top"><i class="sign"> </i><span>退出登录</span></li></a>
 				@endif
-		          </ul>
-			      <div class="clearfix"></div>
+		        </ul>
+			    <div class="clearfix"></div>
 			    </div>
-			  </div>
+			</div>
 		</nav>		
         <div class="clearfix"></div>
            </div>
@@ -175,20 +176,11 @@
 		   	<div class="col-md-3 content_top">
 		   	   	<div class="category_box">
 		   	  		<h3 class="cate_head">店铺分类</h3>
+		   	  		@foreach($cates as $v)
 		   	     	<ul class="category">
-				   	  	<li><a href="#">快餐便当</a></li>
-				   	  	<li><a href="#">特色菜系</a></li>
-				   	  	<li><a href="#">异国料理</a></li>
-				   	  	<li><a href="#">小吃夜宵</a></li>
-				   	  	<li><a href="#">甜品饮品</a></li>
-				   	  	<li><a href="#">果蔬生鲜</a></li>
-				   	  	<li><a href="#">商店超市</a></li>
-				   	  	<li><a href="#">早餐</a></li>
-				   	  	<li><a href="#">午餐</a></li>
-				   	  	<li><a href="#">下午茶</a></li>
-				   	  	<li><a href="#">晚餐</a></li>
-				   	  	<li><a href="#">夜宵</a></li>
+				   	  	<li><a href="#">{{$v['cate_name']}}</a></li>
 		   	     	</ul>
+		   	     	@endforeach
 		   	   	</div>
 		   	   	<ul class="product_reviews">
 		   	   	<h3><i class="arrow"> </i><span>用户评论</span></h3>
@@ -264,188 +256,29 @@
 		   	    <ul class="feature">
 		   	   	 	<h3><i class="arrow"></i><span>热门店铺</span></h3>
 		   	   	</ul>
+		   	   	@foreach($dianpus as $v)
 		   	   	<div class="row content_bottom">
-		   	   		
-
 			   	   	<div class="col-md-3">
 			   	   		<div class="content_box"><a href="/dianpus/cai">
 			   	   	  	<div class="view view-fifth">
-			   	   	     	<img src="/home/images/p1.jpg" class="img-responsive" alt=""/>
+			   	   	     	<img src="{{$v['dianpu_img']}}" class="img-responsive" alt=""  style="width:100%;height:170px;"/>
 				   	   	<div class="content_box-grid">
-				   	   	<p class="m_1">汉堡</p>
-				   	   	<div class="price">价格:
-						    <span class="actual">¥12.00</span>
-						</div>
+				   	   	<p class="m_1"><b>{{$v['dianpu_name']}}</b>&nbsp; &nbsp; {{$v['dianpu_intro']}}</p>
+				   	   	<div>{{$v['dianpu_adress']}}</div>
 						<ul class="product_but">
 						  	<li class="but3">进店瞧瞧</li>
-						  	<li class="like"><span>120</span><i class="like1"> </i></li>
+						  	<li class="like"><span></span><i class="like1"> </i></li>
 						<div class="clearfix"> </div>
 						</ul>
 						<div class="mask">
-	                    <div class="info">Quick View</div>
+	                    <div class="info"></div>
 			        </div>
 			    </div>
 			</div>
 		</a>
 	</div>
 </div>
-	<div class="col-md-3">
-		<div class="content_box"><a href="/dianpus/xiangqing">
-			<div class="view view-fifth">
-			   	<img src="/home/images/p4.jpg" class="img-responsive" alt=""/>
-				<div class="content_box-grid">
-				<p class="m_1"> elit</p>
-				<div class="price">Price:
-					<span class="actual">$12.00</span>
-				</div>
-				<ul class="product_but">
-					<li class="but3">Buy</li>
-					<li class="like"><span>120</span><i class="like1"> </i></li>
-					<div class="clearfix"> </div>
-				</ul>
-				<div class="mask">
-		        <div class="info">Quick View</div>
-				</div>
-				</div>
-			</div>
-		</a>
-	</div>
-</div>
-	<div class="col-md-3">
-		<div class="content_box"><a href="/dianpus/xiangqing">
-			<div class="view view-fifth">
-			   	<img src="/home/images/p3.jpg" class="img-responsive" alt=""/>
-				<div class="content_box-grid">
-					<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-					<div class="price">Price:
-						<span class="actual">$12.00</span>
-					</div>
-					<ul class="product_but">
-						<li class="but3">立即购买</li>
-						<li class="like"><span>120</span><i class="like1"> </i></li>
-					<div class="clearfix"> </div>
-					</ul>
-					<div class="mask">
-			        <div class="info">Quick View</div>
-					</div>
-				</div>
-			</div>
-		</a>
-		</div>
-	</div>
-	<div class="col-md-3">
-		<div class="content_box"><a href="/dianpus/xiangqing">
-		<div class="view view-fifth">
-			<img src="/home/images/p2.jpg" class="img-responsive" alt=""/>
-				<div class="content_box-grid">
-					<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-						<div class="price">Price:
-							<span class="actual">$12.00</span>
-						</div>
-							<ul class="product_but">
-							  	<li class="but3">Buy</li>
-							  	<li class="like"><span>120</span><i class="like1"> </i></li>
-						  	<div class="clearfix"> </div>
-						    </ul>
-						    <div class="mask">
-			                    <div class="info">Quick View</div>
-			            </div>
-					</div>
-				</div>
-			</a>
-		</div>
-	</div>
-</div>
-	<div class="row content_bottom1">
-		<div class="col-md-3">
-			<div class="content_box"><a href="/dianpus/xiangqing">
-			   	<div class="view view-fifth">
-			   	   	<img src="/home/images/s3.jpg" class="img-responsive" alt=""/>
-				   	<div class="content_box-grid">
-				   	<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	<div class="price">Price:
-					<span class="actual">$12.00</span>
-					</div>
-					<ul class="product_but">
-					<li class="but3">Buy</li>
-					<li class="like"><span>120</span><i class="like1"> </i></li>
-					<div class="clearfix"> </div>
-					</ul>
-					<div class="mask">
-	                <div class="info">Quick View</div>
-			        </div>
-			    </div>
-			</div>
-		</a>
-	</div>
-</div>
-	<div class="col-md-3">
-		<div class="content_box"><a href="/dianpus/xiangqing">
-			<div class="view view-fifth">
-			   	<img src="/home/images/p7.jpg" class="img-responsive" alt=""/>
-				   	<div class="content_box-grid">
-				   	   	<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	   	<div class="price">Price:
-						<span class="actual">$12.00</span>
-						</div>
-						<ul class="product_but">
-						<li class="but3">Buy</li>
-						<li class="like"><span>120</span><i class="like1"> </i></li>
-						<div class="clearfix"> </div>
-						</ul>
-						<div class="mask">
-	                    <div class="info">Quick View</div>
-			         	</div>
-			        </div>
-				</div>
-			</a>
-		</div>
-	</div>
-		<div class="col-md-3">
-			<div class="content_box"><a href="/dianpus/xiangqing">
-			   	<div class="view view-fifth">
-			   	   	<img src="/home/images/p6.jpg" class="img-responsive" alt=""/>
-				   	<div class="content_box-grid">
-				   	   	<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	   	<div class="price">Price:
-						<span class="actual">$12.00</span>
-						</div>
-						<ul class="product_but">
-						<li class="but3">Buy</li>
-						<li class="like"><span>120</span><i class="like1"> </i></li>
-						<div class="clearfix"> </div>
-						</ul>
-						<div class="mask">
-	                    <div class="info">Quick View</div>
-			            </div>
-			        </div>
-				</div>
-			</a>
-		</div>
-	</div>
-		<div class="col-md-3">
-			<div class="content_box"><a href="/dianpus/xiangqing">
-			   	<div class="view view-fifth">
-			   	   	<img src="/home/images/p5.jpg" class="img-responsive" alt=""/>
-				   	   	<div class="content_box-grid">
-				   	   	<p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-				   	   	<div class="price">Price:
-						<span class="actual">$12.00</span>
-						</div>
-						<ul class="product_but">
-						<li class="but3">Buy</li>
-						<li class="like"><span>120</span><i class="like1"> </i></li>
-						<div class="clearfix"> </div>
-						</ul>
-						<div class="mask">
-	                    <div class="info">Quick View</div>
-			            </div>
-			         	</div>
-				   	</div>
-			   	</a>
-			</div>
-		</div>
-	</div>
+@endforeach
 		<ul class="dc_pagination dc_paginationA dc_paginationA06">
 			<li><a href="#">1</a></li>
 			<li><a href="#" class="current">2</a></li>
@@ -468,8 +301,8 @@
 			<div class="footer-grid footer-grid1">
 			  <h3 class="m_2">用戶帮助</h3>
 			  <ul class="list1">
-			  	<li><a href="#">用户留言</a></li>
-			  	<li><a href="#">用户反馈</a></li>
+			  	<li><a href="/dianpus/liuyan">用户留言</a></li>
+			  	<li><a href="/dianpus/fankui">用户反馈</a></li>
 			  </ul>
 		   </div>
 
@@ -522,9 +355,49 @@
 		   <div class="clearfix"> </div>
 	   </div>
 	</div>
-
+<!-- 在线客服 -->
+<div class="suspension">
+	<div class="suspension-box">
+		<a href="#" class="a a-service "><i class="i"></i></a>
+		<a href="javascript:;" class="a a-service-phone "><i class="i"></i></a>
+		<a href="/dianpus/car" class="a a-cart"><i class="i"></i></a>
+		<a href="javascript:;" class="a a-top"><i class="i"></i></a>
+		<div class="d d-service">
+			<i class="arrow"></i>
+			<div class="inner-box">
+				<div class="d-service-item clearfix">				        	
+					<a href="http://wpa.qq.com/msgrd?v=3&uin=1505349007&site=qq&menu=yes" class="clearfix"><span class="circle"><i class="i-qq"></i></span><h3>咨询在线客服</h3></a>
+				</div>
+			</div>
+		</div>
+		<div class="d d-service-phone">
+			<i class="arrow"></i>
+			<div class="inner-box">
+				<div class="d-service-item clearfix">
+					<span class="circle"><i class="i-tel"></i></span>
+					<div class="text">
+						<p>服务热线</p>
+						<p class="red number">15147805380</p>
+					</div>
+				</div>
+				<div class="d-service-intro clearfix">
+					<p><i></i>吃了么24小时为您提供帮助</p>
+				</div>
+			</div>
+		</div>
+		<div class="d d-qrcode">
+			<i class="arrow"></i>
+			<div class="inner-box">
+				<div class="qrcode-img"><img src="images/side_ewm.jpg" alt=""></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 在线客服end -->
 </body>
 </html>
+<script type="text/javascript" src="/home/kefu/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 		/**
@@ -568,5 +441,41 @@
 			$('#images>li').eq(index).fadeIn();
 		}
 		autoRun();
+
+		$(document).ready(function(){
+
+	/* ----- 客服侧边悬浮 ---- */
+	$(document).on("mouseenter", ".suspension .a", function(){
+		var _this = $(this);
+		var s = $(".suspension");
+		var isService = _this.hasClass("a-service");
+		var isServicePhone = _this.hasClass("a-service-phone");
+		var isQrcode = _this.hasClass("a-qrcode");
+		if(isService){ s.find(".d-service").show().siblings(".d").hide();}
+		if(isServicePhone){ s.find(".d-service-phone").show().siblings(".d").hide();}
+		if(isQrcode){ s.find(".d-qrcode").show().siblings(".d").hide();}
+	});
+	$(document).on("mouseleave", ".suspension, .suspension .a-top", function(){
+		$(".suspension").find(".d").hide();
+	});
+	$(document).on("mouseenter", ".suspension .a-top", function(){
+		$(".suspension").find(".d").hide(); 
+	});
+	$(document).on("click", ".suspension .a-top", function(){
+		$("html,body").animate({scrollTop: 0});
+	});
+	$(window).scroll(function(){
+		var st = $(document).scrollTop();
+		var $top = $(".suspension .a-top");
+		if(st > 400){
+			$top.css({display: 'block'});
+		}else{
+			if ($top.is(":visible")) {
+				$top.hide();
+			}
+		}
+	});
+	
+});	
 </script>
 

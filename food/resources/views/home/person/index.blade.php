@@ -58,7 +58,8 @@
 				      	<li><a href="/dianpus">首页</a></li>
 				        <li><a href="/dianpus/order">我的订单</a></li>
 				        <li><a href="/dianpus/guize">规则中心</a></li>
-				        <li><a href="contact.html">我的客服</a></li>
+				        <li><a href="#">用户反馈</a></li>
+				        <li><a href="/dianpus/call">联系我们</a></li>
 		        	</ul>
 		          	<ul class="login">
 		          		<a href="/home/logout"><li class="login_top"><i class="sign"> </i><span>退出登录</span></li></a>

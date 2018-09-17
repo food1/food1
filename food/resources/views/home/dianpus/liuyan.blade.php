@@ -68,13 +68,9 @@
                                     <li><a href="/dianpus/call">联系我们</a></li>
                                 </ul>
                                 <ul class="login">
-                                @if(Session::has('id') == null)
-                                    <a href="/home/login"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
-                                    <a href="/home/zhuce"><li class="login_bottom"><i class="register"> </i><span>注册</span></li></a>
-                                @endif
-                                @if(Session::has('id') != null)
-                                    <a href="/home/logout"><li class="login_top"><i class="sign"> </i><span>退出登录</span></li></a>
-                                @endif
+                                    <a href="/home/zhuce">
+                                        <li class="login_top"><i class="sign"> </i><span>註冊</span></li>
+                                    </a>
                                 </ul>
                                 <div class="clearfix"></div>
                             </div>
@@ -87,6 +83,13 @@
             <input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
             <input type="submit" value="搜索">
         </div>
+        @if(Session::has('error'))
+        <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
+            <div class="dashboard-stat red">
+                <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:#f66;">{{Session::get('error')}} </div>
+            </div>
+        </div>
+        @endif
     </div>
     </div>
     </div>
@@ -94,10 +97,43 @@
         <div class="container">
             <div class="Product_top">
                 <div class="row content">
-                    <div>
-                    	<p>
-                    		<b style="font-size:16px">“吃了么”</b>是2018年创立的本地生活平台,主营在线外卖、新零售、即时配送和餐饮供应链等业务.以诚信服务客户为使命，致力于用创新科技打造全球领先的本地生活平台.成为了中国人继做饭、堂食后的第三种常规就餐方式.
-                    	</p>
+                    <div class="col-md-3">
+                        <div class="category_box">
+                            <h3 class="cate_head">精品推荐</h3>
+                            <ul class="category">
+                                <li><a href="#"><img src="/home/images/p1.jpg" width="100px" height="50px"></a></li>
+                                <li><a href="#"><img src="/home/images/p2.jpg" width="100px" height="50px"></a></li>
+                                <li><a href="#"><img src="/home/images/p3.jpg" width="100px" height="50px"></a></li>
+                                <li><a href="#"><img src="/home/images/p4.jpg" width="100px" height="50px"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="breadcrumb">
+                            <a href="#">首页</a> &gt;&gt; <span class="last">登录</span>
+                        </div>
+                        <center>
+                            <div class="contact-form">
+                                <form action="#" method="post">
+                                    <div>
+                                        <span><label>用户名:</label></span>
+                                        <span><input name="user_name" type="text" class="textbox" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
+                                    </div>
+                                    <div>
+                                        <span><label>手机号:</label></span>
+                                        <span><input name="user_phone" type="text" class="textbox" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
+                                    </div>
+                                    <div>
+                                        <span><label>反馈:</label></span>
+                                        <span style="width:297px;height:123px;border:solid 1px #aaa;"><textarea name="content" rows="10"></textarea></span>
+                                    </div>
+                                    {{csrf_field()}}
+                                    <input type="submit" name="submit" value="提交">
+                                </form>
+                                </div>
+                            </form>
+                            </div>
+                        </center>
                     </div>
                 </div>
             </div>
@@ -112,6 +148,7 @@
                     <li><a href="#">用户反馈</a></li>
                 </ul>
             </div>
+
             <div class="footer-grid footer-grid3">
                 <h3 class="m_2">关于我们</h3>
                 <ul class="list1">

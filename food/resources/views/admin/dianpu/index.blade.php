@@ -37,18 +37,16 @@ $(document).ready(function(){
     <span>店铺管理</span>
     </div>
     @if(Session::has('success'))
-            <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-                <div style="background:yellowgreen">
-                        <div class="desc" style="text-align: center;line-height:95px;color:white;font-size: 20px;">{{Session::get('success')}} </div>
-                </div>
+        <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
+            <div style="background: yellowgreen">
+                <div class="desc" style="text-align: center;line-height:95px;color:white;font-size: 20px;">{{Session::get('success')}} </div>
             </div>
-            @endif
-
-            @if(Session::has('error'))
-            <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
-                <div style="background: pink">
-                        <div class="desc" style="text-align: center;line-height:95px;color:white;font-size: 20px;">{{Session::get('error')}} </div>
-                </div>
+        </div>
+    @endif
+    @if(Session::has('error'))
+        <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
+            <div style="background: pink">
+                <div class="desc" style="text-align: center;line-height:95px;color:white;font-size: 20px;">{{Session::get('error')}} </div>
             </div>
         </div>
     @endif
