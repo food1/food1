@@ -92,11 +92,10 @@
                                 <ul class="nav navbar-nav menu1">
                                     <li><a></a></li>
                                     <li><a></a></li>
-                                    <li><a></a></li>
                                     <li><a href="/dianpus">首页</a></li>
                                     <li><a href="/dianpus/order">我的订单</a></li>
                                     <li><a href="/dianpus/guize">规则中心</a></li>
-                                    <li><a href="#">用户反馈</a></li>
+                                    <li><a href="/dianpus/fankui">用户反馈</a></li>
                                     <li><a href="/dianpus/call">联系我们</a></li>
                                 </ul>
                                 <ul class="login">
@@ -121,28 +120,17 @@
         </div>
     </div>
     <div class="main">
-        <div class="container">
-            <div class="single">
-                <div class="row content">
-                    <div class="col-md-3">
-                        <div class="category_box">
-                            <h3 class="cate_head">店铺分类</h3>
-                            <ul class="category">
-                                <li><a href="#">美食</a></li>
-                                <li><a href="#">快餐便当</a></li>
-                                <li><a href="#">特色菜系</a></li>
-                                <li><a href="#">异国料理</a></li>
-                                <li><a href="#">小吃夜宵</a></li>
-                                <li><a href="#">甜品饮品</a></li>
-                                <li><a href="#">果蔬生鲜</a></li>
-                                <li><a href="#">商店超市</a></li>
-                                <li><a href="#">早餐</a></li>
-                                <li><a href="#">午餐</a></li>
-                                <li><a href="#">下午茶</a></li>
-                                <li><a href="#">晚餐</a></li>
-                                <li><a href="#">夜宵</a></li>
-                            </ul>
-                        </div>
+        <br>
+        <div class="container" style="width: 95%"> 
+            <div class="col-md-3 content_top">
+                 <div class="category_box">
+                    <h3 class="cate_head">店铺分类</h3>
+                    <ul class="category">
+                    @foreach($cates as $v)
+                        <li><a href="/dianpus?cate_id={{$v->id}}">{{$v->cate_name}}</a></li>
+                    @endforeach
+                    </ul>
+                </div>
                         <ul class="product_reviews">
                             <h3><i class="arrow"> </i><span>用户评论</span></h3>
                             <li>

@@ -52,14 +52,13 @@
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    	<ul class="nav navbar-nav menu1">
-				      	<li><a></a></li>
-				      	<li><a></a></li>
-				      	<li><a></a></li>
-				      	<li><a href="/dianpus">首页</a></li>
-				        <li><a href="/dianpus/order">我的订单</a></li>
-				        <li><a href="/dianpus/guize">规则中心</a></li>
-				        <li><a href="#">用户反馈</a></li>
-				        <li><a href="/dianpus/call">联系我们</a></li>
+	                    <li><a></a></li>
+	                    <li><a></a></li>
+	                    <li><a href="/dianpus">首页</a></li>
+	                    <li><a href="/dianpus/order">我的订单</a></li>
+	                    <li><a href="/dianpus/guize">规则中心</a></li>
+	                    <li><a href="/dianpus/fankui">用户反馈</a></li>
+	                    <li><a href="/dianpus/call">联系我们</a></li>
 		        	</ul>
 		          	<ul class="login">
 		          		<a href="/home/logout"><li class="login_top"><i class="sign"> </i><span>退出登录</span></li></a>
@@ -97,7 +96,7 @@
 		<div class="container">
 		  	<div class="Product_top">
 		  		<center>
-		  	  		<form action="/home/login" method="post" id="myform" name="myform" enctype="multipart/form-data"> 
+		  	  		<form action="/person/{{$users['id']}}" method="post" id="myform" name="myform" enctype="multipart/form-data"> 
 				 		<div class="register-top-grid">
 						<div>
 						    <span><label>用户名:</label></span>

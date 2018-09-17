@@ -101,14 +101,13 @@
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    	<ul class="nav navbar-nav menu1">
-				      	<li><a></a></li>
-				      	<li><a></a></li>
-				      	<li><a></a></li>
-				      	<li><a href="/dianpus">首页</a></li>
-				        <li><a href="/dianpus/order">我的订单</a></li>
-				        <li><a href="/dianpus/guize">规则中心</a></li>
-				        <li><a href="#">用户反馈</a></li>
-				        <li><a href="/dianpus/call">联系我们</a></li>
+	                    <li><a></a></li>
+	                    <li><a></a></li>
+	                    <li><a href="/dianpus">首页</a></li>
+	                    <li><a href="/dianpus/order">我的订单</a></li>
+	                    <li><a href="/dianpus/guize">规则中心</a></li>
+	                    <li><a href="/dianpus/fankui">用户反馈</a></li>
+	                    <li><a href="/dianpus/call">联系我们</a></li>
 		        	</ul>
 		          	<ul class="login">
 					@if(Session::has('id') == null)

@@ -174,14 +174,14 @@
 		<div class="container" style="width: 95%">
 		   
 		   	<div class="col-md-3 content_top">
-		   	   	<div class="category_box">
-		   	  		<h3 class="cate_head">店铺分类</h3>
-		   	  		@foreach($cates as $v)
-		   	     	<ul class="category">
-				   	  	<li><a href="#">{{$v['cate_name']}}</a></li>
-		   	     	</ul>
-		   	     	@endforeach
-		   	   	</div>
+		   	   	 <div class="category_box">
+                    <h3 class="cate_head">店铺分类</h3>
+                    <ul class="category">
+                    @foreach($cates as $v)
+                        <li><a href="/dianpus?cate_id={{$v->id}}">{{$v->cate_name}}</a></li>
+                    @endforeach
+                    </ul>
+                </div>
 		   	   	<ul class="product_reviews">
 		   	   	<h3><i class="arrow"> </i><span>用户评论</span></h3>
 		   	   	<li>
@@ -223,73 +223,54 @@
 		   	   	<ul class="feature">
 		   	   	 	<h3><i class="arrow"> </i><span>今日精选</span></h3>
 		   	   	</ul>
-		   	   	<ul class="feature_grid">
-				 	<li class="grid1"><img src="/home/images/f1.jpg" class="img-responsive" alt=""/>
-				 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed</p>
+		   	   	<ul class="feature_grid" style="width: 900px">
+		   	   		@foreach($food1s as $k => $v)
+		   	   		@if($k <= 2)
+
+				 	<li class="grid1" style="float: right;margin: 0 auto;margin-right: 0px""><img src="{{$v['food1_img']}}" class="img-responsive" style="width: 250px;height: 110px; alt=""  />
+				 	<p>{{$v['food1_name']}}</p>
 				 	<div class="price">Price:
-					  	<span class="actual">$12.00</span>
+					  	<span class="actual">{{$v['food1_price']}}</span>
 					</div>
 				    <div class="but1">
 			          	<a href="">立即购买</a>
 			        </div>
-				 	</li>		   	   	
-				 	<li class="grid1"><img src="/home/images/f2.jpg" class="img-responsive" alt=""/>
-				 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed</p>
-				 	<div class="price">Price:
-					  	<span class="actual">$12.00</span>
-					</div>
-				    <div class="but1">
-			          	<a href="#">立即购买</a>
-			        </div>
-				 	</li>		   	
-				 	<li class="grid2"><img src="/home/images/f3.jpg" class="img-responsive" alt=""/>
-				 	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed</p>
-				 	<div class="price">Price:
-					  	<span class="actual">$12.00</span>
-					</div>
-				    <div class="but1">
-			          	<a href="#">立即购买</a>
-			        </div>
-				 	</li>		   	
+				 	</li>
+				 	@endif		   	   	
+				 	@endforeach
 				 	<div class="clearfix"></div>
 		   	   	</ul>
 		   	    <ul class="feature">
 		   	   	 	<h3><i class="arrow"></i><span>热门店铺</span></h3>
 		   	   	</ul>
-		   	   	@foreach($dianpus as $v)
-		   	   	<div class="row content_bottom">
-			   	   	<div class="col-md-3">
-			   	   		<div class="content_box"><a href="/dianpus/cai">
-			   	   	  	<div class="view view-fifth">
-			   	   	     	<img src="{{$v['dianpu_img']}}" class="img-responsive" alt=""  style="width:100%;height:170px;"/>
-				   	   	<div class="content_box-grid">
-				   	   	<p class="m_1"><b>{{$v['dianpu_name']}}</b>&nbsp; &nbsp; {{$v['dianpu_intro']}}</p>
-				   	   	<div>{{$v['dianpu_adress']}}</div>
-						<ul class="product_but">
-						  	<li class="but3">进店瞧瞧</li>
-						  	<li class="like"><span></span><i class="like1"> </i></li>
-						<div class="clearfix"> </div>
-						</ul>
-						<div class="mask">
-	                    <div class="info"></div>
-			        </div>
-			    </div>
-			</div>
-		</a>
-	</div>
-</div>
-@endforeach
-		<ul class="dc_pagination dc_paginationA dc_paginationA06">
-			<li><a href="#">1</a></li>
-			<li><a href="#" class="current">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
-			<li><a href="#">...</a></li>
-			<li><a href="#">19</a></li>
-			<li><a href="#">20</a></li>
-			<li><a href="#" class="previous">下一页</a></li>
-			<li><a href="#" class="next">上一页</a></li>
+		   	    <div class="row content_bottom">
+                	@foreach($dianpus as $v)
+                    <div class="col-md-3" >              
+                        <div class="content_box"  style="float: left;margin-top:30px;">
+                            <a href="/dianpus/cai">
+                                <div class="view view-fifth" style="width: 190px">
+                                    <img src="{{$v->dianpu_img}}" style="width: 190px;height:110px;margin: 0 auto" class="img-responsive" alt="" />
+                                    <div class="content_box-grid">
+                                        <p class="m_1" style="color: red"><center><b>{{$v->dianpu_name}}</b></center></p>
+                                        <p class="m_1" style="display: hidden;"><?php echo mb_substr($v->dianpu_intro,0,17,'utf-8')?></p>
+                                        <p class="m_1" style="display: hidden;"><?php echo mb_substr($v->dianpu_adress,0,13,'utf-8')?></p>
+                                        <ul class="product_but">
+                                            <li class="but3">进店瞧瞧</li>
+                                            <li class="like"><span>120</span><i class="like1"> </i></li>
+                                            <div class="clearfix"> </div>
+                                        </ul>
+                                        <div class="mask">
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    @endforeach
+                  </div>
+				<ul class="dc_pagination dc_paginationA dc_paginationA06">
+			<li>{{ $dianpus->appends(request()->all())->links() }}</li>
+
 		</ul>
 	</div>
 </div>
@@ -397,7 +378,7 @@
 </body>
 </html>
 <script type="text/javascript" src="/home/kefu/js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript">
+<script type="text/javascript"></script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<script>
 		/**
@@ -442,8 +423,7 @@
 		}
 		autoRun();
 
-		$(document).ready(function(){
-
+	$(document).ready(function(){
 	/* ----- 客服侧边悬浮 ---- */
 	$(document).on("mouseenter", ".suspension .a", function(){
 		var _this = $(this);
@@ -476,6 +456,6 @@
 		}
 	});
 	
-});	
+});
 </script>
 

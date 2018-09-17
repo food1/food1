@@ -60,8 +60,10 @@
 								    </select>
 								  </div>
 								</div>
-								<a href="/dianpus"><button class="btn-stress">搜 索</button></a>
+								
          						</form>
+         						
+         						<a href="/dianpus?cate_id=1"><button class="btn-stress">搜 索</button></a>
 						       <!-- 城市三级联动 -->
 						    </div>	
 						</div>

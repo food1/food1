@@ -60,11 +60,10 @@
                                 <ul class="nav navbar-nav menu1">
                                     <li><a></a></li>
                                     <li><a></a></li>
-                                    <li><a></a></li>
                                     <li><a href="/dianpus">首页</a></li>
                                     <li><a href="/dianpus/order">我的订单</a></li>
                                     <li><a href="/dianpus/guize">规则中心</a></li>
-                                    <li><a href="#">用户反馈</a></li>
+                                    <li><a href="/dianpus/fankui">用户反馈</a></li>
                                     <li><a href="/dianpus/call">联系我们</a></li>
                                 </ul>
                                 <ul class="login">
@@ -96,6 +95,8 @@
                 <div class="row content">
                     <div>
                     	<p>
+                            <li><a href="/dianpus/weizhi">我的位置</a></li>
+                            <br>
                     		<b style="font-size:16px">“吃了么”</b>是2018年创立的本地生活平台,主营在线外卖、新零售、即时配送和餐饮供应链等业务.以诚信服务客户为使命，致力于用创新科技打造全球领先的本地生活平台.成为了中国人继做饭、堂食后的第三种常规就餐方式.
                     	</p>
                     </div>
