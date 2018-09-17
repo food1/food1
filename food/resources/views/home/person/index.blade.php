@@ -102,14 +102,21 @@
 						    <span><label>用户名:</label></span>
 						    <span><input name="user_name" type="text" style="width:300px;height:30px;border:solid 1px #aaa;" value="{{$users->user_name}}"></span>
 						</div>
+
 						<div>
 						    <span><label>手机号:</label></span>
 						    <span><input name="user_phone" type="text" style="width:300px;height:30px;border:solid 1px #aaa;" value="{{$users->user_phone}}"></span>
 						</div>
+						
 						<div>
 						    <span><label>收货地址:</label></span>
 						    <span><input name="user_adress" type="text" style="width:300px;height:30px;border:solid 1px #aaa;" value="{{$users->user_adress}}"></span>
 						</div>
+						<div>
+						    <span><label>原密码:</label></span>
+						    <span><input name="jiupass" type="password" class="active" style="width:300px;height:27px;border:solid 1px #aaa;"><span class="remind"></span></span>
+						</div>
+
 						<div>
 						    <span><label>密码:</label></span>
 						    <span><input name="user_password" type="password" class="active" style="width:300px;height:30px;border:solid 1px #aaa;"><span class="remind"></span></span>
@@ -205,7 +212,7 @@
 			//触发错误提醒
 			$('input').trigger('blur');
 			
-			if(CPASS && CREPASS) {
+			if(CPASS && CREPASS && Session = true) {
 				return true;
 			}else{
 				return false;
