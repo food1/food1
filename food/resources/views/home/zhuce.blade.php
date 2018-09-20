@@ -175,7 +175,6 @@
             <div class="footer-grid footer-grid1">
                 <h3 class="m_2">用戶帮助</h3>
                 <ul class="list1">
-                    <li><a href="#">用户留言</a></li>
                     <li><a href="#">用户反馈</a></li>
                 </ul>
             </div>
@@ -313,7 +312,7 @@ $('input[name=user_name]').focus(function() {
 			//获取用户的输入值
 			var v = $(this).val();
 			//正则
-			var reg = /^[a-zA-Z]\w{6,17}$/;
+			var reg = /^[a-zA-Z]\w{5,17}$/;
 
 			if(!reg.test(v)) {
 				

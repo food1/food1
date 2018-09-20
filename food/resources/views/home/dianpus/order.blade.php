@@ -174,7 +174,6 @@
 			<div class="footer-grid footer-grid1">
 			  <h3 class="m_2">用戶帮助</h3>
 			  <ul class="list1">
-			  	<li><a href="#">用户留言</a></li>
 			  	<li><a href="#">用户反馈</a></li>
 			  </ul>
 		   </div>

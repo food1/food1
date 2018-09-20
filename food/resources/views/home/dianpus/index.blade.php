@@ -172,7 +172,6 @@
 		</div>  
 		</div>
 		<div class="container" style="width: 95%">
-		   
 		   	<div class="col-md-3 content_top">
 		   	   	 <div class="category_box">
                     <h3 class="cate_head">店铺分类</h3>
@@ -282,7 +281,6 @@
 			<div class="footer-grid footer-grid1">
 			  <h3 class="m_2">用戶帮助</h3>
 			  <ul class="list1">
-			  	<li><a href="/dianpus/liuyan">用户留言</a></li>
 			  	<li><a href="/dianpus/fankui">用户反馈</a></li>
 			  </ul>
 		   </div>
@@ -422,9 +420,9 @@
 			$('#images>li').eq(index).fadeIn();
 		}
 		autoRun();
-
-	$(document).ready(function(){
+		
 	/* ----- 客服侧边悬浮 ---- */
+	$(document).ready(function(){
 	$(document).on("mouseenter", ".suspension .a", function(){
 		var _this = $(this);
 		var s = $(".suspension");

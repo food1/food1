@@ -89,11 +89,6 @@ class QdianpuController extends Controller
         return view('home.dianpus.fankui');
     }
 
-    public function liuyan()
-    {
-        return view('home.dianpus.liuyan');
-    }
-
     public function weizhi()
     {
         return view('home.dianpus.weizhi');

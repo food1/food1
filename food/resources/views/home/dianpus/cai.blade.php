@@ -100,8 +100,7 @@
 			    </div>
 			  </div>
 			</nav>
-			 <!-- 閃存 -->
-	           
+			 <!-- 閃存 -->  
 			    @if(Session::has('error'))
 			    <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
 			    <div class="dashboard-stat red">
@@ -120,8 +119,13 @@
 		</div>
 	</div>
     <div class="main">
-        <div class="container" style="width: 80%">
+        <div class="container" style="width: 95%">
+            <div class="col-md-3 content_top">
+                <ul class="product_reviews">
+                </ul>               
+                </div>
             <div class="row content">
+
                 <div class="col-md-2 content_top">
                 </div>
                 <div class="col-md-8">
@@ -133,7 +137,7 @@
                     <div class="row content_bottom">
                         @foreach($food1s as $v)
                         <div class="col-md-4">
-                            <div class="content_box">
+                            <div class="content_box" style="width: 190px">
                                 <a href="/dianpus/xiangqing">
                                     <div class="view view-fifth">
                                         <img src="{{$v['food1_img']}}" class="img-responsive" alt="" style="height:150px;width:100%" />
@@ -181,7 +185,6 @@
             <div class="footer-grid footer-grid1">
                 <h3 class="m_2">用戶帮助</h3>
                 <ul class="list1">
-                    <li><a href="/dianpus/liuyan">用户留言</a></li>
                     <li><a href="#\/dianpus/fankui">用户反馈</a></li>
                 </ul>
             </div>
