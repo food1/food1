@@ -102,25 +102,36 @@
 						    <span><label>用户名:</label></span>
 						    <span><input name="user_name" type="text" style="width:300px;height:30px;border:solid 1px #aaa;" value="{{$users->user_name}}"></span>
 						</div>
+
 						<div>
 						    <span><label>手机号:</label></span>
 						    <span><input name="user_phone" type="text" style="width:300px;height:30px;border:solid 1px #aaa;" value="{{$users->user_phone}}"></span>
 						</div>
+						
 						<div>
 						    <span><label>收货地址:</label></span>
 						    <span><input name="user_adress" type="text" style="width:300px;height:30px;border:solid 1px #aaa;" value="{{$users->user_adress}}"></span>
 						</div>
 						<div>
+						    <span><label>原密码:</label></span>
+						    <span><input name="jiupass" type="password" class="active" style="width:300px;height:27px;border:solid 1px #aaa;"></span></span>
+						</div>
+
+						<div>
 						    <span><label>密码:</label></span>
-						    <span><input name="user_password" type="text" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
+						    <span><input name="user_password" type="password" class="active" style="width:300px;height:30px;border:solid 1px #aaa;"><span class="remind"></span></span>
 						</div>
 						<div>
 						    <span><label>头像:</label></span>
 						    <input name="user_img" type="file" style="width:300px;height:30px;border:solid 1px #aaa;">
 						    <img src="{{$users->user_img}}" width="100px" height="80px">
 						</div>
+						<div>
+						    <span><label>确认密码:</label></span>
+						    <span><input name="repassword" type="password" style="width:300px;height:30px;border:solid 1px #aaa;"><span class="remind"></span></span>
+						</div>
 					</div>
-				  <div class="clearfix"> </div>
+				<div class="clearfix"> </div>
 					<div class="register-but">
 						{{method_field('PUT')}} 
 					   	{{csrf_field()}}
@@ -133,6 +144,80 @@
 		</div>
 	</div>
 </div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+		var CPASS = false;
+		var CREPASS = false;
+	//密码
+		$('input[name=user_password]').focus(function(){
+			//边框颜色
+			$(this).addClass('active');
+			//提示语显示
+			$(this).next().show().html('请输入您要设置的新密码');
+		}).blur(function(){
+
+			$(this).removeClass('active');
+			//获取用户的输入值
+			var v = $(this).val();
+			//正则
+			var reg = /^[a-zA-Z]\w{5,17}$/;
+
+
+			if(!reg.test(v)) {
+				
+				//文字提醒
+				$(this).next().html('<span style="color:red">格式不正确</span>').show();
+				CPASS = false;
+			}else{
+				
+				//文字提醒
+				$(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
+				CPASS = true;
+
+			}
+		})
+
+
+	//确认密码
+		$('input[name=repassword]').focus(function(){
+			
+			//提示语显示
+			$(this).next().show().html('请再次输入密码');
+		}).blur(function(){
+			$(this).removeClass('active');
+
+			//获取用户的输入值
+			var v = $(this).val();
+
+
+			if(v != $('input[name=user_password]').val()) {
+				
+				//文字提醒
+				$(this).next().html('<span style="color:red">两次密码不一致</span>').show();
+				CREPASS = false;
+			}else{
+				
+				//文字提醒
+				$(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
+				CREPASS = true;
+
+			}
+		})
+
+		//表单的提交事件
+		$('form').submit(function(){
+			//触发错误提醒
+			$('input').trigger('blur');
+			
+			if(CPASS && CREPASS) {
+				return true;
+			}else{
+				return false;
+			}
+		});
+
+</script>
    <div class="footer">
 		<div class="container">
 			<div class="footer-grid footer-grid1">

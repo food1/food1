@@ -16,7 +16,7 @@ class PersonController extends Controller
     public function index()
     {
         //
-         $users = new User;
+        $users = new User;
         
         $users = User::find(\Session::get('id'));
 
@@ -77,7 +77,13 @@ class PersonController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail(session('id'));
+        if (!Hash::check($request->jiupass,$user->user_password)){
+            return back()->with('error','原密码输入错误,请重新输入!!!');
+        }
+        
+        
+        
         $user = User::find($id);
         //更新
         $user -> user_name = $request->user_name;
@@ -85,15 +91,17 @@ class PersonController extends Controller
         $user -> user_adress = $request->user_adress;
         $user -> user_password = Hash::make($request->user_password);
         
+        
+        
 
         if ($request->hasFile('user_img')) {
             $user->user_img = '/'.$request->user_img->store('uploads/'.date('Ymd'));
         }
         
         if($user->save()){
-            return redirect('/home/login')->with('success','更新成功');
+            return redirect('/home/login')->with('success','修改成功,请您重新登录');
         }else{
-            return back()->with('error','更新失败');
+            return back()->with('error','修改失败,请您稍后再试');
         }
 
     }
