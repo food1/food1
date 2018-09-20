@@ -93,7 +93,7 @@
                                     <li><a></a></li>
                                     <li><a></a></li>
                                     <li><a></a></li>
-                                    <li><a href="/dianpus">首页</a></li>
+                                    <li><a href="/dianpus?cate_id=1">首页</a></li>
                                     <li><a href="/dianpus/order">我的订单</a></li>
                                     <li><a href="/dianpus/guize">规则中心</a></li>
                                     <li><a href="contact.html">我的客服</a></li>
@@ -121,24 +121,7 @@
             <div class="single">
                 <div class="row content">
                     <div class="col-md-3">
-                        <div class="category_box">
-                            <h3 class="cate_head">店铺分类</h3>
-                            <ul class="category">
-                                <li><a href="#">美食</a></li>
-                                <li><a href="#">快餐便当</a></li>
-                                <li><a href="#">特色菜系</a></li>
-                                <li><a href="#">异国料理</a></li>
-                                <li><a href="#">小吃夜宵</a></li>
-                                <li><a href="#">甜品饮品</a></li>
-                                <li><a href="#">果蔬生鲜</a></li>
-                                <li><a href="#">商店超市</a></li>
-                                <li><a href="#">早餐</a></li>
-                                <li><a href="#">午餐</a></li>
-                                <li><a href="#">下午茶</a></li>
-                                <li><a href="#">晚餐</a></li>
-                                <li><a href="#">夜宵</a></li>
-                            </ul>
-                        </div>
+                        
                         <ul class="product_reviews">
                             <h3><i class="arrow"> </i><span>用户评论</span></h3>
                             <li>
@@ -176,6 +159,12 @@
                             </div>
                         </ul>
                         <ul class="product_reviews">
+                            <li>
+                                <h3><i class="arrow"> </i><span>关注我们</span></h3>
+                                <img src="/home/images/clm.png" class="img-responsive" alt=""/>
+                            </li>
+                        </ul>
+                        <ul class="product_reviews">
                             <h3><i class="arrow"> </i><span>支付方式</span></h3>
                         </ul>
                         <div style="float:left;">
@@ -186,55 +175,35 @@
                     </div>
                     <div class="col-md-9">
                         <div class="single_image">
+                            @foreach($food1s as $v)
                             <ul id="etalage">
                                 <li>
                                     <a href="optionallink.html">
-									<img class="etalage_thumb_image" src="/home/images/p1.jpg" class="img-responsive" alt=""/>
-									<img class="etalage_source_image"  src="/home/images/p1.jpg" class="img-responsive" alt=""/>
+									<img class="etalage_thumb_image" src="{{$food1s->food1_img}}" class="img-responsive" alt=""/>
+									<img class="etalage_source_image"  src="{{$food1s->food1_img}}" class="img-responsive" alt=""/>
 								</a>
                                 </li>
-                                <li>
-                                    <img class="etalage_thumb_image" src="/home/images/p2.jpg" class="img-responsive" alt="" />
-                                    <img class="etalage_source_image" src="/home/images/p2.jpg" class="img-responsive" alt="" />
-                                </li>
-                                <li>
-                                    <img class="etalage_thumb_image" src="/home/images/s3.jpg" class="img-responsive" alt="" />
-                                    <img class="etalage_source_image" src="/home/images/s3.jpg" class="img-responsive" alt="" />
-                                </li>
-                                <li>
-                                    <img class="etalage_thumb_image" src="/home/images/p3.jpg" class="img-responsive" alt="" />
-                                    <img class="etalage_source_image" src="/home/images/p3.jpg" class="img-responsive" alt="" />
-                                </li>
-                                <li>
-                                    <img class="etalage_thumb_image" src="/home/images/p4.jpg" class="img-responsive" alt="" />
-                                    <img class="etalage_source_image" src="/home/images/p4.jpg" class="img-responsive" alt="" />
-                                </li>
-                                <li>
-                                    <img class="etalage_thumb_image" src="/home/images/p5.jpg" class="img-responsive" alt="" />
-                                    <img class="etalage_source_image" src="/home/images/p5.jpg" class="img-responsive" alt="" />
-                                </li>
-                                <li>
-                                    <img class="etalage_thumb_image" src="/home/images/p6.jpg" class="img-responsive" alt="" />
-                                    <img class="etalage_source_image" src="/home/images/p6.jpg" class="img-responsive" alt="" />
-                                </li>
                             </ul>
+                            @endforeach
                         </div>
                         <div class="single_right">
                             <h3>产品介绍</h3>
-                            <p class="m_5">em vel eum iriure dolor in hendrerit in vulputate velit esse</p>
+                            
+                            <p class="m_5">{{$food1s->food1_intro}}</p>
                             <div class="price_single">
                                 <span class="reducedfrom">¥66.00</span>
-                                <span class="actual1">¥12.00</span>
+                                <span class="actual1">¥{{$food1s->food1_price}}</span>
                             </div>
+                           
                             <div style="width: 50"></div>
                             <div class="btn_form">
-                                <form type="post" action="/dianpu/xiangqing">
-                                    <input type="submit" value="立即购买" title="">
+                                <form type="post" action="/dianpus/car?food1_id={{$v['id']}}">
+                                    <input type="submit" value="加入购物车" title="">
                                 </form>
                             </div>
-                            <ul class="add-to-links">
+                            <!-- <ul class="add-to-links">
                                 <li><img src="/home/images/wish.png" alt=""><a href="#">加入收藏</a></li>
-                            </ul>
+                            </ul> -->
                             <br>
                             <br>
                             <br>
@@ -273,20 +242,7 @@
                             });
                             </script>
                         </div>
-                        <div class="related_products">
-                            <h3>店主推荐</h3>
-                            <div class="row">
-                                <div class="col-md-4 related">
-                                    <img src="/home/images/p6.jpg" class="img-responsive" alt="" />
-                                </div>
-                                <div class="col-md-4 related">
-                                    <img src="/home/images/p7.jpg" class="img-responsive" alt="" />
-                                </div>
-                                <div class="col-md-4 related">
-                                    <img src="/home/images/p5.jpg" class="img-responsive" alt="" />
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

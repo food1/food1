@@ -19,11 +19,10 @@ Route::get('/','HomeController@index');
 
 //前台展示&店铺分类展示
 Route::get('/dianpus','HomeController@show');
-
 //菜品展示
 Route::get('/dianpus/cai','QdianpuController@cai');
-//前台店铺详情
-Route::get('/dianpus/xiangqing','QdianpuController@xiangqing');
+//菜品详情
+//Route::get('/dianpus/xiangqing','QdianpuController@xiangqing');//加入购物车//结算
 //登陆页面
 Route::get('/home/login', 'HomeController@login');
 //登陆操作
@@ -47,6 +46,12 @@ Route::group(['middleware'=>'home'],function(){
 Route::resource('/person','PersonController');
 //进入购物车
 Route::get('/dianpus/car', 'QdianpuController@car');
+//购物车
+Route::get('/addshopcar','ShopcarController@addshopcar');
+//移除商品
+Route::get('/destroy','ShopcarController@destroy');
+//结算
+Route::get('/jiesuan','ShopcarController@index');
 //进入我的订单
 Route::get('/dianpus/order', 'QdianpuController@order');
 //退出登录
@@ -90,3 +95,5 @@ Route::get('/admin/logout','AdminController@logout');
 Route::get('/admin/login','AdminController@login');
 //后台登录操作
 Route::post('/admin/login','AdminController@dologin');
+
+

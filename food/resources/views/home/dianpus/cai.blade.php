@@ -84,7 +84,7 @@
                                     <li><a></a></li>
                                     <li><a></a></li>
                                     <li><a></a></li>
-                                    <li><a href="/dianpus">首页</a></li>
+                                    <li><a href="/dianpus?cate_id=1">首页</a></li>
                                     <li><a href="/dianpus/order">我的订单</a></li>
                                     <li><a href="/dianpus/guize">规则中心</a></li>
                                     <li><a href="contact.html">我的客服</a></li>
@@ -136,35 +136,36 @@
                         <h3><i class="arrow"> </i><span>热菜</span></h3>
                     </ul>
                     <div class="row content_bottom">
-                        @foreach($food1s as $v)
+                        @foreach($foods as $v)
+                        <form action="/dianpus/car/{{$v['id']}}" method="post" id="myform" name="myform" enctype="multipart/form-data">
                         <div class="col-md-3">
                             <div class="content_box">
-                                <a href="/dianpus/xiangqing">
-                                    <div class="view view-fifth">
-                                        <img src="{{$v['food1_img']}}" class="img-responsive" alt="" />
-                                        <div class="content_box-grid">
-                                            <p class="m_1">{{$v['food1_name']}}</p>
-                                            <div class="price">价格:
-                                                <span class="actual">¥{{$v['food1_price']}}</span>
-                                            </div>
-                                            <ul class="product_but">
-                                                <li class="but3">加入购物车</li>
-                                                <li class="like"><span>120</span><i class="like1"> </i></li>
-                                                <div class="clearfix"> </div>
-                                            </ul>
-                                            <div class="mask">
-                                                <div class="info">Quick View</div>
-                                            </div>
+                                <div class="view view-fifth">
+                                    <img name="shoping_img" src="{{$v['food1_img']}}" class="img-responsive" alt="" style="width: 170px;height: 100px;" />
+                                    <div class="content_box-grid">
+                                        <p class="m_1" name="shoping_name">{{$v['food1_name']}}</p>
+                                        <div class="price">价格:
+                                            <span class="actual" name="shoping_price">¥{{$v['food1_price']}}</span>
+                                        </div> <a href="/dianpus/car?food1_id={{$v['id']}}">
+                                        <ul class="product_but">
+                                            {{csrf_field()}}
+                                            <a href="/addshopcar?food1_id={{$v['id']}}"><li class="but3">加入购物车</li></a>
+                                            <li class="like"><span>120</span><i class="like1"> </i></li>
+                                            <div class="clearfix"> </div>
+                                        </ul></a>
+                                        <div class="mask">
+                                            <div class="info">Quick View</div>
                                         </div>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         </div>
                          @endforeach
+                         </form>
                     </div>
                   
                     <div class="row content_bottom1"></div>
-                    <ul class="dc_pagination dc_paginationA dc_paginationA06">
+                   <!--  <ul class="dc_pagination dc_paginationA dc_paginationA06">
                         <li><a href="#">1</a></li>
                         <li><a href="#" class="current">2</a></li>
                         <li><a href="#">3</a></li>
@@ -175,7 +176,7 @@
                         <li><a href="#">20</a></li>
                         <li><a href="#" class="previous">下一页</a></li>
                         <li><a href="#" class="next">上一页</a></li>
-                    </ul>
+                    </ul> -->
                 </div>
             </div>
         </div>

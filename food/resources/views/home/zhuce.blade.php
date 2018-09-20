@@ -55,7 +55,7 @@
 				      	<li><a></a></li>
 				      	<li><a></a></li>
 				      	<li><a></a></li>
-				      	<li><a href="/dianpus">首页</a></li>
+				      	<li><a href="/dianpus?cate_id=1">首页</a></li>
 				        <li><a>我的订单</a></li>
 				        <li><a href="/dianpus/guize">规则中心</a></li>
 				        <li><a>我的客服</a></li>
