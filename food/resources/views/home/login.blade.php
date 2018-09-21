@@ -3,6 +3,10 @@
 
 <head>
     <title>吃了么登录页面 </title>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+
     <link href="/home/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <script src="/home/js/jquery.min.js"></script>
     <script src="/home/js/bootstrap.min.js"></script>
@@ -61,7 +65,7 @@
                                     <li><a></a></li>
                                     <li><a></a></li>
                                     <li><a></a></li>
-                                    <li><a href="/dianpus">首页</a></li>
+                                    <li><a href="/dianpus/?cate_id=1">首页</a></li>
                                     <li><a>我的订单</a></li>
                                     <li><a href="/dianpus/guize">规则中心</a></li>
                                     <li><a>我的客服</a></li>
@@ -122,7 +126,7 @@
                         <!-- 闪存 -->
                         <center>
                             <div class="contact-form">
-                                <form method="post" action="/home/dianpus">
+                                <form method="post" name="logindd" action="/home/dianpus">
                                     <div>
                                         <span><label>用户名:</label></span>
                                         <span><input name="user_name" type="text" class="textbox" style="width:300px;height:30px;border:solid 1px #aaa;"><span class="remind"></span></span>
@@ -135,8 +139,10 @@
                                     <div id="c1"></div>
                                     <div>
                                         {{csrf_field()}}
-                                        <span><input type="submit" value="登录"></span>
+                                        <!-- <span><input type="submit" value="登录"></span> -->
                                     </div>
+                                    <span id="ding"></span>
+                                    <br>
                                     <br>
                                     <div>
                                         <p style="font-size:14px;">其他登录方式:
@@ -212,9 +218,11 @@
             //文字提醒
             $(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
             CPASS = true;
+            $('#ding').html('<span style="color:#333;font-size:16px;font-weight:bold">&nbsp;&nbsp;请完成滑块验证后登录</span>');
 
         }
-    })
+    });
+
 
 
     var My = _dx.Captcha(document.getElementById('c1'), {
@@ -223,6 +231,7 @@
         width: 300,
         success: function(token) {
             CYAN = true;
+            document.logindd.submit()
         }
 
     });
@@ -236,11 +245,13 @@
         // console.log(CUSER);
         //判断输入值是否都正确
         if (CUSER && CPASS && CYAN) {
+           
             return true;
         } else {
             return false;
         }
     });
+
     </script>
     <div class="footer">
         <div class="container">

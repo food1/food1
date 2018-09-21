@@ -35,6 +35,7 @@ class ShopingController extends Controller
     public function store(Request $request)
     {
         //
+        
     }
 
     /**
@@ -80,5 +81,16 @@ class ShopingController extends Controller
     public function destroy($id)
     {
         //
+        $dianpu_id = ($_GET['dianpu_id']);
+        $dianpu = Dianpu::where('id',$dianpu_id)->first();
+        $foods = $dianpu->food1s;
+        $users = User::find(\Session::get('id'));
+        
+        // $food1s = Food1::orderBy('id','desc')
+        //        ->where('food1_name','like', '%'.request()->keywords.'%')
+        //        ->paginate(8);
+        //解析模板显示数据
+        // dd($food1s);
+        return view('home.dianpus.cai',compact('users','foods'));
     }
 }

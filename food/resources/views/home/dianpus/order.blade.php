@@ -38,8 +38,7 @@
 				 <h1 style="font-family:'华文彩云';color:#aaa;font-size:40px;">吃了么</h1>
 			</ul>
 			<ul class="account">
-			@if(Session::has('id') == null)				
-			@endif
+			
 			@if(Session::has('id') != null)
 				<li style="color:#aaa;font-size:16px;">
 				<a href="/person">个人中心</a>&nbsp;|
@@ -85,7 +84,7 @@
 			      	<li><a></a></li>
 			      	<li><a></a></li>
 			      	<li><a></a></li>
-			      	<li><a href="/dianpus">首页</a></li>
+			      	<li><a href="/dianpus?cate_id=1">首页</a></li>
 			        <li><a href="/dianpus/order">我的订单</a></li>
 			        <li><a href="/dianpus/guize">规则中心</a></li>
 			        <li><a href="contact.html">我的客服</a></li>

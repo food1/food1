@@ -11,4 +11,9 @@ class Food1 extends Model
     {
     	return $this->belongsToMany('App\Dianpu');
     }
+
+    public function shopcar()
+    {
+    	return $this->hasMany('App\Shopcar');
+    }
 }

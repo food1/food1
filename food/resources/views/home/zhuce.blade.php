@@ -47,43 +47,42 @@
 			 			<img src="/home/images/logo.png" class="img-responsive" alt=""/>
 			 		</a>
 			 	</h3>
-                        <div class="container-fluid">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                            </div>
-                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                <ul class="nav navbar-nav menu1">
-                                    <li><a></a></li>
-                                    <li><a></a></li>
-                                    <li><a></a></li>
-                                    <li><a href="/dianpus">首页</a></li>
-                                    <li><a>我的订单</a></li>
-                                    <li><a href="/dianpus/guize">规则中心</a></li>
-                                    <li><a>我的客服</a></li>
-                                </ul>
-                                <ul class="login">
-                                    <a href="/home/login">
-                                        <li class="login_top"><i class="sign"> </i><span>登录</span></li>
-                                    </a>
-                                </ul>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </nav>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="search">
-                    <input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-                    <input type="submit" value="搜索">
-                </div>
-            </div>
-        </div>
-    </div>
+
+			  	<div class="container-fluid">
+			    <div class="navbar-header">
+			    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			        	<span class="sr-only">Toggle navigation</span>
+			        	<span class="icon-bar"></span>
+			        	<span class="icon-bar"></span>
+			        	<span class="icon-bar"></span>
+			        </button>
+			    </div>
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			    	<ul class="nav navbar-nav menu1">
+				      	<li><a></a></li>
+				      	<li><a></a></li>
+				      	<li><a></a></li>
+				      	<li><a href="/dianpus?cate_id=1">首页</a></li>
+				        <li><a>我的订单</a></li>
+				        <li><a href="/dianpus/guize">规则中心</a></li>
+				        <li><a>我的客服</a></li>
+		        	</ul>
+		          	<ul class="login">
+		          		<a href="/home/login"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
+		          	</ul>
+			    <div class="clearfix"></div>
+			</div>
+		</div>
+	</nav>
+<div class="clearfix"></div>
+</div>
+    <div class="search">
+		<input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+		<input type="submit" value="搜索">
+	</div>
+</div>  
+</div>
+</div>
     <!-- 闪存 -->
     @if(Session::has('success'))
     <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
@@ -286,7 +285,7 @@ $('input[name=user_name]').focus(function() {
 			//获取用户的输入值
 			var v = $('input[name=user_phone]').val();
 			//正则
-			var reg = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9]|19[9])\d{8}$/;
+			var reg = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9]|17[0|1|2|3|5|6|7|8|9]|19[9]|16[6])\d{8}$/;
 			if(!reg.test(v)) {
 				
 				//文字提醒
