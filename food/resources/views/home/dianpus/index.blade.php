@@ -80,8 +80,8 @@
 				</li>
 			@endif
 			</ul>
-			<ul class="shopping_cart">
-			   <a href="/dianpus/car"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
+			<ul class="shopping_cart">@foreach($food1s as $v)@endforeach
+			   <a href="/dianpus/car?food1_id={{$v->id}}"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
 			   <a href="#"><li class="shop_right"><span>$0.00</span></li></a>
 			   <div class="clearfix"> </div>
 			</ul>
@@ -115,7 +115,7 @@
 			      	<li><a></a></li>
 			      	<li><a></a></li>
 			      	<li><a></a></li>
-			      	<li><a href="/dianpus">首页</a></li>
+			      	<li><a href="/dianpus?cate_id=1">首页</a></li>
 			        <li><a href="/dianpus/order">我的订单</a></li>
 			        <li><a href="/dianpus/guize">规则中心</a></li>
 			        <li><a href="/dianpus/fankui">用户反馈</a></li>
@@ -232,7 +232,7 @@
 					  	<span class="actual">{{$v['food1_price']}}</span>
 					</div>
 				    <div class="but1">
-			          	<a href="">立即购买</a>
+			          	<a href="/addshopcar?food1_id={{$v['id']}}">加入购物车</a>
 			        </div>
 				 	</li>
 				 	@endif		   	   	
@@ -246,7 +246,7 @@
                 	@foreach($dianpus as $v)
                     <div class="col-md-3" >              
                         <div class="content_box"  style="float: left;margin-top:30px;">
-                            <a href="/dianpus/cai">
+                            <a href="/dianpus/cai?dianpu_id={{$v['id']}}">
                                 <div class="view view-fifth" style="width: 190px">
                                     <img src="{{$v->dianpu_img}}" style="width: 190px;height:110px;margin: 0 auto" class="img-responsive" alt="" />
                                     <div class="content_box-grid">

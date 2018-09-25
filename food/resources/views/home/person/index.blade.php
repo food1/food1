@@ -114,15 +114,13 @@
 						</div>
 						<div>
 						    <span><label>原密码:</label></span>
-						    <span><input name="jiupass" type="password" class="active" style="width:300px;height:27px;border:solid 1px #aaa;"><span class="remind"></span></span>
+						    <span><input name="jiupass" type="password" class="active" style="width:300px;height:27px;border:solid 1px #aaa;"></span></span>
 						</div>
 
 						<div>
 						    <span><label>密码:</label></span>
 						    <span><input name="user_password" type="password" class="active" style="width:300px;height:30px;border:solid 1px #aaa;"><span class="remind"></span></span>
 						</div>
-
-						
 						<div>
 						    <span><label>头像:</label></span>
 						    <input name="user_img" type="file" style="width:300px;height:30px;border:solid 1px #aaa;">
@@ -212,7 +210,7 @@
 			//触发错误提醒
 			$('input').trigger('blur');
 			
-			if(CPASS && CREPASS && Session = true) {
+			if(CPASS && CREPASS) {
 				return true;
 			}else{
 				return false;

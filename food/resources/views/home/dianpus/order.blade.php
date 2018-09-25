@@ -38,8 +38,7 @@
 				 <h1 style="font-family:'华文彩云';color:#aaa;font-size:40px;">吃了么</h1>
 			</ul>
 			<ul class="account">
-			@if(Session::has('id') == null)				
-			@endif
+			
 			@if(Session::has('id') != null)
 				<li style="color:#aaa;font-size:16px;">
 				<a href="/person">个人中心</a>&nbsp;|

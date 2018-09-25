@@ -38,7 +38,6 @@
 							$('.dropdownlist').change(function(){
 								etalage_show( $(this).find('option:selected').attr('class') );
 							});
-
 					});
 				</script>
 				<!----//details-product-slider--->	
@@ -50,6 +49,11 @@
 				</style>
 </head>
 <body>
+	<?php 
+	use App\User;
+	$uid= \Session::get('id');
+	$users = User::find($uid);
+	?>
 	<div class="header">
 		<div class="container">
 		  <div class="header_top">
@@ -131,9 +135,7 @@
 		 	</div>  
 		</div>
 	</div>
-    
    <!-- 购物车 -->
-
    <section class="cartMain">
 	<div class="cartMain_hd">
 		<ul class="order_lists cartTop">
@@ -143,69 +145,67 @@
 				<label for="all"></label>
 				全选
 			</li>
-			<li class="list_con">商品信息</li>
+			<li class="list_con">餐品信息</li>
 			<li class="list_price">单价</li>
 			<li class="list_amount">数量</li>
 			<li class="list_sum">金额</li>
 			<li class="list_op">操作</li>
 		</ul>
-	</div>
+		<?php $i = 1;?>
+	</div>@foreach($food1s as $v)
+	<?php $i++ ?>
 	<div class="cartBox">	
 		<div class="order_content">
 			<ul class="order_lists">
 				<li class="list_chk">
-					<input type="checkbox" id="checkbox_2" class="son_check">
-					<label for="checkbox_2"></label>
+					<input type="checkbox" id="{{$i}}" class="son_check">
+					<label for="{{$i}}"></label>
 				</li>
 				<li class="list_con">
-					<div class="list_img"><a href="javascript:;"><img src="/home/car/images/1.png" alt=""></a></div>
-					<div class="list_text"><a href="javascript:;">夏季男士迷彩无袖T恤圆领潮流韩版修身男装背心青年时尚打底衫男</a></div>
+					<div class="list_img"><a href="javascript:;"><img src="{{$v->food1['food1_img']}}" alt=""></a></div>
+					<div class="list_text"><a href="javascript:;">{{$v->food1['food1_name']}}</a></div>
 				</li>
 				
 				<li class="list_price">
-					<p class="price">￥980</p>
+					<p class="price">￥{{$v->food1['food1_price']}}</p>
 				</li>
 				<li class="list_amount">
 					<div class="amount_box">
 						<a href="javascript:;" class="reduce reSty">-</a>
-						<input type="text" value="1" class="sum"  id="che">
+						<input type="text" value="{{$v->shuliang}}" class="sum"  id="che">
 						<a href="javascript:;" class="plus">+</a>
 					</div>
 				</li>
 				<li class="list_sum">
-					<p class="sum_price">￥980</p>
+					<p class="sum_price">￥{{$v->food1['food1_price']*$v->shuliang}}</p>
 				</li>
 				<li class="list_op">
-					<p class="del"><a href="javascript:;" class="delBtn">移除商品</a></p>
+					{{method_field('DELETE')}}
+            		{{csrf_field()}}
+					<p class="del"><a href="/destroy?food1_id={{$v->id}}" >移除商品</a></p>
 				</li>
-			</ul>
-			
+			</ul>		
 		</div>
 	</div>
-</div>
-	
+	@endforeach
 	<!--底部-->
 	<div class="bar-wrapper">
+		
 		<div class="bar-right">
 			<div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
 			<div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
-			<div class="calBtn"><a href="javascript:;">结算</a></div>
+			<div class="calBtn"><a href="/jiesuan">结算</a></div>
 		</div>
+		
 	</div>
 </section>
 <section class="model_bg"></section>
-<section class="my_model">
-	<p class="title">删除宝贝<span class="closeModel">X</span></p>
-	<p>您确认要删除该宝贝吗？</p>
-	<div class="opBtn" style="margin:10px"><a href="javascript:;" class="dialog-sure">确定</a><a href="javascript:;" class="dialog-close">取消</a></div>
-</section>
 
 <script src="/home/car/js/jquery.min.js"></script>
 <script src="/home/car/js/carts.js"></script>
 
 <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"> 
 </div>
-
    <!-- 购物车 -->
 </body>
 </html>
