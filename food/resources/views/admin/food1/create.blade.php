@@ -20,7 +20,7 @@
             <div class="formtitle"><span>基本信息</span></div>
             <ul class="forminfo">
                 <li>
-                    <label>标签</label>                    
+                    <label>店铺名称</label>                    
                     <!-- <input name="tag_id[]" type="checkbox" class="dfinput" value=""/>哈哈哈 -->
                     @foreach($dianpus as $v)
                      <div class="am-u-sm-9">                          
