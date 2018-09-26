@@ -36,7 +36,7 @@ class QdianpuController extends Controller
         //        ->paginate(8);
         //解析模板显示数据
         // dd($food1s);
-        return view('/home.dianpus.cai',compact('users','foods'));
+        return view('/home.dianpus.cai',compact('users','foods','dianpu_id'));
     }
 
 
