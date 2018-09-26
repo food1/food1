@@ -194,7 +194,7 @@
 		<div class="bar-right">
 			<div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
 			<div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
-			<div class="calBtn"><a href="/jiesuan">结算</a></div>
+			<div class="calBtn"><a href="/jiesuan?shopcar_id={{$v['id']}}">结算</a></div>
 		</div>
 		
 	</div>
