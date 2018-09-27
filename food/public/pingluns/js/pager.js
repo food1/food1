@@ -6,7 +6,7 @@
 function getPage(pn){
   var data = datalist
   var dataCount=data.length;//总数据条数
-  var pageSize=10;//每页显示条数
+  var pageSize=7;//每页显示条数
   var pageCount= Math.ceil(dataCount / pageSize);//总页数
   $('#Ccount').html(dataCount)
   if(pn==0||pn>pageCount){
