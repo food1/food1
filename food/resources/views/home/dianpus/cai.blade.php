@@ -11,6 +11,13 @@
     <script src="/home/js/jquery.min.js"></script>
     <!-- Custom Theme files -->
     <link href="/home/css/style.css" rel='stylesheet' type='text/css' />
+
+    <!-- 评论JS CS 引入 -->
+    <link rel="stylesheet" type="text/css" href="/pingluns/css/show.css">
+    <script type="text/javascript" src="/pingluns/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/pingluns/js/qna.js"></script>
+    <script type="text/javascript" src="/pingluns/js/pager.js"></script>
+    <!-- 结束 -->
     <!-- Custom Theme files -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript">
@@ -163,16 +170,50 @@
                          @endforeach
                          </form>
                     </div>
-                    <!-- 畅言 -->
-                    <div id="SOHUCS" sid="{{$dianpu_id}}" ></div> 
-                    <script type="text/javascript"> 
-                    (function(){ 
-                    var appid = 'cytPixVUJ'; 
-                    var conf = 'prod_14fa07613b7dbd85cff129f5b89a7c1a'; 
-                    var width = window.innerWidth || document.documentElement.clientWidth; 
-                    if (width < 960) { 
-                    window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
 
+                   @foreach($food1s as $v)
+                   <!-- 开始 -->
+    <div class="mainContainner">
+        <div class="commentBox">
+                <div class="Ctop">
+                    <label class="Ctitle"><img src="/pingluns/img/user_comment.png">我来说两句</label>
+                    <label class="Ctip">已有<span class="Ccount" id="Ccount"></span>条评论</label>
+                </div>
+                <div class="Cattitude">
+                    <form>
+                        <label>我的态度：</label>
+                        <input type="radio" name="attitude"value='1' checked="checked"><img src="/pingluns/img/zheng.png"></input>
+                        <input type="radio" name="attitude"value='-1'><img src="/pingluns/img/fan.png"></input>
+                        <input type="radio" name="attitude"value='0'><img src="/pingluns/img/zhong.png"></input>
+                    </form>
+                </div>
+                <div class="Cinput">
+                    <textarea placeholder="请输入评论内容" class="Ccont" id="Ccont"></textarea>
+                </div>
+                <div class="Csunbmit">
+                    <label class="Cnick" >你的昵称：</label>
+                    <input class="Cusername" placeholder="你的昵称" id="Cusername" ></input>
+                    <button class="submitBtn" onclick="submit_pl(0)">发布评论</button>
+                </div>
+        </div>
+        <div class="Corder">
+            <button id="newBtn" onclick="start(0)">最新</button>
+            <button id="hotBtn" onclick="start(1)">最热</button>
+        </div>
+        <div class="CommentList">
+            <ul class="listul">
+            </ul>
+        </div>
+        <div class="fydiv">
+            <ul class="fenye">
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+    start(0)
+    </script>
+    <!-- 结束 -->
+                        @endforeach
 
                     
 

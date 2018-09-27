@@ -143,7 +143,7 @@
                                     </div>
                                     <span id="ding"></span>
                                     <br>
-                                    <br>
+                                    
                                     <div>
                                         <p style="font-size:14px;">其他登录方式:
                                             <ul class="footer_social">
@@ -177,7 +177,7 @@
     //用户
     $('input[name=user_name]').focus(function() {
         //提示语显示
-        $(this).next().show().html('请输入您的用户名!!!');
+        $(this).next().show().html('<span style="font-size:13px;">请输入您的用户名</span>');
     }).blur(function() {
 
         //获取用户的输入值
@@ -187,8 +187,8 @@
 
         if (!reg.test(v)) {
             //文字提醒
-            $(this).next().html('<span style="color:red;font-size:12px;">您的输入有误!!!</span>').show();
-            CPASS = false;
+            $(this).next().html('<span style="color:red;font-size:13px;">您的输入有误</span>').show();
+            CUSER = false;
         } else {
             //文字提醒
             $(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
@@ -202,7 +202,7 @@
         //边框颜色
         $(this).addClass('active');
         //提示语显示
-        $(this).next().show().html('请输入您的密码!!!');
+        $(this).next().show().html('<span style="font-size:13px;">请输入您的密码</span>');
     }).blur(function() {
         $(this).removeClass('active');
         //获取用户的输入值
@@ -212,7 +212,7 @@
 
         if (!reg.test(v)) {
             //文字提醒
-            $(this).next().html('<span style="color:red;font-size:12px;">您的输入有误!!!</span>').show();
+            $(this).next().html('<span style="color:red;font-size:13px;">您的输入有误</span>').show();
             CPASS = false;
         } else {
             //文字提醒
@@ -230,27 +230,25 @@
         style: 'inline',
         width: 300,
         success: function(token) {
-            CYAN = true;
-            document.logindd.submit()
+            CYAN = true,
+            document.logindd.submit();
         }
 
     });
 
+    // //表单的提交事件
+    // $('form').submit(function() {
+    //     //触发错误提醒
+    //     $('input').trigger('blur');
+        
+    //     //判断输入值是否都正确
+    //     if (CUSER && CPASS && CYAN) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // });
 
-
-    //表单的提交事件
-    $('form').submit(function() {
-        //触发错误提醒
-        $('input').trigger('blur');
-        // console.log(CUSER);
-        //判断输入值是否都正确
-        if (CUSER && CPASS && CYAN) {
-           
-            return true;
-        } else {
-            return false;
-        }
-    });
 
     </script>
     <div class="footer">

@@ -57,8 +57,8 @@ class HomeController extends Controller
         //
         $food1s = Food1::all();
         $links = Link::all();
-         $users = User::find(\Session::get('id'));
-          $cates = Cate::all();      
+        $users = User::find(\Session::get('id'));
+        $cates = Cate::all();      
         // //读取数据库 获取用户数据
         $dianpus = Dianpu::where('cate_id', $request->cate_id)->orderBy('id','desc')
             ->paginate(8);
