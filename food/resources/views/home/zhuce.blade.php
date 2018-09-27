@@ -244,14 +244,14 @@ $('input[name=user_name]').focus(function() {
     //边框颜色
     // $(this).addClass('active');
     //提示语部分
-    $(this).next().show().html('输入5~18位数字字母下划线');
+    $(this).next().show().html('输入6~18位数字字母下划线');
 }).blur(function() {
     // 移出激活状态的class
     $(this).removeClass('active');
     //正则判断
     var v = $(this).val();
     //声明正则
-    var reg = /^\w{5,18}$/;
+    var reg = /^\w{6,18}$/;
     //判断
     if (!reg.test(v)) {
         //文字提醒
@@ -275,8 +275,7 @@ $('input[name=user_name]').focus(function() {
 
 	//手机号
 	$('input[name=user_phone]').focus(function(){
-			//边框颜色
-			$(this).addClass('active');
+			
 			//提示语显示
 			$(this).next().show().html('输入您的手机号!!!');
 		}).blur(function(){
@@ -284,16 +283,14 @@ $('input[name=user_name]').focus(function() {
 			//获取用户的输入值
 			var v = $('input[name=user_phone]').val();
 			//正则
-			var reg = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9]|19[9])\d{8}$/;
+			var reg = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9]|17[0|1|2|3|5|6|7|8|9]|19[9]|16[6])\d{8}$/;
 			if(!reg.test(v)) {
-				//边框
-				$(this).addClass('error');
+				
 				//文字提醒
 				$(this).next().html('<span style="color:red">格式不正确</span>').show();
 				CPHONE = false;
 			}else{
-				//边框
-				$(this).removeClass('error');
+				
 				//文字提醒
 				$(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
 				CPHONE = true;
@@ -303,8 +300,7 @@ $('input[name=user_name]').focus(function() {
 
 		//密码
 		$('input[name=user_password]').focus(function(){
-			//边框颜色
-			$(this).addClass('active');
+			
 			//提示语显示
 			$(this).next().show().html('请输入字母开头6-16位字母数字下划线!!!');
 		}).blur(function(){

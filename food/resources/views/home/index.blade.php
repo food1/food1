@@ -63,7 +63,7 @@
 								
          						</form>
          						
-         						<a href="/dianpus?cate_id=1"><button class="btn-stress">搜 索</button></a>
+         						<a href="/dianpus"><button class="btn-stress">搜 索</button></a>
 						       <!-- 城市三级联动 -->
 						    </div>	
 						</div>
@@ -84,7 +84,7 @@
 					<a href="" style="color:#666;">官方微博</a>
 				</p>
 				<p style="text-align:center;font-family:'叶根友毛笔行书2.0版';">
-				所有方:内蒙F4组 | 北京市昌平区兄弟连</p>
+				所有方:小猪佩奇组 | 北京市昌平区兄弟连</p>
 			</div>
 		</div>
 	</div>

@@ -17,6 +17,7 @@
     </script>
     <link href='http://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/home/kefu/css/style.css">
+
 </head>
 
 <body>
@@ -162,8 +163,13 @@
                         </form>
                         @endforeach
                     </div>
-      
-                    <div class="row content_bottom1"></div>
+
+
+
+
+
+
+
                 </div>
             </div>
         </div>
@@ -237,7 +243,7 @@
             <i class="arrow"></i>
             <div class="inner-box">
                 <div class="d-service-item clearfix">                           
-                    <a href="http://wpa.qq.com/msgrd?v=3&uin=1505349007&site=qq&menu=yes" class="clearfix"><span class="circle"><i class="i-qq"></i></span><h3>咨询在线客服</h3></a>
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=35788153&site=qq&menu=yes" class="clearfix"><span class="circle"><i class="i-qq"></i></span><h3>咨询在线客服</h3></a>
                 </div>
             </div>
         </div>

@@ -3,12 +3,16 @@
 
 <head>
     <title>吃了么登录页面 </title>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+
     <link href="/home/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <script src="/home/js/jquery.min.js"></script>
     <script src="/home/js/bootstrap.min.js"></script>
     <script src="/home/js/jquery.min.js"></script>
     <link href="/home/css/style.css" rel='stylesheet' type='text/css' />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" http-equiv="refresh">
     <script type="application/x-javascript">
     addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 
@@ -43,10 +47,10 @@
                     </div>
                     <nav class="navbar navbar-default menu" role="navigation">
                         <h3 class="nav_right">
-			 		<a href="index.html">
-			 			<img src="/home/images/logo.png" class="img-responsive" alt=""/>
-			 		</a>
-			 	</h3>
+                    <a href="index.html">
+                        <img src="/home/images/logo.png" class="img-responsive" alt=""/>
+                    </a>
+                </h3>
                         <div class="container-fluid">
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -106,46 +110,46 @@
                         </div>
                         <!-- 闪存 -->
                         @if(Session::has('success'))
-                            <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
+                        <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
                             <div class="dashboard-stat green">
-                            <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:yellowgreen;">{{Session::get('success')}} </div>
+                                <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:yellowgreen;">{{Session::get('success')}} </div>
                             </div>
-                            </div>
-                        @endif
+                        </div>
+                        @endif 
                         @if(Session::has('error'))
-                            <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
+                        <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
                             <div class="dashboard-stat red">
-                            <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:#f66;">{{Session::get('error')}} </div>
+                                <div class="desc" style="text-align: center;line-height:90px;color:white;background-color:#f66;">{{Session::get('error')}} </div>
                             </div>
-                            </div>
+                        </div>
                         @endif
                         <!-- 闪存 -->
                         <center>
                             <div class="contact-form">
-                                <form method="post" action="/home/dianpus">
+                                <form method="post" name="logindd" action="/home/dianpus">
                                     <div>
                                         <span><label>用户名:</label></span>
-                                        <span><input name="user_name" type="text" class="textbox" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
+                                        <span><input name="user_name" type="text" class="textbox" style="width:300px;height:30px;border:solid 1px #aaa;"><span class="remind"></span></span>
                                     </div>
                                     <div>
                                         <span><label>密码:</label></span>
-                                        <span><input name="user_password" type="password" class="textbox" style="width:300px;height:30px;border:solid 1px #aaa;"></span>
+                                        <span><input name="user_password" type="password" class="textbox" style="width:300px;height:30px;border:solid 1px #aaa;"><span class="remind"></span></span>
                                     </div>
+                                    <br>
+                                    <div id="c1"></div>
                                     <div>
                                         {{csrf_field()}}
-                                        <span><input type="submit" value="登录"></span>
+                                        <!-- <span><input type="submit" value="登录"></span> -->
                                     </div>
+                                    <span id="ding"></span>
+                                    <br>
                                     <br>
                                     <div>
                                         <p style="font-size:14px;">其他登录方式:
                                             <ul class="footer_social">
                                                 <li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http">
-				 					<img src="/home/images/QQ.png"/>
-				 					</a>
-                                                </li>
-                                                <li><a href="http://service.weibo.com/share/share.php">
-				 					<img src="/home/images/weibo.png"/>
-				 					</a>
+                                                <img src="/home/images/QQ.png"/>
+                                                </a>
                                                 </li>
                                                 <div class="clearfix"></div>
                                             </ul>
@@ -159,6 +163,92 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.dingxiang-inc.com/ctu-group/captcha-ui/index.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    var CYAN = false;
+    var CUSER = false;
+    var CPASS = false;
+
+    //用户
+    $('input[name=user_name]').focus(function() {
+        //提示语显示
+        $(this).next().show().html('请输入您的用户名!!!');
+    }).blur(function() {
+
+        //获取用户的输入值
+        var v = $(this).val();
+        //正则
+        var reg = /^\w{6,18}$/;
+
+        if (!reg.test(v)) {
+            //文字提醒
+            $(this).next().html('<span style="color:red;font-size:12px;">您的输入有误!!!</span>').show();
+            CPASS = false;
+        } else {
+            //文字提醒
+            $(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
+            CUSER = true;
+
+        }
+    })
+
+    //密码
+    $('input[name=user_password]').focus(function() {
+        //边框颜色
+        $(this).addClass('active');
+        //提示语显示
+        $(this).next().show().html('请输入您的密码!!!');
+    }).blur(function() {
+        $(this).removeClass('active');
+        //获取用户的输入值
+        var v = $(this).val();
+        //正则
+        var reg = /^[a-zA-Z]\w{5,17}$/;
+
+        if (!reg.test(v)) {
+            //文字提醒
+            $(this).next().html('<span style="color:red;font-size:12px;">您的输入有误!!!</span>').show();
+            CPASS = false;
+        } else {
+            //文字提醒
+            $(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
+            CPASS = true;
+            $('#ding').html('<span style="color:#333;font-size:16px;font-weight:bold">&nbsp;&nbsp;请完成滑块验证后登录</span>');
+
+        }
+    });
+
+
+
+    var My = _dx.Captcha(document.getElementById('c1'), {
+        appId: 'ed94b60ca9fd1e481366bc1d3c0049b3',
+        style: 'inline',
+        width: 300,
+        success: function(token) {
+            CYAN = true;
+            document.logindd.submit()
+        }
+
+    });
+
+
+
+    //表单的提交事件
+    $('form').submit(function() {
+        //触发错误提醒
+        $('input').trigger('blur');
+        // console.log(CUSER);
+        //判断输入值是否都正确
+        if (CUSER && CPASS && CYAN) {
+           
+            return true;
+        } else {
+            return false;
+        }
+    });
+
+    </script>
     <div class="footer">
         <div class="container">
             <div class="footer-grid footer-grid1">
@@ -167,7 +257,6 @@
                     <li><a href="#">用户反馈</a></li>
                 </ul>
             </div>
-
             <div class="footer-grid footer-grid3">
                 <h3 class="m_2">关于我们</h3>
                 <ul class="list1">

@@ -40,7 +40,7 @@ class QdianpuController extends Controller
         //        ->paginate(8);
         //解析模板显示数据
         // dd($food1s);
-        return view('/home.dianpus.cai',compact('users','foods','links'));
+        return view('/home.dianpus.cai',compact('users','foods','dianpu_id','links'));
     }
 
 
@@ -77,11 +77,6 @@ class QdianpuController extends Controller
     public function call()
     {
         return view('home.dianpus.call');
-    }
-
-    public function fankui()
-    {
-        return view('home.dianpus.fankui');
     }
 
     public function weizhi()

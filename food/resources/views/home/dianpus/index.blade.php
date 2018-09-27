@@ -101,24 +101,18 @@
 			 			<img src="/home/images/logo.png" class="img-responsive" alt=""/>
 			 		</a>
 			 	</h3>
-			  <div class="container-fluid">
-			    <div class="navbar-header">
-			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			        <span class="sr-only"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			      </button>
+			 	<div class="navbar-header">
 			    </div>
+			  <div class="container-fluid">
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    <ul class="nav navbar-nav menu1">
 			      	<li><a></a></li>
 			      	<li><a></a></li>
 			      	<li><a></a></li>
+					<li><a></a></li>
 			      	<li><a href="/dianpus?cate_id=1">首页</a></li>
 			        <li><a href="/dianpus/order">我的订单</a></li>
 			        <li><a href="/dianpus/guize">规则中心</a></li>
-			        <li><a href="/dianpus/fankui">用户反馈</a></li>
 			        <li><a href="/dianpus/call">联系我们</a></li>
 		        </ul>
 		        <ul class="login">
@@ -345,7 +339,7 @@
 			<i class="arrow"></i>
 			<div class="inner-box">
 				<div class="d-service-item clearfix">				        	
-					<a href="http://wpa.qq.com/msgrd?v=3&uin=1505349007&site=qq&menu=yes" class="clearfix"><span class="circle"><i class="i-qq"></i></span><h3>咨询在线客服</h3></a>
+					<a href="http://wpa.qq.com/msgrd?v=3&uin=986040521&site=qq&menu=yes class="clearfix"><span class="circle"><i class="i-qq"></i></span><h3>咨询在线客服</h3></a>
 				</div>
 			</div>
 		</div>

@@ -21,8 +21,6 @@ Route::get('/','HomeController@index');
 Route::get('/dianpus','HomeController@show');
 //菜品展示
 Route::get('/dianpus/cai','QdianpuController@cai');
-//菜品详情
-//Route::get('/dianpus/xiangqing','QdianpuController@xiangqing');//加入购物车//结算
 //登陆页面
 Route::get('/home/login', 'HomeController@login');
 //登陆操作
@@ -46,8 +44,6 @@ Route::get('/dianpus/weizhi','QdianpuController@weizhi');
 Route::group(['middleware'=>'home'],function(){
 //个人中心
 Route::resource('/person','PersonController');
-//用户反馈
-Route::get('/dianpus/fankui', 'QdianpuController@fankui');
 //进入购物车
 Route::get('/dianpus/car', 'QdianpuController@car');
 //购物车
