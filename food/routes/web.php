@@ -51,9 +51,11 @@ Route::get('/addshopcar','ShopcarController@addshopcar');
 //移除商品
 Route::get('/destroy','ShopcarController@destroy');
 //结算
-Route::get('/jiesuan','ShopcarController@index');
+Route::post('/jiesuan','ShopcarController@index');
 //进入我的订单
 Route::get('/dianpus/order', 'QdianpuController@order');
+//提交
+Route::get('/jiesuan/tijiao', 'ShopcarController@tj');
 //退出登录
 Route::get('/home/logout', 'HomeController@logout');
 });

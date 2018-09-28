@@ -13,6 +13,10 @@
 <link href="/home/css/style.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 分享 -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+<!-- 分享 -->  
 <!-- 结算 -->
 <link href="/home/jiesuan/css/public.css" type="text/css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="/home/jiesuan/css/base.css"/>
@@ -83,8 +87,8 @@
 			@endif
 			</ul>
 			<ul class="shopping_cart">
-			   <a href="#"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
-			   <a href="#"><li class="shop_right"><span>$0.00</span></li></a>
+			   <a href="#"><li class="shop_left"><i class="cart"></i><span>购物车</span></li></a>
+			   <a href="#"><li class="shop_right"><span></span></li></a>
 			   <div class="clearfix"> </div>
 			</ul>
 			<div class="clearfix"></div>
@@ -180,82 +184,21 @@
     <!---->
 </div>
 <div class="box-bd">
-    @foreach ($shopcars as $v)
-    <div class="clearfix xm-address-list" id="checkoutAddrList">
+   
+    <div class="clearfix xm-address-list" id="checkoutAddrList"> 
         <dl class="item" >
+            
             <dt>
-                <strong class="itemConsignee">{{$v['user_name']}}</strong>
+                <strong class="itemConsignee">收货人：{{$users['user_name']}}</strong>
             </dt>
             <dd>
-                <p class="tel itemTel">{{$v['user_phone']}}</p>
-                <p class="itemRegion">{{$v['user_adress']}}</p>
+                <p class="tel itemTel">联系电话：{{$users['user_phone']}}</p>
+                <p class="itemRegion">地址：{{$users['user_adress']}}</p>
             </dd>
-           <!--  <dd style="display:none">
-                <input type="radio" name="Checkout[address]" class="addressId"  value="10140916720030323">
-            </dd> -->
-        </dl>
-           <!--  <div class="item use-new-addr"  id="J_useNewAddr" data-state="off">
-             <span class="iconfont icon-add"><img src="/home/jiesuan/images/add_cart.png" /></span> 
-            使用新地址
-        	</div> -->
+        </dl>  
     </div>
-    @endforeach
-    <input type="hidden" name="newAddress[type]" id="newType" value="common">
-    <input type="hidden" name="newAddress[consignee]" id="newConsignee">
-    <input type="hidden" name="newAddress[province]" id="newProvince">
-    <input type="hidden" name="newAddress[city]" id="newCity">
-    <input type="hidden" name="newAddress[district]" id="newCounty">
-    <input type="hidden" name="newAddress[address]" id="newStreet">
-    <input type="hidden" name="newAddress[zipcode]" id="newZipcode">
-    <input type="hidden" name="newAddress[tel]" id="newTel">
-    <input type="hidden" name="newAddress[tag_name]" id="newTag">
-    <!--点击弹出新增/收货地址界面start-->
-    
-    <!-- <div class="xm-edit-addr-box" id="J_editAddrBox">
-        <div class="bd">
-            <div class="item">
-                <label>收货人姓名<span>*</span></label> 
-                <input type="text" name="userAddress[consignee]" style="width: 220px;" id="Consignee" class="input" placeholder="收货人姓名" maxlength="15" autocomplete='off'>
-                <p class="tip-msg tipMsg"></p>
-            </div>
-            <div class="item">
-                <label>联系电话<span>*</span></label> 
-                <input type="text" style="width: 220px;" name="userAddress[tel]" class="input" id="Telephone" placeholder="11位手机号" autocomplete='off'>
-                <p class="tel-modify-tip" id="telModifyTip"></p>
-                <p class="tip-msg tipMsg"></p>
-            </div>
-            <div class="item">
-                <label>地址<span>*</span></label>
-                <select name="userAddress[province]" style="width: 150px;" id="Provinces" class="select-1">
-                    <option>省份/自治区</option>
-                </select>
-                <select name="userAddress[city]"  id="Citys" style="width: 150px;" class="select-2" disabled>
-                    <option>城市/地区/自治州</option>
-                </select>
-                <select name="userAddress[county]"  id="Countys" style="width: 150px;" class="select-3" disabled>
-                    <option>区/县</option>
-                </select>
-                <textarea   name="userAddress[street]" style="width: 220px;" class="input-area" id="Street" placeholder="路名或街道地址，门牌号"></textarea>
-                <p class="tip-msg tipMsg"></p>
-            </div>
-            <div class="item">
-                <label>邮政编码<span>*</span></label> 
-                <input type="text" name="userAddress[zipcode]" style="width: 220px;" id="Zipcode" class="input" placeholder="邮政编码"  autocomplete='off'>
-                <p class="zipcode-tip" id="zipcodeTip"></p>
-                <p class="tip-msg tipMsg"></p>
-            </div>
-            <div class="item">
-                <label>地址标签<span>*</span></label> 
-                <input type="text" name="userAddress[tag]" style="width: 220px;" id="Tag" class="input" placeholder='地址标签：如"家"、"公司"。限5个字内'  >
-                <p class="tip-msg tipMsg"></p>
-            </div>
-        </div>
-        <div class="ft clearfix">
-            <button  type="button" style="width: 100px;" class="btn btn-lineDake btn-small " id="J_editAddrCancel">取消</button>
-             <button type="button" class="btn btn-primary  btn-small " style="width: 100px;" id="J_editAddrOk">保存</button>
-        </div>
-    </div> -->
-    <!--点击弹出新增/收货地址界面end-->
+</div>
+
     <div class="xm-edit-addr-backdrop" id="J_editAddrBackdrop"></div>
 </div>                  
 </div>
@@ -333,7 +276,6 @@
             电子发票是税务局认可的有效凭证，可作为售后维权凭据，不随商品寄送。开票后不可更换纸质发票，如需报销请选择普通发票。<a href="http://bbs.xiaomi.cn/thread-9285999-1-1.html" target="_blank">什么是电子发票？</a>
         </p>
         <div class="invoice-info nvoice-info-1" id="checkoutInvoiceElectronic" style="display:none;">
-
             <p class="tip">电子发票目前仅对个人用户开具，不可用于单位报销 ，不随商品寄送</p>
             <p>发票内容：购买商品明细</p>
             <p>发票抬头：个人</p>
@@ -369,9 +311,7 @@
                 <label for="Checkout[invoice_title]">单位名称：</label>
                 <input name="Checkout[invoice_title]" type="text" maxlength="49" value="" class="input"> <span class="tip-msg J_tipMsg"></span>
             </div>
-
         </div>
-
     </div>
 </div> 
 </div>            <!-- 发票信息 END-->
@@ -379,51 +319,28 @@
             <div class="checkout-box-ft">
                  <!-- 商品清单 -->
                 <div id="checkoutGoodsList" class="checkout-goods-box">
-                                    <div class="xm-box">
+                <div class="xm-box">
                     <div class="box-hd">
                         <h2 class="title">确认订单信息</h2>
                     </div>
-                    <div class="box-bd">
-                        <dl class="checkout-goods-list">
-                            <dt class="clearfix">
-                                <span class="col col-1">商品名称</span>
-                                <span class="col col-2">购买价格</span>
-                                <span class="col col-3">购买数量</span>
-                                <span class="col col-4">小计（元）</span>
-                            </dt>
-                            <dd class="item clearfix">
-                                <div class="item-row">
-                                    <div class="col col-1">
-                                        <div class="g-pic">
-                                            <img src="http://i1.mifile.cn/a1/T11lLgB5YT1RXrhCrK!40x40.jpg" srcset="http://i1.mifile.cn/a1/T11lLgB5YT1RXrhCrK!80x80.jpg 2x" width="40" height="40" />
-                                        </div>
-                                        <div class="g-info">
-                                            <a href="#">小米T恤 忍者米兔双截棍军绿XXL</a>
-                                        </div>
-                                    <div class="col col-2">39元</div>
-                                    <div class="col col-3">1</div>
-                                    <div class="col col-4">39元</div>
-                                </div>
-                            </dd>                       
-                        </dl>
+                    
+                    </div>
                         <div class="checkout-count clearfix">
                             <div class="checkout-count-extend xm-add-buy">
                                 <h3 class="title">会员留言</h2></br>
                                 <input type="text" />
-
                             </div>
                             <!-- checkout-count-extend -->
                             <div class="checkout-price">
                                 <ul>
-
                                     <li>
-                                       订单总额：<span>244元</span>
+                                       订单总额：<span>{{$price}}元</span>
                                     </li>
                                     <li>
                                         活动优惠：<span>-0元</span>
                                         <script type="text/javascript">
                                             checkoutConfig.activityDiscountMoney=0;
-                                            checkoutConfig.totalPrice=244.00;
+                                            checkoutConfig.totalPrice={{$price}};
                                         </script>
                                     </li>
                                     <li>
@@ -433,13 +350,14 @@
                                         运费：<span id="postageDesc">0元</span>
                                     </li>
                                 </ul>
-                                <p class="checkout-total">应付总额：<span><strong id="totalPrice">244</strong>元</span></p>
+                                
+                                <p class="checkout-total">应付总额：<span><strong id="totalPrice"></strong>元</span></p>
+                               
                             </div>
                             <!--  -->
                         </div>
                     </div>
                 </div>
-
     <!--S 加价购 产品选择弹框 -->
                 <div class="modal hide modal-choose-pro" id="J_choosePro-664">
                 <div class="modal-header">
@@ -457,24 +375,20 @@
                                                     </ul>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <a href="#" class="btn btn-disabled J_chooseProBtn">加入购物车</a>
-                </div>
+               
             </div>
                 <!--E 加价购 产品选择弹框 -->
     
     <!--S 保障计划 产品选择弹框 -->
-    
-    
                 </div>
                 <!-- 商品清单 END -->
                 <input type="hidden"  id="couponType" name="Checkout[couponsType]">
                 <input type="hidden" id="couponValue" name="Checkout[couponsValue]">
                 <div class="checkout-confirm">
                     
-                     <a href="#" class="btn btn-lineDakeLight btn-back-cart">返回购物车</a>
-                     <input type="submit" class="btn btn-primary" value="立即下单" id="checkoutToPay" />
-                                     </div>
+                     <a href="/dianpus/car" class="btn btn-lineDakeLight btn-back-cart">返回购物车</a>
+                     <a href="/jiesuan/tijiao"><input type="" class="btn btn-primary" value="立即支付" id="checkoutToPay" /></a>
+                </div>
             </div>
         </div>
 
@@ -532,15 +446,6 @@
             </div>
     </div>
 <!--  预售提示 E-->
-
-
-
-<!-- 保险弹窗 -->
-<!-- 保险弹窗 -->
-
-
-        
-
     <script src="/home/jiesuan/js/base.min.js"></script>
 
         <script type="text/javascript" src="/home/jiesuan/js/address_all.js"></script>
@@ -578,10 +483,9 @@
 		   <div class="footer-grid footer-grid4">
 			   <h3 class="m_2">好东西和大家一起分享!</h3>
 			   <ul class="footer_social">
-				 <li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http"><img src="/home/images/QQ.png"/></a></li>
-				 <li><a href="https://www.douban.com/share/service?href=http"><img src="/home/images/douban.png"/></a></li>
-				 <li><a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey"><img src="/home/images/qqkj.png"/></a></li>
-				 <li><a href="http://service.weibo.com/share/share.php"><img src="/home/images/weibo.png"/></a></li>
+				<div class="newsview" style="padding:20px;float:right">
+                    <div class="share-component" data-disabled="google,twitter,facebook" data-description=""></div>
+                </div>
 				 <div class="clearfix"> </div>
 			   </ul>
 			   <h3 class="m_3">订阅</h3>

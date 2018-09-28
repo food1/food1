@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Food1;
 use App\Shopcar;
 use App\User;
 use Illuminate\Http\Request;
@@ -39,28 +40,46 @@ class ShopcarController extends Controller
                 return back();
             }
         }
-
     }
 
-    public function index()
+    public function index(Request $req)
     {
-        //
+        // dd($req);
+        $a = $req->shuliang[0];
+        $b = $req->price;
+        $c = (int)$a;
+        
+        $d = (int)$b;
+        
+        // dd($req);
+        $price = $c*$d;
+        //dd($price);
+        $id = $req->shopcar_id;
         $user_id = \Session::get('id');
-        $id = $_GET['shopcar_id'];
-        $shopcars = Shopcar::findOrFail($id);
-        $users = User::orderBy('id','desc');
+        $shopcars = Shopcar::findOrFail($id)
+            ->where('food1_id',$req->food1_id)
+            ->where('user_id',$req->user_id);
+        //$users = User::where('user_id',$user_id)->find($id);
+        // $food1s = Food1::where('id',$id)->find($shopcars);
         //dd($shopcars);
-        return view('home.jiesuan.index',compact('shopcars','users','user_id'));
+        return view('home.jiesuan.index',compact('shopcars','user_id','id','price'));
     }
 
+   
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function tj()
     {
         //
+        return view('home.jiesuan.tijiao');
+    }
+
+    public function order()
+    {
+        
     }
 
     /**

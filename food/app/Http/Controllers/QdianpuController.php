@@ -45,7 +45,8 @@ class QdianpuController extends Controller
     {   
         $user_id = \Session::get('id');
         $food1s = Shopcar::where('user_id',$user_id)->get();
-        return view('home.dianpus.car',compact('users','food1s','user_id'));
+        $food_id = Shopcar::pluck('food1_id');
+        return view('home.dianpus.car',compact('food1s','user_id','food_id'));
     }
     
 

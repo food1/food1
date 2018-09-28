@@ -11,6 +11,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 </script>
+<!-- 分享 -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+<!-- 分享 -->  
 <link href='http://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 
 	<style>
@@ -81,7 +85,7 @@
 			</ul>
 			<ul class="shopping_cart">@foreach($food1s as $v)@endforeach
 			   <a href="/dianpus/car?food1_id={{$v->id}}"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
-			   <a href="#"><li class="shop_right"><span>$0.00</span></li></a>
+			   <a href="#"><li class="shop_right"></li></a>
 			   <div class="clearfix"> </div>
 			</ul>
 			   <div class="clearfix"> 
@@ -308,11 +312,9 @@
 		   <div class="footer-grid footer-grid4">
 			   <h3 class="m_2">好东西和大家一起分享!</h3>
 			   <ul class="footer_social">
-				 <li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http"><img src="/home/images/QQ.png"/></a></li>
-				 <li><a href="https://www.douban.com/share/service?href=http"><img src="/home/images/douban.png"/></a></li>
-				 <li><a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey"><img src="/home/images/qqkj.png"/></a></li>
-				 <li><a href="http://service.weibo.com/share/share.php"><img src="/home/images/weibo.png"/></a></li>
-				 <div class="clearfix"> </div>
+				 <div class="newsview" style="padding:20px;float:right">
+		            <div class="share-component" data-disabled="google,twitter,facebook" data-description=""></div>
+		        </div>
 			   </ul>
 			   <h3 class="m_3">订阅</h3>
 			   <div class="footer_search">
