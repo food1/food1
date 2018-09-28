@@ -173,7 +173,8 @@
 
                    <!-- 开始 -->
                     <div class="mainContainner">
-                        <div class="commentBox">
+
+                        <div class="commentBox" name="one">
                                 <div class="Ctop">
                                     <label class="Ctitle"><img src="/pingluns/img/user_comment.png">我来说两句</label>
                                     <label class="Ctip">已有<span class="Ccount" id="Ccount"></span>条评论</label>
@@ -194,6 +195,7 @@
                                     <input class="Cusername" placeholder="你的昵称" id="Cusername" ></input>
                                     <button class="submitBtn" onclick="submit_pl(0)">发布评论</button>
                                 </div>
+
                         </div>
                         <div class="Corder">
                             <button id="newBtn" onclick="start(0)">最新</button>
@@ -212,7 +214,11 @@
                     start(0)
                     </script>
                     <!-- 结束 -->
-                    
+                    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+                    <script type="text/javascript">
+                        
+
+                    </script>
 
                     
 

@@ -37,6 +37,9 @@ Route::get('/dianpus/guize','QdianpuController@guize');
 Route::get('/dianpus/intro','QdianpuController@intro');
 //联系我们
 Route::get('/dianpus/call','QdianpuController@call');
+//用户反馈
+// Route::get('/dianpus/fankui','QdianpuController@fankui');
+Route::resource('/fankui','FanKuiController');
 
 
 

@@ -75,5 +75,7 @@ class QdianpuController extends Controller
     {
         return view('home.dianpus.call');
     }
+
+
     
 }

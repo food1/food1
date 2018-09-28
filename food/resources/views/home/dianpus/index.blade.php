@@ -119,6 +119,9 @@
 			        <li><a href="/dianpus/order">我的订单</a></li>
 			        <li><a href="/dianpus/guize">规则中心</a></li>
 			        <li><a href="#">我的客服</a></li>
+			        @if(Session::has('id') != null)
+			        <li><a href="/fankui">反馈中心</a></li>
+			        @endif
 		        </ul>
 		        <ul class="login">
 				@if(Session::has('id') == null)
