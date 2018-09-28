@@ -124,6 +124,13 @@
 
                         <form action="/fankui" method="post" id="msgform" class="fl">
                             <div class="quick_liuyan_con">
+                                <div class="item" style="display: none;">
+                                    <span><b class="star">*</b>用户ID</span>
+                                    <div class="item-right">
+                                        <input type="text" class="v-ipt" value="{{$users['id']}}" name="user_id" placeholder="姓名">
+                                    </div>
+                                    <div style="clear: both"></div>
+                                </div>
                                 <div class="item">
                                     <span><b class="star">*</b>姓名</span>
                                     <div class="item-right">

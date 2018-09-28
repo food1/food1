@@ -15,6 +15,7 @@ class CreateFankuisTable extends Migration
     {
         Schema::create('fankuis', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
             $table->string('fankui_name');
             $table->string('fankui_phone');
             $table->string('email');
