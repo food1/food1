@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->integer('user_phone')->comment('电话');
             $table->integer('user_qx')->nullable()->comment('权限');
             $table->string('user_password')->comment('密码');
-            $table->string('user_img')->comment('头像');
+            $table->string('user_img')->nullable()->default('/home/images/p11.jpg');
             $table->string('user_adress')->nullable()->comment('地址');
             $table->timestamps();
         });

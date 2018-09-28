@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Dianpu;
 use App\Food1;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Food1Controller extends Controller
 {
@@ -40,16 +41,9 @@ class Food1Controller extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        // dd($request->all());
-        // $food1 =  Food1::find(1);
-        // $dianpu = $food1->dianpus;
-        // dd($dianpu);
-
-
+    { 
+       
         $food1 = new Food1;
-        
-
         $food1 -> food1_name = $request->food1_name;
         $food1 -> food1_intro =$request->food1_intro;
         $food1 -> food1_price = $request->food1_price;
@@ -57,8 +51,13 @@ class Food1Controller extends Controller
         if ($request->hasFile('food1_img')) {
             $food1->food1_img = '/'.$request->food1_img->store('uploads/'.date('Ymd'));
         }
-        if($food1 -> save()){
-            return redirect('/food1')->with('success', '添加成功');
+        if($food1 -> save()){          
+             try{
+                $res = $food1->dianpus()->sync($request->dianpu_id);                  
+            }catch(\Exception $e){
+                return back()->with('error','添加失败!');               
+            }
+            return redirect('/food1')->with('success','添加成功');            
         }else{
             return back()->with('error','添加失败');
         }

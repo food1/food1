@@ -57,8 +57,8 @@ class HomeController extends Controller
         //
         $food1s = Food1::all();
         $links = Link::all();
-         $users = User::find(\Session::get('id'));
-          $cates = Cate::all();      
+        $users = User::find(\Session::get('id'));
+        $cates = Cate::all();      
         // //读取数据库 获取用户数据
         $dianpus = Dianpu::where('cate_id', $request->cate_id)->orderBy('id','desc')
             ->paginate(8);
@@ -109,7 +109,8 @@ class HomeController extends Controller
     //登录页面
     public function login()
     {
-        return view('home.login');
+        $links = Link::all();
+        return view('home.login',compact('links'));
     }
 
     //登陆操作
@@ -143,8 +144,8 @@ class HomeController extends Controller
     //注册页面
     public function zhuce()
     {
-       
-        return view('home.zhuce');
+        $links = Link::all();
+        return view('home.zhuce',compact('links'));
     }
     //執行註冊
     public function dozhuce(Request $request)

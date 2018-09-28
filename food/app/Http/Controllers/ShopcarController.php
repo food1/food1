@@ -49,6 +49,7 @@ class ShopcarController extends Controller
         $id = $_GET['shopcar_id'];
         $shopcars = Shopcar::findOrFail($id);
         $users = User::orderBy('id','desc');
+       
         //dd($shopcars);
         return view('home.jiesuan.index',compact('shopcars','users','user_id'));
     }

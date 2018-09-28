@@ -105,13 +105,13 @@
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    	<ul class="nav navbar-nav menu1">
-	                    <li><a></a></li>
-	                    <li><a></a></li>
-	                    <li><a href="/dianpus">首页</a></li>
-	                    <li><a href="/dianpus/order">我的订单</a></li>
-	                    <li><a href="/dianpus/guize">规则中心</a></li>
-	                    <li><a href="/dianpus/fankui">用户反馈</a></li>
-	                    <li><a href="/dianpus/call">联系我们</a></li>
+				      	<li><a></a></li>
+						<li><a></a></li>
+						<li><a></a></li>
+				      	<li><a href="/dianpus?cate_id=1">首页</a></li>
+				        <li><a href="/dianpus/order">我的订单</a></li>
+				        <li><a href="/dianpus/guize">规则中心</a></li>
+				        <li><a href="/dianpus/call">联系我们</a></li>
 		        	</ul>
 		          	<ul class="login">
 					@if(Session::has('id') == null)
@@ -150,11 +150,14 @@
 			<li class="list_amount">数量</li>
 			<li class="list_sum">金额</li>
 			<li class="list_op">操作</li>
+			<li onclick="history.go(-1)">返回</li>
 		</ul>
 		<?php $i = 1;?>
-	</div>@foreach($food1s as $v)
-	<?php $i++ ?>
-	<div class="cartBox">	
+	</div>
+	<div class="cartBox">
+	<form action="/jiesuan/{$id}" method="post" class="form">
+		@foreach($food1s as $v)
+		<?php $i++ ?>	
 		<div class="order_content">
 			<ul class="order_lists">
 				<li class="list_chk">
@@ -162,47 +165,57 @@
 					<label for="{{$i}}"></label>
 				</li>
 				<li class="list_con">
-					<div class="list_img"><a href="javascript:;"><img src="{{$v->food1['food1_img']}}" alt=""></a></div>
-					<div class="list_text"><a href="javascript:;">{{$v->food1['food1_name']}}</a></div>
+					<div class="list_img">
+						<input type="hidden" name="food1_img" value="{{$v->food1['food1_img']}}" style="width: 50px;border:none;" readonly><img src="{{$v->food1['food1_img']}}" alt="">
+					</div>
+					<div class="list_text">
+						<input type="" name="food1_name" value="{{$v->food1['food1_name']}}">
+					</div>
 				</li>
 				
 				<li class="list_price">
-					<p class="price">￥{{$v->food1['food1_price']}}</p>
+					<p class="price" >
+						<input type="" name="food1_price" style="width: 50px;border:none;" value="{{$v->food1['food1_price']}}" readonly>
+					</p>
 				</li>
 				<li class="list_amount">
 					<div class="amount_box">
-						<a href="javascript:;" class="reduce reSty">-</a>
-						<input type="text" value="{{$v->shuliang}}" class="sum"  id="che">
-						<a href="javascript:;" class="plus">+</a>
+						<input type="text" value="{{$v->shuliang}}" name="shuliang[]" readonly class="sum"  id="che">
 					</div>
 				</li>
 				<li class="list_sum">
-					<p class="sum_price">￥{{$v->food1['food1_price']*$v->shuliang}}</p>
+					<p class="sum_price" value="">￥{{$v->food1['food1_price']*$v->shuliang}}</p>
 				</li>
+				{{csrf_field()}}
+		</form>
 				<li class="list_op">
-					{{method_field('DELETE')}}
-            		{{csrf_field()}}
 					<p class="del"><a href="/destroy?food1_id={{$v->id}}" >移除商品</a></p>
 				</li>
 			</ul>		
-		</div>
+		</div> 
+		@endforeach
 	</div>
-	@endforeach
 	<!--底部-->
 	<div class="bar-wrapper">
 		
 		<div class="bar-right">
 			<div class="piece">已选商品<strong class="piece_num">0</strong>件</div>
 			<div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
-			<div class="calBtn"><a href="/jiesuan">结算</a></div>
+			{{csrf_field()}}
+			<div class="calBtn"><a href="javascript:;" class="tijiao">结算</a></div>
 		</div>
-		
-	</div>
+	</div> 
 </section>
 <section class="model_bg"></section>
 
 <script src="/home/car/js/jquery.min.js"></script>
 <script src="/home/car/js/carts.js"></script>
+
+<script type="text/javascript">
+	$('.tijiao').click(function(){
+		$('.form').submit();
+	})
+</script>
 
 <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"> 
 </div>

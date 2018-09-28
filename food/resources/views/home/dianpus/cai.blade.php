@@ -9,6 +9,13 @@
     <script src="/home/js/bootstrap.min.js"></script>
     <script src="/home/js/jquery.min.js"></script>
     <link href="/home/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- 评论JS CS 引入 -->
+    <link rel="stylesheet" type="text/css" href="/pingluns/css/show.css">
+    <script type="text/javascript" src="/pingluns/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/pingluns/js/qna.js"></script>
+    <script type="text/javascript" src="/pingluns/js/pager.js"></script>
+    <!-- 结束 -->
+    <!-- Custom Theme files -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript">
     addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
@@ -80,10 +87,10 @@
 			    <ul class="nav navbar-nav menu1">
                     <li><a></a></li>
                     <li><a></a></li>
-                    <li><a href="/dianpus">首页</a></li>
+                    <li><a></a></li>
+                    <li><a href="/dianpus?cate_id=1">首页</a></li>
                     <li><a href="/dianpus/order">我的订单</a></li>
                     <li><a href="/dianpus/guize">规则中心</a></li>
-                    <li><a href="/dianpus/fankui">用户反馈</a></li>
                     <li><a href="/dianpus/call">联系我们</a></li>
 		        </ul>
 
@@ -164,58 +171,102 @@
                         @endforeach
                     </div>
 
-
-
-
-
-
-
+                   <!-- 开始 -->
+                   @if(Session::has('id') == null) @endif @if(Session::has('id') != null)
+                    <div class="mainContainner">
+                        <div class="commentBox">
+                                <div class="Ctop">
+                                    <label class="Ctitle"><img src="/pingluns/img/user_comment.png">我来说两句</label>
+                                    <label class="Ctip">已有<span class="Ccount" id="Ccount"></span>条评论</label>
+                                </div>
+                                <div class="Cattitude">
+                                    <form>
+                                        <label>我的态度：</label>
+                                        <input type="radio" name="attitude"value='1' checked="checked"><img src="/pingluns/img/zheng.png"></input>
+                                        <input type="radio" name="attitude"value='-1'><img src="/pingluns/img/fan.png"></input>
+                                        <input type="radio" name="attitude"value='0'><img src="/pingluns/img/zhong.png"></input>
+                                    </form>
+                                </div>
+                                <div class="Cinput">
+                                    <textarea placeholder="请输入评论内容" class="Ccont" id="Ccont"></textarea>
+                                </div>
+                                <div class="Csunbmit">
+                                    <label class="Cnick" >你的昵称：</label>
+                                    <input class="Cusername" value="{{$users['user_name']}}" id="Cusername" ></input>
+                                    <button class="submitBtn" onclick="submit_pl(0)">发布评论</button>
+                                </div>
+                        </div>
+                    @endif
+                        <div class="Corder">
+                            <button id="newBtn" onclick="start(0)">最新</button>
+                            <button id="hotBtn" onclick="start(1)">最热</button>
+                        </div>
+                        <div class="CommentList">
+                            <ul class="listul">
+                            </ul>
+                        </div>
+                        <div class="fydiv">
+                            <ul class="fenye">
+                            </ul>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                    start(0)
+                    </script>
+                    <!-- 结束 -->
+                    
                 </div>
             </div>
         </div>
     </div>
-    <!-- 页脚 -->
+  <!-- 页脚 -->
     <div class="footer">
         <div class="container">
-            <div class="footer-grid footer-grid1">
-                <h3 class="m_2">用戶帮助</h3>
-                <ul class="list1">
-                    <li><a href="#\/dianpus/fankui">用户反馈</a></li>
-                </ul>
-            </div>
-            <div class="footer-grid footer-grid3">
-                <h3 class="m_2">关于我们</h3>
-                <ul class="list1">
-                    <li><a href="/dianpus/intro">吃了么介绍</a></li>
-                    <li><a href="/dianpus/call">联系我们</a></li>
-                    <li><a href="/dianpus/guize">规则中心</a></li>
-                </ul>
-            </div>
-            <div class="footer-grid footer-grid2">
-                <h3 class="m_2">商务合作</h3>
-                <ul class="list1">
-                    <li><a href="#">我要开店</a></li>
-                    <li><a href="#">加盟指南</a></li>
-                    <li><a href="#">市场合作</a></li>
-                    <li><a href="#">开放平台</a></li>
-                </ul>
-            </div>
-            <div class="footer-grid footer-grid4">
-                <h3 class="m_2">好东西和大家一起分享!</h3>
-                <ul class="footer_social">
-                    <li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http"><img src="/home/images/QQ.png"/></a></li>
-                    <li><a href="https://www.douban.com/share/service?href=http"><img src="/home/images/douban.png"/></a></li>
-                    <li><a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey"><img src="/home/images/qqkj.png"/></a></li>
-                    <li><a href="http://service.weibo.com/share/share.php"><img src="/home/images/weibo.png"/></a></li>
+           <div class="footer-grid footer-grid3">
+              <h3 class="m_2">关于我们</h3>
+              <ul class="list1">
+                <li><a href="/dianpus/intro">吃了么介绍</a></li>
+                <li><a href="/dianpus/call">联系我们</a></li>
+                <li><a href="/dianpus/guize">规则中心</a></li>
+              </ul>
+           </div>
+           <div class="footer-grid footer-grid2">
+              <h3 class="m_2">商务合作</h3>
+              <ul class="list1">
+                <li><a href="#">我要开店</a></li>
+                <li><a href="#">加盟指南</a></li>
+                <li><a href="#">市场合作</a></li>
+                <li><a href="#">开放平台</a></li>
+              </ul>
+           </div>
+           <div class="footer-grid footer-grid4">
+               <h3 class="m_2">好东西和大家一起分享!</h3>
+               <ul class="footer_social">
+                 <li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http"><img src="/home/images/QQ.png"/></a></li>
+                 <li><a href="https://www.douban.com/share/service?href=http"><img src="/home/images/douban.png"/></a></li>
+                 <li><a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey"><img src="/home/images/qqkj.png"/></a></li>
+                 <li><a href="http://service.weibo.com/share/share.php"><img src="/home/images/weibo.png"/></a></li>
+                 <div class="clearfix"> </div>
+               </ul>
+               <h3 class="m_3">订阅</h3>
+               <div class="footer_search">
+                <input type="text" class="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Email';}">
+                <input type="submit" value="搜索">
+               </div>
+           </div>
+            <div class="footer-grid footer-grid_last">
+                <ul class="secure">
+                    <li class="secure_img"><img src="/home/images/secure.png" alt="" /></li>
+                    <li class="secure_desc">品质值得信赖</li>
                     <div class="clearfix"> </div>
                 </ul>
-                <h3 class="m_3">订阅</h3>
-                <div class="footer_search">
-                    <input type="text" class="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-                    <input type="submit" value="搜索">
-                </div>
+                <ul class="secure">
+                    <li class="secure_img"><img src="/home/images/order.png" alt="" /></li>
+                    <li class="secure_desc">速度值得称赞</li>
+                    <div class="clearfix"> </div>
+                </ul>
             </div>
-`          <!-- 友情链接 -->
+           <!-- 友情链接 -->
            <div class="footer-grid footer-grid_last">
             @foreach($links as $v)
               <ul class="secure">

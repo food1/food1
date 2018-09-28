@@ -58,13 +58,13 @@
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    	<ul class="nav navbar-nav menu1">
-	                    <li><a></a></li>
-	                    <li><a></a></li>
-	                    <li><a href="/dianpus">首页</a></li>
-	                    <li><a href="/dianpus/order">我的订单</a></li>
-	                    <li><a href="/dianpus/guize">规则中心</a></li>
-	                    <li><a href="/dianpus/fankui">用户反馈</a></li>
-	                    <li><a href="/dianpus/call">联系我们</a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a href="/dianpus?cate_id=1">首页</a></li>
+                        <li><a href="/dianpus/order">我的订单</a></li>
+                        <li><a href="/dianpus/guize">规则中心</a></li>
+                        <li><a href="/dianpus/call">联系我们</a></li>
 		        	</ul>
 		          	<ul class="login">
 		          		<a href="/home/login"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>
@@ -170,46 +170,41 @@
             </div>
         </div>
     </div>
+   <!-- 页脚 -->
     <div class="footer">
         <div class="container">
-            <div class="footer-grid footer-grid1">
-                <h3 class="m_2">用戶帮助</h3>
-                <ul class="list1">
-                    <li><a href="#">用户反馈</a></li>
-                </ul>
-            </div>
-            <div class="footer-grid footer-grid3">
-                <h3 class="m_2">关于我们</h3>
-                <ul class="list1">
-                    <li><a href="/dianpus/intro">吃了么介绍</a></li>
-                    <li><a href="/dianpus/call">联系我们</a></li>
-                    <li><a href="/dianpus/guize">规则中心</a></li>
-                </ul>
-            </div>
-            <div class="footer-grid footer-grid2">
-                <h3 class="m_2">商务合作</h3>
-                <ul class="list1">
-                    <li><a href="#">我要开店</a></li>
-                    <li><a href="#">加盟指南</a></li>
-                    <li><a href="#">市场合作</a></li>
-                    <li><a href="#">开放平台</a></li>
-                </ul>
-            </div>
-            <div class="footer-grid footer-grid4">
-                <h3 class="m_2">好东西和大家一起分享!</h3>
-                <ul class="footer_social">
-                    <li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http"><img src="/home/images/QQ.png"/></a></li>
-                    <li><a href="https://www.douban.com/share/service?href=http"><img src="/home/images/douban.png"/></a></li>
-                    <li><a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey"><img src="/home/images/qqkj.png"/></a></li>
-                    <li><a href="http://service.weibo.com/share/share.php"><img src="/home/images/weibo.png"/></a></li>
-                    <div class="clearfix"> </div>
-                </ul>
-                <h3 class="m_3">订阅</h3>
-                <div class="footer_search">
-                    <input type="text" class="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Email';}">
-                    <input type="submit" value="搜索">
-                </div>
-            </div>
+           <div class="footer-grid footer-grid3">
+              <h3 class="m_2">关于我们</h3>
+              <ul class="list1">
+                <li><a href="/dianpus/intro">吃了么介绍</a></li>
+                <li><a href="/dianpus/call">联系我们</a></li>
+                <li><a href="/dianpus/guize">规则中心</a></li>
+              </ul>
+           </div>
+           <div class="footer-grid footer-grid2">
+              <h3 class="m_2">商务合作</h3>
+              <ul class="list1">
+                <li><a href="#">我要开店</a></li>
+                <li><a href="#">加盟指南</a></li>
+                <li><a href="#">市场合作</a></li>
+                <li><a href="#">开放平台</a></li>
+              </ul>
+           </div>
+           <div class="footer-grid footer-grid4">
+               <h3 class="m_2">好东西和大家一起分享!</h3>
+               <ul class="footer_social">
+                 <li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http"><img src="/home/images/QQ.png"/></a></li>
+                 <li><a href="https://www.douban.com/share/service?href=http"><img src="/home/images/douban.png"/></a></li>
+                 <li><a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey"><img src="/home/images/qqkj.png"/></a></li>
+                 <li><a href="http://service.weibo.com/share/share.php"><img src="/home/images/weibo.png"/></a></li>
+                 <div class="clearfix"> </div>
+               </ul>
+               <h3 class="m_3">订阅</h3>
+               <div class="footer_search">
+                <input type="text" class="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Email';}">
+                <input type="submit" value="搜索">
+               </div>
+           </div>
             <div class="footer-grid footer-grid_last">
                 <ul class="secure">
                     <li class="secure_img"><img src="/home/images/secure.png" alt="" /></li>
@@ -222,8 +217,22 @@
                     <div class="clearfix"> </div>
                 </ul>
             </div>
-            <div class="clearfix"> </div>
-        </div>
+           <!-- 友情链接 -->
+           <div class="footer-grid footer-grid_last">
+            @foreach($links as $v)
+              <ul class="secure">
+                <li class="secure_img">
+                <a href="{{$v['link_url']}}">
+                <img src="{{$v['link_img']}}" alt="" width="50"/></li> 
+                <li class="secure_desc">{{$v['link_name']}}</li>
+                </a>
+                <div class="clearfix"> </div>
+              </ul>
+            @endforeach
+           </div>
+           <!-- 友情链接 -->
+           <div class="clearfix"> </div>
+       </div>
     </div>
 </body>
 
@@ -244,7 +253,7 @@ $('input[name=user_name]').focus(function() {
     //边框颜色
     // $(this).addClass('active');
     //提示语部分
-    $(this).next().show().html('输入6~18位数字字母下划线');
+    $(this).next().show().html('<span style="font-size:12px;">输入6~18位数字字母下划线</span>');
 }).blur(function() {
     // 移出激活状态的class
     $(this).removeClass('active');
@@ -255,13 +264,13 @@ $('input[name=user_name]').focus(function() {
     //判断
     if (!reg.test(v)) {
         //文字提醒
-        $(this).next().show().html('<font color="red">格式不正确</font>');
+        $(this).next().show().html('<span style="color:red;font-size:12px;">格式不正确</span>');
 	} else {
         var input = $(this);
         //发送ajax请求 检测用户名是否存在
         $.post('/check-user-exists.php', { user_name: v }, function(data) {
             if (data != '1') {
-                input.next().html('<font color="red">该用户名太受欢迎了,请您换一个再试!!!</font>');
+                input.next().html('<span style="color:red;font-size:12px;">该用户名太受欢迎了,请您换一个再试!!!</span>');
             } else {
             	input.next().html('<span style="color:green;font-size:16px;font-weight:bold;">√</span>');
             }
@@ -277,7 +286,7 @@ $('input[name=user_name]').focus(function() {
 	$('input[name=user_phone]').focus(function(){
 			
 			//提示语显示
-			$(this).next().show().html('输入您的手机号!!!');
+			$(this).next().show().html('<span style="font-size:12px;">输入您的手机号</span>');
 		}).blur(function(){
 			$(this).removeClass('active');
 			//获取用户的输入值
@@ -287,7 +296,7 @@ $('input[name=user_name]').focus(function() {
 			if(!reg.test(v)) {
 				
 				//文字提醒
-				$(this).next().html('<span style="color:red">格式不正确</span>').show();
+				$(this).next().html('<span style="color:red;font-size:12px;">格式不正确</span>').show();
 				CPHONE = false;
 			}else{
 				
@@ -302,7 +311,7 @@ $('input[name=user_name]').focus(function() {
 		$('input[name=user_password]').focus(function(){
 			
 			//提示语显示
-			$(this).next().show().html('请输入字母开头6-16位字母数字下划线!!!');
+			$(this).next().show().html('<span style="font-size:12px;">请输入字母开头6-16位字母数字下划线</span>');
 		}).blur(function(){
 			$(this).removeClass('active');
 			//获取用户的输入值
@@ -314,7 +323,7 @@ $('input[name=user_name]').focus(function() {
 				
 				
 				//文字提醒
-				$(this).next().html('<span style="color:red">格式不正确</span>').show();
+				$(this).next().html('<span style="color:red;font-size:12px;">格式不正确</span>').show();
 				CPASS = false;
 			}else{
 				
@@ -329,7 +338,7 @@ $('input[name=user_name]').focus(function() {
 		$('input[name=repassword]').focus(function(){
 			
 			//提示语显示
-			$(this).next().show().html('请再次输入密码');
+			$(this).next().show().html('<span style="font-size:12px;">请再次输入密码</span>');
 		}).blur(function(){
 			$(this).removeClass('active');
 
@@ -340,7 +349,7 @@ $('input[name=user_name]').focus(function() {
 			if(v != $('input[name=user_password]').val()) {
 				
 				//文字提醒
-				$(this).next().html('<span style="color:red">两次密码不一致</span>').show();
+				$(this).next().html('<span style="color:red;font-size:12px;">两次密码不一致</span>').show();
 				CREPASS = false;
 			}else{
 				
@@ -356,7 +365,7 @@ $('input[name=user_name]').focus(function() {
 		$('input[name=user_adress]').focus(function(){
 			
 			//提示语显示
-			$(this).next().show().html('请输入中文、英文、数字但不包括下划线等!!!');
+			$(this).next().show().html('<span style="font-size:12px;">请输入中文、英文、数字但不包括下划线等</span>');
 		}).blur(function(){
 			$(this).removeClass('active');
 			//获取用户的输入值
@@ -366,7 +375,7 @@ $('input[name=user_name]').focus(function() {
 
 			if(!reg.test(v)) {
 				//文字提醒
-				$(this).next().html('<span style="color:red">格式不正确</span>').show();
+				$(this).next().html('<span style="color:red;font-size:12px;">格式不正确</span>').show();
 				CADRESS = false;
 			}else{
 				

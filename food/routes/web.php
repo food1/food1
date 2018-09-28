@@ -44,6 +44,8 @@ Route::get('/dianpus/weizhi','QdianpuController@weizhi');
 Route::group(['middleware'=>'home'],function(){
 //个人中心
 Route::resource('/person','PersonController');
+//签到
+Route::get('/dianpus/qiandao','QdianpuController@qiandao');
 //进入购物车
 Route::get('/dianpus/car', 'QdianpuController@car');
 //购物车

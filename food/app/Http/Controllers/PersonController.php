@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Link;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -17,11 +18,11 @@ class PersonController extends Controller
     {
         //
         $users = new User;
-        
+        $links = Link::all();
         $users = User::find(\Session::get('id'));
 
         
-        return view('home.person.index',compact('users'));
+        return view('home.person.index',compact('users','links'));
 
     }
 

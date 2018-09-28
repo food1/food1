@@ -111,13 +111,13 @@
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    	<ul class="nav navbar-nav menu1">
-				      	<li><a></a></li>
-				      	<li><a></a></li>
-				      	<li><a></a></li>
-				      	<li><a href="/dianpus?cate_id=1">首页</a></li>
-				        <li><a href="/dianpus/order">我的订单</a></li>
-				        <li><a href="/dianpus/guize">规则中心</a></li>
-				        <li><a href="contact.html">我的客服</a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a href="/dianpus?cate_id=1">首页</a></li>
+                        <li><a href="/dianpus/order">我的订单</a></li>
+                        <li><a href="/dianpus/guize">规则中心</a></li>
+                        <li><a href="/dianpus/call">联系我们</a></li>
 		        	</ul>
 		          	<ul class="login">
 					@if(Session::has('id') == null)
@@ -180,15 +180,15 @@
     <!---->
 </div>
 <div class="box-bd">
-    @foreach ($shopcars as $v)
+    
     <div class="clearfix xm-address-list" id="checkoutAddrList">
         <dl class="item" >
             <dt>
-                <strong class="itemConsignee">{{$v['user_name']}}</strong>
+                <strong class="itemConsignee">a</strong>
             </dt>
             <dd>
-                <p class="tel itemTel">{{$v['user_phone']}}</p>
-                <p class="itemRegion">{{$v['user_adress']}}</p>
+                <p class="tel itemTel">a</p>
+                <p class="itemRegion">a</p>
             </dd>
            <!--  <dd style="display:none">
                 <input type="radio" name="Checkout[address]" class="addressId"  value="10140916720030323">
@@ -199,7 +199,7 @@
             使用新地址
         	</div> -->
     </div>
-    @endforeach
+   
     <input type="hidden" name="newAddress[type]" id="newType" value="common">
     <input type="hidden" name="newAddress[consignee]" id="newConsignee">
     <input type="hidden" name="newAddress[province]" id="newProvince">

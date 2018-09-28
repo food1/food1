@@ -33,6 +33,7 @@ class QdianpuController extends Controller
         $links = Link::all();
         $dianpu = Dianpu::where('id',$dianpu_id)->first();
         $foods = $dianpu->food1s;
+        $food1s = Food1::all();
         $users = User::find(\Session::get('id'));
         
         // $food1s = Food1::orderBy('id','desc')
@@ -40,7 +41,8 @@ class QdianpuController extends Controller
         //        ->paginate(8);
         //解析模板显示数据
         // dd($food1s);
-        return view('/home.dianpus.cai',compact('users','foods','dianpu_id','links'));
+
+        return view('/home.dianpus.cai',compact('users','foods','dianpu_id','food1s','links'));
     }
 
 
@@ -57,31 +59,40 @@ class QdianpuController extends Controller
     public function order()
     {
         $users = User::find(\Session::get('id'));
-        return view('home.dianpus.order',compact('users'));
+        $links = Link::all();
+        return view('home.dianpus.order',compact('users','links'));
     }
     
 
      public function guize()
     {
         $users = User::find(\Session::get('id'));
-        return view('home.dianpus.guize',compact('users'));
+        $links = Link::all();
+        return view('home.dianpus.guize',compact('users','links'));
     }
 
 
     public function intro()
     {
-        return view('home.dianpus.intro');
+        $links = Link::all();
+        return view('home.dianpus.intro',compact('links'));
     }
 
 
     public function call()
     {
-        return view('home.dianpus.call');
+        $links = Link::all();
+        return view('home.dianpus.call',compact('links'));
     }
 
     public function weizhi()
     {
         return view('home.dianpus.weizhi');
+    }
+
+    public function qiandao()
+    {
+        return view('home.dianpus.qiandao');
     }
     
 }

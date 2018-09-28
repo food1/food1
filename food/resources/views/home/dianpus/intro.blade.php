@@ -60,10 +60,10 @@
                                 <ul class="nav navbar-nav menu1">
                                     <li><a></a></li>
                                     <li><a></a></li>
-                                    <li><a href="/dianpus">首页</a></li>
+                                    <li><a></a></li>
+                                    <li><a href="/dianpus?cate_id=1">首页</a></li>
                                     <li><a href="/dianpus/order">我的订单</a></li>
                                     <li><a href="/dianpus/guize">规则中心</a></li>
-                                    <li><a href="/dianpus/fankui">用户反馈</a></li>
                                     <li><a href="/dianpus/call">联系我们</a></li>
                                 </ul>
                                 <ul class="login">
@@ -104,46 +104,41 @@
             </div>
         </div>
     </div>
+    <!-- 页脚 -->
     <div class="footer">
         <div class="container">
-            <div class="footer-grid footer-grid1">
-                <h3 class="m_2">用戶帮助</h3>
-                <ul class="list1">
-                    <li><a href="#">用户反馈</a></li>
-                </ul>
-            </div>
-            <div class="footer-grid footer-grid3">
-                <h3 class="m_2">关于我们</h3>
-                <ul class="list1">
-                    <li><a href="/dianpus/intro">吃了么介绍</a></li>
-                    <li><a href="/dianpus/call">联系我们</a></li>
-                    <li><a href="/dianpus/guize">规则中心</a></li>
-                </ul>
-            </div>
-            <div class="footer-grid footer-grid2">
-                <h3 class="m_2">商务合作</h3>
-                <ul class="list1">
-                    <li><a href="#">我要开店</a></li>
-                    <li><a href="#">加盟指南</a></li>
-                    <li><a href="#">市场合作</a></li>
-                    <li><a href="#">开放平台</a></li>
-                </ul>
-            </div>
-            <div class="footer-grid footer-grid4">
-                <h3 class="m_2">好东西和大家一起分享!</h3>
-                <ul class="footer_social">
-                    <li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http"><img src="/home/images/QQ.png"/></a></li>
-                    <li><a href="https://www.douban.com/share/service?href=http"><img src="/home/images/douban.png"/></a></li>
-                    <li><a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey"><img src="/home/images/qqkj.png"/></a></li>
-                    <li><a href="http://service.weibo.com/share/share.php"><img src="/home/images/weibo.png"/></a></li>
-                    <div class="clearfix"> </div>
-                </ul>
-                <h3 class="m_3">订阅</h3>
-                <div class="footer_search">
-                    <input type="text" class="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Email';}">
-                    <input type="submit" value="搜索">
-                </div>
-            </div>
+           <div class="footer-grid footer-grid3">
+              <h3 class="m_2">关于我们</h3>
+              <ul class="list1">
+                <li><a href="/dianpus/intro">吃了么介绍</a></li>
+                <li><a href="/dianpus/call">联系我们</a></li>
+                <li><a href="/dianpus/guize">规则中心</a></li>
+              </ul>
+           </div>
+           <div class="footer-grid footer-grid2">
+              <h3 class="m_2">商务合作</h3>
+              <ul class="list1">
+                <li><a href="#">我要开店</a></li>
+                <li><a href="#">加盟指南</a></li>
+                <li><a href="#">市场合作</a></li>
+                <li><a href="#">开放平台</a></li>
+              </ul>
+           </div>
+           <div class="footer-grid footer-grid4">
+               <h3 class="m_2">好东西和大家一起分享!</h3>
+               <ul class="footer_social">
+                 <li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http"><img src="/home/images/QQ.png"/></a></li>
+                 <li><a href="https://www.douban.com/share/service?href=http"><img src="/home/images/douban.png"/></a></li>
+                 <li><a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey"><img src="/home/images/qqkj.png"/></a></li>
+                 <li><a href="http://service.weibo.com/share/share.php"><img src="/home/images/weibo.png"/></a></li>
+                 <div class="clearfix"> </div>
+               </ul>
+               <h3 class="m_3">订阅</h3>
+               <div class="footer_search">
+                <input type="text" class="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Email';}">
+                <input type="submit" value="搜索">
+               </div>
+           </div>
             <div class="footer-grid footer-grid_last">
                 <ul class="secure">
                     <li class="secure_img"><img src="/home/images/secure.png" alt="" /></li>
@@ -156,9 +151,22 @@
                     <div class="clearfix"> </div>
                 </ul>
             </div>
-            <div class="clearfix"> </div>
-        </div>
+           <!-- 友情链接 -->
+           <div class="footer-grid footer-grid_last">
+            @foreach($links as $v)
+              <ul class="secure">
+                <li class="secure_img">
+                <a href="{{$v['link_url']}}">
+                <img src="{{$v['link_img']}}" alt="" width="50"/></li> 
+                <li class="secure_desc">{{$v['link_name']}}</li>
+                </a>
+                <div class="clearfix"> </div>
+              </ul>
+            @endforeach
+           </div>
+           <!-- 友情链接 -->
+           <div class="clearfix"> </div>
+       </div>
     </div>
 </body>
-
 </html>
