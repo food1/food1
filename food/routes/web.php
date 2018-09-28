@@ -35,6 +35,9 @@ Route::post('/home/login', 'HomeController@dozhuce');
 Route::get('/dianpus/guize','QdianpuController@guize');
 //关于我们
 Route::get('/dianpus/intro','QdianpuController@intro');
+//转盘
+Route::get('/dianpus/zhuanpan','QdianpuController@zp');
+
 //联系我们
 Route::get('/dianpus/call','QdianpuController@call');
 
@@ -44,6 +47,10 @@ Route::get('/dianpus/call','QdianpuController@call');
 Route::group(['middleware'=>'home'],function(){
 //个人中心
 Route::resource('/person','PersonController');
+//抽奖
+Route::get('/dianpus/choujiang','QdianpuController@cj');
+//加盟
+Route::get('/dianpus/jiameng','QdianpuController@jm');
 //进入购物车
 Route::get('/dianpus/car', 'QdianpuController@car');
 //购物车

@@ -61,6 +61,7 @@ class HomeController extends Controller
           $cates = Cate::all();      
         // //读取数据库 获取用户数据
         $dianpus = Dianpu::where('cate_id', $request->cate_id)->orderBy('id','desc')
+            ->where('dianpu_name','like', '%'.request()->keywords.'%')
             ->paginate(8);
         
         //  if(!empty($request->cate_id)){

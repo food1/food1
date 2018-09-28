@@ -74,5 +74,22 @@ class QdianpuController extends Controller
     {
         return view('home.dianpus.call');
     }
+
+    //转盘
+    public function zp()
+    {
+         return view('home.dianpus.zhuanpan');
+    }
+
+    //抽奖
+    public function cj()
+    {
+         return view('home.dianpus.choujiang');
+    }
+     //加盟
+    public function jm()
+    {
+         return view('home.dianpus.jiameng');
+    }
     
 }

@@ -33,7 +33,6 @@
 			left:0px;
 			top:0px;
 		}
-
 		#dots{
 			width:200px;
 			height:20px;
@@ -61,8 +60,8 @@
 		<div class="container">
 		  <div class="header_top">
 			<ul class="phone">
-				<li class="phone_left"><i class="mobile"> </i><span>15149174619</span></li>
-				<li class="phone_right"> 50元以上餐品将免费为您配送!</li>
+				<li class="phone_left"><i class="mobile"> </i><span>15847823067</span></li>
+				<li class="phone_right"> 免费配送，你敢下单，我就敢送</li>
 				<div class="clearfix"></div>
 			</ul>
 			<ul class="social">
@@ -111,14 +110,13 @@
 			      </button>
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			    <ul class="nav navbar-nav menu1">
-			      	<li><a></a></li>
-			      	<li><a></a></li>
-			      	<li><a></a></li>
+			    <ul class="nav navbar-nav menu1">			      	
 			      	<li><a href="/dianpus?cate_id=1">首页</a></li>
 			        <li><a href="/dianpus/order">我的订单</a></li>
 			        <li><a href="/dianpus/guize">规则中心</a></li>
-			        <li><a href="#">我的客服</a></li>
+			        <li><a href="/dianpus/jiameng">加盟合作</a></li>
+			        <li><a href="/dianpus/zhuanpan">帮你做决定</a></li>
+			        <li><a href="/dianpus/choujiang">抽奖活动</a></li>
 		        </ul>
 		        <ul class="login">
 				@if(Session::has('id') == null)
@@ -135,10 +133,12 @@
 		</nav>		
         <div class="clearfix"></div>
            </div>
+           <form action="/dianpus" method="get">
             <div class="search">
-			  <input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+			  <input type="text" class="text" value="{{request()->keywords}}">
 			  <input type="submit" value="搜索">
 			</div>
+			</form>
 		 </div>  
 		</div>
 	</div>
@@ -182,31 +182,11 @@
                     </ul>
                 </div>
 		   	   	<ul class="product_reviews">
-		   	   	<h3><i class="arrow"> </i><span>用户评论</span></h3>
+		   	   	<h3><i class="arrow"> </i><span>加入官方QQ群</span></h3>
 		   	   	<li>
-		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/f3.jpg" class="img-responsive" alt=""/></li>
-		   	   			<li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
-		   	   			<div class="clearfix"> </div>
-		   	   		</ul>
+		   	   		<a href=""><img src="/home/images/clmqq.jpg" style="width:300px;height:250px;"/></a>
 		   	   	</li>
-		   	   	<li>
-		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/l4.jpg" class="img-responsive" alt=""/></li>
-		   	   			<li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
-		   	   			<div class="clearfix"> </div>
-		   	   		</ul>
-		   	   	</li>
-		   	   	<li>
-		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/p3.jpg" class="img-responsive" alt=""/></li>
-		   	   			<li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
-		   	   			<div class="clearfix"> </div>
-		   	   		</ul>
-		   	   	</li>
-		   	    <div class="but">
-			       <a href="#">更多评论<i class="but_arrow"></i></a>
-			    </div>
+		   	   
 		   	   	</ul>		   	   
 		   	   	<ul class="product_reviews">
 		   	   		<h3><i class="arrow"> </i><span>支付方式</span></h3>	   	   		
