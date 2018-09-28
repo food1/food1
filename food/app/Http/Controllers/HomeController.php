@@ -6,6 +6,8 @@ use App\Cate;
 use App\Dianpu;
 use App\Food1;
 use App\Link;
+use App\Logo;
+use App\Lunbo;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -55,10 +57,13 @@ class HomeController extends Controller
      public function show(Request $request)
     {
         //
+        $lunbos = Lunbo::orderBy('id','desc')->paginate(5);
+        $logos = Logo::orderBy('id','desc')->paginate(1);
+        // $logos = Logo::find($logos)->first();
         $food1s = Food1::all();
         $links = Link::all();
-         $users = User::find(\Session::get('id'));
-          $cates = Cate::all();      
+        $users = User::find(\Session::get('id'));
+        $cates = Cate::all();      
         // //读取数据库 获取用户数据
         $dianpus = Dianpu::where('cate_id', $request->cate_id)->orderBy('id','desc')
             ->paginate(8);
@@ -68,7 +73,7 @@ class HomeController extends Controller
         // }
         
         //解析模板显示用户数据
-        return view('/home/dianpus/index', compact('dianpus','cates','users','links','food1s'));
+        return view('/home/dianpus/index', compact('dianpus','cates','users','links','food1s','logos','lunbos'));
     }
 
 
@@ -136,6 +141,7 @@ class HomeController extends Controller
     public function logout(Request $request)
     {
         $request->session()->flush();
+
         return redirect('/home/login')->with('success','退出成功!');
     }
 

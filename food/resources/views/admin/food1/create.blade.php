@@ -20,6 +20,16 @@
             <div class="formtitle"><span>基本信息</span></div>
             <ul class="forminfo">
                 <li>
+                    <label>店铺名称</label>                    
+                    <!-- <input name="tag_id[]" type="checkbox" class="dfinput" value=""/>哈哈哈 -->
+                    @foreach($dianpus as $v)
+                     <div class="am-u-sm-9">                          
+                            <label style="font-size: 14px;font-weight: normal;margin-right: 10px;"><input type="checkbox" name="dianpu_id[]" value="{{$v['id']}}">{{$v['dianpu_name']}}</label> 
+                    </div> 
+                     @endforeach  
+                </li>
+                <br>                
+                <li>
                     <label>菜品名</label>
                     <input name="food1_name" type="text" class="dfinput" />
                 </li>

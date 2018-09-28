@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Food1;
+use App\Logo;
 use App\Shopcar;
 use App\User;
 use Illuminate\Http\Request;
@@ -17,6 +18,7 @@ class ShopcarController extends Controller
     
     public function addshopcar()
     {
+        $logos = Logo::orderBy('id','desc')->paginate(1);
         $user_id = \Session::get('id');
         $food_id = $_GET['food1_id'];
         $res = Shopcar::where('user_id',$user_id)
@@ -56,12 +58,13 @@ class ShopcarController extends Controller
         //dd($price);
         $id = $req->shopcar_id;
         $user_id = \Session::get('id');
+
         $shopcars = Shopcar::findOrFail($id)
             ->where('food1_id',$req->food1_id)
             ->where('user_id',$req->user_id);
         //$users = User::where('user_id',$user_id)->find($id);
         // $food1s = Food1::where('id',$id)->find($shopcars);
-        //dd($shopcars);
+
         return view('home.jiesuan.index',compact('shopcars','user_id','id','price'));
     }
 

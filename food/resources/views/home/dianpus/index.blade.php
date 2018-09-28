@@ -64,11 +64,14 @@
 	<div class="header">
 		<div class="container">
 		  <div class="header_top">
+		  	
 			<ul class="phone">
 				<li class="phone_left"><i class="mobile"> </i><span>15149174619</span></li>
+				
 				<li class="phone_right"> 50元以上餐品将免费为您配送!</li>
 				<div class="clearfix"></div>
 			</ul>
+			
 			<ul class="social">
 				 <h1 style="font-family:'华文彩云';color:#aaa;font-size:40px;">吃了么</h1>
 			</ul>
@@ -96,9 +99,13 @@
 		</div>
 		<div class="header_bottom">
 		  <div class="header_nav">
+		  	@foreach($logos as $v)
       		<div class="logo">
-				<a href="/dianpus"><img src="/home/images/logo.png" alt=""/><br></a>
+      			
+				<a href="/dianpus?cate_id=1"><img src="{{$v['logo']}}" alt="" style="width: 90px;height: 90px;" /><br></a>
+				
 			 </div>
+			 @endforeach
 			 <nav class="navbar navbar-default menu" role="navigation">
 			 	<h3 class="nav_right">
 			 		<a href="index.html">
@@ -123,6 +130,9 @@
 			        <li><a href="/dianpus/order">我的订单</a></li>
 			        <li><a href="/dianpus/guize">规则中心</a></li>
 			        <li><a href="#">我的客服</a></li>
+			        @if(Session::has('id') != null)
+			        <li><a href="/fankui">反馈中心</a></li>
+			        @endif
 		        </ul>
 		        <ul class="login">
 				@if(Session::has('id') == null)
@@ -157,11 +167,9 @@
 		<div class="container">
 			<div id="slide">
 			<ul id="images">
-				<li><img src="home/images/l.jpg" alt="" width="100%" height="450px"></li>
-				<li><img src="home/images/l4.jpg" alt="" width="100%" height="450px"></li>
-				<li><img src="home/images/p11.jpg" alt="" width="100%" height="450px"></li>
-				<li><img src="home/images/p13.jpg" alt="" width="100%" height="450px"></li>
-				<li><img src="home/images/p10.jpg" alt="" width="100%" height="450px"></li>
+				@foreach($lunbos as $v)
+				<li><img src="{{$v['lunbo_pic']}}" alt="" width="100%" height="450px"></li>
+				@endforeach
 			</ul>
 			<ul id="dots">
 				<li></li>

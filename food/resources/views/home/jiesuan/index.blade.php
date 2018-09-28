@@ -184,10 +184,8 @@
     <!---->
 </div>
 <div class="box-bd">
-   
     <div class="clearfix xm-address-list" id="checkoutAddrList"> 
         <dl class="item" >
-            
             <dt>
                 <strong class="itemConsignee">收货人：{{$users['user_name']}}</strong>
             </dt>
@@ -198,6 +196,64 @@
         </dl>  
     </div>
 </div>
+
+   
+    <input type="hidden" name="newAddress[type]" id="newType" value="common">
+    <input type="hidden" name="newAddress[consignee]" id="newConsignee">
+    <input type="hidden" name="newAddress[province]" id="newProvince">
+    <input type="hidden" name="newAddress[city]" id="newCity">
+    <input type="hidden" name="newAddress[district]" id="newCounty">
+    <input type="hidden" name="newAddress[address]" id="newStreet">
+    <input type="hidden" name="newAddress[zipcode]" id="newZipcode">
+    <input type="hidden" name="newAddress[tel]" id="newTel">
+    <input type="hidden" name="newAddress[tag_name]" id="newTag">
+    <!--点击弹出新增/收货地址界面start-->
+    
+    <!-- <div class="xm-edit-addr-box" id="J_editAddrBox">
+        <div class="bd">
+            <div class="item">
+                <label>收货人姓名<span>*</span></label> 
+                <input type="text" name="userAddress[consignee]" style="width: 220px;" id="Consignee" class="input" placeholder="收货人姓名" maxlength="15" autocomplete='off'>
+                <p class="tip-msg tipMsg"></p>
+            </div>
+            <div class="item">
+                <label>联系电话<span>*</span></label> 
+                <input type="text" style="width: 220px;" name="userAddress[tel]" class="input" id="Telephone" placeholder="11位手机号" autocomplete='off'>
+                <p class="tel-modify-tip" id="telModifyTip"></p>
+                <p class="tip-msg tipMsg"></p>
+            </div>
+            <div class="item">
+                <label>地址<span>*</span></label>
+                <select name="userAddress[province]" style="width: 150px;" id="Provinces" class="select-1">
+                    <option>省份/自治区</option>
+                </select>
+                <select name="userAddress[city]"  id="Citys" style="width: 150px;" class="select-2" disabled>
+                    <option>城市/地区/自治州</option>
+                </select>
+                <select name="userAddress[county]"  id="Countys" style="width: 150px;" class="select-3" disabled>
+                    <option>区/县</option>
+                </select>
+                <textarea   name="userAddress[street]" style="width: 220px;" class="input-area" id="Street" placeholder="路名或街道地址，门牌号"></textarea>
+                <p class="tip-msg tipMsg"></p>
+            </div>
+            <div class="item">
+                <label>邮政编码<span>*</span></label> 
+                <input type="text" name="userAddress[zipcode]" style="width: 220px;" id="Zipcode" class="input" placeholder="邮政编码"  autocomplete='off'>
+                <p class="zipcode-tip" id="zipcodeTip"></p>
+                <p class="tip-msg tipMsg"></p>
+            </div>
+            <div class="item">
+                <label>地址标签<span>*</span></label> 
+                <input type="text" name="userAddress[tag]" style="width: 220px;" id="Tag" class="input" placeholder='地址标签：如"家"、"公司"。限5个字内'  >
+                <p class="tip-msg tipMsg"></p>
+            </div>
+        </div>
+        <div class="ft clearfix">
+            <button  type="button" style="width: 100px;" class="btn btn-lineDake btn-small " id="J_editAddrCancel">取消</button>
+             <button type="button" class="btn btn-primary  btn-small " style="width: 100px;" id="J_editAddrOk">保存</button>
+        </div>
+    </div> -->
+    <!--点击弹出新增/收货地址界面end-->
 
     <div class="xm-edit-addr-backdrop" id="J_editAddrBackdrop"></div>
 </div>                  

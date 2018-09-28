@@ -11,6 +11,13 @@
     <script src="/home/js/jquery.min.js"></script>
     <!-- Custom Theme files -->
     <link href="/home/css/style.css" rel='stylesheet' type='text/css' />
+
+    <!-- 评论JS CS 引入 -->
+    <link rel="stylesheet" type="text/css" href="/pingluns/css/show.css">
+    <script type="text/javascript" src="/pingluns/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/pingluns/js/qna.js"></script>
+    <script type="text/javascript" src="/pingluns/js/pager.js"></script>
+    <!-- 结束 -->
     <!-- Custom Theme files -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
      <!-- 分享 -->
@@ -167,7 +174,60 @@
                          @endforeach
                          </form>
                     </div>
-                  
+
+                   <!-- 开始 -->
+                    <div class="mainContainner">
+
+                        <div class="commentBox" name="one">
+                                <div class="Ctop">
+                                    <label class="Ctitle"><img src="/pingluns/img/user_comment.png">我来说两句</label>
+                                    <label class="Ctip">已有<span class="Ccount" id="Ccount"></span>条评论</label>
+                                </div>
+                                <div class="Cattitude">
+                                    <form>
+                                        <label>我的态度：</label>
+                                        <input type="radio" name="attitude"value='1' checked="checked"><img src="/pingluns/img/zheng.png"></input>
+                                        <input type="radio" name="attitude"value='-1'><img src="/pingluns/img/fan.png"></input>
+                                        <input type="radio" name="attitude"value='0'><img src="/pingluns/img/zhong.png"></input>
+                                    </form>
+                                </div>
+                                <div class="Cinput">
+                                    <textarea placeholder="请输入评论内容" class="Ccont" id="Ccont"></textarea>
+                                </div>
+                                <div class="Csunbmit">
+                                    <label class="Cnick" >你的昵称：</label>
+                                    <input class="Cusername" placeholder="你的昵称" id="Cusername" ></input>
+                                    <button class="submitBtn" onclick="submit_pl(0)">发布评论</button>
+                                </div>
+
+                        </div>
+                        <div class="Corder">
+                            <button id="newBtn" onclick="start(0)">最新</button>
+                            <button id="hotBtn" onclick="start(1)">最热</button>
+                        </div>
+                        <div class="CommentList">
+                            <ul class="listul">
+                            </ul>
+                        </div>
+                        <div class="fydiv">
+                            <ul class="fenye">
+                            </ul>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                    start(0)
+                    </script>
+                    <!-- 结束 -->
+                    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+                    <script type="text/javascript">
+                        
+
+                    </script>
+
+                    
+
+
+
                     <div class="row content_bottom1"></div>
                    <!--  <ul class="dc_pagination dc_paginationA dc_paginationA06">
                         <li><a href="#">1</a></li>

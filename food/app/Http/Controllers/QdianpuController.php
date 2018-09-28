@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Dianpu;
 use App\Food1;
 use App\Link;
+use App\Logo;
 use App\Shopcar;
 use App\User;
 use Illuminate\Http\Request;
@@ -16,10 +17,10 @@ class QdianpuController extends Controller
     //店铺展示页面
     public function index()
     {
-
+        $logos = Logo::orderBy('id','desc')->paginate(1);
         $links = Link::all();
         $users = User::find(\Session::get('id'));
-        return view('home.dianpus.index',compact('users','links'));
+        return view('home.dianpus.index',compact('users','links','logos'));
     }
 
    
@@ -29,6 +30,7 @@ class QdianpuController extends Controller
         $dianpu_id = ($_GET['dianpu_id']);
         $dianpu = Dianpu::where('id',$dianpu_id)->first();
         $foods = $dianpu->food1s;
+        $food1s = Food1::all();
         $users = User::find(\Session::get('id'));
         
         // $food1s = Food1::orderBy('id','desc')
@@ -36,7 +38,7 @@ class QdianpuController extends Controller
         //        ->paginate(8);
         //解析模板显示数据
         // dd($food1s);
-        return view('/home.dianpus.cai',compact('users','foods'));
+        return view('/home.dianpus.cai',compact('users','foods','dianpu_id','food1s'));
     }
 
 
@@ -75,5 +77,7 @@ class QdianpuController extends Controller
     {
         return view('home.dianpus.call');
     }
+
+
     
 }

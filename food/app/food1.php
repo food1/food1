@@ -16,4 +16,13 @@ class Food1 extends Model
     {
     	return $this->hasMany('App\Shopcar');
     }
+
+    public function create()
+    {
+    	$dianpus = Dianpu::all();
+
+    	return view('admin.food1.create',[
+    		'dianpus'=>$dianpus
+    	]);
+    }
 }

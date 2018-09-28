@@ -191,6 +191,7 @@
 				<li class="list_sum">
 					<p class="sum_price" value="">￥{{$v->food1['food1_price']*$v->shuliang}}</p>
 				</li>
+
 				</form>
 				<li class="list_op">
             		{{csrf_field()}}
@@ -217,8 +218,7 @@
 			<div class="totalMoney">共计: <strong class="total_text">0.00</strong></div>
 			<div class="calBtn"><a href="javascript:;" class="tijiao">结算</a></div>
 		</div>
-		
-	</div>
+	</div> 
 </section>
 <section class="model_bg"></section>
 

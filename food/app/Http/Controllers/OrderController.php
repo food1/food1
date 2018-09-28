@@ -13,7 +13,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        
+        return view('admin.order.index');
     }
 
     /**
@@ -23,7 +24,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        return '2';
     }
 
     /**
@@ -34,7 +35,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return '3';
     }
 
     /**
@@ -45,7 +46,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        return '4';
     }
 
     /**
@@ -56,7 +57,7 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        return '5';
     }
 
     /**
@@ -68,7 +69,7 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return '6';
     }
 
     /**
@@ -79,6 +80,6 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return '7';
     }
 }

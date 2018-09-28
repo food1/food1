@@ -16,9 +16,8 @@
 
 //前台首页
 Route::get('/','HomeController@index');
-
 //前台展示&店铺分类展示
-Route::get('/dianpus','HomeController@show');
+Route::get('dianpus','HomeController@show');
 //菜品展示
 Route::get('/dianpus/cai','QdianpuController@cai');
 //菜品详情
@@ -37,6 +36,9 @@ Route::get('/dianpus/guize','QdianpuController@guize');
 Route::get('/dianpus/intro','QdianpuController@intro');
 //联系我们
 Route::get('/dianpus/call','QdianpuController@call');
+//用户反馈
+// Route::get('/dianpus/fankui','QdianpuController@fankui');
+Route::resource('/fankui','FanKuiController');
 
 
 
@@ -70,6 +72,10 @@ Route::get('/admin','AdminController@index');
 Route::resource('user', 'UserController');
 //餐品管理
 Route::resource('food1', 'Food1Controller');
+//轮播图
+Route::resource('lunbotu','LunboController');
+//logo管理
+Route::resource('logo','LogoController');
 //分类管理
 Route::resource('cate', 'CateController');
 //店铺管理
