@@ -94,5 +94,12 @@ class QdianpuController extends Controller
     {
         return view('home.dianpus.qiandao');
     }
+
+    public function qiandao()
+    {
+        return view('home.dianpus.neirong');
+    }
+
+
     
 }

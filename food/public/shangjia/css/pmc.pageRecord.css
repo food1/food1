@@ -1,0 +1,37 @@
+﻿@charset "utf-8";
+.pageRecord {
+    box-sizing: border-box;
+    color: #393939;
+    font-family: 'Open Sans';
+    font-size: 13px;
+    line-height: 19.5px;
+    overflow:auto;
+            
+}
+.pageRecord li {
+    box-sizing: border-box;
+    color: #393939;
+    display: inline;
+    font-family: 'Open Sans';
+    font-size: 13px;
+    line-height: 19.5px;
+            
+}
+.pageRecord li a:link,.pageRecord li a:visited {
+    background-color: #2468a9;
+    color: #2283C5;
+    float:left;font-family: 'Open Sans';
+    font-size: 13px;
+    line-height: 18.5667px;
+    margin: 0px -1px 0px 0px;
+    outline-width: 0px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+    border: 1px solid  #D9D9D9;
+}
+    .pageRecord .active a:link, .pageRecord .active a:visited
+    {
+        background-color: #6FAED9 !important;
+        color: white;
+    }

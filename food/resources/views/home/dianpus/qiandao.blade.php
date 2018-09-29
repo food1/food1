@@ -26,21 +26,21 @@
                 </div>
                 <div class="qiandao-right">
                     <div class="qiandao-top">
-                        <div class="just-qiandao qiandao-sprits" id="js-just-qiandao">
+                        <div class="just-qiandao qiandao-sprits" id="js-just-qiandao" onclick="history.go(-1)">
                         </div>
                     </div>
                     <div class="qiandao-bottom">
                         <div class="qiandao-rule-list">
                             <h4>签到规则</h4>
-                            <p>首次签到获得0.05元现金奖励</p>
-                            <p>连续签到每天增加0.01元现金奖励</p>
-                            <p>连续签到16天及以上每天获得0.2元现金奖励</p>
+                            <p>首次签到获得0.5积分奖励</p>
+                            <p>连续签到每天增加0.01积分奖励</p>
+                            <p>连续签到16天及以上每天获得0.2积分奖励</p>
                         </div>
                         <div class="qiandao-rule-list">
                             <h4>其他说明</h4>
                             <p>如果中间有一天间断未签到的，重先开始计算连续签到时间。</p>
                             <p>连续签到获得奖励后分享到QQ空间、微信朋友圈后再获得一次奖励，每天只限分享一次。</p>
-                            <p>获得的奖励不能直接提现，只能投资后转让变现。</p>
+                            <p>获得的奖励可以用来升级用户等级。</p>
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                 <div class="yiqiandao-icon qiandao-sprits"></div>您已连续签到<span>1</span>天
             </div>
             <div class="qiandao-jiangli qiandao-sprits">
-                <span class="qiandao-jiangli-num">0.05<em>元</em></span>
+                <span class="qiandao-jiangli-num">0.05<em>积分</em></span>
             </div>
             <a href="#" class="qiandao-share qiandao-tran">分享获取双倍收益</a>
         </div>

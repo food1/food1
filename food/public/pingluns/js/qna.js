@@ -6,10 +6,10 @@ function answer(id) {
 	  if ($('#'+id).find('.answer_block'+id).html()) { $('.answer_block'+id).remove()}
 	  else{
 	  	var cname = '.answer_block'+id
-		var fhN = "回复☛☛"
-	  	var fhHtml = '<div class="answer_block'+id+'"> <textarea class="hf_input" placeholder="亲~输入回复内容"  ></textarea> \
+		var fhN = "回复"
+	  	var fhHtml = '<div class="answer_block'+id+'"> <textarea class="hf_input" placeholder="亲~请输入回复内容"  ></textarea> \
 	  	<div class="Csunbmit"><label class="Cnick">昵称：</label><input  class="Cusername" placeholder="换一个昵称来试试"></input>\
-					<button class="submitBtn" onclick=submit_pl("'+cname+'")>发起➹➹热恋</button></div></div>';
+					<button class="submitBtn" onclick=submit_pl("'+cname+'")>发起热恋</button></div></div>';
 	   $('#'+id).append(fhHtml);
 	   $(cname).find('.hf_input').css('width','99%')
 	   $( cname).find('.hf_input').css('height','90px')
@@ -21,7 +21,7 @@ function answer(id) {
 function like(id) {
 	likes = parseInt($('#like'+id).html())+1
 	likeID = id
-	ajaxPostReq('/pingluns/php/like.php',{'id':id,'like':likes,'time':get_time()},{"1":'☛来啊来啊 来一遍啊☚!!!  么么哒~❤ღღღღ！','0':"亲~您已经赞过了哦.记得明天来咱哦!! "},voids)
+	ajaxPostReq('/pingluns/php/like.php',{'id':id,'like':likes,'time':get_time()},{"1":'感谢您点赞我','0':"亲~您已经赞过了哦.记得明天再来!! "},voids)
 }
 
 function get_time( ) {
@@ -74,7 +74,7 @@ function submit_pl(cname) {
 	data.name = unickname
 	data.attitude = attitude
 	data.time = time
-	ajaxPostReq('/pingluns/php/add.php',data,{'0':'您的飞吻已被拒☟☟☟✘✘✘','1':'亲~您的❤飞吻已发送'},reflash)
+	ajaxPostReq('/pingluns/php/add.php',data,{'0':'评论发送失败,技术小哥送外卖去了!!!','1':'评论发送成功'},reflash)
 }
 
 function ajaxPostReq(handler,data,msg,cb) {

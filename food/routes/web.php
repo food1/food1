@@ -37,6 +37,8 @@ Route::get('/dianpus/intro','QdianpuController@intro');
 Route::get('/dianpus/call','QdianpuController@call');
 //我的位置
 Route::get('/dianpus/weizhi','QdianpuController@weizhi');
+//用户反馈
+Route::resource('/fankui','FanKuiController');
 
 
 
@@ -52,6 +54,8 @@ Route::get('/dianpus/car', 'QdianpuController@car');
 Route::get('/addshopcar','ShopcarController@addshopcar');
 //移除商品
 Route::get('/destroy','ShopcarController@destroy');
+//新闻
+Route::get('/neirong','QdianpuController@neirong');
 //结算
 Route::get('/jiesuan','ShopcarController@index');
 //进入我的订单
@@ -86,6 +90,8 @@ Route::resource('link', 'LinkController');
 Route::get('/model', 'DBController@model');
 // 店铺_分类
 Route::get('/cd', 'DBController@cd');
+//新闻
+Route::resource('/news', 'NewsController');
 // 网站设置
 Route::resource('/peizhi', 'PeizhiController');
 //退出登录
@@ -97,5 +103,8 @@ Route::get('/admin/logout','AdminController@logout');
 Route::get('/admin/login','AdminController@login');
 //后台登录操作
 Route::post('/admin/login','AdminController@dologin');
+
+
+//-----------------------------------------------------------
 
 

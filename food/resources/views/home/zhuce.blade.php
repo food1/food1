@@ -105,10 +105,9 @@
                     <div class="category_box">
                         <h3 class="cate_head">精品推荐</h3>
                         <ul class="category">
-                            <li><a href="#"><img src="/home/images/p1.jpg" width="100px" height="50px"></a></li>
-                            <li><a href="#"><img src="/home/images/p2.jpg" width="100px" height="50px"></a></li>
-                            <li><a href="#"><img src="/home/images/p3.jpg" width="100px" height="50px"></a></li>
-                            <li><a href="#"><img src="/home/images/p4.jpg" width="100px" height="50px"></a></li>
+                            @foreach($food1s as $k => $v)
+                            <li><a href="#"><img src="{{$v['food1_img']}}" width="100px" height="50px"></a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

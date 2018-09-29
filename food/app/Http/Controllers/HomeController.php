@@ -6,6 +6,7 @@ use App\Cate;
 use App\Dianpu;
 use App\Food1;
 use App\Link;
+use App\News;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -56,6 +57,7 @@ class HomeController extends Controller
     {
         //
         $food1s = Food1::all();
+        $news = News::all();
         $links = Link::all();
         $users = User::find(\Session::get('id'));
         $cates = Cate::all();      
@@ -68,7 +70,7 @@ class HomeController extends Controller
         // }
         
         //解析模板显示用户数据
-        return view('/home/dianpus/index', compact('dianpus','cates','users','links','food1s'));
+        return view('/home/dianpus/index', compact('dianpus','cates','users','links','food1s','news'));
     }
 
 
@@ -110,7 +112,8 @@ class HomeController extends Controller
     public function login()
     {
         $links = Link::all();
-        return view('home.login',compact('links'));
+        $food1s = Food1::all();
+        return view('home.login',compact('links','food1s'));
     }
 
     //登陆操作
@@ -137,6 +140,7 @@ class HomeController extends Controller
     public function logout(Request $request)
     {
         $request->session()->flush();
+
         return redirect('/home/login')->with('success','退出成功!');
     }
 
@@ -145,7 +149,8 @@ class HomeController extends Controller
     public function zhuce()
     {
         $links = Link::all();
-        return view('home.zhuce',compact('links'));
+        $food1s = Food1::all();
+        return view('home.zhuce',compact('links','food1s'));
     }
     //執行註冊
     public function dozhuce(Request $request)

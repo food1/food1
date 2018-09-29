@@ -74,7 +74,7 @@
 			@endif
 			@if(Session::has('id') != null)
 				<li style="color:#aaa;font-size:16px;">
-				&nbsp; &nbsp; &nbsp; &nbsp; <a href="/person">个人中心</a>&nbsp;|
+				&nbsp; &nbsp; <a href="/person">个人中心</a>&nbsp;|
 				<a href="#">用户:{{$users['user_name']}}</a>
 				&nbsp; <img src="{{$users['user_img']}}" width="30px" height="30px" />
 				</li>
@@ -114,6 +114,9 @@
 			        <li><a href="/dianpus/order">我的订单</a></li>
 			        <li><a href="/dianpus/guize">规则中心</a></li>
 			        <li><a href="/dianpus/call">联系我们</a></li>
+			        @if(Session::has('id') != null)
+			        <li><a href="/fankui">反馈中心</a></li>
+			        @endif
 		        </ul>
 		        <ul class="login">
 				@if(Session::has('id') == null)
@@ -176,32 +179,20 @@
                     </ul>
                 </div>
 		   	   	<ul class="product_reviews">
-		   	   	<h3><i class="arrow"> </i><span>用户评论</span></h3>
+		   	   	<h3><i class="arrow"> </i><span>吃了么小课堂</span></h3>
+		   	   	@foreach($news as $v)
 		   	   	<li>
 		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/f3.jpg" class="img-responsive" alt=""/></li>
-		   	   			<li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
+		   	   			<li class="review1_img"><img src="{{$v['img']}}" class="img-responsive" alt=""/></li>
+		   	   			<li class="review1_desc"><h3><a href="neirong">{{$v['title']}}</a></h3><p>{{$v['created_at']}}</p></li>
 		   	   			<div class="clearfix"> </div>
 		   	   		</ul>
 		   	   	</li>
-		   	   	<li>
-		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/l4.jpg" class="img-responsive" alt=""/></li>
-		   	   			<li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
-		   	   			<div class="clearfix"> </div>
-		   	   		</ul>
-		   	   	</li>
-		   	   	<li>
-		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/p3.jpg" class="img-responsive" alt=""/></li>
-		   	   			<li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
-		   	   			<div class="clearfix"> </div>
-		   	   		</ul>
-		   	   	</li>
+		   	   	@endforeach
 		   	    <div class="but">
-			       <a href="#">更多评论<i class="but_arrow"></i></a>
+			       <a href="#">更多内容<i class="but_arrow"></i></a>
 			    </div>
-		   	   	</ul>		   	   
+		   	   	</ul>
 		   	   	<ul class="product_reviews">
 		   	   		<h3><i class="arrow"> </i><span>支付方式</span></h3>	   	   		
 		   	   	</ul>
@@ -219,7 +210,6 @@
 		   	   	<ul class="feature_grid" style="width: 900px">
 		   	   		@foreach($food1s as $k => $v)
 		   	   		@if($k <= 2)
-
 				 	<li class="grid1" style="float: right;margin: 0 auto;margin-right: 0px""><img src="{{$v['food1_img']}}" class="img-responsive" style="width: 250px;height: 110px; alt=""  />
 				 	<p>{{$v['food1_name']}}</p>
 				 	<div class="price">Price:

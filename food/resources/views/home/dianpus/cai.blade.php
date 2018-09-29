@@ -24,7 +24,6 @@
     </script>
     <link href='http://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/home/kefu/css/style.css">
-
 </head>
 
 <body>
@@ -140,7 +139,7 @@
                     </ul>
                     <br>
                     <ul class="feature">
-                        <h3><i class="arrow"> </i><span>热菜</span></h3>
+                    <h3><i class="arrow"> </i><span>热菜</span></h3>
                     </ul>
                     <div class="row content_bottom">
                         @foreach($foods as $v)
@@ -170,11 +169,11 @@
                         </form>
                         @endforeach
                     </div>
-
-                   <!-- 开始 -->
+                   <!-- 评论开始 -->
                    @if(Session::has('id') == null) @endif @if(Session::has('id') != null)
                     <div class="mainContainner">
-                        <div class="commentBox">
+
+                        <div class="commentBox" name="one">
                                 <div class="Ctop">
                                     <label class="Ctitle"><img src="/pingluns/img/user_comment.png">我来说两句</label>
                                     <label class="Ctip">已有<span class="Ccount" id="Ccount"></span>条评论</label>
@@ -195,6 +194,7 @@
                                     <input class="Cusername" value="{{$users['user_name']}}" id="Cusername" ></input>
                                     <button class="submitBtn" onclick="submit_pl(0)">发布评论</button>
                                 </div>
+
                         </div>
                     @endif
                         <div class="Corder">
@@ -213,8 +213,7 @@
                     <script type="text/javascript">
                     start(0)
                     </script>
-                    <!-- 结束 -->
-                    
+                    <!-- 评论结束 -->
                 </div>
             </div>
         </div>
