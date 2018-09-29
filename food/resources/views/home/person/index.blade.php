@@ -8,6 +8,10 @@
 <script src="/home/js/jquery.min.js"></script>
 <link href="/home/css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1">
+ <!-- 分享 -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+<!-- 分享 -->  
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 </script>
 <link href='http://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
@@ -24,10 +28,17 @@
 			<ul class="social">
 				<h1 style="font-family:'华文彩云';color:#aaa;font-size:40px;">吃了么</h1>
 			</ul>
-                <ul class="phone">
-                    <li class="phone_right">吃了么24小时竭诚为您服务!</li>
-                    <div class="clearfix"></div>
-                </ul>
+            <ul class="account">
+			@if(Session::has('id') == null)				
+			@endif
+			@if(Session::has('id') != null)
+				<li style="color:#aaa;font-size:16px;">
+				&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="/person">个人中心</a>&nbsp;|
+				<a href="#">用户:{{$users['user_name']}}</a>
+				&nbsp; <img src="{{$users['user_img']}}" width="30px" height="30px" />
+				</li>
+			@endif
+			</ul>
 			<div class="clearfix"></div>
 		</div>
 		<div class="header_bottom">
@@ -51,15 +62,17 @@
 			        </button>
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			    	<ul class="nav navbar-nav menu1">
-				      	<li><a></a></li>
-						<li><a></a></li>
-						<li><a></a></li>
-				      	<li><a href="/dianpus?cate_id=1">首页</a></li>
-				        <li><a href="/dianpus/order">我的订单</a></li>
-				        <li><a href="/dianpus/guize">规则中心</a></li>
-				        <li><a href="/dianpus/call">联系我们</a></li>
-		        	</ul>
+			    <ul class="nav navbar-nav menu1">
+			      	<li><a href="/dianpus?cate_id=1">首页</a></li>
+			        <li><a href="/dianpus/guize">规则中心</a></li>
+					<li><a href="/dianpus/qiandao">每日签到</a></li>
+			        <li><a href="/dianpus/jiameng">加盟合作</a></li>
+			        <li><a href="/dianpus/zhuanpan">帮你做决定</a></li>
+			        <li><a href="/dianpus/choujiang">抽奖活动</a></li>
+			        @if(Session::has('id') != null)
+			        <li><a href="/fankui">反馈中心</a></li>
+			        @endif
+		        </ul>
 		          	<ul class="login">
 		          		<a href="/home/logout"><li class="login_top"><i class="sign"> </i><span>退出登录</span></li></a>
 		          	</ul>

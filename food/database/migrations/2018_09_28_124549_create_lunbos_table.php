@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFankuisTable extends Migration
+class CreateLunbosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateFankuisTable extends Migration
      */
     public function up()
     {
-        Schema::create('fankuis', function (Blueprint $table) {
+        Schema::create('lunbos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('fankui_name');
-            $table->string('fankui_phone');
-            $table->string('email');
-            $table->text('content');
+            $table->string('lunbo_pic')->comment('轮播图')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateFankuisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fankuis');
+        Schema::dropIfExists('lunbos');
     }
 }

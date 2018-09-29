@@ -10,15 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
 
 //前台首页
 Route::get('/','HomeController@index');
-
 //前台展示&店铺分类展示
-Route::get('/dianpus','HomeController@show');
+Route::get('dianpus','HomeController@show');
 //菜品展示
 Route::get('/dianpus/cai','QdianpuController@cai');
 //登陆页面
@@ -33,6 +30,8 @@ Route::post('/home/login', 'HomeController@dozhuce');
 Route::get('/dianpus/guize','QdianpuController@guize');
 //关于我们
 Route::get('/dianpus/intro','QdianpuController@intro');
+//转盘
+Route::get('/dianpus/zhuanpan','QdianpuController@zp');
 //联系我们
 Route::get('/dianpus/call','QdianpuController@call');
 //我的位置
@@ -48,6 +47,10 @@ Route::group(['middleware'=>'home'],function(){
 Route::resource('/person','PersonController');
 //签到
 Route::get('/dianpus/qiandao','QdianpuController@qiandao');
+//抽奖
+Route::get('/dianpus/choujiang','QdianpuController@cj');
+//加盟
+Route::get('/dianpus/jiameng','QdianpuController@jm');
 //进入购物车
 Route::get('/dianpus/car', 'QdianpuController@car');
 //购物车
@@ -55,11 +58,13 @@ Route::get('/addshopcar','ShopcarController@addshopcar');
 //移除商品
 Route::get('/destroy','ShopcarController@destroy');
 //新闻
-Route::get('/neirong','QdianpuController@neirong');
+Route::get('/dianpus/neirong','QdianpuController@neirong');
 //结算
-Route::get('/jiesuan','ShopcarController@index');
+Route::post('/jiesuan','ShopcarController@index');
 //进入我的订单
 Route::get('/dianpus/order', 'QdianpuController@order');
+//提交
+Route::get('/jiesuan/tijiao', 'ShopcarController@tj');
 //退出登录
 Route::get('/home/logout', 'HomeController@logout');
 });
@@ -74,6 +79,10 @@ Route::get('/admin','AdminController@index');
 Route::resource('user', 'UserController');
 //餐品管理
 Route::resource('food1', 'Food1Controller');
+//轮播图
+Route::resource('lunbotu','LunboController');
+//logo管理
+Route::resource('logo','LogoController');
 //分类管理
 Route::resource('cate', 'CateController');
 //店铺管理
@@ -99,12 +108,11 @@ Route::get('/admin/logout','AdminController@logout');
 });
 
 
+
 //后台登录页面
 Route::get('/admin/login','AdminController@login');
 //后台登录操作
 Route::post('/admin/login','AdminController@dologin');
-
-
 //-----------------------------------------------------------
 
 

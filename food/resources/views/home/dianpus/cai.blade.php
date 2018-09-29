@@ -17,6 +17,10 @@
     <!-- 结束 -->
     <!-- Custom Theme files -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- 分享 -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+<!-- 分享 -->  
     <script type="application/x-javascript">
     addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
     function hideURLbar() { window.scrollTo(0, 1); }
@@ -83,15 +87,17 @@
 			    </div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			    <ul class="nav navbar-nav menu1">
-                    <li><a></a></li>
-                    <li><a></a></li>
-                    <li><a></a></li>
+                <ul class="nav navbar-nav menu1" style="float:right">
                     <li><a href="/dianpus?cate_id=1">首页</a></li>
-                    <li><a href="/dianpus/order">我的订单</a></li>
                     <li><a href="/dianpus/guize">规则中心</a></li>
-                    <li><a href="/dianpus/call">联系我们</a></li>
-		        </ul>
+                    <li><a href="/dianpus/qiandao">每日签到</a></li>
+                    <li><a href="/dianpus/jiameng">加盟合作</a></li>
+                    <li><a href="/dianpus/zhuanpan">帮你做决定</a></li>
+                    <li><a href="/dianpus/choujiang">抽奖活动</a></li>
+                    @if(Session::has('id') != null)
+                    <li><a href="/fankui">反馈中心</a></li>
+                    @endif
+                </ul>
 
 		        <ul class="login">
 				@if(Session::has('id') == null)
@@ -151,7 +157,7 @@
                                     <div class="content_box-grid">
                                         <p class="m_1" name="shoping_name">{{$v['food1_name']}}</p>
                                         <div class="price">价格:
-                                            <span class="actual" name="shoping_price">¥{{$v['food1_price']}}</span>
+                                            <span class="actual" name="shoping_price">￥{{$v['food1_price']}}</span>
                                         </div> <a href="/dianpus/car?food1_id={{$v['id']}}">
                                         <ul class="product_but">
                                             {{csrf_field()}}

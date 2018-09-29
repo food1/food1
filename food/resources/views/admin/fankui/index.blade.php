@@ -49,13 +49,6 @@
     @endif
     <div class="rightinfo">
         <div class="tools">
-            <ul class="toolbar">
-                <li class="click"><span><a href="/fankui/create"><img src="/admingg/images/t01.png" /></span>添加</a>
-                </li>
-            </ul>
-            <ul class="toolbar1">
-                <li><span><img src="/admingg/images/t05.png" /></span>设置</li>
-            </ul>
         </div>
         <table class="tablelist">
             <thead>
@@ -64,6 +57,7 @@
                         <input name="" type="checkbox" value="" checked="checked" />
                     </th>
                     <th>ID<i class="sort"></i></th>
+                    <th>用户ID</th>
                     <th>姓名</th>
                     <th>电话</th>
                     <th>邮箱</th>
@@ -79,6 +73,7 @@
                         <input name="" type="checkbox" value="" />
                     </td>
                     <td>{{$v['id']}}</td>
+                    <td>{{$v['user_id']}}</td>
                     <td>{{$v['fankui_name']}}</td>
                     <td>{{$v['fankui_phone']}}</td>
                     <td>{{$v['email']}}</td>

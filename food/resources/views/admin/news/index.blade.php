@@ -73,6 +73,7 @@ $(document).ready(function(){
         @foreach($news as $v)
         <tbody>
         <tr>
+        <td></td>
         <td>{{$v['id']}}</td>
         <td>{{$v['title']}}</td>
         <td><img src="{{$v['img']}}" width="50" height="50"></td>

@@ -18,7 +18,7 @@ class CheckForMaintenanceMode
     {
 
        if(app()->isDownForMaintenance()){
-         if(!$request->is('admin*','user*','cate*','dianpu','dianpu/*','link*','peizhi*','food1*')){
+         if(!$request->is('admin*','user*','cate*','dianpu/*','dianpu','link*','peizhi*','food1*','fankui*')){
             throw new HttpException(503);
             }
         }

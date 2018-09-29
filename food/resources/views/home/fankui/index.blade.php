@@ -64,13 +64,15 @@
                             </div>
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav menu1">
-                                    <li><a></a></li>
-                                    <li><a></a></li>
-                                    <li><a></a></li>
                                     <li><a href="/dianpus?cate_id=1">首页</a></li>
-                                    <li><a href="/dianpus/order">我的订单</a></li>
                                     <li><a href="/dianpus/guize">规则中心</a></li>
-                                    <li><a href="contact.html">我的客服</a></li>
+                                    <li><a href="/dianpus/qiandao">每日签到</a></li>
+                                    <li><a href="/dianpus/jiameng">加盟合作</a></li>
+                                    <li><a href="/dianpus/zhuanpan">帮你做决定</a></li>
+                                    <li><a href="/dianpus/choujiang">抽奖活动</a></li>
+                                    @if(Session::has('id') != null)
+                                    <li><a href="/fankui">反馈中心</a></li>
+                                    @endif
                                 </ul>
                                 <ul class="login">
                                     @if(Session::has('id') == null)
@@ -124,6 +126,13 @@
 
                         <form action="/fankui" method="post" id="msgform" class="fl">
                             <div class="quick_liuyan_con">
+                                <div class="item" style="display: none;">
+                                    <span><b class="star">*</b>用户ID</span>
+                                    <div class="item-right">
+                                        <input type="text" class="v-ipt" value="{{$users['id']}}" name="user_id" placeholder="姓名">
+                                    </div>
+                                    <div style="clear: both"></div>
+                                </div>
                                 <div class="item">
                                     <span><b class="star">*</b>姓名</span>
                                     <div class="item-right">

@@ -81,13 +81,15 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			    <ul class="nav navbar-nav menu1">
-			      	<li><a></a></li>
-					<li><a></a></li>
-					<li><a></a></li>
 			      	<li><a href="/dianpus?cate_id=1">首页</a></li>
-			        <li><a href="/dianpus/order">我的订单</a></li>
 			        <li><a href="/dianpus/guize">规则中心</a></li>
-			        <li><a href="/dianpus/call">联系我们</a></li>
+					<li><a href="/dianpus/qiandao">每日签到</a></li>
+			        <li><a href="/dianpus/jiameng">加盟合作</a></li>
+			        <li><a href="/dianpus/zhuanpan">帮你做决定</a></li>
+			        <li><a href="/dianpus/choujiang">抽奖活动</a></li>
+			        @if(Session::has('id') != null)
+			        <li><a href="/fankui">反馈中心</a></li>
+			        @endif
 		        </ul>
 
 		        <ul class="login">
@@ -140,24 +142,27 @@
     <div class="tpl-block">
         <div class="am-g">
             <div class="am-u-sm-12">
+
                 <table class="am-table am-table-striped am-table-hover table-main">
+                	
                     <thead>
                         <tr>
                             <th class="table-time">下单时间</th>
                             <th class="table-title">订单内容</th>
                             <th class="table-set">支付金额 (元)</th>
-                            <th class="table-set">订单编号</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
                     	
                         <tr style="height: 40px">
-                            <td>fdfdsfds</td>
+                            <td>dfdsfds</td>
                             <td>fdsfdsfds</td>
                             <td>dsfdsfds</td>
-                            <td>dsfdsfd</td>
+                            
                         </t
                     </tbody>
+                   
                 </table>
             </div>
         </div>

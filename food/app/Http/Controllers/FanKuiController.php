@@ -50,6 +50,7 @@ class FanKuiController extends Controller
     public function store(Request $request)
     {
             $fankui = new Fankui;
+            $fankui -> user_id = $request->user_id;
             $fankui -> fankui_name = $request->fankui_name;
             $fankui -> fankui_phone = $request->fankui_phone;
             $fankui -> email = $request->email;
