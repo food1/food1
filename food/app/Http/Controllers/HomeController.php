@@ -8,7 +8,9 @@ use App\Food1;
 use App\Link;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Overtrue\Socialite\SocialiteManager;
 
 class HomeController extends Controller
 {
@@ -54,6 +56,7 @@ class HomeController extends Controller
     //前台展示
      public function show(Request $request)
     {
+        
         //
         $food1s = Food1::all();
         $links = Link::all();
@@ -167,6 +170,66 @@ class HomeController extends Controller
         }
     }
 
+
+
+    public function qq()
+    {
+        $config = [
+         'qq' => [
+            'client_id'     => '101504681',
+            'client_secret' => 'a2c3b8773b52d5201c819402e27099f7',
+            'redirect'      => 'http://food.com/callback',
+                ],
+            ];
+
+            $socialite = new SocialiteManager($config);
+
+            $response = $socialite->driver('qq')->redirect();
+
+            $response->send();// or $response->send();
+
+    }
+
+
+    public function callback(Request $request)
+    {
+        // return 3333;
+        
+        $config = [
+            'qq' => [
+                'client_id'     => '101504681',
+                'client_secret' => 'a2c3b8773b52d5201c819402e27099f7',
+                'redirect'      => 'http://food.com/callback',
+            ],
+        ];
+
+        $socialite = new SocialiteManager($config);
+
+        $userinfo = $socialite->driver('qq')->user();
+
+        //判断
+        $user = User::where('openid',$userinfo->id)->first();
+
+        //注册
+        if(empty($user)){
+            $user = new User;
+            $user->openid = $userinfo->id;
+            $user->user_name = $userinfo->name;
+            $user->user_img = $userinfo->avatar;
+            $user->save();
+        }
+
+        //登录
+        if($request->openid == $userinfo->openid){
+            //写入session
+            session(['user_name'=>$user->user_name, 'id'=>$user->id]);
+            return redirect('/dianpus')->with('success','登陆成功!');
+        }else{
+            return back('/home/login')->with('error','登陆失败!');
+        }
+
+
+    }
    
    
 }
