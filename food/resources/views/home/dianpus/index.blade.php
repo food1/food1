@@ -53,6 +53,20 @@
 		#dots .active{
 			background:white;
 		}
+
+		 img.c2{
+		 	width: 300px;
+		 	height: 300px;
+            position:absolute;
+            left:-250px;/*让图片钻进浏览器右面*/
+            top:200px;
+            z-index:5;
+            /*检测右侧距离变化 5,秒完成 由慢到快*/
+            transition:left 3s ease-in;
+            }
+            img.c2:hover{
+               left:0px;
+            }
 	</style>
 </head>
 <body>
@@ -114,9 +128,16 @@
 			      	<li><a href="/dianpus?cate_id=1">首页</a></li>
 			        <li><a href="/dianpus/order">我的订单</a></li>
 			        <li><a href="/dianpus/guize">规则中心</a></li>
+
 			        <li><a href="/dianpus/jiameng">加盟合作</a></li>
 			        <li><a href="/dianpus/zhuanpan">帮你做决定</a></li>
 			        <li><a href="/dianpus/choujiang">抽奖活动</a></li>
+
+			       
+			        @if(Session::has('id') != null)
+			        <li><a href="/fankui">反馈中心</a></li>
+			        @endif
+
 		        </ul>
 		        <ul class="login">
 				@if(Session::has('id') == null)
@@ -257,6 +278,8 @@
 </div>
 </div>
 </div>
+<!-- QQ图片 -->	
+ <img class="c2" src="/home/images/clmqq.jpg">
 	<!-- 页脚 -->
 	<div class="footer">
 		<div class="container">

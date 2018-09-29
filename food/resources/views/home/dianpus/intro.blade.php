@@ -17,7 +17,6 @@
     </script>
     <link href='http://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 </head>
-
 <body>
     <div class="header">
         <div class="container">

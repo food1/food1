@@ -57,8 +57,8 @@ class HomeController extends Controller
         //
         $food1s = Food1::all();
         $links = Link::all();
-         $users = User::find(\Session::get('id'));
-          $cates = Cate::all();      
+        $users = User::find(\Session::get('id'));
+        $cates = Cate::all();      
         // //读取数据库 获取用户数据
         $dianpus = Dianpu::where('cate_id', $request->cate_id)->orderBy('id','desc')
             ->where('dianpu_name','like', '%'.request()->keywords.'%')
@@ -137,6 +137,7 @@ class HomeController extends Controller
     public function logout(Request $request)
     {
         $request->session()->flush();
+
         return redirect('/home/login')->with('success','退出成功!');
     }
 

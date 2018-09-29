@@ -3,16 +3,17 @@
 
 <head>
     <title>吃了么登录页面 </title>
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="cache-control" content="no-cache">
-    <meta http-equiv="expires" content="0">
-
     <link href="/home/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <script src="/home/js/jquery.min.js"></script>
     <script src="/home/js/bootstrap.min.js"></script>
     <script src="/home/js/jquery.min.js"></script>
+    <!-- 反馈 -->
+    <script src="/Bjs/jquery-1.7.2.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" type="text/css" href="/Acss/style.css">
+    <!-- end -->
     <link href="/home/css/style.css" rel='stylesheet' type='text/css' />
-    <meta name="viewport" content="width=device-width, initial-scale=1" http-equiv="refresh">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="application/x-javascript">
     addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 
@@ -21,6 +22,7 @@
     </script>
     <link href='http://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 </head>
+
 
 <body>
     <div class="header">
@@ -47,14 +49,14 @@
                     </div>
                     <nav class="navbar navbar-default menu" role="navigation">
                         <h3 class="nav_right">
-                    <a href="index.html">
-                        <img src="/home/images/logo.png" class="img-responsive" alt=""/>
-                    </a>
-                </h3>
+			 		<a href="index.html">
+			 			<img src="/home/images/logo.png" class="img-responsive" alt=""/>
+			 		</a>
+			 	</h3>
                         <div class="container-fluid">
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="sr-only"></span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
@@ -65,15 +67,24 @@
                                     <li><a></a></li>
                                     <li><a></a></li>
                                     <li><a></a></li>
-                                    <li><a href="/dianpus/?cate_id=1">首页</a></li>
-                                    <li><a>我的订单</a></li>
+                                    <li><a href="/dianpus?cate_id=1">首页</a></li>
+                                    <li><a href="/dianpus/order">我的订单</a></li>
                                     <li><a href="/dianpus/guize">规则中心</a></li>
-                                    <li><a>我的客服</a></li>
+                                    <li><a href="contact.html">我的客服</a></li>
                                 </ul>
                                 <ul class="login">
-                                    <a href="/home/zhuce">
-                                        <li class="login_top"><i class="sign"> </i><span>註冊</span></li>
+                                    @if(Session::has('id') == null)
+                                    <a href="/home/login">
+                                        <li class="login_top"><i class="sign"> </i><span>登录</span></li>
                                     </a>
+                                    <a href="/home/zhuce">
+                                        <li class="login_bottom"><i class="register"> </i><span>注册</span></li>
+                                    </a>
+                                    @endif @if(Session::has('id') != null)
+                                    <a href="/home/logout">
+                                        <li class="login_top"><i class="sign"> </i><span>退出登录</span></li>
+                                    </a>
+                                    @endif
                                 </ul>
                                 <div class="clearfix"></div>
                             </div>
@@ -89,26 +100,7 @@
     </div>
     </div>
     </div>
-    <div class="main">
-        <div class="container">
-            <div class="Product_top">
-                <div class="row content">
-                    <div class="col-md-3">
-                        <div class="category_box">
-                            <h3 class="cate_head">精品推荐</h3>
-                            <ul class="category">
-                                <li><a href="#"><img src="/home/images/p1.jpg" width="100px" height="50px"></a></li>
-                                <li><a href="#"><img src="/home/images/p2.jpg" width="100px" height="50px"></a></li>
-                                <li><a href="#"><img src="/home/images/p3.jpg" width="100px" height="50px"></a></li>
-                                <li><a href="#"><img src="/home/images/p4.jpg" width="100px" height="50px"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="breadcrumb">
-                            <a href="#">首页</a> &gt;&gt; <span class="last">登录</span>
-                        </div>
-                        <!-- 闪存 -->
+    <!-- 闪存 -->
                         @if(Session::has('success'))
                         <div class=" am-u-sm-12" style="padding:0px;margin:0px;">
                             <div class="dashboard-stat green">
@@ -124,133 +116,97 @@
                         </div>
                         @endif
                         <!-- 闪存 -->
-                        <center>
-                            <div class="contact-form">
-                                <form method="post" name="logindd" action="/home/dianpus">
-                                    <div>
-                                        <span><label>用户名:</label></span>
-                                        <span><input name="user_name" type="text" class="textbox" style="width:300px;height:30px;border:solid 1px #aaa;"><span class="remind"></span></span>
+    <div class="main">
+        <div class="container">
+            <div class="Product_top">
+                <div class="row content">
+                    <div class="user_mesg">
+
+                        <form action="/fankui" method="post" id="msgform" class="fl">
+                            <div class="quick_liuyan_con">
+                                <div class="item" style="display: none;">
+                                    <span><b class="star">*</b>用户ID</span>
+                                    <div class="item-right">
+                                        <input type="text" class="v-ipt" value="{{$users['id']}}" name="user_id" placeholder="姓名">
                                     </div>
-                                    <div>
-                                        <span><label>密码:</label></span>
-                                        <span><input name="user_password" type="password" class="textbox" style="width:300px;height:30px;border:solid 1px #aaa;"><span class="remind"></span></span>
+                                    <div style="clear: both"></div>
+                                </div>
+                                <div class="item">
+                                    <span><b class="star">*</b>姓名</span>
+                                    <div class="item-right">
+                                        <input type="text" class="v-ipt" value="" name="fankui_name" placeholder="姓名">
                                     </div>
-                                    <br>
-                                    <div id="c1"></div>
-                                    <div>
-                                        {{csrf_field()}}
-                                        <!-- <span><input type="submit" value="登录"></span> -->
+                                    <div style="clear: both"></div>
+                                </div>
+                                <div class="item">
+                                    <span><b class="star">*</b>电话</span>
+                                    <div class="item-right">
+                                        <input type="text" value="{{$users['user_phone']}}" name="fankui_phone" maxlength="11" placeholder="请输入手机号">
                                     </div>
-                                    <span id="ding"></span>
-                                    <br>
-                                    
-                                    <div>
-                                        <p style="font-size:14px;">其他登录方式:
-                                            <ul class="footer_social">
-                                                <li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http">
-                                    <img src="/home/images/QQ.png"/>
-                                    </a>
-                                                </li>
-                                                <li><a href="http://service.weibo.com/share/share.php">
-                                    <img src="/home/images/weibo.png"/>
-                                    </a>
-                                                </li>
-                                                <div class="clearfix"></div>
-                                            </ul>
+                                    <div style="clear: both"></div>
+                                </div>
+                                <div class="item">
+                                    <span>QQ/Email</span>
+                                    <div class="item-right">
+                                        <input type="text" value="" name="email" id="email">
                                     </div>
-                                    </p>
-                                </form>
+                                    <div style="clear: both"></div>
+                                </div>
+                                <div class="item">
+                                    <span>留言</span>
+                                    <div class="item-right">
+                                        <textarea name="content" id="Message" class="Message" cols="30" rows="10"></textarea>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                </div>
+                                <div class="item">
+                                    <input name="url" value="" id='burl' type="hidden">
+                                     {{csrf_field()}}
+                                    <input type="submit" class="btn-mesSubmit" id="imgBtnUp1" value="提交留言">
+                                </div>
                             </div>
-                        </center>
+                        </form>
+                        <div class="form-right fl">
+                            <h3>您可以根据下列意向,<span>快捷留言</span></h3>
+                            <ul class="quickMessage">
+                                <li>
+                                    <a>
+                                        <p>1.我想加盟，请速与我联系！</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <p>2.加盟不错，我想了解一下具体细节！</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <p>3.我想开个店，不知道如何加盟？</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <p>4.我们这个地方有加盟商吗？想去看看！</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <p>5.我想到贵公司考察，请与我联系！</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <p>6.吃了么十分的好,希望你们继续加油！</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
+                    <script src="/Bjs/script.js" type="text/javascript"></script>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://cdn.dingxiang-inc.com/ctu-group/captcha-ui/index.js"></script>
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript">
-    var CYAN = false;
-    var CUSER = false;
-    var CPASS = false;
-
-    //用户
-    $('input[name=user_name]').focus(function() {
-        //提示语显示
-        $(this).next().show().html('<span style="font-size:13px;">请输入您的用户名</span>');
-    }).blur(function() {
-
-        //获取用户的输入值
-        var v = $(this).val();
-        //正则
-        var reg = /^\w{6,18}$/;
-
-        if (!reg.test(v)) {
-            //文字提醒
-            $(this).next().html('<span style="color:red;font-size:13px;">您的输入有误</span>').show();
-            CUSER = false;
-        } else {
-            //文字提醒
-            $(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
-            CUSER = true;
-
-        }
-    })
-
-    //密码
-    $('input[name=user_password]').focus(function() {
-        //边框颜色
-        $(this).addClass('active');
-        //提示语显示
-        $(this).next().show().html('<span style="font-size:13px;">请输入您的密码</span>');
-    }).blur(function() {
-        $(this).removeClass('active');
-        //获取用户的输入值
-        var v = $(this).val();
-        //正则
-        var reg = /^[a-zA-Z]\w{5,17}$/;
-
-        if (!reg.test(v)) {
-            //文字提醒
-            $(this).next().html('<span style="color:red;font-size:13px;">您的输入有误</span>').show();
-            CPASS = false;
-        } else {
-            //文字提醒
-            $(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
-            CPASS = true;
-            $('#ding').html('<span style="color:#333;font-size:16px;font-weight:bold">&nbsp;&nbsp;请完成滑块验证后登录</span>');
-
-        }
-    });
-
-
-
-    var My = _dx.Captcha(document.getElementById('c1'), {
-        appId: 'ed94b60ca9fd1e481366bc1d3c0049b3',
-        style: 'inline',
-        width: 300,
-        success: function(token) {
-            CYAN = true,
-            document.logindd.submit();
-        }
-
-    });
-
-    // //表单的提交事件
-    // $('form').submit(function() {
-    //     //触发错误提醒
-    //     $('input').trigger('blur');
-        
-    //     //判断输入值是否都正确
-    //     if (CUSER && CPASS && CYAN) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // });
-
-
-    </script>
     <div class="footer">
         <div class="container">
             <div class="footer-grid footer-grid1">

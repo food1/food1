@@ -246,7 +246,7 @@ $('input[name=user_name]').focus(function() {
     //边框颜色
     // $(this).addClass('active');
     //提示语部分
-    $(this).next().show().html('输入6~18位数字字母下划线');
+    $(this).next().show().html('<span style="font-size:12px;">输入6~18位数字字母下划线</span>');
 }).blur(function() {
     // 移出激活状态的class
     $(this).removeClass('active');
@@ -257,13 +257,13 @@ $('input[name=user_name]').focus(function() {
     //判断
     if (!reg.test(v)) {
         //文字提醒
-        $(this).next().show().html('<font color="red">格式不正确</font>');
+        $(this).next().show().html('<span style="color:red;font-size:12px;">格式不正确</span>');
 	} else {
         var input = $(this);
         //发送ajax请求 检测用户名是否存在
         $.post('/check-user-exists.php', { user_name: v }, function(data) {
             if (data != '1') {
-                input.next().html('<font color="red">该用户名太受欢迎了,请您换一个再试!!!</font>');
+                input.next().html('<span style="color:red;font-size:12px;">该用户名太受欢迎了,请您换一个再试!!!</span>');
             } else {
             	input.next().html('<span style="color:green;font-size:16px;font-weight:bold;">√</span>');
             }
@@ -279,7 +279,7 @@ $('input[name=user_name]').focus(function() {
 	$('input[name=user_phone]').focus(function(){
 			
 			//提示语显示
-			$(this).next().show().html('输入您的手机号!!!');
+			$(this).next().show().html('<span style="font-size:12px;">输入您的手机号</span>');
 		}).blur(function(){
 			$(this).removeClass('active');
 			//获取用户的输入值
@@ -289,7 +289,7 @@ $('input[name=user_name]').focus(function() {
 			if(!reg.test(v)) {
 				
 				//文字提醒
-				$(this).next().html('<span style="color:red">格式不正确</span>').show();
+				$(this).next().html('<span style="color:red;font-size:12px;">格式不正确</span>').show();
 				CPHONE = false;
 			}else{
 				
@@ -304,7 +304,7 @@ $('input[name=user_name]').focus(function() {
 		$('input[name=user_password]').focus(function(){
 			
 			//提示语显示
-			$(this).next().show().html('请输入字母开头6-16位字母数字下划线!!!');
+			$(this).next().show().html('<span style="font-size:12px;">请输入字母开头6-16位字母数字下划线</span>');
 		}).blur(function(){
 			$(this).removeClass('active');
 			//获取用户的输入值
@@ -316,7 +316,7 @@ $('input[name=user_name]').focus(function() {
 				
 				
 				//文字提醒
-				$(this).next().html('<span style="color:red">格式不正确</span>').show();
+				$(this).next().html('<span style="color:red;font-size:12px;">格式不正确</span>').show();
 				CPASS = false;
 			}else{
 				
@@ -331,7 +331,7 @@ $('input[name=user_name]').focus(function() {
 		$('input[name=repassword]').focus(function(){
 			
 			//提示语显示
-			$(this).next().show().html('请再次输入密码');
+			$(this).next().show().html('<span style="font-size:12px;">请再次输入密码</span>');
 		}).blur(function(){
 			$(this).removeClass('active');
 
@@ -342,7 +342,7 @@ $('input[name=user_name]').focus(function() {
 			if(v != $('input[name=user_password]').val()) {
 				
 				//文字提醒
-				$(this).next().html('<span style="color:red">两次密码不一致</span>').show();
+				$(this).next().html('<span style="color:red;font-size:12px;">两次密码不一致</span>').show();
 				CREPASS = false;
 			}else{
 				
@@ -358,7 +358,7 @@ $('input[name=user_name]').focus(function() {
 		$('input[name=user_adress]').focus(function(){
 			
 			//提示语显示
-			$(this).next().show().html('请输入中文、英文、数字但不包括下划线等!!!');
+			$(this).next().show().html('<span style="font-size:12px;">请输入中文、英文、数字但不包括下划线等</span>');
 		}).blur(function(){
 			$(this).removeClass('active');
 			//获取用户的输入值
@@ -368,7 +368,7 @@ $('input[name=user_name]').focus(function() {
 
 			if(!reg.test(v)) {
 				//文字提醒
-				$(this).next().html('<span style="color:red">格式不正确</span>').show();
+				$(this).next().html('<span style="color:red;font-size:12px;">格式不正确</span>').show();
 				CADRESS = false;
 			}else{
 				
