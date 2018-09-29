@@ -9,6 +9,10 @@
     <script src="/home/js/jquery.min.js"></script>
     <link href="/home/css/style.css" rel='stylesheet' type='text/css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 分享 -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+<!-- 分享 -->  
     <script type="application/x-javascript">
     addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 
@@ -17,7 +21,6 @@
     </script>
     <link href='http://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 </head>
-
 <body>
     <div class="header">
         <div class="container">
@@ -93,7 +96,7 @@
         <div class="container">
             <div class="Product_top">
                 <div class="row content">
-                    <div>
+                    <div style="height: 150px;">
                     	<p>
                     		<b style="font-size:16px">“吃了么”</b>是2018年创立的本地生活平台,主营在线外卖、新零售、即时配送和餐饮供应链等业务.以诚信服务客户为使命，致力于用创新科技打造全球领先的本地生活平台.成为了中国人继做饭、堂食后的第三种常规就餐方式.
                     	</p>
@@ -131,10 +134,9 @@
             <div class="footer-grid footer-grid4">
                 <h3 class="m_2">好东西和大家一起分享!</h3>
                 <ul class="footer_social">
-                    <li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http"><img src="/home/images/QQ.png"/></a></li>
-                    <li><a href="https://www.douban.com/share/service?href=http"><img src="/home/images/douban.png"/></a></li>
-                    <li><a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey"><img src="/home/images/qqkj.png"/></a></li>
-                    <li><a href="http://service.weibo.com/share/share.php"><img src="/home/images/weibo.png"/></a></li>
+                    <div class="newsview" style="padding:20px;float:right">
+                    <div class="share-component" data-disabled="google,twitter,facebook" data-description=""></div>
+                </div>
                     <div class="clearfix"> </div>
                 </ul>
                 <h3 class="m_3">订阅</h3>

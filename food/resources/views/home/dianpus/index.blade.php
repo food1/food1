@@ -11,6 +11,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 </script>
+<!-- 分享 -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+<!-- 分享 -->  
 <link href='http://fonts.googleapis.com/css?family=Exo+2:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 
 	<style>
@@ -33,7 +37,6 @@
 			left:0px;
 			top:0px;
 		}
-
 		#dots{
 			width:200px;
 			height:20px;
@@ -54,17 +57,34 @@
 		#dots .active{
 			background:white;
 		}
+
+		 img.c2{
+		 	width: 300px;
+		 	height: 300px;
+            position:absolute;
+            left:-250px;/*让图片钻进浏览器右面*/
+            top:200px;
+            z-index:5;
+            /*检测右侧距离变化 5,秒完成 由慢到快*/
+            transition:left 3s ease-in;
+            }
+            img.c2:hover{
+               left:0px;
+            }
 	</style>
 </head>
 <body>
 	<div class="header">
 		<div class="container">
 		  <div class="header_top">
+		  	
 			<ul class="phone">
-				<li class="phone_left"><i class="mobile"> </i><span>15149174619</span></li>
-				<li class="phone_right"> 50元以上餐品将免费为您配送!</li>
+
+				<li class="phone_left"><i class="mobile"> </i><span>15847823067</span></li>
+				<li class="phone_right"> 免费配送，你敢下单，我就敢送</li>
 				<div class="clearfix"></div>
 			</ul>
+			
 			<ul class="social">
 				 <h1 style="font-family:'华文彩云';color:#aaa;font-size:40px;">吃了么</h1>
 			</ul>
@@ -81,7 +101,7 @@
 			</ul>
 			<ul class="shopping_cart">@foreach($food1s as $v)@endforeach
 			   <a href="/dianpus/car?food1_id={{$v->id}}"><li class="shop_left"><i class="cart"> </i><span>购物车</span></li></a>
-			   <a href="#"><li class="shop_right"><span>$0.00</span></li></a>
+			   <a href="#"><li class="shop_right"></li></a>
 			   <div class="clearfix"> </div>
 			</ul>
 			   <div class="clearfix"> 
@@ -92,9 +112,13 @@
 		</div>
 		<div class="header_bottom">
 		  <div class="header_nav">
+		  	@foreach($logos as $v)
       		<div class="logo">
-				<a href="/dianpus"><img src="/home/images/logo.png" alt=""/><br></a>
+      			
+				<a href="/dianpus?cate_id=1"><img src="{{$v['logo']}}" alt="" style="width: 90px;height: 90px;" /><br></a>
+				
 			 </div>
+			 @endforeach
 			 <nav class="navbar navbar-default menu" role="navigation">
 			 	<h3 class="nav_right">
 			 		<a href="index.html">
@@ -111,17 +135,20 @@
 			      </button>
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			    <ul class="nav navbar-nav menu1">
-			      	<li><a></a></li>
-			      	<li><a></a></li>
-			      	<li><a></a></li>
+			    <ul class="nav navbar-nav menu1">			      	
 			      	<li><a href="/dianpus?cate_id=1">首页</a></li>
 			        <li><a href="/dianpus/order">我的订单</a></li>
 			        <li><a href="/dianpus/guize">规则中心</a></li>
-			        <li><a href="#">我的客服</a></li>
+
+			        <li><a href="/dianpus/jiameng">加盟合作</a></li>
+			        <li><a href="/dianpus/zhuanpan">帮你做决定</a></li>
+			        <li><a href="/dianpus/choujiang">抽奖活动</a></li>
+
+			       
 			        @if(Session::has('id') != null)
 			        <li><a href="/fankui">反馈中心</a></li>
 			        @endif
+
 		        </ul>
 		        <ul class="login">
 				@if(Session::has('id') == null)
@@ -138,10 +165,12 @@
 		</nav>		
         <div class="clearfix"></div>
            </div>
+           <form action="/dianpus" method="get">
             <div class="search">
-			  <input type="text" class="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+			  <input type="text" class="text" value="{{request()->keywords}}">
 			  <input type="submit" value="搜索">
 			</div>
+			</form>
 		 </div>  
 		</div>
 	</div>
@@ -156,11 +185,9 @@
 		<div class="container">
 			<div id="slide">
 			<ul id="images">
-				<li><img src="home/images/l.jpg" alt="" width="100%" height="450px"></li>
-				<li><img src="home/images/l4.jpg" alt="" width="100%" height="450px"></li>
-				<li><img src="home/images/p11.jpg" alt="" width="100%" height="450px"></li>
-				<li><img src="home/images/p13.jpg" alt="" width="100%" height="450px"></li>
-				<li><img src="home/images/p10.jpg" alt="" width="100%" height="450px"></li>
+				@foreach($lunbos as $v)
+				<li><img src="{{$v['lunbo_pic']}}" alt="" width="100%" height="450px"></li>
+				@endforeach
 			</ul>
 			<ul id="dots">
 				<li></li>
@@ -185,31 +212,11 @@
                     </ul>
                 </div>
 		   	   	<ul class="product_reviews">
-		   	   	<h3><i class="arrow"> </i><span>用户评论</span></h3>
+		   	   	<h3><i class="arrow"> </i><span>加入官方QQ群</span></h3>
 		   	   	<li>
-		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/f3.jpg" class="img-responsive" alt=""/></li>
-		   	   			<li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
-		   	   			<div class="clearfix"> </div>
-		   	   		</ul>
+		   	   		<a href=""><img src="/home/images/clmqq.jpg" style="width:300px;height:250px;"/></a>
 		   	   	</li>
-		   	   	<li>
-		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/l4.jpg" class="img-responsive" alt=""/></li>
-		   	   			<li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
-		   	   			<div class="clearfix"> </div>
-		   	   		</ul>
-		   	   	</li>
-		   	   	<li>
-		   	   		<ul class="review1">
-		   	   			<li class="review1_img"><img src="/home/images/p3.jpg" class="img-responsive" alt=""/></li>
-		   	   			<li class="review1_desc"><h3><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h3><p>Wed, June 2014</p></li>
-		   	   			<div class="clearfix"> </div>
-		   	   		</ul>
-		   	   	</li>
-		   	    <div class="but">
-			       <a href="#">更多评论<i class="but_arrow"></i></a>
-			    </div>
+		   	   
 		   	   	</ul>		   	   
 		   	   	<ul class="product_reviews">
 		   	   		<h3><i class="arrow"> </i><span>支付方式</span></h3>	   	   		
@@ -280,6 +287,8 @@
 </div>
 </div>
 </div>
+<!-- QQ图片 -->	
+ <img class="c2" src="/home/images/clmqq.jpg">
 	<!-- 页脚 -->
 	<div class="footer">
 		<div class="container">
@@ -311,11 +320,9 @@
 		   <div class="footer-grid footer-grid4">
 			   <h3 class="m_2">好东西和大家一起分享!</h3>
 			   <ul class="footer_social">
-				 <li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http"><img src="/home/images/QQ.png"/></a></li>
-				 <li><a href="https://www.douban.com/share/service?href=http"><img src="/home/images/douban.png"/></a></li>
-				 <li><a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey"><img src="/home/images/qqkj.png"/></a></li>
-				 <li><a href="http://service.weibo.com/share/share.php"><img src="/home/images/weibo.png"/></a></li>
-				 <div class="clearfix"> </div>
+				 <div class="newsview" style="padding:20px;float:right">
+		            <div class="share-component" data-disabled="google,twitter,facebook" data-description=""></div>
+		        </div>
 			   </ul>
 			   <h3 class="m_3">订阅</h3>
 			   <div class="footer_search">

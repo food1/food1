@@ -140,24 +140,27 @@
     <div class="tpl-block">
         <div class="am-g">
             <div class="am-u-sm-12">
+
                 <table class="am-table am-table-striped am-table-hover table-main">
+                	
                     <thead>
                         <tr>
                             <th class="table-time">下单时间</th>
                             <th class="table-title">订单内容</th>
                             <th class="table-set">支付金额 (元)</th>
-                            <th class="table-set">订单编号</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
                     	
                         <tr style="height: 40px">
-                            <td>fdfdsfds</td>
+                            <td>dfdsfds</td>
                             <td>fdsfdsfds</td>
                             <td>dsfdsfds</td>
-                            <td>dsfdsfd</td>
+                            
                         </t
                     </tbody>
+                   
                 </table>
             </div>
         </div>
