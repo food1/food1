@@ -11,7 +11,12 @@
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "overtrue/socialite": "^2.0"
+=======
+        "overtrue/socialite": "^2.0",
+        "socialiteproviders/qq": "^3.0"
+>>>>>>> 3bd8d0b2333cbf1a2b00e1e7f4668b9a4b3b8cd5
 =======
         "socialiteproviders/weibo": "^3.0"
 >>>>>>> c1deb9bed23c280561aca6d4b3158c6887c84a99

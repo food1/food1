@@ -114,15 +114,17 @@
 			        </button>
 			    </div>
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			    	<ul class="nav navbar-nav menu1">
-                        <li><a></a></li>
-                        <li><a></a></li>
-                        <li><a></a></li>
-                        <li><a href="/dianpus?cate_id=1">首页</a></li>
-                        <li><a href="/dianpus/order">我的订单</a></li>
-                        <li><a href="/dianpus/guize">规则中心</a></li>
-                        <li><a href="/dianpus/call">联系我们</a></li>
-		        	</ul>
+                <ul class="nav navbar-nav menu1">
+                    <li><a href="/dianpus?cate_id=1">首页</a></li>
+                    <li><a href="/dianpus/guize">规则中心</a></li>
+                    <li><a href="/dianpus/qiandao">每日签到</a></li>
+                    <li><a href="/dianpus/jiameng">加盟合作</a></li>
+                    <li><a href="/dianpus/zhuanpan">帮你做决定</a></li>
+                    <li><a href="/dianpus/choujiang">抽奖活动</a></li>
+                    @if(Session::has('id') != null)
+                    <li><a href="/fankui">反馈中心</a></li>
+                    @endif
+                </ul>
 		          	<ul class="login">
 					@if(Session::has('id') == null)
 						<a href="/home/login"><li class="login_top"><i class="sign"> </i><span>登录</span></li></a>

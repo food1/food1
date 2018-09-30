@@ -51,33 +51,6 @@
                 <button class="btn btn-primary btn6 mr10" id="one" type="submit">开启网站</button>
             </li>
         </ul>
-        <ul>
-            <li>
-                <label>网站名称&nbsp; &nbsp; </label>
-                <input name="user_name" type="text" class="dfinput" />
-            </li>
-            <br>
-            <li>
-                <label>网站关键字</label>
-                <input name="user_phone" type="text" class="dfinput" />
-            </li>
-            <br>
-            <li>
-                <label>网站版权&nbsp; &nbsp; </label>
-                <input name="user_phone" type="text" class="dfinput" />
-            </li>
-            <br>
-            <li>
-                <label>网站logo&nbsp; &nbsp</label>
-                <input name="user_phone" type="file" />
-            </li>
-            <br>
-            <li style="margin-left:50px;">
-                <label>&nbsp;</label>
-                <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
-                <input class="btn btn-primary btn6 mr10" value="返回" type="button" onclick="history.go(-1)">
-            </li>
-        </ul> 
         </form>
     </div>
 </body>

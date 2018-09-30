@@ -26,6 +26,9 @@ Route::post('/home/dianpus', 'HomeController@dologin');
 Route::get('/home/zhuce', 'HomeController@zhuce');
 //注册操作
 Route::post('/home/login', 'HomeController@dozhuce');
+//QQ登录
+Route::get('/home/qq','HomeController@qq');
+Route::get('callback','HomeController@callback');
 //规则中心
 Route::get('/dianpus/guize','QdianpuController@guize');
 //关于我们
@@ -40,9 +43,10 @@ Route::get('/dianpus/weizhi','QdianpuController@weizhi');
 Route::resource('/fankui','FanKuiController');
 
 
-
 //前台登陆拦截
 Route::group(['middleware'=>'home'],function(){
+//用户反馈
+Route::resource('/fankui','FanKuiController');
 //个人中心
 Route::resource('/person','PersonController');
 //签到

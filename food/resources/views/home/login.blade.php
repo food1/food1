@@ -153,8 +153,12 @@
                                     <div>
                                         <p style="font-size:14px;">其他登录方式:
                                             <ul class="footer_social">
-                                                <li><a href="https://connect.qq.com/widget/shareqq/index.html?url=http">
+                                                <li><a href="/home/qq">
                                                 <img src="/home/images/QQ.png"/>
+                                                </a>
+                                                </li>
+                                                <li><a href="http://service.weibo.com/share/share.php">
+                                                <img src="/home/images/weibo.png"/>
                                                 </a>
                                                 </li>
                                                 <div class="clearfix"></div>

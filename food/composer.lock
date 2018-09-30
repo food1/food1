@@ -5,7 +5,11 @@
         "This file is @generated automatically"
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
     "content-hash": "d31fa639ba12495abaa0130c2e6eff2b",
+=======
+    "content-hash": "8c6cd68da1413ebc59a693afe0f844df",
+>>>>>>> 3bd8d0b2333cbf1a2b00e1e7f4668b9a4b3b8cd5
 =======
     "content-hash": "2233260422610f866286cb88d398cf1c",
 >>>>>>> c1deb9bed23c280561aca6d4b3158c6887c84a99
@@ -955,6 +959,18 @@
         },
         {
             "name": "laravel/socialite",
+<<<<<<< HEAD
+            "version": "v3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/socialite.git",
+                "reference": "65f771ff4f266ebae23de1a3f18efd80a1da2f8d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/65f771ff4f266ebae23de1a3f18efd80a1da2f8d",
+                "reference": "65f771ff4f266ebae23de1a3f18efd80a1da2f8d",
+=======
             "version": "v3.0.12",
             "source": {
                 "type": "git",
@@ -965,6 +981,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/socialite/zipball/b5f465847b1d637efa86bbfe2fc1c9d2bd12f60f",
                 "reference": "b5f465847b1d637efa86bbfe2fc1c9d2bd12f60f",
+>>>>>>> c1deb9bed23c280561aca6d4b3158c6887c84a99
                 "shasum": ""
             },
             "require": {
@@ -973,7 +990,11 @@
                 "illuminate/http": "~5.4",
                 "illuminate/support": "~5.4",
                 "league/oauth1-client": "~1.0",
+<<<<<<< HEAD
+                "php": ">=5.6.4"
+=======
                 "php": ">=5.4.0"
+>>>>>>> c1deb9bed23c280561aca6d4b3158c6887c84a99
             },
             "require-dev": {
                 "mockery/mockery": "~0.9",
@@ -1009,11 +1030,19 @@
                 }
             ],
             "description": "Laravel wrapper around OAuth 1 & OAuth 2 libraries.",
+<<<<<<< HEAD
+            "homepage": "https://laravel.com",
+=======
+>>>>>>> c1deb9bed23c280561aca6d4b3158c6887c84a99
             "keywords": [
                 "laravel",
                 "oauth"
             ],
+<<<<<<< HEAD
+            "time": "2018-08-16T12:51:21+00:00"
+=======
             "time": "2018-06-01T15:06:47+00:00"
+>>>>>>> c1deb9bed23c280561aca6d4b3158c6887c84a99
         },
         {
             "name": "laravel/tinker",
@@ -1948,6 +1977,19 @@
             "time": "2017-11-20T08:42:57+00:00"
         },
         {
+<<<<<<< HEAD
+            "name": "socialiteproviders/qq",
+            "version": "v3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SocialiteProviders/QQ.git",
+                "reference": "fc338245c348189880911827c162ef73f651ba44"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SocialiteProviders/QQ/zipball/fc338245c348189880911827c162ef73f651ba44",
+                "reference": "fc338245c348189880911827c162ef73f651ba44",
+=======
             "name": "socialiteproviders/weibo",
             "version": "v3.0.0",
             "source": {
@@ -1959,16 +2001,25 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/SocialiteProviders/Weibo/zipball/9df4737ad28f220cc97ac5590ab78c8de46825ee",
                 "reference": "9df4737ad28f220cc97ac5590ab78c8de46825ee",
+>>>>>>> c1deb9bed23c280561aca6d4b3158c6887c84a99
                 "shasum": ""
             },
             "require": {
                 "php": "^5.6 || ^7.0",
+<<<<<<< HEAD
+                "socialiteproviders/manager": "~2.0 || ~3.0"
+=======
                 "socialiteproviders/manager": "~3.0"
+>>>>>>> c1deb9bed23c280561aca6d4b3158c6887c84a99
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
+<<<<<<< HEAD
+                    "SocialiteProviders\\QQ\\": ""
+=======
                     "SocialiteProviders\\Weibo\\": ""
+>>>>>>> c1deb9bed23c280561aca6d4b3158c6887c84a99
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1977,12 +2028,21 @@
             ],
             "authors": [
                 {
+<<<<<<< HEAD
+                    "name": "heui",
+                    "email": "runphp@qq.com"
+                }
+            ],
+            "description": "Qq.com OAuth2 Provider for Laravel Socialite",
+            "time": "2018-04-18T04:04:42+00:00"
+=======
                     "name": "xyxu",
                     "email": "techxu@gmail.com"
                 }
             ],
             "description": "weibo.com OAuth2 Provider for Laravel Socialite",
             "time": "2017-01-25T09:48:29+00:00"
+>>>>>>> c1deb9bed23c280561aca6d4b3158c6887c84a99
         },
         {
             "name": "swiftmailer/swiftmailer",
